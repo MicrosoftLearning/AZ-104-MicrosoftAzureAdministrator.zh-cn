@@ -1,36 +1,45 @@
-﻿# AZ-104：Microsoft Azure 管理员
+# <a name="az-104-microsoft-azure-administrator"></a>AZ-104：Microsoft Azure 管理员
 
-## 欢迎
+## <a name="welcome"></a>欢迎使用
 
-- **[演练的链接（HTML 格式）](https://microsoftlearning.github.io/AZ-104ZH-MicrosoftAzureAdministrator/)**
-- **你是 MCT 吗？** - 了解我们的 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide-ZH/)
+This repository is for instructors teaching Microsoft courses. If you are in class, please ask your instructor for assistance. 
 
-## 我们在做什么？
+- [实验室的链接（HTML 格式）](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
+- <bpt id="p1">**</bpt>Are you a MCT?<ept id="p1">**</ept> - Have a look at our <bpt id="p1">[</bpt>GitHub User Guide for MCTs<ept id="p1">](https://microsoftlearning.github.io/MCT-User-Guide/)</ept>
 
-- 为了支持本课程，我们需要经常更新课程内容，以使其与课程中使用的 Azure 服务保持同步。 我们将在 GitHub 上发布实验室说明和实验室文件，使得课程作者和 MCT 之间的开放式参与成为可能，从而让内容与 Azure 平台中的更改保持同步。
+## <a name="security-issue---february-2022"></a>安全问题 - 2022 年 2 月
 
-- 我们希望这能给实验室带来前所未有的协作感。当 Azure 发生变化并且你在实时上课期间初次发现这种变化时，请直接在实验室源代码中进行改进。 帮助你的 MCT 同事。
+Some Azure training labs instruct the student to use a specific user name and password. Bad actors constantly scan virtual machines and try to log in using those credentials.
+Once they login the machines can be used for crypto-mining or other non-classroom activities.
 
-## 相对于已发布的 MOC 文件，我应该如何使用这些文件？
+此存储库适用于教授 Microsoft 课程的讲师。 
 
-- 讲师手册和 PowerPoint 仍将是你教授课程内容的主要来源。
+## <a name="what-are-we-doing"></a>我们要做什么？
 
-- GitHub 上的这些文件旨在与学生手册结合使用，但在 GitHub 中作为中央存储库使用，这样，MCT 和课程作者可以拥有最新实验室文件的共享来源。
+- 如果你在上课，请向你的讲师寻求帮助。
 
-- 建议在每次上课时，培训人员都要检查 GitHub 以了解为支持最新 Azure 服务而执行的任何更改，并获取用于授课的最新文件。
+- We hope that this brings a sense of collaboration to the labs like we've never had before - when Azure changes and you find it first during a live delivery, go ahead and make an enhancement right in the lab source.  Help your fellow MCTs.
 
-## 怎样修改学生手册？
+## <a name="how-should-i-use-these-files-relative-to-the-released-moc-files"></a>相对于已发布的 MOC 文件，应如何使用这些文件？
 
-- 我们将每季度审核一次学生手册，并根据需要通过正常的 MOC 发布渠道进行更新。
+- 讲师手册和 PowerPoint 仍将是教授课程内容的主要来源。
 
-## 我该如何参与？
+- GitHub 上的这些文件旨在与学员手册一起使用，但在 GitHub 中是作为中心存储库，因此 MCT 和课程作者可以拥有最新实验室文件的共享源。
 
-- 任何 MCT 均可向 GitHub 存储库中的代码或内容提交拉取请求，Microsoft 和课程作者将进行分类，并根据需要包含内容和实验室代码更改。
+- 对于每次授课，建议培训师查看 GitHub 中的内容，了解是否为支持最新 Azure 服务而进行了更改，并获取最新文件来进行授课。
 
-- 你可以提交错误、更改、改进和意见。 在我们之前就发现新的 Azure 功能？ 提交新的演示！
+## <a name="how-do-i-contribute"></a>如何参与内容编辑？
 
-## 注释
+- 任何 MCT 都可向 GitHub 存储库中的代码或内容提交拉取请求，Microsoft 和课程作者将根据需要进行分流并纳入内容和实验室代码的更改。
 
-### 课堂材料
+- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
 
-强烈建议 MCT 和合作伙伴访问这些材料，然后将它们单独提供给学生。 引导学生直接前往 GitHub 访问实验室步骤是正在进行的课程的一部分，这将要求他们在课程中访问另一个 UI，会给学生带来混乱的体验。向学生解释为什么他们会收到单独的实验室说明，这可以强调基于云的接口和平台不断变化的本质。Microsoft Learning 对访问 GitHub 上的文件的支持以及对 GitHub 站点导航的支持仅限于教授本课程的 MCT。
+## <a name="what-about-changes-to-the-student-handbook"></a>如何处理对学生手册的更改？
+
+- 你是 MCT 吗？
+
+## <a name="notes"></a>注释
+
+### <a name="classroom-materials"></a>课堂材料
+
+- 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
