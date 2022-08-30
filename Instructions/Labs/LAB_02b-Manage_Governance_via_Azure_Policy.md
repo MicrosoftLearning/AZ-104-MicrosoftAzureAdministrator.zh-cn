@@ -1,13 +1,13 @@
 ---
 lab:
-    title: '02b - 通过 Azure Policy 管理治理'
-    module: '模块 02 - 治理与合规性'
+  title: 02b - 通过 Azure Policy 管理治理
+  module: Module 02 - Governance and Compliance
 ---
 
-# 实验室 02b - 通过 Azure Policy 管理治理
-# 学生实验室手册
+# <a name="lab-02b---manage-governance-via-azure-policy"></a>实验室 02b - 通过 Azure Policy 管理治理
+# <a name="student-lab-manual"></a>学生实验室手册
 
-## 实验室场景
+## <a name="lab-scenario"></a>实验室方案
 
 为了改善 Contoso 中 Azure 资源的管理，你的任务是实现以下功能：
 
@@ -17,31 +17,31 @@ lab:
 
 - 补救任何不合规的资源 
 
-## 目标
+## <a name="objectives"></a>目标
 
-在本实验室中，我们将完成以下任务：
+在本实验室中，我们将：
 
 + 任务 1：通过 Azure 门户创建和分配标记
 + 任务 2：通过 Azure Policy 强制标记
 + 任务 3：通过 Azure Policy 应用标记
 
-## 预计用时：30 分钟
+## <a name="estimated-timing-30-minutes"></a>预计用时：30 分钟
 
-## 体系结构图
+## <a name="architecture-diagram"></a>体系结构关系图
 
-![图像](../media/lab02b.png)
+![image](../media/lab02b.png)
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 练习 1
+### <a name="exercise-1"></a>练习 1
 
-#### 任务 1：通过 Azure 门户分配标记
+#### <a name="task-1-assign-tags-via-the-azure-portal"></a>任务 1：通过 Azure 门户分配标记
 
 在此任务中，你将通过 Azure 门户创建标记并将标记分配给 Azure 资源组。
 
-1. 在 Azure 门户中，启动 **Cloud Shell** 中的 **“PowerShell”** 会话。
+1. 在 Azure 门户中，启动 Cloud Shell 中的“PowerShell”会话 。
 
-    >**备注**：如果这是你第一次启动 **Cloud Shell**，并看到“**未装载任何存储**”消息，请选择在本实验室中使用的订阅，然后单击“**创建存储**”。 
+    >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。 
 
 1. 在 Cloud Shell 窗格中，运行以下命令以标识 Cloud Shell 使用的存储帐户的名称：
 
@@ -55,168 +55,168 @@ lab:
    //xxxxxxxxxxxxxx.file.core.windows.net/cloudshell   (..)  /usr/csuser/clouddrive
    ```
 
-1. 在 Azure 门户中，搜索并选择 **“储存帐户”**，然后在存储帐户列表中，单击表示上一步中标识的存储帐户的条目。
+1. 在 Azure 门户中，搜索并选择“储存帐户”，然后在存储帐户列表中，单击表示上一步中标识的存储帐户的条目。
 
 1. 在“存储帐户”边栏选项卡中，单击表示包含该存储帐户的资源组名称的链接。
 
     **备注**：请注意存储帐户所在的资源组，稍后将在本实验室中用到它。
 
-1. 在资源组边栏选项卡上，单击 **“标记”**。
+1. 在资源组边栏选项卡上，单击“标记”旁边的“编辑”来创建新的标记 。
 
-1. 创建一个标记并采用以下设置，然后应用更改：
+1. 使用以下设置创建标记，并应用更改：
 
     | 设置 | 值 |
     | --- | --- |
     | 名称 | **角色** |
-    | 值 | **Infra** |
+    | 值 | **基础结构** |
 
-1. 导航回“存储帐户”边栏选项卡。查看 **“概述”** 信息，注意新标记不会自动分配给存储帐户。 
+1. Navigate back to the storage account blade. Review the <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> information and note that the new tag was not automatically assigned to the storage account. 
 
-#### 任务 2：通过 Azure Policy 强制标记
+#### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>任务 2：通过 Azure Policy 强制标记
 
 在此任务中，你将向资源组分配内置的*要求资源采用标记及其值*策略并评估结果。 
 
-1. 在 Azure 门户中，搜索并选择 **“策略”**。 
+1. 在 Azure 门户中，搜索并选择“策略”。 
 
-1. 在 **“创作”** 部分中单击 **“定义”**。花一点时间浏览可供使用的内置策略定义列表。列出所有涉及使用标记的内置策略，方法是在 **“类别”** 下拉列表中选择 **“标记”** 条目（并取消选择所有其他条目）。 
+1. In the <bpt id="p1">**</bpt>Authoring<ept id="p1">**</ept> section, click <bpt id="p2">**</bpt>Definitions<ept id="p2">**</ept>. Take a moment to browse through the list of built-in policy definitions that are available for you to use. List all built-in policies that involve the use of tags by selecting the <bpt id="p1">**</bpt>Tags<ept id="p1">**</ept> entry (and de-selecting all other entries) in the <bpt id="p2">**</bpt>Category<ept id="p2">**</ept> drop-down list. 
 
-1. 单击表示 **“要求资源采用标记及其值”** 内置策略的条目并查看其定义。
+1. 单击表示“要求资源采用标记及其值”内置策略的条目并查看其定义。
 
-1. 在 **“要求资源采用标记及其值”** 内置策略定义边栏选项卡中，单击 **“分配”**。
+1. 在“要求资源采用标记及其值”内置策略定义边栏选项卡中，单击“分配”。
 
-1. 通过单击省略号按钮指定 **“范围”** 并选择以下值：
+1. 通过单击省略号按钮指定“范围”并选择以下值：
 
     | 设置 | 值 |
     | --- | --- |
-    | 订阅 | 在本实验室中使用的 Azure 订阅的名称 |
+    | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 资源组的名称，其中包含你在上一个任务中标识的 Cloud Shell 帐户 |
 
-    >**备注**： 范围确定了策略分配生效的资源或资源组。你可以在管理组、订阅或资源组级别上分配策略。还可以选择指定排除项，例如单个订阅、资源组或资源（取决于分配范围）。 
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A scope determines the resources or resource groups where the policy assignment takes effect. You could assign policies on the management group, subscription, or resource group level. You also have the option of specifying exclusions, such as individual subscriptions, resource groups, or resources (depending on the assignment scope). 
 
-1. 通过指定以下设置（其他设置保留默认值）来配置分配的**基本**属性：
+1. 通过指定以下设置（其他设置保留默认值）来配置分配的基本属性：
 
     | 设置 | 值 |
     | --- | --- |
     | 分配名称 | **要求采用值为 Infra 的角色标记**|
-    | 描述 | **要求 Cloud Shell 资源组中所有资源都采用值为 Infra 的角色标记**|
-    | 策略执行 | 已启用 |
+    | 说明 | **要求 Cloud Shell 资源组中所有资源都采用值为 Infra 的角色标记**|
+    | 策略强制执行 | 已启用 |
 
-    >**备注**： **“分配名称”** 中会自动填充你选择的策略名称，但你可以对其进行更改。你还可以添加可选 **“描述”**。 **“分配人”** 中会自动填写创建分配的的用户名。 
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The <bpt id="p2">**</bpt>Assignment name<ept id="p2">**</ept> is automatically populated with the policy name you selected, but you can change it. You can also add an optional <bpt id="p1">**</bpt>Description<ept id="p1">**</ept>. <bpt id="p1">**</bpt>Assigned by<ept id="p1">**</ept> is automatically populated based on the user name creating the assignment. 
 
-1. 单击 **“下一步”**，将 **“参数”** 设为以下值：
+1. 单击“下一步”，将“参数”设为以下值：
 
     | 设置 | 值 |
     | --- | --- |
     | 标记名称 | **角色** |
-    | 标记值 | **Infra** |
+    | 标记值 | **基础结构** |
 
-1. 单击 **“下一步”**，查看 **“修正”** 选项卡。保持 **“创建一个托管标识”** 复选框为未选中状态。 
+1. 单击“下一步”，查看“修正”选项卡。保持“创建一个托管标识”复选框为未选中状态。 
 
-    >**备注**： 当策略或方案包括 **“不存在时部署”** 或 **“修改”** 效果时，便可以使用此设置。
+    >**注意**：当策略或方案包括“不存在时部署”或“修改” 效果时，便可以使用此设置。
 
-1. 单击 **“查看 + 创建”** ，然后单击 **“创建”**。
+1. 单击“查看 + 创建”，然后单击“创建”。
 
-    >**备注**： 现在，你将尝试在资源组中创建另一个 Azure 存储帐户，但不显式添加所需标记，从而验证新策略分配是否有效。 
+    >**注意**：现在，你将尝试在资源组中创建另一个 Azure 存储帐户，但不显式添加所需标记，从而验证新策略分配是否有效。 
     
-    >**备注**： 策略生效可能需要 5 到 15 分钟。
+    >**注意**：策略生效可能需要 5 到 15 分钟。
 
 1. 导航回“资源组”边栏选项卡，该资源组托管用于 Cloud Shell 主驱动器的存储帐户，你在上一个任务中已确定该帐户。
 
-1. 在资源组边栏选项卡上，单击“**+ 创建**”，然后搜索“**存储帐户**”，并单击“**+ 创建**”。 
+1. 在资源组边栏选项卡上，单击“+ 创建”，然后搜索存储帐户，并单击“+ 创建”  。 
 
-1. 在“**创建存储帐户**”边栏选项卡的“**基本信息**”选项卡上，验证所用资源组是否已应用策略，并指定以下设置（其他设置保留默认值），单击“**查看 + 创建**”，然后单击“**创建**”：
+1. 在“创建存储帐户”边栏选项卡的“基本信息”选项卡上，验证所用资源组是否已应用策略，并指定以下设置（其他设置保留默认值），单击“查看 + 创建”，然后单击“创建”   ：
 
     | 设置 | 值 |
     | --- | --- |
     | 存储帐户名称 | 3 到 24 个小写字母和数字的全局唯一组合，以字母开头 |
 
-1. 创建部署后，你应该会在门户的 **“通知”** 列表中看到 **“部署失败”** 的消息。从 **“通知”** 列表中，导航到部署概述并单击 **“部署失败。单击此处获取详细信息”** 消息，确定失败的原因。 
+1. Once you create the deployment, you should see the <bpt id="p1">**</bpt>Deployment failed<ept id="p1">**</ept> message in the <bpt id="p2">**</bpt>Notifications<ept id="p2">**</ept> list of the portal. From the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> list, navigate to the deployment overview and click the <bpt id="p2">**</bpt>Deployment failed. Click here for details<ept id="p2">**</ept> message to identify the reason for the failure. 
 
-    >**备注**： 验证错误消息是否表明策略禁止资源部署。 
+    >**注意**：验证错误消息是否表明策略禁止资源部署。 
 
-    >**备注**： 通过单击“**标记**”选项卡，你可以找到有关错误的更多详细信息，包括角色定义的名称“**要求采用值为 Infra 的角色标记**”。部署失败，因为尝试创建的存储帐户没有名为“**角色**”且值设为“**Infra**”的标记。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By clicking the <bpt id="p2">**</bpt>Raw Error<ept id="p2">**</ept> tab, you can find more details about the error, including the name of the role definition <bpt id="p3">**</bpt>Require Role tag with Infra value<ept id="p3">**</ept>. The deployment failed because the storage account you attempted to create did not have a tag named <bpt id="p1">**</bpt>Role<ept id="p1">**</ept> with its value set to <bpt id="p2">**</bpt>Infra<ept id="p2">**</ept>.
 
-#### 任务 3：通过 Azure Policy 应用标记
+#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>任务 3：通过 Azure Policy 应用标记
 
 在此任务中，我们将使用其他策略定义来修正所有不符合要求的资源。 
 
-1. 在 Azure 门户中，搜索并选择 **“策略”**。 
+1. 在 Azure 门户中，搜索并选择“策略”。 
 
-1. 在 **“创作”** 部分中，单击 **“分配”**。 
+1. 在“创作”部分中，单击“分配”。 
 
-1. 在分配列表中，右键单击表示 **“要求采用值为 Infra 的角色标记”** 策略分配的行中的省略号图标，然后使用 **“删除分配”** 菜单项删除分配。 
+1. 在分配列表中，单击表示“要求采用值为 Infra 的角色标记”策略分配的行中的省略号图标，然后使用“删除分配”菜单项删除分配 。
 
-1. 单击 **“分配策略”**，通过单击省略号按钮并选择以下值指定 **“范围”**：
+1. 单击“分配策略”，通过单击省略号按钮并选择以下值指定“范围”：
 
     | 设置 | 值 |
     | --- | --- |
-    | 订阅 | 在本实验室中使用的 Azure 订阅的名称 |
+    | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 资源组的名称，其中包含你在第一个任务中标识的 Cloud Shell 帐户 |
 
-1. 要指定 **“策略定义”**，请单击省略号按钮，然后搜索并选择 **“如果标记丢失，则从资源组继承一个标记”**。
+1. 要指定“策略定义”，请单击省略号按钮，然后搜索并选择“如果标记丢失，则从资源组继承一个标记”。
 
-1. 通过指定以下设置来配置分配的剩余**基本**属性（其他设置保留默认值）：
+1. 通过指定以下设置来配置分配的剩余基本属性（其他设置保留默认值）：
 
     | 设置 | 值 |
     | --- | --- |
     | 分配名称 | **如果缺失，则从 Cloud Shell 资源组继承角色标记及其 Infra 值**|
-    | 描述 | **如果缺失，则从 Cloud Shell 资源组继承角色标记及其 Infra 值**|
-    | 策略执行 | 已启用 |
+    | 说明 | **如果缺失，则从 Cloud Shell 资源组继承角色标记及其 Infra 值**|
+    | 策略强制执行 | 已启用 |
 
-1. 单击 **“下一步”**，将 **“参数”** 设为以下值：
+1. 单击“下一步”，将“参数”设为以下值：
 
     | 设置 | 值 |
     | --- | --- |
     | 标记名称 | **角色** |
 
-1. 单击 **“下一步”**，然后在 **“修正”** 选项卡上配置以下设置（其他设置保留默认值）：
+1. 单击“下一步”，然后在“修正”选项卡上配置以下设置（其他设置保留默认值）：
 
     | 设置 | 值 |
     | --- | --- |
-    | 创建修正任务 | 已启用 |
-    | 待修正的策略 | **如果丢失，则从资源组继承一个标记** |
+    | 创建修正任务 | enabled |
+    | 待修正的策略 | **从订阅继承标记（如果缺少）** |
 
-    >**备注**： 此策略定义包括 **“修改”** 效果。
+    >**注意**：此策略定义包括“修改”效果。
 
-1. 单击 **“查看 + 创建”**，然后单击 **“创建”**。
+1. 单击“查看 + 创建”，然后单击“创建”。
 
-    >**备注**： 若要验证新策略分配是否有效，你将在同一资源组中创建另一个 Azure 存储帐户，但不显式添加所需的标记。 
+    >**注意**：若要验证新策略分配是否有效，你将在同一资源组中创建另一个 Azure 存储帐户，但不显式添加所需的标记。 
     
-    >**备注**： 策略生效可能需要 5 到 15 分钟。
+    >**注意**：策略生效可能需要 5 到 15 分钟。
 
 1. 导航回“资源组”边栏选项卡，该资源组托管用于 Cloud Shell 主驱动器的存储帐户，你在第一个任务中已确定该帐户。
 
-1. 在资源组边栏选项卡上，单击“**+ 创建**”，然后搜索“**存储帐户**”，并单击“**+ 创建**”。 
+1. 在资源组边栏选项卡上，单击“+ 创建”，然后搜索存储帐户，并单击“+ 创建”  。 
 
-1. 在“**创建存储帐户**”边栏选项卡的“**基本信息**”选项卡上，验证所用资源组是否已应用策略，指定以下设置（将其他设置保留为默认值），并单击“**查看 + 创建**”：
+1. 在“创建存储帐户”边栏选项卡的“基本信息”选项卡上，验证所用资源组是否已应用策略，指定以下设置（将其他设置保留为默认值），并单击“查看 + 创建”  ：
 
     | 设置 | 值 |
     | --- | --- |
     | 存储帐户名称 | 3 到 24 个小写字母和数字的全局唯一组合，以字母开头 |
 
-1. 验证这次验证是否通过，然后单击 **“创建”**。
+1. 验证这次验证是否通过，然后单击“创建”。
 
-1. 新存储帐户预配完成后，单击 **“前往资源”** 按钮，然后在新创建的存储帐户 **“概述”** 边栏选项卡中，注意值为 **“Infra”** 的**角色**标记已自动分配到资源。
+1. 新存储帐户预配完成后，单击“前往资源”按钮，然后在新创建的存储帐户“概述”边栏选项卡中，注意值为“Infra”的角色标记已自动分配到资源。
 
-#### 任务 4：清理资源
+#### <a name="task-4-clean-up-resources"></a>任务 4：清理资源
 
-   >**备注**：请记得删除任何新创建且不会再使用的 Azure 资源。 
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although keep in mind that Azure policies do not incur extra cost.
+   
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 
-   >**备注**：删除未使用的资源可确保不会出现意外收费，不过请记住，Azure 策略不会产生额外费用。
+1. 在门户中，搜索并选择“策略”。
 
-1. 在门户中，搜索并选择 **“策略”**。
+1. 在“创作”部分，单击“分配”，单击你在上一个任务中创建的分配右侧的省略号图标，然后单击“删除分配”。 
 
-1. 在 **“创作”** 部分，单击 **“分配”**，单击你在上一个任务中创建的分配右侧的省略号图标，然后单击 **“删除分配”**。 
+1. 在门户中，搜索并选择“存储帐户”。
 
-1. 在门户中，搜索并选择 **“存储帐户”**。
+1. In the list of storage accounts, select the resource group corresponding to the storage account you created in the last task of this lab. Select <bpt id="p1">**</bpt>Tags<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> (Trash can to the right) to the <bpt id="p3">**</bpt>Role:Infra<ept id="p3">**</ept> tag and press <bpt id="p4">**</bpt>Apply<ept id="p4">**</ept>. 
 
-1. 在存储帐户列表中，选择与你在本实验室的最后一个任务中创建的存储帐户对应的资源组。选择“**标记**”，单击“**Role:Infra**”标记对应的“**删除**”（右侧的垃圾桶），然后按“**应用**”。 
+1. Click <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> on the top of the storage account blade. When prompted for the confirmation, in the <bpt id="p1">**</bpt>Delete storage account<ept id="p1">**</ept> blade, type the name of the storage account to confirm and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept>. 
 
-1. 单击“**删除**”，在出现确认提示时，在“**删除存储帐户**”边栏选项卡中键入存储帐户的名称以确认，然后单击“**删除**”。 
+#### <a name="review"></a>审阅
 
-#### 回顾
-
-在本实验室中，你已：
+在此实验室中，你执行了以下操作：
 
 - 通过 Azure 门户创建和分配标记
 - 通过 Azure Policy 强制标记

@@ -1,49 +1,49 @@
 ---
 lab:
-    title: '03d - 使用 Azure CLI 管理 Azure 资源'
-    module: '模块 03 - Azure 管理'
+  title: 03d - 使用 Azure CLI 管理 Azure 资源
+  module: Module 03 - Azure Administration
 ---
 
-# 实验室 03d - 使用 Azure CLI 管理 Azure 资源
-# 学生实验室手册
+# <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>实验室 03d - 使用 Azure CLI 管理 Azure 资源
+# <a name="student-lab-manual"></a>学生实验室手册
 
-## 实验室场景
+## <a name="lab-scenario"></a>实验室方案
 
-你已经探索了与使用 Azure 门户、Azure 资源管理器模板和 Azure PowerShell 预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure CLI 执行相应的任务。为了避免安装 Azure CLI，你将利用 Azure Cloud Shell 中提供的 Bash 环境。
+Now that you explored the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups by using the Azure portal, Azure Resource Manager templates, and Azure PowerShell, you need to carry out the equivalent task by using Azure CLI. To avoid installing Azure CLI, you will leverage Bash environment available in Azure Cloud Shell.
 
-## 目标
+## <a name="objectives"></a>目标
 
-在本实验室中，你将：
+在此实验中，将执行以下操作：
 
-+ 任务 1： 在 Azure Cloud Shell 中启动 Bash 会话
-+ 任务 2： 使用 Azure CLI 创建资源组和 Azure 托管磁盘
-+ 任务 3： 使用 Azure CLI 配置托管磁盘
++ 任务 1：在 Azure Cloud Shell 中启动 Bash 会话
++ 任务 2：使用 Azure CLI 创建资源组和 Azure 托管磁盘
++ 任务 3：使用 Azure CLI 配置托管磁盘
 
-## 预计用时：20 分钟
+## <a name="estimated-timing-20-minutes"></a>预计用时：20 分钟
 
-## 说明
+## <a name="instructions"></a>说明
 
-### 练习 1
+### <a name="exercise-1"></a>练习 1
 
-#### 任务 1： 在 Azure Cloud Shell 中启动 Bash 会话
+#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>任务 1：在 Azure Cloud Shell 中启动 Bash 会话
 
 在此任务中，你将在 Cloud Shell 中打开 Bash 会话。 
 
-1. 单击 Azure 门户右上方的图标，在门户中打开 **Azure Cloud Shell**。
+1. 单击 Azure 门户右上方的图标，在门户中打开 Azure Cloud Shell。
 
-1. 如果提示选择 **“Bash”** 或 **“PowerShell”**，请选择 **“Bash”**。 
+1. 如果系统提示选择“Bash”或“PowerShell”，请选择“Bash”。 
 
-    >**注意**：如果这是你首次启动 **Cloud Shell**，且看到 **“未装载任何存储”** 消息，请选择在本实验室中使用的订阅，然后选择 **“创建存储”**。 
+    >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。 
 
-1. 如果出现提示，请单击 **“创建存储”**，然后等到出现“Azure Cloud Shell”窗格。 
+1. 如果出现提示，请单击“创建存储”，然后等到出现“Azure Cloud Shell”窗格。 
 
-1. 确保 **“Bash”** 出现在 “Cloud Shell” 窗格左上角的下拉菜单中。
+1. 确保“Bash”出现在“Cloud Shell”窗格左上角的下拉菜单中。
 
-#### 任务 2： 使用 Azure CLI 创建资源组和 Azure 托管磁盘
+#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>任务 2：使用 Azure CLI 创建资源组和 Azure 托管磁盘
 
 在此任务中，你将使用 Cloud Shell 中的 Azure CLI 会话来创建资源组和 Azure 托管磁盘。
 
-1. 要通过 Cloud Shell 中的 Bash 会话创建一个资源组，并且使该资源组与上一个实验室中创建的资源组 **az104-03c-rg1** 位于同一 Azure 区域，请运行以下命令：
+1. 要通过 Cloud Shell 中的 Bash 会话创建一个资源组，并且使该资源组与上一个实验室中创建的资源组 az104-03c-rg1 位于同一 Azure 区域，请运行以下命令：
 
    ```sh
    LOCATION=$(az group show --name 'az104-03c-rg1' --query location --out tsv)
@@ -76,11 +76,11 @@ lab:
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### 任务 3： 使用 Azure CLI 配置托管磁盘
+#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>任务 3：使用 Azure CLI 配置托管磁盘
 
 在此任务中，你将使用 Cloud Shell 中的 Azure CLI 会话来管理 Azure 托管磁盘的配置。 
 
-1. 要通过 Cloud Shell 中的 Bash 会话将 Azure 托管磁盘的大小增加到 **64 GB**，请运行以下命令：
+1. 要通过 Cloud Shell 中的 Bash 会话将 Azure 托管磁盘的大小增加到 64 GB，请运行以下命令：
 
    ```sh
    az disk update --resource-group $RGNAME --name $DISKNAME --size-gb 64
@@ -92,7 +92,7 @@ lab:
    az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
    ```
 
-1. 要通过 Cloud Shell 中的 Bash 会话将磁盘性能 SKU 更改为 **“Premium_LRS”**，请运行以下命令：
+1. 要通过 Cloud Shell 中的 Bash 会话将磁盘性能 SKU 更改为“Premium_LRS”，请运行以下命令：
 
    ```sh
    az disk update --resource-group $RGNAME --name $DISKNAME --sku 'Premium_LRS'
@@ -104,11 +104,13 @@ lab:
    az disk show --resource-group $RGNAME --name $DISKNAME --query sku
    ```
 
-#### 清理资源
+#### <a name="clean-up-resources"></a>清理资源
 
-   >**注意**：请记得删除任何新创建而不会再使用的 Azure 资源。删除未使用的资源，确保不产生意外费用。
+ > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
-1. 在 Azure 门户中，在 **“Cloud Shell”** 窗格中打开 **“Bash”** shell 会话。
+ > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+
+1. 在 Azure 门户中，在 Cloud Shell 窗格中打开 Bash Shell 会话 。
 
 1. 运行以下命令，列出在本模块各实验室中创建的所有资源组：
 
@@ -116,17 +118,17 @@ lab:
    az group list --query "[?starts_with(name,'az104-03')].name" --output tsv
    ```
 
-1. 运行以下命令，删除在本模块各个实验室中创建的所有资源组：
+1. 通过运行以下命令，删除在此模块的实验室中创建的所有资源组：
 
    ```sh
    az group list --query "[?starts_with(name,'az104-03')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
-    >**注意**：该命令以异步方式执行（由 --nowait 参数决定），因此，虽然你随后可在同一 Bash 会话中立即运行另一个 Azure CLI 命令，但实际上要花几分钟才能删除资源组。
+    >**注意**：该命令以异步方式执行（由 --nowait 参数确定），因此，尽管可立即在同一 Bash 会话中运行另一个 Azure CLI 命令，但实际上要花几分钟才能删除资源组。
 
-#### 回顾
+#### <a name="review"></a>审阅
 
-在本实验室中，你已：
+在此实验室中，你执行了以下操作：
 
 - 在 Azure Cloud Shell 中启动 Bash 会话
 - 使用 Azure CLI 创建资源组和 Azure 托管磁盘
