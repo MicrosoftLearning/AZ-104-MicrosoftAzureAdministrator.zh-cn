@@ -1,7 +1,7 @@
 ---
 lab:
   title: 09a - 实现 Web 应用
-  module: Module 09 - Serverless Computing
+  module: Administer Serverless Computing
 ---
 
 # <a name="lab-09a---implement-web-apps"></a>实验室 09a - 实现 Web 应用

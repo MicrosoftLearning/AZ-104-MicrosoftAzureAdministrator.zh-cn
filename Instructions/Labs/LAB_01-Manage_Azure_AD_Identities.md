@@ -1,7 +1,7 @@
 ---
 lab:
   title: 01 - 管理 Azure Active Directory 标识
-  module: Module 01 - Identity
+  module: Administer Identity
 ---
 
 # <a name="lab-01---manage-azure-active-directory-identities"></a>实验室 01 - 管理 Azure Active Directory 标识

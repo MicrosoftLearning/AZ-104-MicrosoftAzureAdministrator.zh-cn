@@ -1,7 +1,7 @@
 ---
 lab:
   title: 03d - 使用 Azure CLI 管理 Azure 资源
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>实验室 03d - 使用 Azure CLI 管理 Azure 资源

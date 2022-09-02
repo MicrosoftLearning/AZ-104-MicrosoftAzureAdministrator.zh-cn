@@ -1,7 +1,7 @@
 ---
 lab:
   title: 07 - 管理 Azure 存储
-  module: Module 07 - Azure Storage
+  module: Administer Azure Storage
 ---
 
 # <a name="lab-07---manage-azure-storage"></a>实验室 07 - 管理 Azure 存储
