@@ -1,7 +1,7 @@
 ---
 lab:
   title: 05 - 实现站点间连接
-  module: Module 05 - Intersite Connectivity
+  module: Administer Intersite Connectivity
 ---
 
 # <a name="lab-05---implement-intersite-connectivity"></a>实验室 05 - 实现站点间连接

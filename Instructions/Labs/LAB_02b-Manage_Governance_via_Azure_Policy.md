@@ -1,7 +1,7 @@
 ---
 lab:
   title: 02b - 通过 Azure Policy 管理治理
-  module: Module 02 - Governance and Compliance
+  module: Administer Governance and Compliance
 ---
 
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>实验室 02b - 通过 Azure Policy 管理治理
