@@ -1,7 +1,7 @@
 ---
 lab:
   title: 03a - 使用 Azure 门户管理 Azure 资源
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>实验室 03a - 使用 Azure 门户管理 Azure 资源
@@ -10,6 +10,8 @@ lab:
 ## <a name="lab-scenario"></a>实验室方案
 
 You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
+
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)。
 
 ## <a name="objectives"></a>目标
 
@@ -37,7 +39,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|值|
+    |设置|“值”|
     |---|---|
     |订阅| 创建的资源组所在的 Azure 订阅的名称 |
     |资源组| 新建资源组的名称 az104-03a-rg1 |
@@ -76,13 +78,13 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|值|
+    |设置|“值”|
     |---|---|
     |订阅| 本实验室所用订阅的名称 |
     |资源组| 单击“新建”资源组，并将其命名为 az104-03a-rg3  |
     |磁盘名称| **az104-03a-disk2** |
     |区域| 本实验室中创建的其他资源组所在 Azure 区域的名称 |
-    |可用性区域| 无  |
+    |可用性区域| **无** |
     |源类型| **无** |
 
 1. 将磁盘类型和大小分别设置为“标准 HDD”和“32 GiB”。

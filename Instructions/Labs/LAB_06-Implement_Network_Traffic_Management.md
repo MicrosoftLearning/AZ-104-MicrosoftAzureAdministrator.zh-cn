@@ -11,6 +11,8 @@ lab:
 
 You were tasked with testing managing network traffic targeting Azure virtual machines in the hub and spoke network topology, which Contoso considers implementing in its Azure environment (instead of creating the mesh topology, which you tested in the previous lab). This testing needs to include implementing connectivity between spokes by relying on user defined routes that force traffic to flow via the hub, as well as traffic distribution across virtual machines by using layer 4 and layer 7 load balancers. For this purpose, you intend to use Azure Load Balancer (layer 4) and Azure Application Gateway (layer 7).
 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)。
+
 ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This lab, by default, requires total of 8 vCPUs available in the Standard_Dsv3 series in the region you choose for deployment, since it involves deployment of four Azure VMs of Standard_D2s_v3 SKU. If your students are using trial accounts, with the limit of 4 vCPUs, you can use a VM size that requires only one vCPU (such as Standard_B1s).
 
 ## <a name="objectives"></a>目标
@@ -39,7 +41,7 @@ You were tasked with testing managing network traffic targeting Azure virtual ma
 
 In this task, you will deploy four virtual machines into the same Azure region. The first two will reside in a hub virtual network, while each of the remaining two will reside in a separate spoke virtual network.
 
-1. 登录 [Azure 门户](https://portal.azure.com)。
+1. 登录到 [Azure 门户](https://portal.azure.com)。
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
@@ -181,7 +183,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
     | 从远程虚拟网络转接的流量 | **允许（默认）** |
     | 虚拟网络网关 | **“无”（默认）** |
 
-    >**注意**：默认情况下，此实验室要求在选择部署的区域中，Standard_Dsv3 系列中总共有 8 个 vCPU 可用，因为它涉及部署 Standard_D2s_v3 SKU 的四个 Azure VM。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step establishes two local peerings - one from az104-06-vnet01 to az104-06-vnet3 and the other from az104-06-vnet3 to az104-06-vnet01. This completes setting up the hub and spoke topology (with two spoke virtual networks).
 
     >**注意**：需要启用“允许转发的流量”，以便于在此实验室稍后将实现的分支虚拟网络之间进行路由。
 
@@ -197,7 +199,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 在“网络观察程序”-“连接故障排除”边栏选项卡中，使用以下设置启动检查（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -210,13 +212,13 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
     > **注意**：10.62.0.4 代表 az104-06-vm2 的专用 IP 地址 
 
-1. 如果学生使用的是试用版帐户（最多 4 个 vCPU），则可以使用仅需要一个 vCPU 的 VM 大小（例如 Standard_B1s）。
+1. **注意**：默认情况下，此实验室要求在选择部署的区域中，Standard_Dsv3 系列中总共有 8 个 vCPU 可用，因为它涉及部署 Standard_D2s_v3 SKU 的四个 Azure VM。
 
     > **注意**：这是预料之中的，因为中心虚拟网络直接与第一个辐射虚拟网络互连。
 
 1. 在“网络观察程序”-“连接故障排除”边栏选项卡中，使用以下设置启动检查（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -229,13 +231,13 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
     > **注意**：10.63.0.4 代表 az104-06-vm3 的专用 IP 地址 
 
-1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Verify that the status is <bpt id="p1">**</bpt>Reachable<ept id="p1">**</ept>. Review the network path and note that the connection was direct, with no intermediate hops in between the VMs.
+1. 如果学生使用的是试用版帐户（最多 4 个 vCPU），则可以使用仅需要一个 vCPU 的 VM 大小（例如 Standard_B1s）。
 
     > **注意**：这是预料之中的，因为中心虚拟网络直接与第二个辐射虚拟网络互连。
 
 1. 在“网络观察程序”-“连接故障排除”边栏选项卡中，使用以下设置启动检查（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -300,7 +302,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 使用以下设置（将其他设置保留为默认值）创建路由表：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -343,7 +345,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 使用以下设置（将其他设置保留为默认值）创建路由表：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -386,7 +388,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 在“网络观察程序”-“连接故障排除”边栏选项卡中，使用以下设置启动检查（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -405,95 +407,81 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 #### <a name="task-5-implement-azure-load-balancer"></a>任务 5：实现 Azure 负载均衡器
 
-在此任务中，你将在中心虚拟网络中的两台 Azure 虚拟机前实现 Azure 负载均衡器
+在此任务中，你将在中心虚拟网络中的两台 Azure 虚拟机前实现 Azure 负载均衡器。
 
-1. 在 Azure 门户中，搜索并选择“负载均衡器”，在“负载均衡器”边栏选项卡上，单击“+ 创建”  。
+1. 在 Azure 门户中，搜索并选择“负载均衡器”，在“负载均衡器”边栏选项卡上，单击“+ 创建”。  
 
 1. 创建一个负载均衡器，设置如下（其他设置保留默认值），然后单击“下一步: 前端 IP 配置”：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
     | 名称 | az104-06-lb4 |
-    | 区域| 在本实验室中部署所有其他资源的 Azure 区域的名称 |
-    | SKU | **标准** |
+    | 区域 | 在本实验室中部署所有其他资源的 Azure 区域的名称 |
+    | SKU  | **标准** |
     | 类型 | **Public** |
+    | 层 | **Regional** |
     
-1. 在“前端 IP 配置”选项卡上，单击“添加前端 IP 配置”并使用以下设置，然后再单击“添加”  。   
+1. On the <bpt id="p1">**</bpt>Frontend IP configuration<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a frontend IP configuration<ept id="p2">**</ept> and use the following settings before clicking <bpt id="p3">**</bpt>OK<ept id="p3">**</ept> and then <bpt id="p4">**</bpt>Add<ept id="p4">**</ept>. When completed click <bpt id="p1">**</bpt>Next: Backend pools<ept id="p1">**</ept>. 
      
     | 设置 | 值 |
     | --- | --- |
     | 名称 | 任何唯一名称 |
+    | IP 版本 | IPv4 |
+    | IP 类型 | IP 地址 |
     | 公共 IP 地址 | **新建** |
-    | 公共 IP 地址名称 | az104-06-pip4 |
+    | 名称 | az104-06-pip4 |
+    | 可用性区域 | **无区域** | 
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
-
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Azure load balancer to be provisioned. This should take about 2 minutes.
-
-1. 在“部署”边栏选项卡上，单击“前往资源”。
-
-1. 在“az104-06-lb4”负载均衡器边栏选项卡的“设置”部分，单击“后端池”，然后单击“+ 添加”   。
-
-1. 添加后端池并进行如下设置（保留其他默认设置）：
+1. On the <bpt id="p1">**</bpt>Backend pools<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a backend pool<ept id="p2">**</ept> with the following settings (leave others with their default values). Click <bpt id="p1">**</bpt>+ Add<ept id="p1">**</ept> (twice) and then click  <bpt id="p2">**</bpt>Next:Inbound rules<ept id="p2">**</ept>. 
 
     | 设置 | 值 |
     | --- | --- |
     | 名称 | az104-06-lb4-be1 |
     | 虚拟网络 | az104-06-vnet01 |
+    | 后端池配置 | **NIC** | 
     | IP 版本 | **IPv4** |
-    | 虚拟机 | az104-06-vm0 |
-    | 虚拟机 IP 地址 | ipconfig1 (10.60.0.4) |
-    | 虚拟机 | az104-06-vm1 |
-    | 虚拟机 IP 地址 | ipconfig1 (10.60.1.4) |
+    | 单击“添加”以添加虚拟机 |  |
+    | az104-06-vm0 | 选中框 |
+    | az104-06-vm1 | 选中框 |
 
-1. 单击“添加”
 
-1. 等待后端池创建完毕，单击“设置”部分中的“运行状况探测”，然后单击“+ 添加”  。
-
-1. 使用以下设置添加运行状况探测：
-
-    | 设置 | 值 |
-    | --- | --- |
-    | 名称 | az104-06-lb4-hp1 |
-    | 协议 | **TCP** |
-    | 端口 | **80** |
-    | 时间间隔 | **5** |
-    | 不正常阈值 | **2** |
-
-1. 单击“添加”
-
-1. 等待运行状况探测创建完毕，单击“设置”部分中的“负载均衡规则”，然后单击“+ 添加”  。
-
-1. 添加负载均衡规则，设置如下（其他设置保留默认值）：
+1. On the <bpt id="p1">**</bpt>Inbound rules<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a load balancing rule<ept id="p2">**</ept>. Add a load balancing rule with the following settings (leave others with their default values). When completed click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept>.
 
     | 设置 | 值 |
     | --- | --- |
     | 名称 | az104-06-lb4-lbrule1 |
     | IP 版本 | **IPv4** |
-    | 前端 IP 地址 | 从下拉列表中选择 LoadBalancerFrontEnd
+    | 前端 IP 地址 | az104-06-pip4 |
+    | 后端池 | az104-06-lb4-be1 |    
     | 协议 | **TCP** |
     | 端口 | **80** |
     | 后端端口 | **80** |
-    | 后端池 | az104-06-lb4-be1 |
-    | 运行状况探测 | az104-06-lb4-hp1 |
+    | 运行状况探测 | **新建** |
+    | 名称 | az104-06-lb4-hp1 |
+    | 协议 | **TCP** |
+    | 端口 | **80** |
+    | 时间间隔 | **5** |
+    | 不正常阈值 | **2** |
+    | 关闭“创建运行状况探测”窗口 | **确定** | 
     | 会话暂留 | **无** |
     | 空闲超时(分钟) | **4** |
     | TCP 重置 | **已禁用** |
-    | 浮动 IP (直接服务器返回) | **已禁用** |
+    | 浮动 IP | **已禁用** |
+    | 出站源网络地址转换 (SNAT) | 推荐 |
 
-1. 单击“添加”
+1. As you have time, review the other tabs, then click <bpt id="p1">**</bpt>Review and create<ept id="p1">**</ept>. Ensure there are no validation errors, then click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. 
 
-1. 等待负载均衡规则创建完成，在“设置”部分单击“前端 IP 配置”，并记下“公共 IP 地址”的值  。
+1. 等待负载均衡器部署，然后单击“转到资源”。  
 
-1. 启动另一个浏览器窗口，并导航到你在上一步中标识的 IP 地址。
+1. Select <bpt id="p1">**</bpt>Frontend IP configuration<ept id="p1">**</ept> from the Load Balancer resource page. Copy the IP address.
 
-1. 验证浏览器窗口是否显示消息“Hello World from az104-06-vm0”或者“Hello World from az104-06-vm1”。
+1. Open another browser tab and navigate to the IP address. Verify that the browser window displays the message <bpt id="p1">**</bpt>Hello World from az104-06-vm0<ept id="p1">**</ept> or <bpt id="p2">**</bpt>Hello World from az104-06-vm1<ept id="p2">**</ept>.
 
-1. 打开另一个浏览器窗口，但这一次使用 InPrivate 模式，并验证目标 vm 是否更改（如消息所示）。
+1. Refresh the window to verify the message changes to the other virtual machine. This demonstrates the load balancer rotating through the virtual machines.
 
-    > **注意**：可能需要刷新浏览器窗口，或使用 InPrivate 模式再次打开它。
+    > 注意：可能需要多次刷新或在 InPrivate 模式下打开新的浏览器窗口。
 
 #### <a name="task-6-implement-azure-application-gateway"></a>任务 6：实现 Azure 应用程序网关
 
@@ -518,9 +506,9 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 在 Azure 门户中，搜索并选择“应用程序网关”，并在“应用程序网关”边栏选项卡中单击“+ 创建”  。
 
-1. 在“创建应用程序网关”边栏选项卡的“基本设置”选项卡上，指定以下设置（其他设置保留默认值） ：
+1. 在“基本信息”选项卡上，指定以下设置（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | az104-06-rg1 |
@@ -528,64 +516,57 @@ In this task, you will deploy four virtual machines into the same Azure region. 
     | 区域 | 在本实验室中部署所有其他资源的 Azure 区域的名称 |
     | 层 | 标准 V2 |
     | 启用自动缩放 | **否** |
+    | 实例计数 | **2** |
+    | 可用性区域 | **无** |
     | HTTP2 | **已禁用** |
     | 虚拟网络 | az104-06-vnet01 |
-    | 子网 | subnet-appgw |
+    | 子网 | subnet-appgw (10.60.3.224/27) |
 
-1. 单击“下一步:前端 >”，然后在“创建应用程序网关”边栏选项卡的“前端”选项卡上单击“新增”，并指定以下设置（其他设置保留默认值）  ：
+1. Click <bpt id="p1">**</bpt>Next: Frontends &gt;<ept id="p1">**</ept> and specify the following settings (leave others with their default values). When complete, click <bpt id="p1">**</bpt>OK<ept id="p1">**</ept>. 
 
     | 设置 | 值 |
     | --- | --- |
-    | 前端 IP 地址类型 | **Public** |
-    | 公共 IP 地址| 新公共 IP 地址的名称 az104-06-pip5 |
+    | 前端 IP 地址类型 | **公共** |
+    | 公共 IP 地址| **添加新内容** | 
+    | 名称 | **az104-06-pip5** |
+    | 可用性区域 | **无** |
 
-1. 单击“下一步:后端 >”，在“创建应用程序网关”边栏选项卡的“后端”选项卡上单击“添加后端池”，并在“添加后端池”边栏选项卡上指定以下设置（其他设置保留默认值）   ：
+1. 在此任务中，你将会把四台虚拟机部署到同一 Azure 区域中。
 
     | 设置 | 值 |
     | --- | --- |
     | 名称 | az104-06-appgw5-be1 |
     | 添加没有目标的后端池 | **否** |
-    | 目标类型 | IP 地址或 FQDN |
-    | 目标 | 10.62.0.4 |
-    | 目标类型 | IP 地址或 FQDN |
-    | 目标 | 10.63.0.4 |
+    | IP 地址或 FQDN | 10.62.0.4 | 
+    | IP 地址或 FQDN | 10.63.0.4 |
 
     > **注意**：目标代表辐射虚拟网络 az104-06-vm2 和 az104-06-vm3 中虚拟机的专用 IP 地址。
 
-1. 单击“添加”，然后单击“下一步:  配置 >”，并在“创建应用程序网关”边栏选项卡的“配置”选项卡上单击“+ 添加路由规则”  。
-
-1. 在“添加路由规则”边栏选项卡的“侦听器”选项卡上，指定以下设置 ：
+1. 前两个将驻留在中心虚拟网络中，后两个将各自驻留在单独的辐射虚拟网络中。
 
     | 设置 | 值 |
     | --- | --- |
     | 规则名称 | az104-06-appgw5-rl1 |
     | 优先度 | **10** |
     | 侦听器名称 | az104-06-appgw5-rl1l1 |
-    | 前端 IP | **Public** |
+    | 前端 IP | **公共** |
     | 协议 | **HTTP** |
     | 端口 | **80** |
     | 侦听器类型 | **基本** |
     | 错误页 URL | **否** |
 
-1. 切换到“添加路由规则”边栏选项卡的“后端目标”选项卡，并指定以下设置（其他设置保留默认值） ：
+1. Switch to the <bpt id="p1">**</bpt>Backend targets<ept id="p1">**</ept> tab and specify the following settings (leave others with their default values). When completed click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> (twice).  
 
     | 设置 | 值 |
     | --- | --- |
     | 目标类型 | 后端池 |
     | 后端目标 | az104-06-appgw5-be1 |
-
-1. 单击“后端设置”文本框下的“新增”，然后在“添加后端设置”边栏选项卡上指定以下设置（其他设置保留默认值）：  
-
-    | 设置 | 值 |
-    | --- | --- |
-    | HTTP 设置名称 | az104-06-appgw5-http1 |
+    | 后端设置 | **添加新内容** |
+    | 后端设置名称 | az104-06-appgw5-http1 |
     | 后端协议 | **HTTP** |
     | 后端端口 | **80** |
-    | 基于 Cookie 的相关性 | **禁用** |
-    | 连接清空 | **禁用** |
-    | 申请超时（秒） | **20** |
-
-1. 在“添加 HTTP 设置”边栏选项卡上单击“添加”，然后返回到“添加路由规则”边栏选项卡，单击“添加”。
+    | 其他设置 | 采用默认值 |
+    | 主机名 | 采用默认值 |
 
 1. 单击“下一步:标记 >”，再单击“下一步: 查看 + 创建 >”，然后单击“创建”。
 
@@ -593,15 +574,15 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. 在 Azure 门户中，搜索并选择“应用程序网关”，并在“应用程序网关”边栏选项卡上单击“az104-06-appgw5”。
 
-1. 在“az104-06-appgw5”应用程序网关边栏选项卡上，记下“前端公共 IP 地址”的值。
+1. 在“az104-06-appgw5”应用程序网关边栏选项卡上，复制“前端公共 IP 地址”的值。 
 
 1. 启动另一个浏览器窗口，并导航到你在上一步中标识的 IP 地址。
 
 1. 验证浏览器窗口是否显示消息“Hello World from az104-06-vm2”或者“Hello World from az104-06-vm3” 。
 
-1. 打开另一个浏览器窗口，但这次使用 InPrivate 模式打开，并验证目标 VM 是否更改（基于网页上显示的消息）。
+1. 刷新窗口以验证对其他虚拟机的消息更改。 
 
-    > **注意**：可能需要刷新浏览器窗口，或使用 InPrivate 模式再次打开它。
+    > 注意：可能需要多次刷新或在 InPrivate 模式下打开新的浏览器窗口。
 
     > **注意**：把多个虚拟网络上的虚拟机作为目标不是常见配置，而是为了说明应用程序网关能够把多个虚拟网络（以及其他 Azure 区域甚至 Azure 外部的终结点）上的虚拟机作为目标。这与 Azure 负载均衡器不同，Azure 负载均衡器的功能是在同一虚拟网络中的各个虚拟机之间实现负载均衡。
 
@@ -634,6 +615,6 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 + 预配实验室环境
 + 配置中心辐射型网络拓扑
 + 测试虚拟网络互连的可传递性
-+ 任务 4：在中心辐射型拓扑中配置路由
-+ 任务 5：实现 Azure 负载均衡器
-+ 任务 6：实现 Azure 应用程序网关
++ 配置中心辐射型拓扑中的路由
++ 实现 Azure 负载均衡器
++ 实现 Azure 应用程序网关

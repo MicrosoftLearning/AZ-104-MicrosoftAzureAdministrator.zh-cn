@@ -1,7 +1,7 @@
 ---
 lab:
   title: 10 - 实现数据保护
-  module: Module 10 - Data Protection
+  module: Administer Data Protection
 ---
 
 # <a name="lab-10---backup-virtual-machines"></a>实验室 10 - 备份虚拟机
@@ -10,6 +10,8 @@ lab:
 ## <a name="lab-scenario"></a>实验室方案
 
 You have been tasked with evaluating the use of Azure Recovery Services for backup and restore of files hosted on Azure virtual machines and on-premises computers. In addition, you want to identify methods of protecting data stored in the Recovery Services vault from accidental or malicious data loss.
+
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)。
 
 ## <a name="objectives"></a>目标
 

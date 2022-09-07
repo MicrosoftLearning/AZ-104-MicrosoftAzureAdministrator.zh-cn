@@ -1,7 +1,7 @@
 ---
 lab:
   title: 03b - 使用 ARM 模板管理 Azure 资源
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>实验室 03b - 使用 ARM 模板管理 Azure 资源
@@ -9,6 +9,8 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 你已探索了与使用 Azure 门户预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure 资源管理器模板来执行等效的任务。
+
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)。
 
 ## <a name="objectives"></a>目标
 
@@ -72,12 +74,6 @@ lab:
    "sourceResourceId": {
        "type": "String"
    },
-   "sourceUri": {
-       "type": "String"
-   },
-   "osType": {
-       "type": "String"
-   },
    ```
 
    ```json
@@ -85,10 +81,6 @@ lab:
        "defaultValue": "V1",
        "type": "String"
    },      
-   ```
-
-   ```json
-   "osType": "[parameters('osType')]",
    ```
 
     ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: These parameters are removed since they are not applicable to the current deployment. In particular, sourceResourceId, sourceUri, osType, and hyperVGeneration parameters are applicable to creating an Azure disk from an existing VHD file.
@@ -101,7 +93,7 @@ lab:
 
 1. 返回“自定义部署”边栏选项卡，指定以下设置：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- |--- |
     | 订阅 | *你在此实验室中使用的 Azure 订阅的名称* |
     | 资源组 | 新建资源组的名称 **az104-03b-rg1** |

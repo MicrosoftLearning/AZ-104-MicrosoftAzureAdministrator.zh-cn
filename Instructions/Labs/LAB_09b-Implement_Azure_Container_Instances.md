@@ -11,6 +11,8 @@ lab:
 
 Contoso wants to find a new platform for its virtualized workloads. You identified a number of container images that can be leveraged to accomplish this objective. Since you want to minimize container management, you plan to evaluate the use of Azure Container Instances for deployment of Docker images.
 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)。
+
 ## <a name="objectives"></a>目标
 
 在此实验中，将执行以下操作：
@@ -38,7 +40,7 @@ Contoso wants to find a new platform for its virtualized workloads. You identifi
 
 1. 在“创建容器实例”边栏选项卡的“基本设置”选项卡中，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | ---- | ---- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组的名称 **az104-09b-rg1** |

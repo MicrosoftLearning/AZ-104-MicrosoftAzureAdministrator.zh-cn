@@ -12,6 +12,8 @@ lab:
 
 In order to allow Contoso users to authenticate by using Azure AD, you have been tasked with provisioning users and group accounts. Membership of the groups should be updated automatically based on the user job titles. You also need to create a test Azure AD tenant with a test user account and grant that account limited permissions to resources in the Contoso Azure subscription.
 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)。
+
 ## <a name="objectives"></a>目标
 
 在此实验中，将执行以下操作：
@@ -136,7 +138,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 设置 | 值 |
     | --- | --- |
     | 属性 | **jobTitle** |
-    | 运算符 | **等于** |
+    | 操作员 | **等于** |
     | 值 | 云管理员 |
 
 1. 为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。 
@@ -157,7 +159,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 设置 | 值 |
     | --- | --- |
     | 属性 | **jobTitle** |
-    | 运算符 | **等于** |
+    | 操作员 | **等于** |
     | 值 | **系统管理员** |
 
 1. 组的成员身份应根据用户职位自动更新。 

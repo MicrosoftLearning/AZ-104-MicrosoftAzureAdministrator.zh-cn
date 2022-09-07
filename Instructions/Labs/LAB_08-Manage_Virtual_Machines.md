@@ -1,7 +1,7 @@
 ---
 lab:
   title: 08 - 管理虚拟机
-  module: Module 08 - Virtual Machines
+  module: Administer Virtual Machines
 ---
 
 # <a name="lab-08---manage-virtual-machines"></a>实验室 08 - 管理虚拟机
@@ -10,6 +10,8 @@ lab:
 ## <a name="lab-scenario"></a>实验室方案
 
 You were tasked with identifying different options for deploying and configuring Azure virtual machines. First, you need to determine different compute and storage resiliency and scalability options you can implement when using Azure virtual machines. Next, you need to investigate compute and storage resiliency and scalability options that are available when using Azure virtual machine scale sets. You also want to explore the ability to automatically configure virtual machines and virtual machine scale sets by using the Azure Virtual Machine Custom Script extension.
+
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)。
 
 ## <a name="objectives"></a>目标
 
@@ -44,7 +46,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机”边栏选项卡的“基本信息”选项卡上，指定以下设置（将其他设置保留为默认值） ：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 将在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称“az104-08-rg01” |
@@ -353,7 +355,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机规模集”边栏选项卡的“基本信息”选项卡上，指定以下设置（其他设置保留默认值），然后单击“下一步:   磁盘 >”：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组的名称“az104-08-rg02” |

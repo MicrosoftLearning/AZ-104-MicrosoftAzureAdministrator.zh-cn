@@ -6,6 +6,7 @@ This repository is for instructors teaching Microsoft courses. If you are in cla
 
 - [实验室的链接（HTML 格式）](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
 - <bpt id="p1">**</bpt>Are you a MCT?<ept id="p1">**</ept> - Have a look at our <bpt id="p1">[</bpt>GitHub User Guide for MCTs<ept id="p1">](https://microsoftlearning.github.io/MCT-User-Guide/)</ept>
+- 若要以交互式指南格式预览本课程，请单击此处：[AZ-104 考试指南 - Microsoft Azure 管理员](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)
 
 ## <a name="security-issue---february-2022"></a>安全问题 - 2022 年 2 月
 
@@ -42,4 +43,4 @@ Once they login the machines can be used for crypto-mining or other non-classroo
 
 ### <a name="classroom-materials"></a>课堂材料
 
-- 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
+- 请查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
