@@ -20,7 +20,9 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 - granting permissions to submit support requests for all subscriptions in the management group to a designated Azure Active Directory user. That user's permissions should be limited only to: 
 
     - 创建支持请求票证
-    - 查看资源组 
+    - 查看资源组
+
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)。
 
 ## <a name="objectives"></a>目标
 
