@@ -11,7 +11,7 @@ lab:
 
 You were tasked with identifying different options for deploying and configuring Azure virtual machines. First, you need to determine different compute and storage resiliency and scalability options you can implement when using Azure virtual machines. Next, you need to investigate compute and storage resiliency and scalability options that are available when using Azure virtual machine scale sets. You also want to explore the ability to automatically configure virtual machines and virtual machine scale sets by using the Azure Virtual Machine Custom Script extension.
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)。
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
 
 ## <a name="objectives"></a>目标
 
@@ -46,7 +46,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机”边栏选项卡的“基本信息”选项卡上，指定以下设置（将其他设置保留为默认值） ：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 将在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称“az104-08-rg01” |
@@ -176,7 +176,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“编辑模板”边栏选项卡上显示模板内容的部分，从第 20 行开始（在 `"resources": [` 行的正下方）插入以下代码 ：
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 20.
+   >你的任务是确定用于部署和配置 Azure 虚拟机的不同选项。
 
    ```json
         {
@@ -204,7 +204,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 单击“保存”，返回“自定义模板”边栏选项卡，单击“查看 + 创建”，然后在“查看 + 创建”边栏选项卡上，单击“创建”    
 
-    >你的任务是确定用于部署和配置 Azure 虚拟机的不同选项。
+    >首先，你需要确定在使用 Azure 虚拟机时可以采用的各种计算和存储复原与缩放选项。
 
 1. 要验证基于自定义脚本扩展的配置是否成功，请导航回“az104-08-vm1”边栏选项卡，单击“操作”部分的“运行命令”，然后单击命令列表中的“RunPowerShellScript”   。
 
@@ -274,7 +274,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“自定义部署”边栏选项卡上，单击“编辑模板”。
 
-    >首先，你需要确定在使用 Azure 虚拟机时可以采用的各种计算和存储复原与缩放选项。
+    >接下来，你需要研究使用 Azure 虚拟机规模集时可用的计算和存储复原与缩放选项。
 
 1. 在“编辑模板”边栏选项卡上显示模板内容的部分，将第 30 行 `"vmSize": "Standard_D2s_v3"` 替换为以下行 ：
 
@@ -306,14 +306,14 @@ You were tasked with identifying different options for deploying and configuring
                     ]
    ```
 
-    >接下来，你需要研究使用 Azure 虚拟机规模集时可用的计算和存储复原与缩放选项。
+    >你还希望探索使用 Azure 虚拟机自定义脚本扩展自动配置虚拟机和虚拟机规模集的功能。
 
     >**注意**：模板此部分创建两个托管磁盘并将其附加到 az104-08-vm1，类似于通过 Azure 门户对第一台虚拟机进行的存储配置。
 
 
 1. 单击“保存”，返回“自定义部署”边栏选项卡，单击“查看 + 创建”，然后在“查看 + 创建”边栏选项卡上，单击“创建”    。
 
-    >你还希望探索使用 Azure 虚拟机自定义脚本扩展自动配置虚拟机和虚拟机规模集的功能。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the template deployment to complete. You can monitor its progress from the <bpt id="p1">**</bpt>Disks<ept id="p1">**</ept> blade of the <bpt id="p2">**</bpt>az104-08-vm1<ept id="p2">**</ept> virtual machine. This should take no more than 3 minutes.
 
 1. 回到“az104-08-vm1”边栏选项卡，单击“操作”部分的“运行命令”，然后单击命令列表中的“RunPowerShellScript”   。
 
@@ -355,7 +355,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机规模集”边栏选项卡的“基本信息”选项卡上，指定以下设置（其他设置保留默认值），然后单击“下一步:   磁盘 >”：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组的名称“az104-08-rg02” |
@@ -449,7 +449,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机规模集”边栏选项卡的“查看 + 创建”选项卡上确保验证通过，然后单击“创建”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the virtual machine scale set deployment to complete. This should take about 5 minutes.
+    >                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** ，让你能以自己的节奏点击浏览实验室。
 
 #### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>任务 6：使用虚拟机扩展配置 Azure 虚拟机规模集
 
@@ -582,7 +582,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 保存更改，单击“az10408vmss0”边栏选项卡“设置”部分的“实例”，选中虚拟机规模集实例旁边的复选框，单击“升级”，然后在提示确认时，单击“是”    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, create a filesystem, and mount it. To accomplish this, you will use Azure virtual machine Custom Script extension. First, you will need to remove the existing Custom Script Extension.
+    >你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 1. 在“az10408vmss0”边栏选项卡的“设置”部分，单击“扩展”，单击“CustomScriptExtension”，然后单击“卸载”。
 

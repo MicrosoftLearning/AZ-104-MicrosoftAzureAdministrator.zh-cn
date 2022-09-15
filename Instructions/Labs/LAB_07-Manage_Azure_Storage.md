@@ -11,7 +11,7 @@ lab:
 
 You need to evaluate the use of Azure storage for storing files residing currently in on-premises data stores. While majority of these files are not accessed frequently, there are some exceptions. You would like to minimize cost of storage by placing less frequently accessed files in lower-priced storage tiers. You also plan to explore different protection mechanisms that Azure Storage offers, including network access, authentication, authorization, and replication. Finally, you want to determine to what extent Azure Files service might be suitable for hosting your on-premises file shares.
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)。
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
 
 ## <a name="objectives"></a>目标
 
@@ -96,7 +96,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在“创建存储帐户”边栏选项卡的“基本信息”选项卡上，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-07-rg1  |
@@ -111,7 +111,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在“创建存储帐户”边栏选项卡的“数据保护”选项卡中，查看可用选项，接受默认设置，然后单击“查看 + 创建”，等待验证过程完成，然后单击“创建”   。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Storage account to be created. This should take about 2 minutes.
+    >你需要评估可否使用 Azure 存储来存储当前位于本地数据存储中的文件。
 
 1. 在“部署”边栏选项卡上，单击“前往资源”，以显示“Azure 存储帐户”边栏选项卡。
 
@@ -162,7 +162,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在 licenses/LICENSE 边栏选项卡上，查看可用选项。
 
-    > 你需要评估可否使用 Azure 存储来存储当前位于本地数据存储中的文件。
+    > 虽然不经常访问其中大部分文件，但也有一些例外。
 
 #### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>任务 4：管理 Azure 存储的身份验证和授权
 
@@ -197,17 +197,17 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 使用 InPrivate 模式打开另一个浏览器窗口，并导航到上一步中复制的 URL。
 
-    > 虽然不经常访问其中大部分文件，但也有一些例外。
+    > 你希望将访问频率较低的文件放在价格较低的存储层中，以最大程度地降低存储成本。
 
     > **注意**：这很正常，因为你现在的访问基于新生成的 SAS 令牌进行授权。
 
-    > 你希望将访问频率较低的文件放在价格较低的存储层中，以最大程度地降低存储成本。
+    > 你还计划探索 Azure 存储提供的不同保护机制，包括网络访问、身份验证、授权和复制。
 
 1. 关闭 InPrivate 模式浏览器窗口，返回到显示 Azure 存储容器 licenses/LICENSE 边栏选项卡的浏览器窗口，然后从中导航回 az104-07-container 边栏选项卡。
 
 1. 单击“身份验证方法”标签旁边的“切换到 Azure AD 用户帐户”链接。
 
-    > 你还计划探索 Azure 存储提供的不同保护机制，包括网络访问、身份验证、授权和复制。  
+    > 最后，你需要确定 Azure 文件存储服务有多适合用于托管本地文件共享。  
 
     > **注意**：此时，你没有更改身份验证方法的权限。
 
@@ -243,7 +243,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 单击新创建的文件共享，然后单击“连接”。
 
-1. 最后，你需要确定 Azure 文件存储服务有多适合用于托管本地文件共享。
+1. On the <bpt id="p1">**</bpt>Connect<ept id="p1">**</ept> blade, ensure that the <bpt id="p2">**</bpt>Windows<ept id="p2">**</ept> tab is selected. Below you will find a grey textbox with a script, in the bottom right corner of that box hover over the pages icon and click <bpt id="p1">**</bpt>Copy to clipboard<ept id="p1">**</ept>.
 
 1. 在 Azure 门户中，搜索并选择“虚拟机”，然后在虚拟机列表中，单击 az104-07-vm0。
 
@@ -283,7 +283,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 使用 InPrivate 模式打开另一个浏览器窗口，然后导航到你在上一个任务中生成的 blob SAS URL。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you did not record the SAS URL from task 4, you should generate a new one with the same configuration. Use Task 4 steps 4-6 as a guide for generating a new blob SAS URL. 
+    >                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** ，让你能以自己的节奏点击浏览实验室。 
 
 1. 系统随即显示“MIT 许可证(MIT)”页面的内容。
 
@@ -302,7 +302,7 @@ You need to evaluate the use of Azure storage for storing files residing current
    ```
 1. 验证下载尝试是否失败。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You should receive the message stating <bpt id="p2">**</bpt>AuthorizationFailure: This request is not authorized to perform this operation<ept id="p2">**</ept>. This is expected, since you are connecting from the IP address assigned to an Azure VM hosting the Cloud Shell instance.
+    > 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 1. 关闭 Cloud Shell 窗格。
 

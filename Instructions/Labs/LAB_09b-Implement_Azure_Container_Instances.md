@@ -11,7 +11,7 @@ lab:
 
 Contoso wants to find a new platform for its virtualized workloads. You identified a number of container images that can be leveraged to accomplish this objective. Since you want to minimize container management, you plan to evaluate the use of Azure Container Instances for deployment of Docker images.
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)。
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
 
 ## <a name="objectives"></a>目标
 
@@ -40,7 +40,7 @@ Contoso wants to find a new platform for its virtualized workloads. You identifi
 
 1. 在“创建容器实例”边栏选项卡的“基本设置”选项卡中，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | ---- | ---- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组的名称 **az104-09b-rg1** |
@@ -81,9 +81,9 @@ Contoso wants to find a new platform for its virtualized workloads. You identifi
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>Contoso 希望为其虚拟化工作负荷找到一个新平台。
 
->Contoso 希望为其虚拟化工作负荷找到一个新平台。 
+>你找到了大量可用于实现该目标的容器映像。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
