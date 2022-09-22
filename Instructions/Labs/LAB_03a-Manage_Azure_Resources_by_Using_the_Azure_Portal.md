@@ -11,7 +11,7 @@ lab:
 
 You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)。
 
 ## <a name="objectives"></a>目标
 
@@ -39,7 +39,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|值|
+    |设置|“值”|
     |---|---|
     |订阅| 创建的资源组所在的 Azure 订阅的名称 |
     |资源组| 新建资源组的名称 az104-03a-rg1 |
@@ -78,7 +78,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|值|
+    |设置|“值”|
     |---|---|
     |订阅| 本实验室所用订阅的名称 |
     |资源组| 单击“新建”资源组，并将其命名为 az104-03a-rg3  |
@@ -114,13 +114,13 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 导航回到“az104-03a-rg3”资源组的资源列表，然后单击表示“az104-03a-disk2”资源的条目。 
 
-1. 你需要探索与预配资源并根据资源组整理资源相关的基本 Azure 管理功能，包括在资源组之间移动资源。
+1. On the <bpt id="p1">**</bpt>az104-03a-disk2<ept id="p1">**</ept> blade, in the <bpt id="p2">**</bpt>Settings<ept id="p2">**</ept> section, click <bpt id="p3">**</bpt>Size + performance<ept id="p3">**</ept>, set the disk type and size to <bpt id="p4">**</bpt>Premium SSD<ept id="p4">**</ept> and <bpt id="p5">**</bpt>64 GiB<ept id="p5">**</ept>, respectively, and click <bpt id="p6">**</bpt>Resize<ept id="p6">**</ept> to apply the change. Verify that the change was successful.
 
     >**注意**：这很正常，因为资源组级别的锁定仅适用于删除操作。 
 
 #### <a name="clean-up-resources"></a>清理资源
 
-   >你还需要探索可保护磁盘资源不意外遭到删除，同时仍允许修改其性能特征和大小的方案选项。
+   >你需要探索与预配资源并根据资源组整理资源相关的基本 Azure 管理功能，包括在资源组之间移动资源。
 
 1. 导航到“az104-03a-rg3”资源组边栏选项卡，显示“锁”边栏选项卡，然后通过单击“删除”锁定条目右侧的“删除”链接移除“az104-03a-delete-lock”锁。
 

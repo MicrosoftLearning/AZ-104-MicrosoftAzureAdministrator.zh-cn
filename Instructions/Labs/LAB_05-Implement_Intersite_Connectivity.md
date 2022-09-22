@@ -11,7 +11,7 @@ lab:
 
 Contoso has its datacenters in Boston, New York, and Seattle offices connected via a mesh wide-area network links, with full connectivity between them. You need to implement a lab environment that will reflect the topology of the Contoso's on-premises networks and verify its functionality.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)。
 
 ## <a name="objectives"></a>目标
 
@@ -33,7 +33,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 在此任务中，你将部署三个虚拟机，每个虚拟机都部署到一个独立的虚拟网络中。其中两个在同一个 Azure 区域中，第三个在另一个 Azure 区域中。
 
-1. 登录 [Azure 门户](https://portal.azure.com)。
+1. 登录到 [Azure 门户](https://portal.azure.com)。
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
@@ -65,7 +65,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
    >
    >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
    >
-   >Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。
+   >If the command returns no results, then you need to choose another region. Once you have identified two suitable regions, you can adjust the regions in the code block above.
 
 1. 在 Cloud Shell 窗格中，运行以下命令创建三个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
 
@@ -78,7 +78,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
       -location2 $location2
    ```
 
-    >需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
+    >Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。
 
 1. 关闭 Cloud Shell 窗格。
 
@@ -211,7 +211,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 1. 在“az104-05-vm0”边栏选项卡中，单击“连接”，在下拉菜单中，单击“RDP”，在“连接到 RDP”边栏选项卡中，单击“下载 RDP 文件”，并按照提示启动远程桌面会话。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -241,7 +241,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 1. 在“az104-05-vm1”边栏选项卡上，单击“连接”，在下拉菜单中，单击“RDP”，然后在“使用 RDP 连接”边栏选项卡上，单击“下载 RDP 文件”并按照提示启动远程桌面会话    。
 
-    >                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** ，让你能以自己的节奏点击浏览实验室。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -261,7 +261,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 #### <a name="clean-up-resources"></a>清理资源
 
->你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
 ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
 

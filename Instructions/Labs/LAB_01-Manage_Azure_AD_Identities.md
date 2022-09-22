@@ -12,7 +12,7 @@ lab:
 
 In order to allow Contoso users to authenticate by using Azure AD, you have been tasked with provisioning users and group accounts. Membership of the groups should be updated automatically based on the user job titles. You also need to create a test Azure AD tenant with a test user account and grant that account limited permissions to resources in the Contoso Azure subscription.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same.
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)。
 
 ## <a name="objectives"></a>目标
 
@@ -114,7 +114,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 1. 刷新浏览器窗口，验证是否激活成功。 
 
- >为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。
+ ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: It can take up to 10 minutes for the licenses to activate. Continue refreshing the page until it appears. Do not proceed until the licenses have been activated.
 
 1. 在“许可证 - 所有产品”边栏选项卡，选择“Azure Active Directory Premium P2”条目，然后将 Azure AD Premium P2 的所有许可证选项分配给你的用户帐户和两个新创建的用户帐户。
 
@@ -138,10 +138,10 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 设置 | 值 |
     | --- | --- |
     | 属性 | **jobTitle** |
-    | 运算符 | **等于** |
+    | 操作员 | **等于** |
     | 值 | 云管理员 |
 
-1. 组的成员身份应根据用户职位自动更新。 
+1. 为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。 
 
 1. 返回 Azure AD 租户的“组 - 所有组”边栏选项卡，单击“+ 新建组”按钮，并使用以下设置创建新组 ：
 
@@ -159,10 +159,10 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 设置 | 值 |
     | --- | --- |
     | 属性 | **jobTitle** |
-    | 运算符 | **等于** |
+    | 操作员 | **等于** |
     | 值 | **系统管理员** |
 
-1. 你还需要创建具有测试用户帐户的测试 Azure AD 租户，并向该帐户授予 Contoso Azure 订阅中资源的有限访问权限。 
+1. 组的成员身份应根据用户职位自动更新。 
 
 1. 返回 Azure AD 租户的“组 - 所有组”边栏选项卡，单击“+ 新建组”按钮，并使用以下设置创建新组 ：
 
@@ -177,11 +177,11 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 1. 在“添加成员”边栏选项卡，搜索并选择“IT 云管理员”和“IT 系统管理员”组，然后回到“新组”边栏选项卡，单击“创建”。
 
-1. Back on the <bpt id="p1">**</bpt>Groups - All groups<ept id="p1">**</ept> blade, click the entry representing the <bpt id="p2">**</bpt>IT Cloud Administrators<ept id="p2">**</ept> group and, on then display its <bpt id="p3">**</bpt>Members<ept id="p3">**</ept> blade. Verify that the <bpt id="p1">**</bpt>az104-01a-aaduser1<ept id="p1">**</ept> appears in the list of group members.
+1. 你还需要创建具有测试用户帐户的测试 Azure AD 租户，并向该帐户授予 Contoso Azure 订阅中资源的有限访问权限。
 
-    >                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** ，让你能以自己的节奏点击浏览实验室。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You might experience delays with updates of the dynamic membership groups. To expedite the update, navigate to the group blade, display its <bpt id="p1">**</bpt>Dynamic membership rules<ept id="p1">**</ept> blade, <bpt id="p2">**</bpt>Edit<ept id="p2">**</ept> the rule listed in the <bpt id="p3">**</bpt>Rule syntax<ept id="p3">**</ept> textbox by adding a whitespace at the end, and <bpt id="p4">**</bpt>Save<ept id="p4">**</ept> the change.
 
-1. 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+1. Navigate back to the <bpt id="p1">**</bpt>Groups - All groups<ept id="p1">**</ept> blade, click the entry representing the <bpt id="p2">**</bpt>IT System Administrators<ept id="p2">**</ept> group and, on then display its <bpt id="p3">**</bpt>Members<ept id="p3">**</ept> blade. Verify that the <bpt id="p1">**</bpt>az104-01a-aaduser2<ept id="p1">**</ept> appears in the list of group members.
 
 #### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>任务 3：创建 Azure Active Directory (AD) 租户（可选 - 实验室环境问题）
 

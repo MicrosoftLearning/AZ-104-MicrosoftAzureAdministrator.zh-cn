@@ -12,7 +12,7 @@ lab:
 
 You need to explore Azure virtual networking capabilities. To start, you plan to create a virtual network in Azure that will host a couple of Azure virtual machines. Since you intend to implement network-based segmentation, you will deploy them into different subnets of the virtual network. You also want to make sure that their private and public IP addresses will not change over time. To comply with Contoso security requirements, you need to protect public endpoints of Azure virtual machines accessible from Internet. Finally, you need to implement DNS name resolution for Azure virtual machines both within the virtual network and from Internet.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)。
 
 ## <a name="objectives"></a>目标
 
@@ -45,7 +45,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 创建一个虚拟网络，设置如下（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 将在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-04-rg1 |
@@ -111,16 +111,16 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
 
-    >你需要探索 Azure 虚拟网络功能。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This method of deploying ARM templates uses Azure PowerShell. You can perform the same task by running the equivalent Azure CLI command <bpt id="p1">**</bpt>az deployment create<ept id="p1">**</ept> (for more information, refer to <bpt id="p2">[</bpt>Deploy resources with Resource Manager templates and Azure CLI<ept id="p2">](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)</ept>.
 
-    >首先，你计划在 Azure 中创建一个将托管几个 Azure 虚拟机的虚拟网络。
+    >你需要探索 Azure 虚拟网络功能。
 
     >**注意**：如果遇到提示 VM 大小不可用的错误，请向讲师寻求帮助并尝试以下步骤：
     > 1. 单击 CloudShell 中的 `{}` 按钮，从左侧栏中选择“az104-04-vms-loop-parameters.json”，并记下 `vmSize` 参数值。
+    > 1. 首先，你计划在 Azure 中创建一个将托管几个 Azure 虚拟机的虚拟网络。
     > 1. 由于你打算实现基于网络的分段，因此会将这些虚拟机部署到虚拟网络的不同子网中。
-    > 1. 你还希望确保其专用 IP 地址和公共 IP 地址不会随着时间的推移而发生变化。
     > 1. 将 `vmSize` 参数的值替换为刚运行的命令返回的一个值。
-    > 1. 为了符合 Contoso 的安全要求，你需要保护可从 Internet 访问的 Azure 虚拟机公共终结点。
+    > 1. 你还希望确保其专用 IP 地址和公共 IP 地址不会随着时间的推移而发生变化。
 
 1. 关闭 Cloud Shell 窗格。
 
@@ -151,7 +151,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 在“ipconfig1”边栏选项卡中，将“分配”设置为“静态”，将“IP 地址”的默认值设置为“10.40.0.4”    。
 
-1. 最后，你需要为虚拟网络和 Internet 内的 Azure 虚拟机实现 DNS 名称解析。
+1. 为了符合 Contoso 的安全要求，你需要保护可从 Internet 访问的 Azure 虚拟机公共终结点。
 
 1. 导航回“az104-04-vnet1”边栏选项卡
 
@@ -188,24 +188,24 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 请注意，连接尝试失败。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, because public IP addresses of the Standard SKU, by default, require that the network interfaces to which they are assigned are protected by a network security group. In order to allow Remote Desktop connections, you will create a network security group explicitly allowing inbound RDP traffic from Internet and assign it to network interfaces of both virtual machines.
+    >最后，你需要为虚拟网络和 Internet 内的 Azure 虚拟机实现 DNS 名称解析。
 
 1. 停止 az104-04-vm0 和 az104-04-vm1 虚拟机 。
 
-    >                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** ，让你能以自己的节奏点击浏览实验室。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is done for lab expediency. If the virtual machines are running when a network security group is attached to their network interface, it can can take over 30 minutes for the attachment to take effect. Once the network security group has been created and attached, the virtual machines will be restarted, and the attachment will be in effect immediately.
 
 1. 在 Azure 门户中，搜索并选择“网络安全组”，然后在“网络安全组”边栏选项卡中单击“+ 创建”  。
 
 1. 创建一个网络安全组，设置如下（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |
     | 名称 | **az104-04-nsg01** |
     | 区域 | 本实验室中用于部署所有其他资源的 Azure 区域的名称 |
 
-1. 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
 
     ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 2 minutes.
 
@@ -255,7 +255,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 创建一个专用 DNS 区域，设置如下（其他设置保留默认值）：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |
@@ -271,7 +271,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 单击“+ 添加”，使用以下设置创建虚拟网络链接（其他设置保留默认值）：：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 链接名称 | **az104-04-vnet1-link** |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
@@ -311,7 +311,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 使用以下设置（将其他设置保留为默认值）创建 DNS 区域：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |

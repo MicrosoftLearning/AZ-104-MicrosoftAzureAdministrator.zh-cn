@@ -11,7 +11,7 @@ lab:
 
 You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)。
 
 ## <a name="objectives"></a>目标
 
@@ -44,7 +44,7 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 1. 在“创建 Web 应用”边栏选项卡的“基本信息”选项卡中，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | ---|
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-09a-rg1 |
@@ -165,7 +165,7 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 1. 在 Web 应用的生产槽位边栏选项卡上单击“概述”，然后单击 URL 链接，在新的浏览器选项卡中显示网站主页 。
 
-1. 你需要评估可否使用 Azure Web 应用来托管 Contoso 的网站，这些网站当前托管在公司的本地数据中心。
+1. Verify the default web page has been replaced with the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> page.
 
 #### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>任务 6：配置并测试 Azure Web 应用的自动缩放
 
@@ -241,9 +241,9 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 #### <a name="clean-up-resources"></a>清理资源
 
->网站通过 PHP 运行时堆栈在 Windows 服务器上运行。
+>你需要评估可否使用 Azure Web 应用来托管 Contoso 的网站，这些网站当前托管在公司的本地数据中心。
 
->你还需要确定如何利用 Azure Web 应用部署槽位来实施 DevOps 实践。 
+>网站通过 PHP 运行时堆栈在 Windows 服务器上运行。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

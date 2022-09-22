@@ -22,7 +22,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
     - 创建支持请求票证
     - 查看资源组
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same.
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)。
 
 ## <a name="objectives"></a>目标
 
@@ -139,17 +139,17 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
     | 让我创建密码 | enabled |
     | 初始密码 | **提供安全密码** |
 
-    >本实验室需要具有创建 Azure Active Directory (Azure AD) 用户、创建自定义 Azure 基于角色的访问控制 (RBAC) 角色，以及将这些角色分配给 Azure AD 用户的权限。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User name<ept id="p3">**</ept>. You will need it later in this lab.
 
 1. 在 Azure 门户中，浏览到“az104-02-mg1”管理组并显示其“详细信息”。
 
-1. 并非所有实验室主机托管服务提供商都提供此功能。 
+1. 本实验室需要具有创建 Azure Active Directory (Azure AD) 用户、创建自定义 Azure 基于角色的访问控制 (RBAC) 角色，以及将这些角色分配给 Azure AD 用户的权限。 
 
     >注意：如果自定义角色不可见，那么自定义角色创建后可能需要 10 分钟才能出现。
 
-1. 请询问讲师是否可以使用本实验室。
+1. 并非所有实验室主机托管服务提供商都提供此功能。
 
-1. Open an <bpt id="p1">**</bpt>InPrivate<ept id="p1">**</ept> browser window and sign in to the <bpt id="p2">[</bpt>Azure portal<ept id="p2">](https://portal.azure.com)</ept> using the newly created user account. When prompted to update the password, change the password for the user.
+1. 请询问讲师是否可以使用本实验室。
 
     >**注意**：可以粘贴剪贴板的内容，而不必键入用户名。
 
@@ -171,7 +171,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 
    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although, resources created in this lab do not incur extra cost.
 
-   >向指定 Azure Active Directory 用户授予为管理组中所有订阅提交支持请求的权限。
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going.
 
 1. 在 Azure 门户中，搜索并选择“Azure Active Directory”，在“Azure Active Directory”边栏选项卡上，单击“用户”。
 
@@ -207,7 +207,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 1. 选择“刷新”，验证订阅是否已成功移动到“租户根管理组” 。
 
 1. 导航回“管理组”边栏选项卡，单击“az104-02-mg1”管理组右侧的省略号图标，然后单击“删除”   。
-  >该用户的权限应仅限于：
+  >向指定 Azure Active Directory 用户授予为管理组中所有订阅提交支持请求的权限。
 
 #### <a name="review"></a>审阅
 

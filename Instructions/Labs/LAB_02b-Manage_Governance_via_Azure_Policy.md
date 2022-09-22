@@ -17,7 +17,7 @@ lab:
 
 - 补救任何不合规的资源
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)。
 
 ## <a name="objectives"></a>目标
 
@@ -88,7 +88,7 @@ lab:
 
 1. 通过单击省略号按钮指定“范围”并选择以下值：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 资源组的名称，其中包含你在上一个任务中标识的 Cloud Shell 帐户 |
@@ -150,7 +150,7 @@ lab:
 
 1. 单击“分配策略”，通过单击省略号按钮并选择以下值指定“范围”：
 
-    | 设置 | 值 |
+    | 设置 | “值” |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 资源组的名称，其中包含你在第一个任务中标识的 Cloud Shell 帐户 |
@@ -212,9 +212,9 @@ lab:
 
 1. 在门户中，搜索并选择“存储帐户”。
 
-1.                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** ，让你能以自己的节奏点击浏览实验室。 
+1. In the list of storage accounts, select the resource group corresponding to the storage account you created in the last task of this lab. Select <bpt id="p1">**</bpt>Tags<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> (Trash can to the right) to the <bpt id="p3">**</bpt>Role:Infra<ept id="p3">**</ept> tag and press <bpt id="p4">**</bpt>Apply<ept id="p4">**</ept>. 
 
-1. 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+1. Click <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> on the top of the storage account blade. When prompted for the confirmation, in the <bpt id="p1">**</bpt>Delete storage account<ept id="p1">**</ept> blade, type the name of the storage account to confirm and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept>. 
 
 #### <a name="review"></a>审阅
 

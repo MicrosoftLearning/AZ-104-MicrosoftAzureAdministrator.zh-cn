@@ -11,7 +11,7 @@ lab:
 
 You have been tasked with evaluating the use of Azure Recovery Services for backup and restore of files hosted on Azure virtual machines and on-premises computers. In addition, you want to identify methods of protecting data stored in the Recovery Services vault from accidental or malicious data loss.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)。
 
 ## <a name="objectives"></a>目标
 
@@ -94,7 +94,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 单击“查看 + 创建”，确保通过验证并单击“创建” 。
 
-    >你的任务是对使用 Azure 恢复服务来备份和还原 Azure 虚拟机和本地计算机上托管的文件这一过程进行评估。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take less than 1 minute.
 
 1. 部署完成后，单击“前往资源”。
 
@@ -102,7 +102,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“az104-10-rsv1 - 属性”边栏选项卡中，在“备份配置”标签下单击“更新”链接。
 
-1. 此外，你还想确定保护恢复服务保管库中所存储数据的方法，以防意外或恶意行为造成的数据丢失。
+1. 你的任务是对使用 Azure 恢复服务来备份和还原 Azure 虚拟机和本地计算机上托管的文件这一过程进行评估。
 
     >**注意**：只有不存在现有备份项目时才能配置此设置。
 
@@ -145,7 +145,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“选择虚拟机”边栏选项卡上，选择“az-104-10-vm0”，单击“确定”，然后返回“备份”边栏选项卡，单击“启用备份”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the backup to be enabled. This should take about 2 minutes.
+    >此外，你还想确定保护恢复服务保管库中所存储数据的方法，以防意外或恶意行为造成的数据丢失。
 
 1. 导航回“az104-10-rsv1”恢复服务保管库边栏选项卡，然后在“受保护项目”部分，单击“备份项目”，再单击“Azure 虚拟机”条目   。
 
@@ -163,7 +163,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“az104-10-vm1”边栏选项卡上，单击“连接”，然后在下拉菜单中，单击“RDP”，再在“与 RDP 连接”边栏选项卡上，单击“下载 RDP 文件”并按照提示启动远程桌面会话。
 
-    >                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** ，让你能以自己的节奏点击浏览实验室。
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -194,7 +194,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
     >**注意**：在“Microsoft Azure 恢复服务代理安装向导”的“Microsoft Update 选择加入”页面 ，选择“我不想使用 Microsoft Update”安装选项。
 
-1. 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+1. On the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Microsoft Azure Recovery Services Agent Setup Wizard<ept id="p2">**</ept>, click <bpt id="p3">**</bpt>Proceed to Registration<ept id="p3">**</ept>. This will start <bpt id="p1">**</bpt>Register Server Wizard<ept id="p1">**</ept>.
 
 1. 切换到显示 Azure 门户的 Web 浏览器窗口，在“准备基础结构”边栏选项卡上，选中“已下载或使用最新的恢复服务器代理”复选框，然后单击“下载”  。
 
