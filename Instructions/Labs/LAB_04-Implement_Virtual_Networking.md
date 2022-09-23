@@ -12,8 +12,6 @@ lab:
 
 You need to explore Azure virtual networking capabilities. To start, you plan to create a virtual network in Azure that will host a couple of Azure virtual machines. Since you intend to implement network-based segmentation, you will deploy them into different subnets of the virtual network. You also want to make sure that their private and public IP addresses will not change over time. To comply with Contoso security requirements, you need to protect public endpoints of Azure virtual machines accessible from Internet. Finally, you need to implement DNS name resolution for Azure virtual machines both within the virtual network and from Internet.
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)。
-
 ## <a name="objectives"></a>目标
 
 在此实验中，将执行以下操作：
@@ -45,7 +43,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 创建一个虚拟网络，设置如下（其他设置保留默认值）：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 将在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-04-rg1 |
@@ -62,7 +60,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
     | 设置 | 值 |
     | --- | --- |
-    | 子网名称 | **subnet0** |
+    | 子网名称 | subnet0 |
     | 子网地址范围 | **10.40.0.0/24** |
 
 1. Accept the defaults and click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
@@ -198,7 +196,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 创建一个网络安全组，设置如下（其他设置保留默认值）：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |
@@ -255,7 +253,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 创建一个专用 DNS 区域，设置如下（其他设置保留默认值）：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |
@@ -271,7 +269,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 单击“+ 添加”，使用以下设置创建虚拟网络链接（其他设置保留默认值）：：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 链接名称 | **az104-04-vnet1-link** |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
@@ -311,7 +309,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 使用以下设置（将其他设置保留为默认值）创建 DNS 区域：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | **az104-04-rg1** |

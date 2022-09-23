@@ -11,8 +11,6 @@ lab:
 
 You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)。
-
 ## <a name="objectives"></a>目标
 
 在此实验中，将执行以下操作：
@@ -44,7 +42,7 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 1. 在“创建 Web 应用”边栏选项卡的“基本信息”选项卡中，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- | ---|
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-09a-rg1 |
