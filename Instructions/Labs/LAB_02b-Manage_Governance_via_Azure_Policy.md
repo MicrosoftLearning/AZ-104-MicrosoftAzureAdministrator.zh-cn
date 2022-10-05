@@ -15,7 +15,9 @@ lab:
 
 - 确保只有标记正确的基础结构资源能被添加到基础结构资源组
 
-- 补救任何不合规的资源 
+- 补救任何不合规的资源
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -70,7 +72,7 @@ lab:
     | 名称 | **角色** |
     | 值 | **基础结构** |
 
-1. Navigate back to the storage account blade. Review the <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> information and note that the new tag was not automatically assigned to the storage account. 
+1. 导航回“存储帐户”边栏选项卡。 查看“概述”信息，注意新标记不会自动分配给存储帐户。 
 
 #### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>任务 2：通过 Azure Policy 强制标记
 
@@ -78,7 +80,7 @@ lab:
 
 1. 在 Azure 门户中，搜索并选择“策略”。 
 
-1. In the <bpt id="p1">**</bpt>Authoring<ept id="p1">**</ept> section, click <bpt id="p2">**</bpt>Definitions<ept id="p2">**</ept>. Take a moment to browse through the list of built-in policy definitions that are available for you to use. List all built-in policies that involve the use of tags by selecting the <bpt id="p1">**</bpt>Tags<ept id="p1">**</ept> entry (and de-selecting all other entries) in the <bpt id="p2">**</bpt>Category<ept id="p2">**</ept> drop-down list. 
+1. 在“创作”部分中单击“定义”。 花一点时间浏览可供使用的内置策略定义列表。 列出所有涉及使用标记的内置策略，方法是在“类别”下拉列表中选择“标记”条目（并取消选择所有其他条目）。 
 
 1. 单击表示“要求资源采用标记及其值”内置策略的条目并查看其定义。
 
@@ -91,7 +93,7 @@ lab:
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 资源组的名称，其中包含你在上一个任务中标识的 Cloud Shell 帐户 |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A scope determines the resources or resource groups where the policy assignment takes effect. You could assign policies on the management group, subscription, or resource group level. You also have the option of specifying exclusions, such as individual subscriptions, resource groups, or resources (depending on the assignment scope). 
+    >**注意**：范围确定了策略分配生效的资源或资源组。 你可以在管理组、订阅或资源组级别上分配策略。 还可以选择指定排除项，例如单个订阅、资源组或资源（取决于分配范围）。 
 
 1. 通过指定以下设置（其他设置保留默认值）来配置分配的基本属性：
 
@@ -101,7 +103,7 @@ lab:
     | 说明 | **要求 Cloud Shell 资源组中所有资源都采用值为 Infra 的角色标记**|
     | 策略强制执行 | 已启用 |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The <bpt id="p2">**</bpt>Assignment name<ept id="p2">**</ept> is automatically populated with the policy name you selected, but you can change it. You can also add an optional <bpt id="p1">**</bpt>Description<ept id="p1">**</ept>. <bpt id="p1">**</bpt>Assigned by<ept id="p1">**</ept> is automatically populated based on the user name creating the assignment. 
+    >**注意**：“分配名称”中自动填充了所选的策略名称，但可以更改它。 还可根据需要添加“说明”。 “分配人”中会自动填写创建分配的的用户名。 
 
 1. 单击“下一步”，将“参数”设为以下值：
 
@@ -130,11 +132,11 @@ lab:
     | --- | --- |
     | 存储帐户名称 | 3 到 24 个小写字母和数字的全局唯一组合，以字母开头 |
 
-1. Once you create the deployment, you should see the <bpt id="p1">**</bpt>Deployment failed<ept id="p1">**</ept> message in the <bpt id="p2">**</bpt>Notifications<ept id="p2">**</ept> list of the portal. From the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> list, navigate to the deployment overview and click the <bpt id="p2">**</bpt>Deployment failed. Click here for details<ept id="p2">**</ept> message to identify the reason for the failure. 
+1. 创建部署后，你应该会在门户的“通知”列表中看到“部署失败”的消息 。 从“通知”列表中，导航到部署概述并单击“部署失败 **。单击此处获取详细信息”消息，确定失败的原因**。 
 
     >**注意**：验证错误消息是否表明策略禁止资源部署。 
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By clicking the <bpt id="p2">**</bpt>Raw Error<ept id="p2">**</ept> tab, you can find more details about the error, including the name of the role definition <bpt id="p3">**</bpt>Require Role tag with Infra value<ept id="p3">**</ept>. The deployment failed because the storage account you attempted to create did not have a tag named <bpt id="p1">**</bpt>Role<ept id="p1">**</ept> with its value set to <bpt id="p2">**</bpt>Infra<ept id="p2">**</ept>.
+    >**注意**：通过单击“原始错误”选项卡，你可以找到有关错误的更多详细信息，包括角色定义的名称“要求采用值为 Infra 的角色标记” 。 部署失败，因为尝试创建的存储帐户没有名为“角色”且值设为“Infra”的标记。
 
 #### <a name="task-3-apply-tagging-via-an-azure-policy"></a>任务 3：通过 Azure Policy 应用标记
 
@@ -174,7 +176,7 @@ lab:
     | 设置 | 值 |
     | --- | --- |
     | 创建修正任务 | enabled |
-    | 待修正的策略 | **从订阅继承标记（如果缺少）** |
+    | 待修正的策略 | **从资源组继承标记（如果缺少此标记）** |
 
     >**注意**：此策略定义包括“修改”效果。
 
@@ -200,9 +202,9 @@ lab:
 
 #### <a name="task-4-clean-up-resources"></a>任务 4：清理资源
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although keep in mind that Azure policies do not incur extra cost.
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外收费，不过请记住，Azure 策略不会产生额外费用。
    
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+   >**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在门户中，搜索并选择“策略”。
 
@@ -210,9 +212,9 @@ lab:
 
 1. 在门户中，搜索并选择“存储帐户”。
 
-1. In the list of storage accounts, select the resource group corresponding to the storage account you created in the last task of this lab. Select <bpt id="p1">**</bpt>Tags<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> (Trash can to the right) to the <bpt id="p3">**</bpt>Role:Infra<ept id="p3">**</ept> tag and press <bpt id="p4">**</bpt>Apply<ept id="p4">**</ept>. 
+1. 在存储帐户列表中，选择与你在本实验室的最后一个任务中创建的存储帐户对应的资源组。 选择“标记”，单击“Role:Infra”标记对应的“删除”（右侧的垃圾桶），然后按“应用”   。 
 
-1. Click <bpt id="p1">**</bpt>Overview<ept id="p1">**</ept> and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept> on the top of the storage account blade. When prompted for the confirmation, in the <bpt id="p1">**</bpt>Delete storage account<ept id="p1">**</ept> blade, type the name of the storage account to confirm and click <bpt id="p2">**</bpt>Delete<ept id="p2">**</ept>. 
+1. 单击“概述”，然后单击存储帐户边栏选项卡顶部的“删除” 。 出现确认提示时，在“删除存储帐户”边栏选项卡中，键入待确认的存储帐户名称，然后单击“删除” 。 
 
 #### <a name="review"></a>审阅
 

@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
+你需要探索与预配资源并根据资源组整理资源相关的基本 Azure 管理功能，包括在资源组之间移动资源。 你还需要探索可保护磁盘资源不意外遭到删除，同时仍允许修改其性能特征和大小的方案选项。
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)。
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -39,7 +39,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|“值”|
+    |设置|值|
     |---|---|
     |订阅| 创建的资源组所在的 Azure 订阅的名称 |
     |资源组| 新建资源组的名称 az104-03a-rg1 |
@@ -54,7 +54,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 单击“查看 + 创建”，然后单击“创建”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait until the disk is created. This should take less than a minute.
+    >**注意**：等待磁盘创建完成。 这应该可以在一分钟内完成。
 
 #### <a name="task-2-move-resources-between-resource-groups"></a>任务 2：在资源组之间移动资源 
 
@@ -68,9 +68,9 @@ You need to explore the basic Azure administration capabilities associated with 
 
     >**注意**：此方法可以让你同时移动多个资源。 
 
-1. Below the <bpt id="p1">**</bpt>Resource group<ept id="p1">**</ept> text box, click <bpt id="p2">**</bpt>Create new<ept id="p2">**</ept> then type <bpt id="p3">**</bpt>az104-03a-rg2<ept id="p3">**</ept> in the text box. On the Review tab, select the checkbox <bpt id="p1">**</bpt>I understand that tools and scripts associated with moved resources will not work until I update them to use new resource IDs<ept id="p1">**</ept>, and click <bpt id="p2">**</bpt>Move<ept id="p2">**</ept>.
+1. 在“资源组”文本框下，单击“新建”，然后在文本框中键入“az104-03a-rg2”  。 在“查看”选项卡上，选中复选框“我了解与已移动资源关联的工具和脚本在更新为使用新资源 ID 之前将不可用”，然后单击“移动” 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the move to complete but instead proceed to the next task. The move might take about 10 minutes. You can determine that the operation was completed by monitoring activity log entries of the source or target resource group. Revisit this step once you complete the next task.
+    >**注意**：请勿等待移动完成，而是继续执行下一个任务。 该移动可能需要约 10 分钟。 你可以通过监视源或目标资源组的活动日志条目来确定操作已完成。 完成下一个任务后，请重新查看此步骤。
 
 #### <a name="task-3-implement-resource-locks"></a>任务 3：实现资源锁
 
@@ -78,7 +78,7 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 在 Azure 门户中，搜索并选择“磁盘”，单击“+ 创建”，然后指定以下设置 ：
 
-    |设置|“值”|
+    |设置|值|
     |---|---|
     |订阅| 本实验室所用订阅的名称 |
     |资源组| 单击“新建”资源组，并将其命名为 az104-03a-rg3  |
@@ -114,13 +114,13 @@ You need to explore the basic Azure administration capabilities associated with 
 
 1. 导航回到“az104-03a-rg3”资源组的资源列表，然后单击表示“az104-03a-disk2”资源的条目。 
 
-1. On the <bpt id="p1">**</bpt>az104-03a-disk2<ept id="p1">**</ept> blade, in the <bpt id="p2">**</bpt>Settings<ept id="p2">**</ept> section, click <bpt id="p3">**</bpt>Size + performance<ept id="p3">**</ept>, set the disk type and size to <bpt id="p4">**</bpt>Premium SSD<ept id="p4">**</ept> and <bpt id="p5">**</bpt>64 GiB<ept id="p5">**</ept>, respectively, and click <bpt id="p6">**</bpt>Resize<ept id="p6">**</ept> to apply the change. Verify that the change was successful.
+1. 在“az104-03a-disk2”边栏选项卡的“设置”部分，单击“大小 + 性能”，将磁盘类型和大小分别设置为“高级 SSD”和“64 GiB”，然后单击“重设大小”应用更改     。 验证更改是否成功。
 
     >**注意**：这很正常，因为资源组级别的锁定仅适用于删除操作。 
 
 #### <a name="clean-up-resources"></a>清理资源
 
-   >你需要探索与预配资源并根据资源组整理资源相关的基本 Azure 管理功能，包括在资源组之间移动资源。
+   >**注意**：不要删除你在本实验室中部署的资源。 在本模块的下一次实验室中，你需要使用他们。 仅移除你在本实验室中创建的资源锁。
 
 1. 导航到“az104-03a-rg3”资源组边栏选项卡，显示“锁”边栏选项卡，然后通过单击“删除”锁定条目右侧的“删除”链接移除“az104-03a-delete-lock”锁。
 

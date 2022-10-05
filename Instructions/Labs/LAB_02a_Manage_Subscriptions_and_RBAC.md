@@ -9,7 +9,7 @@ lab:
 
 ## <a name="lab-requirements"></a>实验室要求
 
-This lab requires permissions to create Azure Active Directory (Azure AD) users, create custom Azure Role Based Access Control (RBAC) roles, and assign these roles to Azure AD users. Not all lab hosters may provide this capability. Ask your instructor for the availability of this lab.
+本实验室需要具有创建 Azure Active Directory (Azure AD) 用户、创建自定义 Azure 基于角色的访问控制 (RBAC) 角色，以及将这些角色分配给 Azure AD 用户的权限。 并非所有实验室主机托管服务提供商都提供此功能。 请询问讲师是否可以使用本实验室。
 
 ## <a name="lab-scenario"></a>实验室场景
 
@@ -17,10 +17,12 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 
 - 创建一个将包括所有 Contoso Azure 订阅的管理组
 
-- granting permissions to submit support requests for all subscriptions in the management group to a designated Azure Active Directory user. That user's permissions should be limited only to: 
+- 向指定 Azure Active Directory 用户授予为管理组中所有订阅提交支持请求的权限。 该用户的权限应仅限于： 
 
     - 创建支持请求票证
-    - 查看资源组 
+    - 查看资源组
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ## <a name="objectives"></a>目标
 
@@ -50,7 +52,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 
 1. 搜索并选择“管理组”，导航到“管理组”边栏选项卡 。
 
-1. Review the messages at the top of the <bpt id="p1">**</bpt>Management groups<ept id="p1">**</ept> blade. If you are seeing the message stating <bpt id="p1">**</bpt>You are registered as a directory admin but do not have the necessary permissions to access the root management group<ept id="p1">**</ept>, perfom the following sequence of steps:
+1. 查看“管理组”边栏选项卡顶部的信息。 如果看到的信息为“你已注册为目录管理员，但没有访问根管理组的必要权限”，请执行下面的一系列步骤：
 
     1. 在 Azure 门户中，搜索并选择“Azure Active Directory”。
     
@@ -77,7 +79,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 
 1. 在“az104-02-mg1 \| 订阅”边栏选项卡上，单击“+ 添加”，在“添加订阅”边栏选项卡上的“订阅”下拉列表中，选择你在此实验室中使用的订阅，然后单击“保存”    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: On the <bpt id="p2">**</bpt>az104-02-mg1 <ph id="ph1">\|</ph> Subscriptions<ept id="p2">**</ept> blade, copy the ID of your Azure subscription into Clipboard. You will need it in the next task.
+    >**注意**：在 **“az104-02-mg1 \| 订阅**”边栏选项卡上，将 Azure 订阅的 ID 复制到剪贴板。 稍后在下一个任务中将用到它。
 
 #### <a name="task-2-create-custom-rbac-roles"></a>任务 2：创建自定义 RBAC 角色
 
@@ -137,17 +139,17 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
     | 让我创建密码 | enabled |
     | 初始密码 | **提供安全密码** |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User name<ept id="p3">**</ept>. You will need it later in this lab.
+    >**注意**：将完整用户名称复制到剪贴板 。******** 本实验室中稍后会用到它。
 
 1. 在 Azure 门户中，浏览到“az104-02-mg1”管理组并显示其“详细信息”。
 
-1. 本实验室需要具有创建 Azure Active Directory (Azure AD) 用户、创建自定义 Azure 基于角色的访问控制 (RBAC) 角色，以及将这些角色分配给 Azure AD 用户的权限。 
+1. 依次单击“访问控制(IAM)”、“+ 添加”和“添加角色分配”。   在“角色”选项卡上，搜索“支持请求参与者(自定义)”。  
 
     >注意：如果自定义角色不可见，那么自定义角色创建后可能需要 10 分钟才能出现。
 
-1. 并非所有实验室主机托管服务提供商都提供此功能。
+1. 选择“角色”并单击“下一步”。  在“成员”选项卡上，单击“+ 选择成员”，选择用户帐户 az104-***********************.**********.onmicrosoft.com。   单击“下一步”，然后单击“查看并分配”。 
 
-1. 请询问讲师是否可以使用本实验室。
+1. 打开一个 InPrivate 浏览器窗口，并使用新创建的用户帐户登录到 [Azure 门户](https://portal.azure.com)。 当提示更新密码时，更改该用户的密码。
 
     >**注意**：可以粘贴剪贴板的内容，而不必键入用户名。
 
@@ -157,19 +159,19 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 
 1. 在 InPrivate 浏览器窗口中，在 Azure 门户中搜索并选择“帮助 + 支持”，然后单击“+ 创建支持请求”  。 
 
-1. In the <bpt id="p1">**</bpt>InPrivate<ept id="p1">**</ept> browser window, on the <bpt id="p2">**</bpt>Problem Desription/Summary<ept id="p2">**</ept> tab of the <bpt id="p3">**</bpt>Help + support - New support request<ept id="p3">**</ept> blade, type <bpt id="p4">**</bpt>Service and subscription limits<ept id="p4">**</ept> in the Summary field and select the <bpt id="p5">**</bpt>Service and subscription limits (quotas)<ept id="p5">**</ept> issue type. Note that the subscription you are using in this lab is listed in the <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept> drop-down list.
+1. 在 InPrivate 浏览器窗口的“帮助 + 支持 - 新建支持请求”边栏选项卡的“问题描述/摘要”选项卡上，在“摘要”字段键入“服务和订阅限制”，然后选择“服务与订阅限制(配额)”问题类型    。 请注意，“订阅”下拉列表中列出了你在本实验室中使用的订阅。
 
     >**注意**：你在本实验室中使用的订阅显示在“订阅”下拉列表中，表示你使用的帐户具有适当权限，可以创建特定于订阅的支持请求。
 
     >**注意**：如果没有看到“服务与订阅限制(配额)”选项，请从 Azure 门户注销并重新登录。
 
-1. Do not continue with creating the support request. Instead, sign out as the az104-02-aaduser1 user from the Azure portal and close the InPrivate browser window.
+1. 不要继续创建支持请求。 相反，请以“az104-02-aaduser1”用户身份从 Azure 门户注销，然后关闭 InPrivate 浏览器窗口。
 
 #### <a name="task-4-clean-up-resources"></a>任务 4：清理资源
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although, resources created in this lab do not incur extra cost.
+   >**注意**：记得删除所有不再使用的新建 Azure 资源。 虽然在此实验室中创建的资源不会产生额外的费用，但请删除未使用的资源，以确保不会有意外费用产生。
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going.
+   >**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。
 
 1. 在 Azure 门户中，搜索并选择“Azure Active Directory”，在“Azure Active Directory”边栏选项卡上，单击“用户”。
 
@@ -205,7 +207,7 @@ This lab requires permissions to create Azure Active Directory (Azure AD) users,
 1. 选择“刷新”，验证订阅是否已成功移动到“租户根管理组” 。
 
 1. 导航回“管理组”边栏选项卡，单击“az104-02-mg1”管理组右侧的省略号图标，然后单击“删除”   。
-  >向指定 Azure Active Directory 用户授予为管理组中所有订阅提交支持请求的权限。
+  >                **注意**：如果无法删除“租户根管理组”，则可能是“Azure 订阅”位于管理组下。  需要将“Azure 订阅”从“租户根管理组”中删除，然后删除该组 。
 
 #### <a name="review"></a>审阅
 

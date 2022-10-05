@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-Contoso has its datacenters in Boston, New York, and Seattle offices connected via a mesh wide-area network links, with full connectivity between them. You need to implement a lab environment that will reflect the topology of the Contoso's on-premises networks and verify its functionality.
+Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。 需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -31,7 +33,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 在此任务中，你将部署三个虚拟机，每个虚拟机都部署到一个独立的虚拟网络中。其中两个在同一个 Azure 区域中，第三个在另一个 Azure 区域中。
 
-1. 登录 [Azure 门户](https://portal.azure.com)。
+1. 登录到 [Azure 门户](https://portal.azure.com)。
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
@@ -41,9 +43,9 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，然后将文件 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json 和 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json 上传到 Cloud Shell 主目录中   。
 
-1. Edit the <bpt id="p1">**</bpt>Parameters<ept id="p1">**</ept> file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
-1. From the Cloud Shell pane, run the following to create the resource group that will be hosting the lab environment. The first two virtual networks and a pair of virtual machines will be deployed in [Azure_region_1]. The third virtual network and the third virtual machine will be deployed in the same resource group but another [Azure_region_2]. (replace the [Azure_region_1] and [Azure_region_2] placeholder, including the square brackets, with the names of two different Azure regions where you intend to deploy these Azure virtual machines. An example is $location1 = 'eastus'. You can use Get-AzLocation to list all locations.):
+1. 在 Cloud Shell 窗格中，运行以下命令以创建将托管实验室环境的资源组。 前两个虚拟网络和一对虚拟机将部署在 [Azure_region_1] 中。 第三个虚拟网络和第三个虚拟机将部署在同一资源组 [Azure_region_2] 中。 （将 [Azure_region_1] 和 [Azure_region_2] 占位符 [包括方括号] 替换为你打算在其中部署这些 Azure 虚拟机的两个不同 Azure 区域的名称。 例如，$location 1 =“eastus”。 可以使用 Get-AzLocation 列出所有位置。）：
 
    ```powershell
    $location1 = 'eastus'
@@ -55,7 +57,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
    New-AzResourceGroup -Name $rgName -Location $location1
    ```
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The regions used above were tested and known to work when this lab was last officially reviewed. If you would prefer to use different locations, or they no longer work, you will need to identify two different regions that Standard D2Sv3 virtual machines can be deployed into.
+   >**注意**：在上次正式审查此实验室时，上面使用的区域经过测试并且已知可以工作。 如果希望使用不同的位置，或者它们不再工作，则需要确定标准 D2Sv3 虚拟机可以部署到的两个不同区域。
    >
    >为了识别 Azure 区域，请从 Cloud Shell 中的“PowerShell”会话中运行 (Get-AzLocation).Location
    >
@@ -63,7 +65,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
    >
    >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
    >
-   >If the command returns no results, then you need to choose another region. Once you have identified two suitable regions, you can adjust the regions in the code block above.
+   >如果命令没有返回任何结果，则需要选择另一个区域。 确定两个合适的区域后，可以在上面的代码块中调整区域。
 
 1. 在 Cloud Shell 窗格中，运行以下命令创建三个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
 
@@ -76,7 +78,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
       -location2 $location2
    ```
 
-    >Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。
+    >**注意**：在继续下一步之前，请等待部署完成。 这大约需要 2 分钟。
 
 1. 关闭 Cloud Shell 窗格。
 
@@ -209,7 +211,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 1. 在“az104-05-vm0”边栏选项卡中，单击“连接”，在下拉菜单中，单击“RDP”，在“连接到 RDP”边栏选项卡中，单击“下载 RDP 文件”，并按照提示启动远程桌面会话。
 
-    >需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -239,7 +241,7 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 1. 在“az104-05-vm1”边栏选项卡上，单击“连接”，在下拉菜单中，单击“RDP”，然后在“使用 RDP 连接”边栏选项卡上，单击“下载 RDP 文件”并按照提示启动远程桌面会话    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -259,9 +261,9 @@ Contoso has its datacenters in Boston, New York, and Seattle offices connected v
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

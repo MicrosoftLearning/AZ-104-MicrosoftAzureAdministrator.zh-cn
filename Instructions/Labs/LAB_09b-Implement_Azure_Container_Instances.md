@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-Contoso wants to find a new platform for its virtualized workloads. You identified a number of container images that can be leveraged to accomplish this objective. Since you want to minimize container management, you plan to evaluate the use of Azure Container Instances for deployment of Docker images.
+Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了大量可用于实现该目标的容器映像。 由于你想要最大程度地减少容器管理，因此计划评估 Azure 容器实例在 Docker 映像部署中的使用。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -53,13 +55,13 @@ Contoso wants to find a new platform for its virtualized workloads. You identifi
     | --- | --- |
     | DNS 名称标签 | 任何有效且全局唯一的 DNS 主机名 |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Your container will be publicly reachable at dns-name-label.region.azurecontainer.io. If you receive a <bpt id="p1">**</bpt>DNS name label not available<ept id="p1">**</ept> error message, specify a different value.
+    >**注意**：可以在 dns-name-label.region.azurecontainer.io 公开访问你的容器。 如果你收到了“DNS 名称标签不可用”的错误消息，请指定其他值。
 
 1. 单击“下一步:**高级 >”，查看“创建容器实例”边栏选项卡中的“高级”选项卡上的设置，但不要做任何更改，单击“查看 + 创建”，确保验证通过并单击“创建”**    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 3 minutes.
+    >备注：请等待部署完成。 这大约需要 3 分钟的时间。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: While you wait, you may be interested in viewing the <bpt id="p2">[</bpt>code behind the sample application<ept id="p2">](https://github.com/Azure-Samples/aci-helloworld)</ept>. To view it, browse the <ph id="ph1">\\</ph>app folder.
+    >**注意**：在等待期间，你可能有兴趣查看[示例应用程序背后的代码](https://github.com/Azure-Samples/aci-helloworld)。 若要查看，请浏览 \\app 文件夹。
 
 #### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>任务 2：查看 Azure 容器实例的功能
 
@@ -79,9 +81,9 @@ Contoso wants to find a new platform for its virtualized workloads. You identifi
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
->Contoso 希望为其虚拟化工作负荷找到一个新平台。 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

@@ -10,7 +10,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You need to explore Azure virtual networking capabilities. To start, you plan to create a virtual network in Azure that will host a couple of Azure virtual machines. Since you intend to implement network-based segmentation, you will deploy them into different subnets of the virtual network. You also want to make sure that their private and public IP addresses will not change over time. To comply with Contoso security requirements, you need to protect public endpoints of Azure virtual machines accessible from Internet. Finally, you need to implement DNS name resolution for Azure virtual machines both within the virtual network and from Internet.
+你需要探索 Azure 虚拟网络功能。 首先，你计划在 Azure 中创建一个将托管几个 Azure 虚拟机的虚拟网络。 由于你打算实现基于网络的分段，因此会将这些虚拟机部署到虚拟网络的不同子网中。 你还希望确保其专用 IP 地址和公共 IP 地址不会随着时间的推移而发生变化。 为了符合 Contoso 的安全要求，你需要保护可从 Internet 访问的 Azure 虚拟机公共终结点。 最后，你需要为虚拟网络和 Internet 内的 Azure 虚拟机实现 DNS 名称解析。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -60,12 +62,12 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
     | 设置 | 值 |
     | --- | --- |
-    | 子网名称 | subnet0 |
+    | 子网名称 | **subnet0** |
     | 子网地址范围 | **10.40.0.0/24** |
 
-1. Accept the defaults and click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. 接受默认值，并单击“查看和创建”。 允许进行验证，然后再次单击“创建”以提交部署。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> Wait for the virtual network to be provisioned. This should take less than a minute.
+    >**注意：** 请等待预配虚拟网络。 这应该可以在一分钟内完成。
 
 1. 单击“前往资源”
 
@@ -96,7 +98,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
     >**注意**：你可能需要分别上传各个文件。
 
-1. Edit the Parameters file, and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. 编辑 Parameters 文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中，使用模板和参数文件运行以下命令，以部署两台虚拟机：
 
@@ -109,16 +111,16 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This method of deploying ARM templates uses Azure PowerShell. You can perform the same task by running the equivalent Azure CLI command <bpt id="p1">**</bpt>az deployment create<ept id="p1">**</ept> (for more information, refer to <bpt id="p2">[</bpt>Deploy resources with Resource Manager templates and Azure CLI<ept id="p2">](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)</ept>.
+    >**注意**：这种部署 ARM 模板的方法使用了 Azure PowerShell。 你可以通过运行等效的 Azure CLI 命令 az deployment create 来执行相同的任务（有关详细信息，请参阅[使用资源管理器模板和 Azure CLI 部署资源](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)。
 
-    >你需要探索 Azure 虚拟网络功能。
+    >**注意**：请等待部署完成后再继续下一个任务。 这大约需要 2 分钟。
 
     >**注意**：如果遇到提示 VM 大小不可用的错误，请向讲师寻求帮助并尝试以下步骤：
     > 1. 单击 CloudShell 中的 `{}` 按钮，从左侧栏中选择“az104-04-vms-loop-parameters.json”，并记下 `vmSize` 参数值。
-    > 1. 首先，你计划在 Azure 中创建一个将托管几个 Azure 虚拟机的虚拟网络。
-    > 1. 由于你打算实现基于网络的分段，因此会将这些虚拟机部署到虚拟网络的不同子网中。
+    > 1. 检查部署“az104-04-rg1”资源组的位置。 你可以在 CloudShell 中运行 `az group show -n az104-04-rg1 --query location` 以获取它。
+    > 1. 在 CloudShell 中运行 `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"`。 如果没有列出 SKU（即没有结果），则不能在该区域中部署任何 D2S 虚拟机。 需要找到允许部署 D2S 虚拟机的区域。 选择合适的位置后，请删除 AZ104-04-rg1 资源组并重启实验室。
     > 1. 将 `vmSize` 参数的值替换为刚运行的命令返回的一个值。
-    > 1. 你还希望确保其专用 IP 地址和公共 IP 地址不会随着时间的推移而发生变化。
+    > 1. 现在再次运行 `New-AzResourceGroupDeployment` 命令以重新部署模板。 可以按几次向上按钮，这样就会显示最后执行的命令。
 
 1. 关闭 Cloud Shell 窗格。
 
@@ -149,7 +151,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 在“ipconfig1”边栏选项卡中，将“分配”设置为“静态”，将“IP 地址”的默认值设置为“10.40.0.4”    。
 
-1. 为了符合 Contoso 的安全要求，你需要保护可从 Internet 访问的 Azure 虚拟机公共终结点。
+1. 返回“ipconfig1”边栏选项卡，保存更改。 在继续下一步骤之前，请确保等待保存操作完成。
 
 1. 导航回“az104-04-vnet1”边栏选项卡
 
@@ -186,11 +188,11 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 请注意，连接尝试失败。
 
-    >最后，你需要为虚拟网络和 Internet 内的 Azure 虚拟机实现 DNS 名称解析。
+    >**注意**：这很正常，因为在默认情况下，标准 SKU 的公共 IP 地址会要求其分配到的网络接口受网络安全组的保护。 为了允许远程桌面连接，你将创建一个网络安全组，明确允许来自 Internet 的入站 RDP 流量，并将这些流量分配到两台虚拟机的网络接口。
 
 1. 停止 az104-04-vm0 和 az104-04-vm1 虚拟机 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is done for lab expediency. If the virtual machines are running when a network security group is attached to their network interface, it can can take over 30 minutes for the attachment to take effect. Once the network security group has been created and attached, the virtual machines will be restarted, and the attachment will be in effect immediately.
+    >**注意**：这样做只是暂时用于实验室。 如果在将网络安全组附加到其网络接口时虚拟机正在运行，则附件可能需要 30 分钟以上才能生效。 创建并附加网络安全组后，虚拟机将重新启动，附件将立即生效。
 
 1. 在 Azure 门户中，搜索并选择“网络安全组”，然后在“网络安全组”边栏选项卡中单击“+ 创建”  。
 
@@ -203,9 +205,9 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
     | 名称 | **az104-04-nsg01** |
     | 区域 | 本实验室中用于部署所有其他资源的 Azure 区域的名称 |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
+1. 单击“查看并创建”。 允许进行验证，然后单击“创建”以提交部署。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 2 minutes.
+    >备注：请等待部署完成。 这大约需要 2 分钟。
 
 1. 在“部署”边栏选项卡上，单击“前往资源”以打开“az104-04-nsg01”网络安全组边栏选项卡 。
 
@@ -237,13 +239,13 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 在“az104-04-vm0”边栏选项卡上依次单击“连接”和“RDP”，在“使用 RDP 连接”边栏选项卡上单击“使用公共 IP 地址下载 RDP 文件”，然后按照提示启动远程桌面会话    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
 1. 出现提示时，请使用参数文件中的用户和密码登录。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Leave the Remote Desktop session open. You will need it in the next task.
+    >**注意**：使远程桌面会话保持开启状态。 稍后在下一个任务中将用到它。
 
 #### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>任务 5：配置 Azure DNS 以进行内部名称解析
 
@@ -259,9 +261,9 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
     | 资源组 | **az104-04-rg1** |
     | 名称 | **contoso.org** |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. 单击“查看并创建”。 允许进行验证，然后再次单击“创建”以提交部署。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the private DNS zone to be created. This should take about 2 minutes.
+    >**注意**：请等到专用 DNS 区域创建完成。 这大约需要 2 分钟。
 
 1. 单击“前往资源”以打开“contoso.org DNS”专用区域边栏选项卡 。
 
@@ -278,7 +280,7 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 1. 单击" **确定**"。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> Wait for the virtual network link to be created. This should take less than 1 minute.
+    >**注意：** 请等到虚拟网络链接创建完成。 此过程应会在 1 分钟内完成。
 
 1. 在 contoso.org 专用 DNS 区域边栏选项卡上，在边栏中，单击“概述”
 
@@ -315,9 +317,9 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
     | 资源组 | **az104-04-rg1** |
     | 名称 | 之前在此任务中标识的 DNS 域名 |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. 单击“查看并创建”。 允许进行验证，然后再次单击“创建”以提交部署。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the DNS zone to be created. This should take about 2 minutes.
+    >**注意**：请等到 DNS 区域创建完成。 这大约需要 2 分钟。
 
 1. 单击“前往资源”，打开新创建的 DNS 区域的边栏选项卡。
 
@@ -373,9 +375,9 @@ You need to explore Azure virtual networking capabilities. To start, you plan to
 
 #### <a name="clean-up-resources"></a>清理资源
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

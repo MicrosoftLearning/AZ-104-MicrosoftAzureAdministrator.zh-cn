@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-Contoso has a number of multi-tier applications that are not suitable to run by using Azure Container Instances. In order to determine whether they can be run as containerized workloads, you want to evaluate using Kubernetes as the container orchestrator. To further minimize management overhead, you want to test Azure Kubernetes Service, including its simplified deployment experience and scaling capabilities.
+Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程序。 为确定它们是否可作为容器化工作负载运行，你希望评估可否使用 Kubernetes 作为容器业务流程协调程序。 为了进一步减少管理开销，你希望测试 Azure Kubernetes 服务，包括该服务的简化部署体验和缩放功能。
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)。
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -62,7 +62,7 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
 
 1. 在“创建 Kubernetes 群集”边栏选项卡的“基本设置”选项卡上，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | ---- | ---- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-09c-rg1 |
@@ -82,12 +82,12 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
     | ---- | ---- |
     | 启用虚拟节点 | 禁用（默认值） |
 
-1. 单击“下一步:访问 >”，然后在“创建 Kubernetes 群集”边栏选项卡的“访问”选项卡上，指定以下设置（其他设置保留默认值） ：
+1. 单击“下一步:访问 >”，然后在“创建 Kubernetes 群集”边栏选项卡的“访问”选项卡上，将设置保留为默认值：  
 
     | 设置 | 值 |
     | ---- | ---- |
-    | 身份验证方法 | 系统分配的托管标识（默认值 - 无更改） | 
-    | 基于角色的访问控制 (RBAC) | **已启用** |
+    | 资源标识 | **系统分配的托管标识** |
+    | 身份验证方法 | **使用 Kubernetes RBAC 本地帐户** |
 
 1. 单击“下一步:网络 >”，然后在“创建 Kubernetes 集群”边栏选项卡的“联网”选项卡上，指定以下设置（其他设置保留默认值） ：
 
@@ -98,9 +98,9 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
 
 1. 单击“下一步:集成 >”，然后在“创建 Kubernetes 群集”边栏选项卡的“集成”选项卡中，将“容器监视”设置为“禁用”，单击“查看 + 创建”，确保验证通过并单击“创建”     。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: In production scenarios, you would want to enable monitoring. Monitoring is disabled in this case since it is not covered in the lab.
+    >**注意**：在生产方案中，你需要启用监视。 在这种情况下，由于实验室未涵盖监视，因此禁用监视。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 10 minutes.
+    >**注意**：等待部署完成。 这需要约 10 分钟。
 
 #### <a name="task-3-deploy-pods-into-the-azure-kubernetes-service-cluster"></a>任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
 
@@ -166,9 +166,9 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
     kubectl get service
     ```
 
-1. Re-run the command until the value in the <bpt id="p1">**</bpt>EXTERNAL-IP<ept id="p1">**</ept> column for the <bpt id="p2">**</bpt>nginx-deployment<ept id="p2">**</ept> entry changes from <bpt id="p3">**</bpt><ph id="ph1">\&lt;pending\&gt;</ph><ept id="p3">**</ept> to a public IP address. Note the public IP address in the <bpt id="p1">**</bpt>EXTERNAL-IP<ept id="p1">**</ept> column for <bpt id="p2">**</bpt>nginx-deployment<ept id="p2">**</ept>.
+1. 重新运行该命令，直到“nginx-deployment”条目的“EXTERNAL-IP”列中的值从“\<pending\>”更改为公共 IP 地址  。 记录 nginx-deployment 条目的 EXTERNAL-IP 列中的公共 IP 地址。
 
-1. Open a browser window and navigate to the IP address you obtained in the previous step. Verify that the browser page displays the <bpt id="p1">**</bpt>Welcome to nginx!<ept id="p1">**</ept> message.
+1. 打开浏览器窗口，然后导航到你在上一步中获取的 IP 地址。 验证浏览器页面是否显示“欢迎使用 nginx!” 消息作为响应。
 
 #### <a name="task-4-scale-containerized-workloads-in-the-azure-kubernetes-service-cluster"></a>任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
 
@@ -198,7 +198,7 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 
-    > Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程序。
+    > **注意**：请等待附加节点预配完成。 这可能需要大约 3 分钟的时间。 如果失败，请重新运行 `az aks scale` 命令。
 
 1. 在 Cloud Shell 窗格中运行以下命令，以验证群集的缩放结果：
 
@@ -240,9 +240,9 @@ Contoso has a number of multi-tier applications that are not suitable to run by 
 
 #### <a name="clean-up-resources"></a>清理资源
 
->为确定它们是否可作为容器化工作负载运行，你希望评估可否使用 Kubernetes 作为容器业务流程协调程序。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
->为了进一步减少管理开销，你希望测试 Azure Kubernetes 服务，包括该服务的简化部署体验和缩放功能。 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户中，在 Cloud Shell 窗格中打开 Bash Shell 会话 。
 

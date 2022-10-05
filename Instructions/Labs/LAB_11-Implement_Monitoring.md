@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You need to evaluate Azure functionality that would provide insight into performance and configuration of Azure resources, focusing in particular on Azure virtual machines. To accomplish this, you intend to examine the capabilities of Azure Monitor, including Log Analytics.
+你需要评估 Azure 功能，以深入了解 Azure 资源的性能和配置，尤其要关注 Azure 虚拟机。 若要实现此目的，你打算检查 Azure Monitor 的功能，包括 Log Analytics。
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)。
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -45,7 +45,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\11\\az104-11-vm-template.json 和 \\Allfiles\\Labs\\11\\az104-11-vm-parameters.json 上传到 Cloud Shell 主目录中   。
 
-1. Edit the Parameters file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中，运行以下命令以创建托管虚拟机的资源组（将 `[Azure_region]` 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）：
 
@@ -69,7 +69,7 @@ You need to evaluate Azure functionality that would provide insight into perform
       -AsJob
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take about 3 minutes.
+    >注意：请不要等待部署完成，而是继续执行下一个任务。 部署大约需要 3 分钟的时间完成。
 
 #### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>任务 2：注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序。
 
@@ -100,7 +100,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
     >注意：请确保指定在上一个任务中向其中部署了虚拟机的同一区域。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take about 1 minute.
+    >注意：请等待部署完成。 部署大约需要 1 分钟的时间完成。
 
 1. 在 Azure 门户中，搜索并选择“自动化帐户”，然后在“自动化帐户”边栏选项卡上，选择“+ 创建”  。
 
@@ -115,7 +115,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
     >**注意**：务必根据[工作区映射文档](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)指定 Azure 区域
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment might take about 3 minutes.
+    >备注：请等待部署完成。 部署可能需要大约 3 分钟。
 
 1. 单击“转到资源”。
 
@@ -123,13 +123,13 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在“清单”窗格中的“Log Analytics 工作区”下拉列表中，选择你之前在此任务中创建的 Log Analytics 工作区，然后单击“启用”。
 
-    >你需要评估 Azure 功能，以深入了解 Azure 资源的性能和配置，尤其要关注 Azure 虚拟机。
+    >备注：请等待相应 Log Analytics 解决方案的安装完成。 这可能需要大约 3 分钟的时间。
 
     >备注：这还会自动安装“更改跟踪”解决方案 。
 
 1. 在“自动化帐户”边栏选项卡上的“更新管理”部分，单击“更新管理”，然后单击“启用”。
 
-    >若要实现此目的，你打算检查 Azure Monitor 的功能，包括 Log Analytics。
+    >备注：请等待安装完成。 这可能需要大约 5 分钟。
 
 #### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>任务 4：查看 Azure 虚拟机的默认监视设置
 
@@ -141,7 +141,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在“az104-11-vm0 \| 指标”边栏选项卡中，请注意，在默认图表中唯一可用的“指标命名空间”是“虚拟机主机”  。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, since no guest-level diagnostic settings have been configured yet. You do have, however, the option of enabling guest memory metrics directly from the <bpt id="p1">**</bpt>Metrics Namespace<ept id="p1">**</ept> drop down-list. You will enable it later in this exercise.
+    >**注意**：这很正常，因为尚未配置来宾级诊断设置。 但是，你确实可以选择直接从“指标命名空间”下拉列表中启用来宾内存指标。 稍后将在本练习中启用它。
 
 1. 在“指标”下拉列表中，查看可用指标的列表。
 
@@ -157,27 +157,27 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在“az104-11-vm0 \| 诊断设置”边栏选项卡的“概述”选项卡中，单击“启用来宾级别的监视”  。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the operation to take effect. This might take about 3 minutes.
+    >注意：请等待操作生效。 这可能需要大约 3 分钟。
 
 1. 切换到“az104-11-vm0 \| 诊断设置”边栏选项卡上的“性能计数器”选项卡并查看可用的计数器 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By default, CPU, memory, disk, and network counters are enabled. You can switch to the <bpt id="p1">**</bpt>Custom<ept id="p1">**</ept> view for more detailed listing.
+    >注意：默认情况下，CPU、内存、磁盘和网络计数器均已启用。 可以切换到“自定义”视图以获取更详细的列表。
 
 1. 切换到“az104-11-vm0 \| 诊断设置”边栏选项卡的“日志”选项卡，并查看可用的事件日志集合选项 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By default, log collection includes critical, error, and warning entries from the Application Log and System log, as well as Audit failure entries from the Security log. Here as well you can switch to the <bpt id="p1">**</bpt>Custom<ept id="p1">**</ept> view for more detailed configuration settings.
+    >注意：默认情况下，日志集合包含应用程序日志和系统日志中的严重、错误和警告条目，以及安全日志中的审核失败条目。 在这里，你还可以切换到“自定义”视图以了解更详细的配置设置。
 
 1. 在“az104-11-vm0”边栏选项卡上的“监视”部分，单击“Log Analytics 代理”，然后单击“启用”。   
 
 1. 在“az104-11-vm0 - 日志”边栏选项卡上，确保在“选择 Log Analytics 工作区”下拉列表中选择了你之前在本实验室中创建的 Log Analytics 工作区，然后单击“启用”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the operation to complete but instead proceed to the next step. The operation might take about 5 minutes.
+    >**注意**：请勿等待操作完成，而是继续执行下一步。 该操作可能需要 5 分钟左右。
 
 1. 在“az104-11-vm0 \| 日志”边栏选项卡的“监视”部分中，单击“指标”  。
 
 1. 在“az104-11-vm0 \| 指标”边栏选项卡的默认图表上，可以看到此时“指标命名空间”下拉列表中除了包含“虚拟机主机”条目外，还包含了“来宾(经典)”条目   。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, since you enabled guest-level diagnostic settings. You also have the option to <bpt id="p1">**</bpt>Enable new guest memory metrics<ept id="p1">**</ept>.
+    >**注意**：这很正常，因为你启用了来宾级诊断设置。 你还可以选择“启用新的来宾内存指标”。
 
 1. 在“指标命名空间”下拉列表中，选择“来宾(经典)”条目。
 
@@ -199,7 +199,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在“监视 \| 指标”边栏选项卡上，在“az104-11-vm0 的平均 CPU 百分比”窗格中单击“新建预警规则”  。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Creating an alert rule from Metrics is not supported for metrics from the Guest (classic) metric namespace. This can be accomplished by using Azure Resource Manager templates, as described in the document <bpt id="p1">[</bpt>Send Guest OS metrics to the Azure Monitor metric store using a Resource Manager template for a Windows virtual machine<ept id="p1">](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm)</ept>
+    >注意：来宾（经典）指标命名空间中的指标不支持从指标创建警报规则。 这可以通过使用 Azure 资源管理器模板来完成，如[使用 Windows 虚拟机的资源管理器模板将来宾 OS 指标发送到 Azure Monitor 指标存储](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm)文档所述
 
 1. 在“创建警报规则”边栏选项卡的“条件”部分，单击现有条件条目。
 
@@ -225,7 +225,7 @@ You need to evaluate Azure functionality that would provide insight into perform
     | 操作组名称 | az104-11-ag1 |
     | 显示名称 | az104-11-ag1 |
 
-1. On the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> tab of the <bpt id="p2">**</bpt>Create an action group<ept id="p2">**</ept> blade, in the <bpt id="p3">**</bpt>Notification type<ept id="p3">**</ept> drop-down list, select <bpt id="p4">**</bpt>Email/SMS message/Push/Voice<ept id="p4">**</ept>. In the <bpt id="p1">**</bpt>Name<ept id="p1">**</ept> text box, type <bpt id="p2">**</bpt>admin email<ept id="p2">**</ept>. Click the <bpt id="p1">**</bpt>Edit details<ept id="p1">**</ept> (pencil) icon.
+1. 在“创建操作组”边栏选项卡的“通知”选项卡上，在“通知类型”下拉列表中，选择“电子邮件/短信/推送/语音”   。 在“名称”文本框中，输入“管理员邮箱” 。 单击”编辑细节”（铅笔）图标。
 
 1. 在“电子邮件/短信/推送/语音”边栏选项卡上选中“电子邮件”复选框，在“电子邮件”文本框中键入你的电子邮件地址，将其他设置保留默认值，单击“确定”，然后返回到“创建操作组”边栏选项卡的“通知”选项卡，选择“下一步:       操作 >”。
 
@@ -250,7 +250,7 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 1. 在“az104-11-vm0”边栏选项卡上单击“连接”，在下拉菜单中单击“RDP”，在“使用 RDP 连接”边栏选项卡上单击“下载 RDP 文件”，并按照提示启动远程桌面会话    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -296,7 +296,7 @@ You need to evaluate Azure functionality that would provide insight into perform
    | render timechart
    ```
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The query should not have any errors (indicated by red blocks on the right scroll bar). If the query will not paste without errors directly from the instructions, paste the query code into a text editor such as Notepad, and then copy and paste it into the query window from there.
+    > **注意**：查询不应包含任何错误（由右侧滚动条上的红色块指示）。 如果无法直接从说明中粘贴没有错误的查询，请将查询代码粘贴到文本编辑器（如记事本）中，然后从那里将其复制并粘贴到查询窗口中。
 
 
 1. 单击工具栏中的“查询”，在“查询”窗格中找到“跟踪 VM 可用性”磁贴，双击该磁贴以填充查询窗口，单击该磁贴中的“运行”命令按钮，然后查看结果   。
@@ -313,9 +313,9 @@ You need to evaluate Azure functionality that would provide insight into perform
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
