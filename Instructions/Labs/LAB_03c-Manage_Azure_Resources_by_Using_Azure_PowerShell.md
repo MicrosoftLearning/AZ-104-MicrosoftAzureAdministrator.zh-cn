@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-Now that you explored the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups by using the Azure portal and Azure Resource Manager templates, you need to carry out the equivalent task by using Azure PowerShell. To avoid installing Azure PowerShell modules, you will leverage PowerShell environment available in Azure Cloud Shell.
+你已经探索了与使用 Azure 门户和 Azure 资源管理器模板预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure PowerShell 执行相应的任务。 为避免安装 Azure PowerShell 模块，你将利用 Azure Cloud Shell 中提供的 PowerShell 环境。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -27,7 +29,7 @@ Now that you explored the basic Azure administration capabilities associated wit
 
 ## <a name="instructions"></a>说明
 
-> <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Always create your own secure password for any virtual machine or user account you create. If the virtual machine is created for you, use <bpt id="p1">**</bpt>Reset password<ept id="p1">**</ept> in the Portal to update the password. 
+> **注意**：始终为你创建的任何虚拟机或用户帐户创建自己的安全密码。 如果为你创建了虚拟机，请使用门户中的“重置密码”来更新密码。 
 
 ### <a name="exercise-1"></a>练习 1
 
@@ -122,7 +124,7 @@ Now that you explored the basic Azure administration capabilities associated wit
 
 #### <a name="clean-up-resources"></a>清理资源
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not delete resources you deployed in this lab. You will reference them in the next lab of this module.
+   >**注意**：不要删除你在本实验室中部署的资源。 在本模块的下一个实验室中，你将引用它们。
 
 #### <a name="review"></a>审阅
 

@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You need to evaluate the use of Azure storage for storing files residing currently in on-premises data stores. While majority of these files are not accessed frequently, there are some exceptions. You would like to minimize cost of storage by placing less frequently accessed files in lower-priced storage tiers. You also plan to explore different protection mechanisms that Azure Storage offers, including network access, authentication, authorization, and replication. Finally, you want to determine to what extent Azure Files service might be suitable for hosting your on-premises file shares.
+你需要评估可否使用 Azure 存储来存储当前位于本地数据存储中的文件。 虽然不经常访问其中大部分文件，但也有一些例外。 你希望将访问频率较低的文件放在价格较低的存储层中，以最大程度地降低存储成本。 你还计划探索 Azure 存储提供的不同保护机制，包括网络访问、身份验证、授权和复制。 最后，你需要确定 Azure 文件存储服务有多适合用于托管本地文件共享。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -47,7 +49,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\07\\az104-07-vm-template.json 和 \\Allfiles\\Labs\\07\\az104-07-vm-parameters.json 上传到 Cloud Shell 主目录中   。
 
-1. Edit the <bpt id="p1">**</bpt>Parameters<ept id="p1">**</ept> file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中运行以下命令，以创建将托管虚拟机的资源组（将 '[Azure_region]' 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）
 
@@ -80,10 +82,10 @@ You need to evaluate the use of Azure storage for storing files residing current
 
     >**注意**：如果遇到提示 VM 大小不可用的错误，请向讲师寻求帮助并尝试以下步骤。
     > 1. 单击 CloudShell 中的 `{}` 按钮，从左侧栏中选择“az104-07-vm-parameters.json”，并记下 `vmSize` 参数值。
-    > 1. Check the location in which the 'az104-04-rg1' resource group is deployed. You can run <ph id="ph1">`az group show -n az104-04-rg1 --query location`</ph> in your CloudShell to get it.
+    > 1. 检查部署“az104-04-rg1”资源组的位置。 你可以在 CloudShell 中运行 `az group show -n az104-04-rg1 --query location` 以获取它。
     > 1. 在 CloudShell 中运行 `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"`。
     > 1. 将 `vmSize` 参数的值替换为刚运行的命令返回的一个值。
-    > 1. Now redeploy your templates by running the <ph id="ph1">`New-AzResourceGroupDeployment`</ph> command again. You can press the up button a few times which would bring the last executed command.
+    > 1. 现在再次运行 `New-AzResourceGroupDeployment` 命令以重新部署模板。 可以按几次向上按钮，这样就会显示最后执行的命令。
 
 1. 关闭 Cloud Shell 窗格。
 
@@ -110,17 +112,15 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在“创建存储帐户”边栏选项卡的“数据保护”选项卡中，查看可用选项，接受默认设置，然后单击“查看 + 创建”，等待验证过程完成，然后单击“创建”   。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Storage account to be created. This should take about 2 minutes.
+    >**注意**：请等待存储帐户创建完成。 这大约需要 2 分钟。
 
 1. 在“部署”边栏选项卡上，单击“前往资源”，以显示“Azure 存储帐户”边栏选项卡。
 
-1. 在“存储帐户”边栏选项卡的“数据管理”部分，单击“异地复制”并记下辅助位置 。 
+1. 在“存储帐户”边栏选项卡的“数据管理”部分，单击“冗余”并记下辅助位置。  
 
-1. 在“存储帐户”边栏选项卡的“设置”部分，选择“配置”，在“复制”下拉列表中选择“本地冗余存储(LRS)”并保存更改   。
+1. 在“冗余”下拉列表中，选择“本地冗余存储(LRS)”并保存所做更改。  请注意，存储帐户此时只有主要位置。
 
-1. 切换回“异地复制”边栏选项卡，请注意，此时存储帐户只有主位置。
-
-1. 再次显示存储帐户的“配置”边栏选项卡，将“访问层(默认)”设置为“冷”并保存更改  。
+1. 在“存储帐户”边栏选项卡的“设置”部分，选择“配置”。  将“Blob 访问层(默认)”设置为“冷”，然后保存所做更改。 
 
     > **注意**：对于不经常访问的数据，冷访问层是最佳选择。
 
@@ -161,7 +161,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 在 licenses/LICENSE 边栏选项卡上，查看可用选项。
 
-    > 你需要评估可否使用 Azure 存储来存储当前位于本地数据存储中的文件。
+    > **注意**：你可以选择执行以下操作：下载 blob；更改其访问层（当前设置为“热”）；获得租约，这会将其租赁状态更改为“已锁定”（当前设置为“已解锁”）并保护 blob 不被修改或删除；以及分配自定义元数据（通过指定任意键/值对）  。 也可以在 Azure 门户界面中直接“编辑”文件，无需先下载。 你还可以创建快照以及生成 SAS 令牌（将在下一个任务中探索此选项）。
 
 #### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>任务 4：管理 Azure 存储的身份验证和授权
 
@@ -196,17 +196,17 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 使用 InPrivate 模式打开另一个浏览器窗口，并导航到上一步中复制的 URL。
 
-    > 虽然不经常访问其中大部分文件，但也有一些例外。
+    > **注意**：若使用 Microsoft Edge，则会显示“MIT 许可证(MIT)”页面。 若使用 Chrome、Microsoft Edge (Chromium) 或 Firefox，则可下载文件并用“记事本”打开查看文件内容。
 
     > **注意**：这很正常，因为你现在的访问基于新生成的 SAS 令牌进行授权。
 
-    > 你希望将访问频率较低的文件放在价格较低的存储层中，以最大程度地降低存储成本。
+    > **注意**：保存 blob SAS URL。 本实验室中稍后会用到它。
 
 1. 关闭 InPrivate 模式浏览器窗口，返回到显示 Azure 存储容器 licenses/LICENSE 边栏选项卡的浏览器窗口，然后从中导航回 az104-07-container 边栏选项卡。
 
 1. 单击“身份验证方法”标签旁边的“切换到 Azure AD 用户帐户”链接。
 
-    > 你还计划探索 Azure 存储提供的不同保护机制，包括网络访问、身份验证、授权和复制。  
+    > **注意**：更改身份验证方法时，可看到一个错误（错误为“你没有使用 Azure AD 的用户帐户列出数据的权限”）。 这符合预期。  
 
     > **注意**：此时，你没有更改身份验证方法的权限。
 
@@ -242,7 +242,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 单击新创建的文件共享，然后单击“连接”。
 
-1. 最后，你需要确定 Azure 文件存储服务有多适合用于托管本地文件共享。
+1. 在“连接”边栏选项卡上，确保选中“Windows”选项卡。 下面显示一个带有“显示脚本”标签的按钮。 单击此按钮，你会发现一个带有脚本的灰色文本框，将鼠标悬停在该框右下角的页面图标上，并单击“复制到剪贴板”。
 
 1. 在 Azure 门户中，搜索并选择“虚拟机”，然后在虚拟机列表中，单击 az104-07-vm0。
 
@@ -282,7 +282,7 @@ You need to evaluate the use of Azure storage for storing files residing current
 
 1. 使用 InPrivate 模式打开另一个浏览器窗口，然后导航到你在上一个任务中生成的 blob SAS URL。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you did not record the SAS URL from task 4, you should generate a new one with the same configuration. Use Task 4 steps 4-6 as a guide for generating a new blob SAS URL. 
+    > **注意**：如果未从任务 4 记录 SAS URL，则应生成具有相同配置的新 URL。 使用任务 4 的步骤 4-6 作为生成新 blob SAS URL 的指南。 
 
 1. 系统随即显示“MIT 许可证(MIT)”页面的内容。
 
@@ -301,15 +301,15 @@ You need to evaluate the use of Azure storage for storing files residing current
    ```
 1. 验证下载尝试是否失败。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You should receive the message stating <bpt id="p2">**</bpt>AuthorizationFailure: This request is not authorized to perform this operation<ept id="p2">**</ept>. This is expected, since you are connecting from the IP address assigned to an Azure VM hosting the Cloud Shell instance.
+    > **注意**：你应收到消息“授权失败: 该请求无权执行此操作”。 这很正常，因为你连接的 IP 地址已分配给托管 Cloud Shell 实例的 Azure VM。
 
 1. 关闭 Cloud Shell 窗格。
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. You might also try to delete the Resource Group where the resources reside. That is a quick Administrator shortcut. If you have concerns speak to your instructor.
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 你还可以尝试删除资源所在的资源组。 这是一个快速的管理员快捷方式。 如果你存在疑问，请与你的讲师沟通。
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

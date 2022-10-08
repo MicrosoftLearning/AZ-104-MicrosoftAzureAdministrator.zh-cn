@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You have been tasked with evaluating the use of Azure Recovery Services for backup and restore of files hosted on Azure virtual machines and on-premises computers. In addition, you want to identify methods of protecting data stored in the Recovery Services vault from accidental or malicious data loss.
+你的任务是对使用 Azure 恢复服务来备份和还原 Azure 虚拟机和本地计算机上托管的文件这一过程进行评估。 此外，你还想确定保护恢复服务保管库中所存储数据的方法，以防意外或恶意行为造成的数据丢失。
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)。
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -45,9 +45,9 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json 和 \\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json 上传到 Cloud Shell 主目录中   。
 
-1. Edit the Parameters file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
-1. From the Cloud Shell pane, run the following to create the resource group that will be hosting the virtual machines (replace the <ph id="ph1">`[Azure_region]`</ph> placeholder with the name of an Azure region where you intend to deploy Azure virtual machines). Type each command line separately and execute them separately:
+1. 在 Cloud Shell 窗格中，运行以下命令以创建托管虚拟机的资源组（将 `[Azure_region]` 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）。 分别键入每个命令行，并分别执行它们：
 
    ```powershell
    $location = '[Azure_region]'
@@ -73,7 +73,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 最小化 Cloud Shell（但不要将其关闭）。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take about 5 minutes.
+    >注意：请不要等待部署完成，而是继续执行下一个任务。 部署大约需要 5 分钟的时间完成。
 
 #### <a name="task-2-create-a-recovery-services-vault"></a>任务 2：创建恢复服务保管库
 
@@ -94,7 +94,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 单击“查看 + 创建”，确保通过验证并单击“创建” 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take less than 1 minute.
+    >**注意**：等待部署完成。 部署应可在 1 分钟内完成。
 
 1. 部署完成后，单击“前往资源”。
 
@@ -102,7 +102,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“az104-10-rsv1 - 属性”边栏选项卡中，在“备份配置”标签下单击“更新”链接。
 
-1. 你的任务是对使用 Azure 恢复服务来备份和还原 Azure 虚拟机和本地计算机上托管的文件这一过程进行评估。
+1. 在“备份配置”边栏选项卡上，请注意，可以将“存储复制类型”设置为“本地冗余”或“异地冗余”。 保留“异地冗余”默认设置，关闭边栏选项卡。
 
     >**注意**：只有不存在现有备份项目时才能配置此设置。
 
@@ -145,7 +145,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“选择虚拟机”边栏选项卡上，选择“az-104-10-vm0”，单击“确定”，然后返回“备份”边栏选项卡，单击“启用备份”。
 
-    >此外，你还想确定保护恢复服务保管库中所存储数据的方法，以防意外或恶意行为造成的数据丢失。
+    >**注意**：等待启用备份。 这大约需要 2 分钟。
 
 1. 导航回“az104-10-rsv1”恢复服务保管库边栏选项卡，然后在“受保护项目”部分，单击“备份项目”，再单击“Azure 虚拟机”条目   。
 
@@ -163,7 +163,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“az104-10-vm1”边栏选项卡上，单击“连接”，然后在下拉菜单中，单击“RDP”，再在“与 RDP 连接”边栏选项卡上，单击“下载 RDP 文件”并按照提示启动远程桌面会话。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -194,11 +194,11 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
     >**注意**：在“Microsoft Azure 恢复服务代理安装向导”的“Microsoft Update 选择加入”页面 ，选择“我不想使用 Microsoft Update”安装选项。
 
-1. On the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Microsoft Azure Recovery Services Agent Setup Wizard<ept id="p2">**</ept>, click <bpt id="p3">**</bpt>Proceed to Registration<ept id="p3">**</ept>. This will start <bpt id="p1">**</bpt>Register Server Wizard<ept id="p1">**</ept>.
+1. 在“Microsoft Azure 恢复服务代理安装向导”的“安装”页面，单击“继续注册”。 这将启动“注册服务器向导”。
 
 1. 切换到显示 Azure 门户的 Web 浏览器窗口，在“准备基础结构”边栏选项卡上，选中“已下载或使用最新的恢复服务器代理”复选框，然后单击“下载”  。
 
-1. When prompted, whether to open or save the vault credentials file, click <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>. This will save the vault credentials file to the local Downloads folder.
+1. 提示打开还是保存保管库凭据文件时，请单击“保存”。 这会将保管库凭据文件保存到本地的“下载”文件夹。
 
 1. 切换回“注册服务器向导”窗口，在“保管库标识”页面上，单击“浏览”  。
 
@@ -216,7 +216,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
     >**注意**：在生产环境中，应该将密码文件存储在除备份服务器之外的安全位置。
 
-1. On the <bpt id="p1">**</bpt>Server Registration<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Register Server Wizard<ept id="p2">**</ept>, review the warning regarding the location of the passphrase file, ensure that the <bpt id="p3">**</bpt>Launch Microsoft Azure Recovery Services Agent<ept id="p3">**</ept> checkbox is selected and click <bpt id="p4">**</bpt>Close<ept id="p4">**</ept>. This will automatically open the <bpt id="p1">**</bpt>Microsoft Azure Backup<ept id="p1">**</ept> console.
+1. 在“注册服务器向导”的“服务器注册”页面上，查看有关密码文件位置的警告，确保选中“启动 Microsoft Azure 恢复服务代理”复选框，然后单击“关闭”   。 这将自动打开 Microsoft Azure 备份控制台。
 
 1. 在“Microsoft Azure 备份”控制台的“操作”窗格中，单击“计划备份”。
 
@@ -234,7 +234,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“选择初始备份类型”页面上，接受默认设置，然后单击“下一步”。
 
-1. On the <bpt id="p1">**</bpt>Confirmation<ept id="p1">**</ept> page, click <bpt id="p2">**</bpt>Finish<ept id="p2">**</ept>. When the backup schedule is created, click <bpt id="p1">**</bpt>Close<ept id="p1">**</ept>.
+1. 在“确认”**** 页面上，单击“完成”****。 创建备份计划后，单击“关闭”。
 
 1. 在“Microsoft Azure 备份”控制台的“操作”窗格中，单击“立即备份”。
 
@@ -260,7 +260,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在与 az104-10-vm1 的远程桌面会话中，打开文件资源管理器，导航到 C:\\Windows\\System32\\drivers\\etc\\ 文件夹并删除 hosts 文件  。
 
-1. Open Microsoft Azure Backup and click <bpt id="p1">**</bpt>Recover data<ept id="p1">**</ept> in the <bpt id="p2">**</bpt>Actions<ept id="p2">**</ept> pane. This will start <bpt id="p1">**</bpt>Recover Data Wizard<ept id="p1">**</ept>.
+1. 打开 Microsoft Azure 备份，然后在“操作”窗格中单击“恢复数据” 。 这将启动“恢复数据向导”。
 
 1. 在恢复数据向导的“入门”页面上，确保选中“此服务器 (az104-10-vm1.)”选项并单击“下一步”   。
 
@@ -268,7 +268,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“选择卷和日期”页的“选择卷”下拉列表中，选择“C:\\”，接受可用备份的默认选择，然后单击“装载”   。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the mount operation to complete. This might take about 2 minutes.
+    >**注意**：等待装载操作完成。 这可能需要大约 2 分钟。
 
 1. 在“浏览和恢复文件”页面上，记下恢复卷的驱动器号，并查看有关使用 robocopy 的提示。
 
@@ -294,7 +294,7 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“az104-10-vm0”边栏选项卡上单击“连接”，在下拉列表中单击“RDP”，在“使用 RDP 连接”边栏选项卡上单击“下载 RDP 文件”，并按照提示启动远程桌面会话    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
 
     >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
 
@@ -366,11 +366,11 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 1. 在“备份项目(Azure 备份代理)”边栏选项卡上，单击代表 az104-10-vm1 备份的条目 。
 
-1. On the <bpt id="p1">**</bpt>C:<ph id="ph1">\\</ph> on az104-10-vm1.<ept id="p1">**</ept> blade, select <bpt id="p1">**</bpt>View details<ept id="p1">**</ept> for <bpt id="p2">**</bpt>az104-10-vm1.<ept id="p2">**</ept> .
+1. 在“az104-10-vm1. 上的 C:\\” 边栏选项卡上，选择 az104-10-vm1. 相对应的“查看详细信息”  .
 
 1. 在“详细信息”边栏选项卡上，单击“az104-10-vm1”。
 
-1. On the <bpt id="p1">**</bpt>az104-10-vm1.<ept id="p1">**</ept> Protected Servers blade, click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>.
+1. 在“az104-10-vm1. ”受保护服务器边栏选项卡上，单击“删除”。
 
 1. 在“删除”边栏选项卡上，指定以下设置。
 
@@ -440,9 +440,9 @@ You have been tasked with evaluating the use of Azure Recovery Services for back
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 

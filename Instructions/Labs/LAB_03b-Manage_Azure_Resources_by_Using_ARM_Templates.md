@@ -10,7 +10,7 @@ lab:
 ## <a name="lab-scenario"></a>实验室方案
 你已探索了与使用 Azure 门户预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure 资源管理器模板来执行等效的任务。
 
-若要以交互式指南格式预览此实验室，请[单击此处](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)。
+                注意：我们提供[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -32,8 +32,6 @@ lab:
 
 #### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>任务 1：查看用于部署 Azure 托管磁盘的 ARM 模板
 
-在此任务中，你将使用一个 Azure 资源管理器模板创建一个 Azure 磁盘资源。
-
 1. 登录到 [**Azure 门户**](http://portal.azure.com)。
 
 1. 在 Azure 门户中，搜索并选择“资源组”。 
@@ -52,7 +50,7 @@ lab:
 
 1. 在“Microsoft.ManagedDisk-XXXXXXXXX \| 模板”边栏选项卡上，单击“输入”。
 
-1. Note the value of the <bpt id="p1">**</bpt>location<ept id="p1">**</ept> parameter. You will need it in the next task.
+1. 请记下“位置”参数的值。 稍后在下一个任务中将用到它。
 
 1. 将下载文件的内容提取到实验室计算机上的“下载”文件夹。
 
@@ -83,7 +81,7 @@ lab:
    },      
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: These parameters are removed since they are not applicable to the current deployment. In particular, sourceResourceId, sourceUri, osType, and hyperVGeneration parameters are applicable to creating an Azure disk from an existing VHD file.
+    >**注意**：由于这些参数不适用于当前部署，因此已将其移除。 sourceResourceId、sourceUri、osType 和 hyperVGeneration 参数尤其适用于根据现有 VHD 文件创建 Azure 磁盘。
 
 1. 保存更改。
 
@@ -93,7 +91,7 @@ lab:
 
 1. 返回“自定义部署”边栏选项卡，指定以下设置：
 
-    | 设置 | “值” |
+    | 设置 | 值 |
     | --- |--- |
     | 订阅 | *你在此实验室中使用的 Azure 订阅的名称* |
     | 资源组 | 新建资源组的名称 **az104-03b-rg1** |
@@ -122,7 +120,7 @@ lab:
 
 #### <a name="clean-up-resources"></a>清理资源
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not delete resources you deployed in this lab. You will reference them in the next lab of this module.
+   >**注意**：不要删除你在本实验室中部署的资源。 在本模块的下一个实验室中，你将引用它们。
 
 #### <a name="review"></a>审阅
 

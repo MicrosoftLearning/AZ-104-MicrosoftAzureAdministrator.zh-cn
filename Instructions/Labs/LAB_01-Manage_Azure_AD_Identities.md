@@ -10,7 +10,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-In order to allow Contoso users to authenticate by using Azure AD, you have been tasked with provisioning users and group accounts. Membership of the groups should be updated automatically based on the user job titles. You also need to create a test Azure AD tenant with a test user account and grant that account limited permissions to resources in the Contoso Azure subscription.
+为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。 组的成员身份应根据用户职位自动更新。 你还需要创建具有测试用户帐户的测试 Azure AD 租户，并向该帐户授予 Contoso Azure 订阅中资源的有限访问权限。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ## <a name="objectives"></a>目标
 
@@ -57,12 +59,12 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 用户名 | az104-01a-aaduser1 |
     | 名称 | az104-01a-aaduser1 |
     | 让我创建密码 | enabled |
-    | 初始密码 | 提供安全密码 |
+    | 初始密码 | **提供安全密码** |
     | 使用位置 | **美国** |
     | 职务 | 云管理员 |
     | 部门 | **IT** |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User Principal Name<ept id="p3">**</ept> (user name plus domain). You will need it later in this task.
+    >**注意**：将完整的“用户主体名称”（用户名加域）“复制到剪贴板”。 你将在此任务的后面部分使用它。
 
 1. 在用户列表中，单击新创建的用户帐户以显示其边栏选项卡。
 
@@ -72,13 +74,13 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
     >**注意**：预配新用户时，还可以选择分配 Azure AD 角色。
 
-1. Open an <bpt id="p1">**</bpt>InPrivate<ept id="p1">**</ept> browser window and sign in to the <bpt id="p2">[</bpt>Azure portal<ept id="p2">](https://portal.azure.com)</ept> using the newly created user account. When prompted to update the password, change the password to a secure password of your choosing. 
+1. 打开一个 InPrivate 浏览器窗口，并使用新创建的用户帐户登录到 [Azure 门户](https://portal.azure.com)。 当系统提示更新密码时，请将密码更改为所选的安全密码。 
 
     >**注意**：你可以粘贴剪贴板的内容，而不必输入用户名（包括域名）。
 
 1. 在“InPrivate”浏览器窗口，在 Azure 门户中，搜索并选择“Azure Active Directory” 。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: While this user account can access the Azure Active Directory tenant, it does not have any access to Azure resources. This is expected, since such access would need to be granted explicitly by using Azure Role-Based Access Control. 
+    >**注意**：尽管此用户帐户可以访问 Azure Active Directory 租户，但它无权访问 Azure 资源。 这很正常，因为需要使用 Azure 基于角色的访问控制来明确授予对 Azure 资源的访问权限。 
 
 1. 在“InPrivate”浏览器窗口，在 Azure AD 边栏选项卡上，向下滚动到“管理”部分，单击“用户设置”，请注意，你无权修改任何配置选项。
 
@@ -91,7 +93,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 用户名 | az104-01a-aaduser2 |
     | 名称 | az104-01a-aaduser2 |
     | 让我创建密码 | enabled |
-    | 初始密码 | 提供安全密码 |
+    | 初始密码 | **提供安全密码** |
     | 使用位置 | **美国** |
     | 职务 | **系统管理员** |
     | 部门 | **IT** |
@@ -112,7 +114,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 1. 刷新浏览器窗口，验证是否激活成功。 
 
- ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: It can take up to 10 minutes for the licenses to activate. Continue refreshing the page until it appears. Do not proceed until the licenses have been activated.
+ >**注意**：最多需要 10 分钟的时间，这些许可证才会激活。 继续刷新页面，直到许可证出现。 在许可证激活之前不要继续。
 
 1. 在“许可证 - 所有产品”边栏选项卡，选择“Azure Active Directory Premium P2”条目，然后将 Azure AD Premium P2 的所有许可证选项分配给你的用户帐户和两个新创建的用户帐户。
 
@@ -139,7 +141,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 运算符 | **等于** |
     | 值 | 云管理员 |
 
-1. 为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。 
+1. 通过依次单击“+添加表达式”和“保存”来保存规则 。 返回“新建组”边栏选项卡，单击“创建”。 
 
 1. 返回 Azure AD 租户的“组 - 所有组”边栏选项卡，单击“+ 新建组”按钮，并使用以下设置创建新组 ：
 
@@ -160,7 +162,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 运算符 | **等于** |
     | 值 | **系统管理员** |
 
-1. 组的成员身份应根据用户职位自动更新。 
+1. 通过依次单击“+添加表达式”和“保存”来保存规则 。 返回“新建组”边栏选项卡，单击“创建”。 
 
 1. 返回 Azure AD 租户的“组 - 所有组”边栏选项卡，单击“+ 新建组”按钮，并使用以下设置创建新组 ：
 
@@ -175,17 +177,17 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 1. 在“添加成员”边栏选项卡，搜索并选择“IT 云管理员”和“IT 系统管理员”组，然后回到“新组”边栏选项卡，单击“创建”。
 
-1. 你还需要创建具有测试用户帐户的测试 Azure AD 租户，并向该帐户授予 Contoso Azure 订阅中资源的有限访问权限。
+1. 回到“组 - 所有组”边栏选项卡，单击代表“IT 云管理员”组的条目，然后显示其“成员”边栏选项卡。 验证 az104-01a-aaduser1 出现在组成员列表中。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You might experience delays with updates of the dynamic membership groups. To expedite the update, navigate to the group blade, display its <bpt id="p1">**</bpt>Dynamic membership rules<ept id="p1">**</ept> blade, <bpt id="p2">**</bpt>Edit<ept id="p2">**</ept> the rule listed in the <bpt id="p3">**</bpt>Rule syntax<ept id="p3">**</ept> textbox by adding a whitespace at the end, and <bpt id="p4">**</bpt>Save<ept id="p4">**</ept> the change.
+    >**注意**：可能会遇到动态成员身份组更新导致的延迟。 为加速更新，请导航至组边栏选项卡，并显示其“动态成员资格规则”边栏选项卡，编辑“规则语法”文本框中列出的规则（在末尾添加一个空格），然后保存更改   。
 
-1. Navigate back to the <bpt id="p1">**</bpt>Groups - All groups<ept id="p1">**</ept> blade, click the entry representing the <bpt id="p2">**</bpt>IT System Administrators<ept id="p2">**</ept> group and, on then display its <bpt id="p3">**</bpt>Members<ept id="p3">**</ept> blade. Verify that the <bpt id="p1">**</bpt>az104-01a-aaduser2<ept id="p1">**</ept> appears in the list of group members.
+1. 导航回“组”-“所有组”边栏选项卡，单击代表“IT 系统管理员”组的条目，然后显示其“成员”边栏选项卡  。 验证 az104-01a-aaduser2 出现在组成员列表中。
 
 #### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>任务 3：创建 Azure Active Directory (AD) 租户（可选 - 实验室环境问题）
 
 在此任务中，你将创建新的 Azure AD 租户。
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: There is a known issue with the Captcha verification in the lab environment. If you experience this issue, please skip both this task and the next. We are working on a solution.
+   >**注意**：实验室环境中的 Captcha 验证存在一个已知问题。 如果你遇到此问题，请跳过该任务和下一个任务。 我们正在努力开发解决方案。
 
 1. 在 Azure 门户中，搜索并选择“Azure Active Directory”。
 
@@ -203,7 +205,7 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 初始域名 | 由小写字母和数字组成并以字母开头的任何有效 DNS 名称 | 
     | 国家/地区 | **美国** |
 
-   > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The <bpt id="p2">**</bpt>Initial domain name<ept id="p2">**</ept> should not be a legitimate name that potentially matches your organization or another. The green check mark in the <bpt id="p1">**</bpt>Initial domain name<ept id="p1">**</ept> text box will indicate that the domain name you typed in is valid and unique.
+   > **注意**：初始域名不应是可能与你的组织或其他组织的名称相冲突的合法名称。 “初始域名”文本框中出现绿色复选标记，表示你键入的域名有效且具有唯一性。
 
 1. 依次单击“查看 + 创建”、“创建”。 
 
@@ -222,17 +224,17 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
     | 用户名 | az104-01b-aaduser1 |
     | 名称 | az104-01b-aaduser1 |
     | 让我创建密码 | enabled |
-    | 初始密码 | 提供安全密码 |
+    | 初始密码 | **提供安全密码** |
     | 职务 | **系统管理员** |
     | 部门 | **IT** |
 
 1. 单击新建的个人资料。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User Principal Name<ept id="p3">**</ept> (user name plus domain). You will need it later in this task.
+    >**注意**：将完整的“用户主体名称”（用户名加域）“复制到剪贴板”。 你将在此任务的后面部分使用它。
 
 1. 使用 Azure 门户工具栏中的“目录 + 订阅”按钮（正在 Cloud Shell 按钮的右侧）切换回默认的 Azure AD 租户。
 
-1. 导航回“用户 - 所有用户”边栏选项卡，然后单击“+ 新增来宾用户”。
+1. 导航回“用户 - 所有用户”边栏选项卡，然后单击“+ 邀请外部用户”。 
 
 1. 使用以下设置邀请新的来宾用户（其他设置保留默认值）：
 
@@ -255,11 +257,11 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 #### <a name="task-5-clean-up-resources"></a>任务 5：清理资源
 
-> <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not incur unexpected costs. While, in this case, there are no additional charges associated with Azure Active Directory tenants and their objects, you might want to consider removing the user accounts, the group accounts, and the Azure Active Directory tenant you created in this lab.
+> **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源，确保不产生意外成本。 在这种情况下，虽然没有与 Azure Active Directory 租户及其对象相关的额外费用，但你可能需要考虑删除在此实验室中创建的用户帐户、组帐户和 Azure Active Directory 租户。
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
-1. In the <bpt id="p1">**</bpt>Azure Portal<ept id="p1">**</ept> search for <bpt id="p2">**</bpt>Azure Active Directory<ept id="p2">**</ept> in the search bar. Within <bpt id="p1">**</bpt>Azure Active Directory<ept id="p1">**</ept> under <bpt id="p2">**</bpt>Manage<ept id="p2">**</ept> select <bpt id="p3">**</bpt>Licenses<ept id="p3">**</ept>. Once at <bpt id="p1">**</bpt>Licenses<ept id="p1">**</ept> under <bpt id="p2">**</bpt>Manage<ept id="p2">**</ept> select <bpt id="p3">**</bpt>All Products<ept id="p3">**</ept> and then select <bpt id="p4">**</bpt>Azure Active Directory Premium P2<ept id="p4">**</ept> item in the list. Proceed by then selecting <bpt id="p1">**</bpt>Licensed Users<ept id="p1">**</ept>. Select the user accounts <bpt id="p1">**</bpt>az104-01a-aaduser1<ept id="p1">**</ept> and <bpt id="p2">**</bpt>az104-01a-aaduser2<ept id="p2">**</ept> to which you assigned licenses in this lab, click <bpt id="p3">**</bpt>Remove license<ept id="p3">**</ept>, and, when prompted to confirm, click <bpt id="p4">**</bpt>Yes<ept id="p4">**</ept>.
+1. 在 Azure 门户的搜索栏中，搜索“Azure Active Directory” 。 在“管理”下的“Azure Active Directory”中，选择“许可证”  。 在“管理”下的“许可证”处，选择“所有产品”，然后在列表中选择“Azure Active Directory Premium P2”项   。 然后选择“许可的用户”以继续。 选择在本实验室中为其分配了许可证的用户帐户 az104-01a-aaduser1 和 az104-01a-aaduser2，单击“删除许可证”，然后在系统提示确认时单击“是”   。
 
 1. 在 Azure 门户中，导航到“用户 - 所有用户”边栏选项卡，单击代表 az104-01b-aaduser1 来宾用户帐户的条目，在“az104-01b-aaduser1 - 个人资料”边栏选项卡上，单击“删除”，然后在系统提示确认时，单击“确定”。
 
@@ -271,11 +273,11 @@ In order to allow Contoso users to authenticate by using Azure AD, you have been
 
 1. 导航回到“用户 - 所有用户”边栏选项卡，单击代表“az104-01b-aaduser1”用户帐户的条目，在“az104-01b-aaduser1 - 配置文件”边栏选项卡上单击“删除”，然后在提示确认时单击“确定”。
 
-1. Navigate to the <bpt id="p1">**</bpt>Contoso Lab - Overview<ept id="p1">**</ept> blade of the Contoso Lab Azure AD tenant, click <bpt id="p2">**</bpt>Manage tenants<ept id="p2">**</ept> and then on the next screen, select the box next to <bpt id="p3">**</bpt>Contoso Lab<ept id="p3">**</ept>, click <bpt id="p4">**</bpt>Delete<ept id="p4">**</ept>, on the <bpt id="p5">**</bpt>Delete tenant 'Contoso Labs'?<ept id="p5">**</ept> blade, click the <bpt id="p1">**</bpt>Get permission to delete Azure resources<ept id="p1">**</ept> link, on the <bpt id="p2">**</bpt>Properties<ept id="p2">**</ept> blade of Azure Active Directory, set <bpt id="p3">**</bpt>Access management for Azure resources<ept id="p3">**</ept> to <bpt id="p4">**</bpt>Yes<ept id="p4">**</ept> and click <bpt id="p5">**</bpt>Save<ept id="p5">**</ept>.
+1. 导航到 Contoso 实验室 Azure AD 租户的“Contoso 实验室 - 概述”边栏选项卡，单击“管理租户”，然后在下一个屏幕上选择“Contoso 实验室”旁边的框，在“删除租户‘Contoso 实验室’?”边栏选项卡中单击“删除”，     单击“获取删除 Azure 资源的权限”链接，然后在 Azure Active Directory 的“属性”边栏选项卡上，将“Azure 资源的访问管理”设置为“是”，并单击“保存”    。
 
 1. 导航回“删除目录‘Contoso 实验室’”边栏选项卡，然后依次单击“刷新”和“删除”  。
 
-> <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If a tenant has a trial license, then you would have to wait for the trial license expiration before you could delete the tenant. This would not incur any additional cost.
+> **注意**：如果租户具有试用版许可证，则必须先等待试用版许可证过期，然后才能删除租户。 这不会产生任何额外费用。
 
 #### <a name="review"></a>审阅
 

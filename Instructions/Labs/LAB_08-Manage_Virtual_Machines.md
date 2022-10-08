@@ -1,7 +1,7 @@
 ---
 lab:
   title: 08 - 管理虚拟机
-  module: Module 08 - Virtual Machines
+  module: Administer Virtual Machines
 ---
 
 # <a name="lab-08---manage-virtual-machines"></a>实验室 08 - 管理虚拟机
@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You were tasked with identifying different options for deploying and configuring Azure virtual machines. First, you need to determine different compute and storage resiliency and scalability options you can implement when using Azure virtual machines. Next, you need to investigate compute and storage resiliency and scalability options that are available when using Azure virtual machine scale sets. You also want to explore the ability to automatically configure virtual machines and virtual machine scale sets by using the Azure Virtual Machine Custom Script extension.
+你的任务是确定用于部署和配置 Azure 虚拟机的不同选项。 首先，你需要确定在使用 Azure 虚拟机时可以采用的各种计算和存储复原与缩放选项。 接下来，你需要研究使用 Azure 虚拟机规模集时可用的计算和存储复原与缩放选项。 你还希望探索使用 Azure 虚拟机自定义脚本扩展自动配置虚拟机和虚拟机规模集的功能。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -93,11 +95,16 @@ You were tasked with identifying different options for deploying and configuring
 
     | 设置 | 值 |
     | --- | --- |
-    | 启动诊断 | 使用自定义存储帐户启用 |
-    | 诊断存储帐户 | 接受默认值 |
     | 补丁业务流程选项 | **手动更新** |  
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If necessary, select an existing storage account in the dropdown list or create a new storage account. Record the name of the storage account. You will use it in the next task.
+1. 单击“下一步: 监视 >”，在“创建虚拟机”边栏选项卡的“监视”选项卡上，指定以下设置（其他设置保留默认值）：  
+
+    | 设置 | 值 |
+    | --- | --- |
+    | 启动诊断 | 使用自定义存储帐户启用 |
+    | 诊断存储帐户 | **接受默认值** |
+
+    >**注意**：如有必要，请在下拉列表中选择现有存储帐户，或创建新的存储帐户。 记录存储帐户的名称。 你将在下一个任务中使用它。
 
 1. 单击“下一步:**高级 >”，在“创建虚拟机”边栏选项卡的“高级”选项卡上，查看可用设置（不做任何修改），然后单击“查看 + 创建”**   。
 
@@ -127,7 +134,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 单击“查看 + 创建”，在“查看 + 创建”边栏选项卡上，单击“创建”  。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for both deployments to complete before you proceed to the next task. This might take about 5 minutes.
+    >**注意**：等待两个部署完成，然后继续进行下一个任务。 这可能需要大约 5 分钟。
 
 #### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>任务 2：使用虚拟机扩展配置 Azure 虚拟机
 
@@ -170,11 +177,11 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“自定义部署”边栏选项卡上，单击“编辑模板”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Disregard the message stating <bpt id="p2">**</bpt>The resource group is in a location that is not supported by one or more resources in the template. Please choose a different resource group<ept id="p2">**</ept>. This is expected and can be ignored in this case.
+    >**注意**：忽略此消息：“资源组位于模板中一个或多个资源不支持的位置。请选择其他资源组”。 这是在预料之中的，在这种情况下可以忽略。
 
 1. 在“编辑模板”边栏选项卡上显示模板内容的部分，从第 20 行开始（在 `"resources": [` 行的正下方）插入以下代码 ：
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 20.
+   >**注意**：如果使用逐行粘贴代码的工具，IntelliSense 可能会添加多余的括号，从而导致验证错误。 可能需要先将代码粘贴到记事本中，再将其粘贴到第 20 行中。
 
    ```json
         {
@@ -202,7 +209,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 单击“保存”，返回“自定义模板”边栏选项卡，单击“查看 + 创建”，然后在“查看 + 创建”边栏选项卡上，单击“创建”    
 
-    >你的任务是确定用于部署和配置 Azure 虚拟机的不同选项。
+    >**注意**：请等待模板部署完成。 可从 az104-08-vm0 和 az104-08-vm1 虚拟机的“扩展”边栏选项卡监控进度。 所需时长应该不超过 3 分钟。
 
 1. 要验证基于自定义脚本扩展的配置是否成功，请导航回“az104-08-vm1”边栏选项卡，单击“操作”部分的“运行命令”，然后单击命令列表中的“RunPowerShellScript”   。
 
@@ -272,7 +279,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“自定义部署”边栏选项卡上，单击“编辑模板”。
 
-    >首先，你需要确定在使用 Azure 虚拟机时可以采用的各种计算和存储复原与缩放选项。
+    >**注意**：忽略此消息：“资源组位于模板中一个或多个资源不支持的位置。请选择其他资源组”。 这是在预料之中的，在这种情况下可以忽略。
 
 1. 在“编辑模板”边栏选项卡上显示模板内容的部分，将第 30 行 `"vmSize": "Standard_D2s_v3"` 替换为以下行 ：
 
@@ -304,14 +311,14 @@ You were tasked with identifying different options for deploying and configuring
                     ]
    ```
 
-    >接下来，你需要研究使用 Azure 虚拟机规模集时可用的计算和存储复原与缩放选项。
+    >**注意**：如果使用逐行粘贴代码的工具，IntelliSense 可能会添加多余的括号，从而导致验证错误。 可能需要先将代码粘贴到记事本，再将其粘贴到第 49 行中。
 
     >**注意**：模板此部分创建两个托管磁盘并将其附加到 az104-08-vm1，类似于通过 Azure 门户对第一台虚拟机进行的存储配置。
 
 
 1. 单击“保存”，返回“自定义部署”边栏选项卡，单击“查看 + 创建”，然后在“查看 + 创建”边栏选项卡上，单击“创建”    。
 
-    >你还希望探索使用 Azure 虚拟机自定义脚本扩展自动配置虚拟机和虚拟机规模集的功能。
+    >**注意**：请等待模板部署完成。 从 az104-08-vm1 虚拟机的“磁盘”边栏选项卡可以监控进度 。 所需时长应该不超过 3 分钟。
 
 1. 回到“az104-08-vm1”边栏选项卡，单击“操作”部分的“运行命令”，然后单击命令列表中的“RunPowerShellScript”   。
 
@@ -402,7 +409,7 @@ You were tasked with identifying different options for deploying and configuring
     | 目标端口范围 | **80** |
     | 协议 | **TCP** |
     | 操作 | **允许** |
-    | 优先级 | 1010 |
+    | 优先级 | **1.0.10** |
     | “属性” | custom-allow-http |
 
 1. 单击“添加”，回到“创建网络安全组”边栏选项卡，单击“确定”  。
@@ -447,7 +454,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 在“创建虚拟机规模集”边栏选项卡的“查看 + 创建”选项卡上确保验证通过，然后单击“创建”。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the virtual machine scale set deployment to complete. This should take about 5 minutes.
+    >**注意**：请等待虚拟机规模集部署完成。 这大约需要 5 分钟。
 
 #### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>任务 6：使用虚拟机扩展配置 Azure 虚拟机规模集
 
@@ -580,7 +587,7 @@ You were tasked with identifying different options for deploying and configuring
 
 1. 保存更改，单击“az10408vmss0”边栏选项卡“设置”部分的“实例”，选中虚拟机规模集实例旁边的复选框，单击“升级”，然后在提示确认时，单击“是”    。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, create a filesystem, and mount it. To accomplish this, you will use Azure virtual machine Custom Script extension. First, you will need to remove the existing Custom Script Extension.
+    >**注意**：上一步中附加的磁盘是原始磁盘。 在使用之前需要创建一个分区、创建文件系统并进行装载。 为此，将使用 Azure 虚拟机自定义脚本扩展。 首先，需要删除现有的自定义脚本扩展。
 
 1. 在“az10408vmss0”边栏选项卡的“设置”部分，单击“扩展”，单击“CustomScriptExtension”，然后单击“卸载”。
 
@@ -614,9 +621,9 @@ You were tasked with identifying different options for deploying and configuring
 
 #### <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
 1. 通过运行以下命令删除 az104-08-configure_VMSS_disks.ps1：

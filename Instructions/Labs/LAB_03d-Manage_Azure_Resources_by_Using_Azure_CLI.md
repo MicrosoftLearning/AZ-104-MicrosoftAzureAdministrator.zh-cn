@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-Now that you explored the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups by using the Azure portal, Azure Resource Manager templates, and Azure PowerShell, you need to carry out the equivalent task by using Azure CLI. To avoid installing Azure CLI, you will leverage Bash environment available in Azure Cloud Shell.
+你已经探索了与使用 Azure 门户、Azure 资源管理器模板和 Azure PowerShell 预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在需要使用 Azure CLI 来执行等效的任务。 为了避免安装 Azure CLI，你将利用 Azure Cloud Shell 中提供的 Bash 环境。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -20,6 +22,10 @@ Now that you explored the basic Azure administration capabilities associated wit
 + 任务 3：使用 Azure CLI 配置托管磁盘
 
 ## <a name="estimated-timing-20-minutes"></a>预计用时：20 分钟
+
+## <a name="architecture-diagram"></a>体系结构关系图
+
+![image](../media/lab03d.png)
 
 ## <a name="instructions"></a>说明
 
@@ -106,9 +112,9 @@ Now that you explored the basic Azure administration capabilities associated wit
 
 #### <a name="clean-up-resources"></a>清理资源
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户中，在 Cloud Shell 窗格中打开 Bash Shell 会话 。
 

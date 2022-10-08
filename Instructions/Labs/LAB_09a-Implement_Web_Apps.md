@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
+你需要评估可否使用 Azure Web 应用来托管 Contoso 的网站，这些网站当前托管在公司的本地数据中心。 网站通过 PHP 运行时堆栈在 Windows 服务器上运行。 你还需要确定如何利用 Azure Web 应用部署槽位来实施 DevOps 实践。
+
+                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## <a name="objectives"></a>目标
 
@@ -53,9 +55,9 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
     | 区域 | 可以在其中预配 Azure Web 应用的 Azure 区域的名称 |
     | 应用服务计划 | 接受默认配置 |
 
-1. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept>. On the <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept> tab of the <bpt id="p2">**</bpt>Create Web App<ept id="p2">**</ept> blade, ensure that the validation passed and click <bpt id="p3">**</bpt>Create<ept id="p3">**</ept>.
+1. 单击“查看 + 创建”。 在“创建 Web 应用”边栏选项卡的“查看 + 创建”选项卡上，确保验证通过，然后单击“创建”  。
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait until the web app is created before you proceed to the next task. This should take about a minute.
+    >**注意**：请等到 Web 应用创建完成，再继续执行下一个任务。 此操作大约需要 1 分钟。
 
 1. 在“部署”边栏选项卡上，单击“前往资源”。
 
@@ -149,7 +151,7 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 1. 在暂存槽位边栏选项卡上，单击“概述”，再单击 URL 链接，在新的浏览器选项卡中显示默认网页 。
 
-1. Verify that the browser page displays the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> message and close the new tab.
+1. 验证浏览器页是否显示“Hello World!” 消息并关闭新标签页。
 
 #### <a name="task-5-swap-the-staging-slots"></a>任务 5：交换暂存槽位
 
@@ -163,7 +165,7 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 1. 在 Web 应用的生产槽位边栏选项卡上单击“概述”，然后单击 URL 链接，在新的浏览器选项卡中显示网站主页 。
 
-1. Verify the default web page has been replaced with the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> page.
+1. 验证默认网页是否已替换为“Hello World!” 页面。
 
 #### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>任务 6：配置并测试 Azure Web 应用的自动缩放
 
@@ -239,9 +241,9 @@ You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, 
 
 #### <a name="clean-up-resources"></a>清理资源
 
->你需要评估可否使用 Azure Web 应用来托管 Contoso 的网站，这些网站当前托管在公司的本地数据中心。
+>**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
->网站通过 PHP 运行时堆栈在 Windows 服务器上运行。 
+>**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
