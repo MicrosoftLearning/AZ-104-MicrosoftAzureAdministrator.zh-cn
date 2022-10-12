@@ -27,6 +27,10 @@ lab:
 
 ## <a name="estimated-timing-50-minutes"></a>预计用时：50 分钟
 
+## <a name="architecture-diagram"></a>体系结构关系图
+
+![image](../media/lab10.png)
+
 ## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>练习 1
