@@ -27,6 +27,10 @@ lab:
 
 ## <a name="estimated-timing-45-minutes"></a>预计用时：45 分钟
 
+## <a name="architecture-diagram"></a>体系结构关系图
+
+![image](../media/lab11.png)
+
 ## <a name="instructions"></a>说明
 
 ### <a name="exercise-1"></a>练习 1
@@ -115,7 +119,7 @@ lab:
 
     >**注意**：务必根据[工作区映射文档](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)指定 Azure 区域
 
-    >备注：请等待部署完成。 部署可能需要大约 3 分钟。
+    >注意：请等待部署完成。 部署可能需要大约 3 分钟。
 
 1. 单击“转到资源”。
 
@@ -123,7 +127,7 @@ lab:
 
 1. 在“清单”窗格中的“Log Analytics 工作区”下拉列表中，选择你之前在此任务中创建的 Log Analytics 工作区，然后单击“启用”。
 
-    >备注：请等待相应 Log Analytics 解决方案的安装完成。 这可能需要大约 3 分钟的时间。
+    >备注：请等待相应 Log Analytics 解决方案的安装完成。 这可能需要大约 3 分钟。
 
     >备注：这还会自动安装“更改跟踪”解决方案 。
 
