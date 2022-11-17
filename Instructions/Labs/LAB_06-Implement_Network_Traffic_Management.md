@@ -33,7 +33,7 @@ lab:
 ![image](../media/lab06.png)
 
 
-## <a name="instructions"></a>说明
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>练习 1
 
@@ -41,7 +41,7 @@ lab:
 
 在此任务中，你将会把四台虚拟机部署到同一 Azure 区域中。 前两个将驻留在中心虚拟网络中，后两个将各自驻留在单独的辐射虚拟网络中。
 
-1. 登录到 [Azure 门户](https://portal.azure.com)。
+1. 登录 [Azure 门户](https://portal.azure.com)。
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
@@ -416,7 +416,7 @@ lab:
     | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
-    | 资源组 | az104-06-rg1 |
+    | 资源组 | **az104-06-rg4** |
     | 名称 | az104-06-lb4 |
     | 区域 | 在本实验室中部署所有其他资源的 Azure 区域的名称 |
     | SKU  | **标准** |
@@ -511,7 +511,7 @@ lab:
     | 设置 | 值 |
     | --- | --- |
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
-    | 资源组 | az104-06-rg1 |
+    | 资源组 | **az104-06-rg6** |
     | 应用程序网关名称 | az104-06-appgw5 |
     | 区域 | 在本实验室中部署所有其他资源的 Azure 区域的名称 |
     | 层 | 标准 V2 |
