@@ -119,7 +119,7 @@ lab:
 
     >**注意**：务必根据[工作区映射文档](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)指定 Azure 区域
 
-    >注意：请等待部署完成。 部署可能需要大约 3 分钟。
+    >备注：请等待部署完成。 部署可能需要大约 3 分钟。
 
 1. 单击“转到资源”。
 

@@ -27,7 +27,7 @@ lab:
 
 ![image](../media/lab03a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>说明
 
 ### <a name="exercise-1"></a>练习 1
 
