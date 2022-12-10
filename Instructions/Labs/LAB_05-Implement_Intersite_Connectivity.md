@@ -33,7 +33,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 
 在此任务中，你将部署三个虚拟机，每个虚拟机都部署到一个独立的虚拟网络中。其中两个在同一个 Azure 区域中，第三个在另一个 Azure 区域中。
 
-1. 登录到 [Azure 门户](https://portal.azure.com)。
+1. 登录 [Azure 门户](https://portal.azure.com)。
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
