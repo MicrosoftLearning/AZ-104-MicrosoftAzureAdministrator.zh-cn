@@ -40,7 +40,7 @@ lab:
 ![image](../media/lab02a.png)
 
 
-## <a name="instructions"></a>说明
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>练习 1
 
@@ -147,7 +147,7 @@ lab:
 
     >注意：如果自定义角色不可见，那么自定义角色创建后可能需要 10 分钟才能出现。
 
-1. 选择“角色”并单击“下一步”。  在“成员”选项卡上，单击“+ 选择成员”，选择用户帐户 az104-***********************.**********.onmicrosoft.com。   单击“下一步”，然后单击“查看并分配”。 
+1. 选择“角色”并单击“下一步”。  在“成员”选项卡上，单击“+ 选择成员”，然后选择用户帐户 az104-***********************.**********.onmicrosoft.com。   单击“下一步”，然后单击“查看并分配”。 
 
 1. 打开一个 InPrivate 浏览器窗口，并使用新创建的用户帐户登录到 [Azure 门户](https://portal.azure.com)。 当提示更新密码时，更改该用户的密码。
 
@@ -185,9 +185,9 @@ lab:
 
    ```powershell
    
-   $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes[0]
-
-   Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
+    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    
+    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
    ```
 
 1. 在 Cloud Shell 窗格中，运行下列命令以删除自定义角色定义：
