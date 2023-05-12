@@ -4,33 +4,33 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09b---implement-azure-container-instances"></a>实验室 09b - 实现 Azure 容器实例
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 09b - 实现 Azure 容器实例
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了大量可用于实现该目标的容器映像。 由于你想要最大程度地减少容器管理，因此计划评估 Azure 容器实例在 Docker 映像部署中的使用。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
 - 任务 1：使用 Azure 容器实例部署 Docker 容器映像
 - 任务 2：查看 Azure 容器实例的功能
 
-## <a name="estimated-timing-20-minutes"></a>预计用时：20 分钟
+## 预计用时：20 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab09b.png)
 
-## <a name="instructions"></a>说明
+## 说明
 
-### <a name="exercise-1"></a>练习 1
+### 练习 1
 
-#### <a name="task-1-deploy-a-docker-image-by-using-the-azure-container-instance"></a>任务 1：使用 Azure 容器实例部署 Docker 容器映像
+#### 任务 1：使用 Azure 容器实例部署 Docker 容器映像
 
 在此任务中，你将为 Web 应用程序创建一个新的容器实例。
 
@@ -63,7 +63,7 @@ Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了�
 
     >**注意**：在等待期间，你可能有兴趣查看[示例应用程序背后的代码](https://github.com/Azure-Samples/aci-helloworld)。 若要查看，请浏览 \\app 文件夹。
 
-#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>任务 2：查看 Azure 容器实例的功能
+#### 任务 2：查看 Azure 容器实例的功能
 
 在此任务中，你将查看容器实例的部署。
 
@@ -79,13 +79,15 @@ Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了�
 
 1. 验证你是否看到代表通过在浏览器中显示应用程序生成的 HTTP GET 请求的日志条目。
 
-#### <a name="clean-up-resources"></a>清理资源
+#### 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
 >**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要较长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
 
 1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
+
+    >注意：必须创建 Cloud Shell 存储才能确保这些命令正常工作。 
 
 1. 运行以下命令，列出在本模块各实验室中创建的所有资源组：
 
@@ -101,7 +103,7 @@ Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了�
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+#### 审阅
 
 在此实验室中，你执行了以下操作：
 
