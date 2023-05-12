@@ -4,16 +4,16 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09c---implement-azure-kubernetes-service"></a>实验室 09c - 实现 Azure Kubernetes 服务
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 09c - 实现 Azure Kubernetes 服务
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程序。 为确定它们是否可作为容器化工作负载运行，你希望评估可否使用 Kubernetes 作为容器业务流程协调程序。 为了进一步减少管理开销，你希望测试 Azure Kubernetes 服务，包括该服务的简化部署体验和缩放功能。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -22,17 +22,17 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 + 任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
 + 任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
 
-## <a name="estimated-timing-40-minutes"></a>预计用时：40 分钟
+## 预计用时：40 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab09c.png)
 
-## <a name="instructions"></a>说明
+## 说明
 
-### <a name="exercise-1"></a>练习 1
+### 练习 1
 
-#### <a name="task-1-register-the-microsoftkubernetes-and-microsoftkubernetesconfiguration-resource-providers"></a>任务 1：注册 Microsoft.Kubernetes 和 Microsoft.KubernetesConfiguration 资源提供程序。
+#### 任务 1：注册 Microsoft.Kubernetes 和 Microsoft.KubernetesConfiguration 资源提供程序。
 
 在此任务中，将注册部署 Azure Kubernetes 服务群集所需的资源提供程序。
 
@@ -54,7 +54,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="task-2-deploy-an-azure-kubernetes-service-cluster"></a>任务 2：部署 Azure Kubernetes 服务群集
+#### 任务 2：部署 Azure Kubernetes 服务群集
 
 在此任务中，你将使用 Azure 门户部署 Azure Kubernetes 服务群集。
 
@@ -94,15 +94,22 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
     | 设置 | 值 |
     | ---- | ---- |
     | 网络配置 | **kubenet** |
-    | DNS 名称前缀 | 任何有效且全局唯一的 DNS 前缀|
+    | DNS 名称前缀 | **任何有效且全局唯一的 DNS 前缀** |
 
-1. 单击“下一步:集成 >”，然后在“创建 Kubernetes 群集”边栏选项卡的“集成”选项卡中，将“容器监视”设置为“禁用”，单击“查看 + 创建”，确保验证通过并单击“创建”     。
+1. 单击“下一步: 集成 >”，在“创建 Kubernetes 群集”边栏选项卡的“集成”选项卡上，指定以下设置（其他设置保留默认值）  ：
+
+    | 设置 | 值 |
+    | ---- | ---- |
+    | 容器监视 | **Disable** |
+    | 启用建议的警报规则 | **取消选中** |
+    
+1.  单击“查看 + 创建”，确保通过验证，然后单击“创建” 。
 
     >**注意**：在生产方案中，你需要启用监视。 在这种情况下，由于实验室未涵盖监视，因此禁用监视。
 
     >**注意**：等待部署完成。 这需要约 10 分钟。
 
-#### <a name="task-3-deploy-pods-into-the-azure-kubernetes-service-cluster"></a>任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
+#### 任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
 
 在此任务中，将 Pod 部署到 Azure Kubernetes 服务群集中。
 
@@ -170,7 +177,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 打开浏览器窗口，然后导航到你在上一步中获取的 IP 地址。 验证浏览器页面是否显示“欢迎使用 nginx!” 消息作为响应。
 
-#### <a name="task-4-scale-containerized-workloads-in-the-azure-kubernetes-service-cluster"></a>任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
+#### 任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
 
 在此任务中，你将水平缩放 Pod 的数量和群集节点的数量。
 
@@ -238,7 +245,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="clean-up-resources"></a>清理资源
+#### 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -260,7 +267,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
     >**注意**：该命令以异步方式执行（由 --nowait 参数确定），因此，尽管可立即在同一 Bash 会话中运行另一个 Azure CLI 命令，但实际上要花几分钟才能删除资源组。
 
-#### <a name="review"></a>审阅
+#### 审阅
 
 在此实验室中，你执行了以下操作：
 
