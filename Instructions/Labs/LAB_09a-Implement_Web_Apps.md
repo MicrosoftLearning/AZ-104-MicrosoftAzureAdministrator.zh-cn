@@ -4,16 +4,16 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09a---implement-web-apps"></a>实验室 09a - 实现 Web 应用
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 09a - 实现 Web 应用
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你需要评估可否使用 Azure Web 应用来托管 Contoso 的网站，这些网站当前托管在公司的本地数据中心。 网站通过 PHP 运行时堆栈在 Windows 服务器上运行。 你还需要确定如何利用 Azure Web 应用部署槽位来实施 DevOps 实践。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -24,17 +24,17 @@ lab:
 + 任务 5：交换暂存槽位
 + 任务 6：配置并测试 Azure Web 应用的自动缩放
 
-## <a name="estimated-timing-30-minutes"></a>预计用时：30 分钟
+## 预计用时：30 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab09a.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-create-an-azure-web-app"></a>任务 1：创建 Azure Web 应用
+## 任务 1：创建 Azure Web 应用
 
 在此任务中，你将创建 Azure Web 应用。
 
@@ -61,7 +61,7 @@ lab:
 
 1. 在“部署”边栏选项卡上，单击“前往资源”。
 
-#### <a name="task-2-create-a-staging-deployment-slot"></a>任务 2：创建过渡部署槽位
+## 任务 2：创建过渡部署槽位
 
 在此任务中，你将创建暂存部署槽位。
 
@@ -84,7 +84,7 @@ lab:
 
 1. 查看过渡槽边栏选项卡，注意其 URL 与分配给生产槽的 URL 不同。
 
-#### <a name="task-3-configure-web-app-deployment-settings"></a>任务 3：配置 Web 应用部署设置
+## 任务 3：配置 Web 应用部署设置
 
 在此任务中，你将配置 Web 应用部署设置。
 
@@ -107,7 +107,7 @@ lab:
 
     >**注意：** 你将在此实验室的下一个任务中用到这些凭据。
 
-#### <a name="task-4-deploy-code-to-the-staging-deployment-slot"></a>任务 4：将代码部署到暂存部署槽位
+## 任务 4：将代码部署到暂存部署槽位
 
 在此任务中，你会将代码部署到暂存部署槽位。
 
@@ -151,7 +151,7 @@ lab:
 
 1. 验证浏览器页是否显示“Hello World!” 消息并关闭新标签页。
 
-#### <a name="task-5-swap-the-staging-slots"></a>任务 5：交换暂存槽位
+## 任务 5：交换暂存槽位
 
 在此任务中，你会将过渡槽与生产槽交换
 
@@ -165,7 +165,7 @@ lab:
 
 1. 验证默认网页是否已替换为“Hello World!” 页面。
 
-#### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>任务 6：配置并测试 Azure Web 应用的自动缩放
+## 任务 6：配置并测试 Azure Web 应用的自动缩放
 
 在此任务中，你将配置和测试 Azure Web 应用的自动缩放。
 
@@ -237,7 +237,7 @@ lab:
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -259,7 +259,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

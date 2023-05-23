@@ -28,11 +28,11 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 ![image](../media/lab09c.png)
 
-## 说明
+### 说明
 
-### 练习 1
+## 练习 1
 
-#### 任务 1：注册 Microsoft.Kubernetes 和 Microsoft.KubernetesConfiguration 资源提供程序。
+## 任务 1：注册 Microsoft.Kubernetes 和 Microsoft.KubernetesConfiguration 资源提供程序。
 
 在此任务中，将注册部署 Azure Kubernetes 服务群集所需的资源提供程序。
 
@@ -54,7 +54,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 关闭 Cloud Shell 窗格。
 
-#### 任务 2：部署 Azure Kubernetes 服务群集
+## 任务 2：部署 Azure Kubernetes 服务群集
 
 在此任务中，你将使用 Azure 门户部署 Azure Kubernetes 服务群集。
 
@@ -109,7 +109,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
     >**注意**：等待部署完成。 这需要约 10 分钟。
 
-#### 任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
+## 任务 3：将 Pod 部署到 Azure Kubernetes 服务群集
 
 在此任务中，将 Pod 部署到 Azure Kubernetes 服务群集中。
 
@@ -177,7 +177,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 打开浏览器窗口，然后导航到你在上一步中获取的 IP 地址。 验证浏览器页面是否显示“欢迎使用 nginx!” 消息作为响应。
 
-#### 任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
+## 任务 4：缩放 Azure Kubernetes 服务群集中的容器化工作负载
 
 在此任务中，你将水平缩放 Pod 的数量和群集节点的数量。
 
@@ -245,7 +245,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
 1. 关闭 Cloud Shell 窗格。
 
-#### 清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -267,7 +267,7 @@ Contoso 具有许多不适合使用 Azure 容器实例运行的多层应用程�
 
     >**注意**：该命令以异步方式执行（由 --nowait 参数确定），因此，尽管可立即在同一 Bash 会话中运行另一个 Azure CLI 命令，但实际上要花几分钟才能删除资源组。
 
-#### 审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

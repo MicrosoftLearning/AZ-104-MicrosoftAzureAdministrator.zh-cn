@@ -4,15 +4,15 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>实验室 03b - 使用 ARM 模板管理 Azure 资源
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 03b - 使用 ARM 模板管理 Azure 资源
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 你已探索了与使用 Azure 门户预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure 资源管理器模板来执行等效的任务。
 
                 注意：我们提供[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -20,17 +20,17 @@ lab:
 + 任务 2：使用 ARM 模板创建 Azure 托管磁盘
 + 任务 3：查看基于 ARM 模板的托管磁盘部署
 
-## <a name="estimated-timing-20-minutes"></a>预计用时：20 分钟
+## 预计用时：20 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab03b.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>任务 1：查看用于部署 Azure 托管磁盘的 ARM 模板
+## 任务 1：查看用于部署 Azure 托管磁盘的 ARM 模板
 
 1. 登录到 [**Azure 门户**](http://portal.azure.com)。
 
@@ -58,7 +58,7 @@ lab:
     
 1. 关闭所有“文件资源管理器”窗口。
 
-#### <a name="task-2-create-an-azure-managed-disk-by-using-an-arm-template"></a>任务 2：使用 ARM 模板创建 Azure 托管磁盘
+## 任务 2：使用 ARM 模板创建 Azure 托管磁盘
 
 1. 在 Azure 门户中搜索并选择“部署自定义模板”。
 
@@ -108,7 +108,7 @@ lab:
 
 1. 验证部署是否已成功完成。
 
-#### <a name="task-3-review-the-arm-template-based-deployment-of-the-managed-disk"></a>任务 3：查看基于 ARM 模板的托管磁盘部署
+## 任务 3：查看基于 ARM 模板的托管磁盘部署
 
 1. 在 Azure 门户中，搜索并选择“资源组”。 
 
@@ -118,11 +118,11 @@ lab:
 
 1. 在“az104-03b-rg1 - 部署”边栏选项卡上，单击部署列表中的第一个条目，然后查看“输入”和“模板”边栏选项卡的内容。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
    >**注意**：不要删除你在本实验室中部署的资源。 在本模块的下一个实验室中，你将引用它们。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 
