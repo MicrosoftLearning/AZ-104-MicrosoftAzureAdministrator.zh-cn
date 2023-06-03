@@ -4,17 +4,17 @@ lab:
   module: Administer Virtual Networking
 ---
 
-# <a name="lab-04---implement-virtual-networking"></a>实验室 04 - 实现虚拟网络
+# 实验室 04 - 实现虚拟网络
 
-# <a name="student-lab-manual"></a>学生实验室手册
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你需要探索 Azure 虚拟网络功能。 首先，你计划在 Azure 中创建一个将托管几个 Azure 虚拟机的虚拟网络。 由于你打算实现基于网络的分段，因此会将这些虚拟机部署到虚拟网络的不同子网中。 你还希望确保其专用 IP 地址和公共 IP 地址不会随着时间的推移而发生变化。 为了符合 Contoso 的安全要求，你需要保护可从 Internet 访问的 Azure 虚拟机公共终结点。 最后，你需要为虚拟网络和 Internet 内的 Azure 虚拟机实现 DNS 名称解析。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -25,17 +25,17 @@ lab:
 + 任务 5：配置 Azure DNS 以进行内部名称解析
 + 任务 6：配置 Azure DNS 以进行外部名称解析
 
-## <a name="estimated-timing-40-minutes"></a>预计用时：40 分钟
+## 预计用时：40 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab04.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-create-and-configure-a-virtual-network"></a>任务 1：创建和配置虚拟网络
+## 任务 1：创建和配置虚拟网络
 
 在此任务中，你将使用 Azure 门户创建一个包含多个子网的虚拟网络
 
@@ -52,14 +52,15 @@ lab:
     | 名称 | **az104-04-vnet1** |
     | 区域 | 本实验室将使用的订阅中可用的任何 Azure 区域的名称 |
 
-1. 单击“下一页: IP 地址”，并删除现有 IPv4 地址空间 。 在“IPv4 地址空间”文本框中，键入 10.40.0.0/20 。
+1. 单击“下一页: IP 地址”。 “起始地址”为 10.40.0.0 。 “地址空间大小”为 /20 。 请务必单击“添加”。 
 
 1. 单击“+ 添加子网”，输入以下值，然后单击“添加” 。
 
     | 设置 | 值 |
     | --- | --- |
     | 子网名称 | subnet0 |
-    | 子网地址范围 | **10.40.0.0/24** |
+    | 开始地址 | **10.40.0.0/24** |
+    | 开始地址 | **/24（256 个地址）** |
 
 1. 接受默认值，并单击“查看和创建”。 允许进行验证，然后再次单击“创建”以提交部署。
 
@@ -80,7 +81,7 @@ lab:
 
 1. 单击“保存” 
 
-#### <a name="task-2-deploy-virtual-machines-into-the-virtual-network"></a>任务 2：将虚拟机部署到虚拟网络中
+## 任务 2：将虚拟机部署到虚拟网络中
 
 在此任务中，你将使用 ARM 模板将 Azure 虚拟机部署到虚拟网络的不同子网中
 
@@ -94,10 +95,9 @@ lab:
 
     >注意：必须分别上传各个文件。 上传后，使用 dir 确保已成功上传这两个文件。
 
-1. 编辑 Parameters 文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
-
 1. 在 Cloud Shell 窗格中，使用模板和参数文件运行以下命令，以部署两台虚拟机：
-
+    >注意：系统会提示你提供管理员密码。
+    
    ```powershell
    $rgName = 'az104-04-rg1'
 
@@ -106,7 +106,7 @@ lab:
       -TemplateFile $HOME/az104-04-vms-loop-template.json `
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
-
+   
     >**注意**：这种部署 ARM 模板的方法使用了 Azure PowerShell。 你可以通过运行等效的 Azure CLI 命令 az deployment create 来执行相同的任务（有关详细信息，请参阅[使用资源管理器模板和 Azure CLI 部署资源](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)。
 
     >**注意**：请等待部署完成后再继续下一个任务。 这大约需要 2 分钟。
@@ -120,7 +120,7 @@ lab:
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>任务 3：配置 Azure VM 的专用 IP 地址和公共 IP 地址
+#### 任务 3：配置 Azure VM 的专用 IP 地址和公共 IP 地址
 
 在此任务中，你将配置分配到 Azure 虚拟机网络接口的公共 IP 地址和专用 IP 地址的静态分配。
 
@@ -174,7 +174,7 @@ lab:
 
     >**注意**：本实验室的最后一个任务中需要这两个 IP 地址。
 
-#### <a name="task-4-configure-network-security-groups"></a>任务 4：配置网络安全组
+## 任务 4：配置网络安全组
 
 在此任务中，你将配置网络安全组，以允许对 Azure 虚拟机的受限连接。
 
@@ -243,7 +243,7 @@ lab:
 
     >**注意**：使远程桌面会话保持开启状态。 稍后在下一个任务中将用到它。
 
-#### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>任务 5：配置 Azure DNS 以进行内部名称解析
+#### 任务 5：配置 Azure DNS 以进行内部名称解析
 
 在此任务中，你将使用 Azure 专用 DNS 区域在虚拟网络中配置 DNS 名称解析。
 
@@ -295,7 +295,7 @@ lab:
 
 1. 验证命令的输出是否包含 az104-04-vm1 的专用 IP 地址 (10.40.1.4) 。
 
-#### <a name="task-6-configure-azure-dns-for-external-name-resolution"></a>任务 6：配置 Azure DNS 以进行外部名称解析
+## 任务 6：配置 Azure DNS 以进行外部名称解析
 
 此任务将使用 Azure 公用 DNS 区域配置外部 DNS 名称解析。
 
@@ -369,7 +369,7 @@ lab:
 
 1. 验证命令输出是否包含 az104-04-vm1 的公共 IP 地址。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
  > **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -391,7 +391,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

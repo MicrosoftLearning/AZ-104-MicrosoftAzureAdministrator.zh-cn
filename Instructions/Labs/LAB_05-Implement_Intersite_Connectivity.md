@@ -4,16 +4,16 @@ lab:
   module: Administer Intersite Connectivity
 ---
 
-# <a name="lab-05---implement-intersite-connectivity"></a>实验室 05 - 实现站点间连接
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 05 - 实现站点间连接
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。 需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -21,15 +21,15 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 + 任务 2：配置本地和全局虚拟网络对等互连
 + 任务 3：测试站点间连接
 
-## <a name="estimated-timing-30-minutes"></a>预计用时：30 分钟
+## 预计用时：30 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab05.png)
 
-### <a name="instructions"></a>说明
+### 说明
 
-#### <a name="task-1-provision-the-lab-environment"></a>任务 1：预配实验室环境
+#### 任务 1：预配实验室环境
 
 在此任务中，你将部署三个虚拟机，每个虚拟机都部署到一个独立的虚拟网络中。其中两个在同一个 Azure 区域中，第三个在另一个 Azure 区域中。
 
@@ -41,9 +41,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 
     >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。
 
-1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，然后将文件 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json 和 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json 上传到 Cloud Shell 主目录中   。
-
-1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
+1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，然后将文件 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json 和 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json 上传到 Cloud Shell 主目录中   。 
 
 1. 在 Cloud Shell 窗格中，运行以下命令以创建将托管实验室环境的资源组。 前两个虚拟网络和一对虚拟机将部署在 [Azure_region_1] 中。 第三个虚拟网络和第三个虚拟机将部署在同一资源组 [Azure_region_2] 中。 （将 [Azure_region_1] 和 [Azure_region_2] 占位符 [包括方括号] 替换为你打算在其中部署这些 Azure 虚拟机的两个不同 Azure 区域的名称。 例如，$location 1 =“eastus”。 可以使用 Get-AzLocation 列出所有位置。）：
 
@@ -68,6 +66,8 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
    >如果命令没有返回任何结果，则需要选择另一个区域。 确定两个合适的区域后，可以在上面的代码块中调整区域。
 
 1. 在 Cloud Shell 窗格中，运行以下命令创建三个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
+    
+    >注意：系统会提示你提供管理员密码。
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -82,7 +82,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>任务 2：配置本地和全局虚拟网络对等互连
+#### 任务 2：配置本地和全局虚拟网络对等互连
 
 在此任务中，你需要在之前的任务中部署的虚拟网络之间配置本地和全局对等互连。
 
@@ -201,7 +201,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### <a name="task-3-test-intersite-connectivity"></a>任务 3：测试站点间连接
+#### 任务 3：测试站点间连接
 
 在此任务中，将测试在上一个任务中通过本地和全局对等互连连接的三个虚拟网络上的虚拟机之间的连接性。
 
@@ -259,7 +259,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 
 1. 检查命令输出并验证连接是否成功。
 
-#### <a name="clean-up-resources"></a>清理资源
+#### 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -281,7 +281,7 @@ Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+#### 审阅
 
 在此实验室中，你执行了以下操作：
 

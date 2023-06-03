@@ -4,16 +4,16 @@ lab:
   module: Administer Data Protection
 ---
 
-# <a name="lab-10---backup-virtual-machines"></a>实验室 10 - 备份虚拟机
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 10 - 备份虚拟机
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你的任务是对使用 Azure 恢复服务来备份和还原 Azure 虚拟机和本地计算机上托管的文件这一过程进行评估。 此外，你还想确定保护恢复服务保管库中所存储数据的方法，以防意外或恶意行为造成的数据丢失。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -25,17 +25,17 @@ lab:
 + 任务 6：通过使用 Azure 虚拟机快照执行文件恢复（可选）
 + 任务 7：查看 Azure 恢复服务软删除功能（可选）
 
-## <a name="estimated-timing-50-minutes"></a>预计用时：50 分钟
+## 预计用时：50 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab10.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>任务 1：预配实验室环境
+## 任务 1：预配实验室环境
 
 在此任务中，你将部署两台虚拟机用于测试不同的备份方案。
 
@@ -48,8 +48,6 @@ lab:
     >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json 和 \\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json 上传到 Cloud Shell 主目录中   。
-
-1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中，运行以下命令以创建托管虚拟机的资源组（将 `[Azure_region]` 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）。 分别键入每个命令行，并分别执行它们：
 
@@ -66,7 +64,8 @@ lab:
    ```
 
 1. 在“Cloud Shell”窗格中运行以下命令，以创建第一个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
-
+    >注意：系统会提示你提供管理员密码。
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -79,7 +78,7 @@ lab:
 
     >注意：请不要等待部署完成，而是继续执行下一个任务。 部署大约需要 5 分钟的时间完成。
 
-#### <a name="task-2-create-a-recovery-services-vault"></a>任务 2：创建恢复服务保管库
+## 任务 2：创建恢复服务保管库
 
 在此任务中，你将创建恢复服务保管库。
 
@@ -116,7 +115,7 @@ lab:
 
 1. 关闭“安全设置”边栏选项卡，然后返回“az104-10-rsv1”恢复服务保管库”边栏选项卡，单击“概述”  。
 
-#### <a name="task-3-implement-azure-virtual-machine-level-backup"></a>任务 3：实现 Azure 虚拟机级备份
+## 任务 3：实现 Azure 虚拟机级备份
 
 在此任务中，你将实现 Azure 虚拟机级备份。
 
@@ -159,7 +158,7 @@ lab:
 
     >**注意**：不要等待备份完成，而是继续执行下一个任务。
 
-#### <a name="task-4-implement-file-and-folder-backup"></a>任务 4：实现文件和文件夹备份
+## 任务 4：实现文件和文件夹备份
 
 在此任务中，你将使用 Azure 恢复服务实现文件和文件夹备份。
 
@@ -258,7 +257,7 @@ lab:
 
 1. 在“备份项目(Azure 备份代理)”边栏选项卡上，验证是否存在引用 az104-10-vm1 的 C:\\ 驱动器的条目  。
 
-#### <a name="task-5-perform-file-recovery-by-using-azure-recovery-services-agent-optional"></a>任务 5：通过使用 Azure 恢复服务代理来执行文件恢复（可选）
+## 任务 5：通过使用 Azure 恢复服务代理来执行文件恢复（可选）
 
 在此任务中，你将使用 Azure 恢复服务代理执行文件还原。
 
@@ -288,7 +287,7 @@ lab:
 
 1. 终止远程桌面会话。
 
-#### <a name="task-6-perform-file-recovery-by-using-azure-virtual-machine-snapshots-optional"></a>任务 6：通过使用 Azure 虚拟机快照执行文件恢复（可选）
+## 任务 6：通过使用 Azure 虚拟机快照执行文件恢复（可选）
 
 在此任务中，你将从基于 Azure 虚拟机级快照的备份中还原文件。
 
@@ -360,7 +359,7 @@ lab:
 
 1. 终止远程桌面会话。
 
-#### <a name="task-7-review-the-azure-recovery-services-soft-delete-functionality"></a>任务 7：查看 Azure 恢复服务软删除功能
+## 任务 7：查看 Azure 恢复服务软删除功能
 
 1. 在实验室计算机的 Azure 门户中，搜索并选择“恢复服务保管库”，然后在“恢复服务保管库”中，单击“az104-10-rsv1”。
 
@@ -442,7 +441,7 @@ lab:
 
 1. 重复此任务开头的步骤，以删除 az104-10-vm1 的备份项目。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -466,7 +465,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

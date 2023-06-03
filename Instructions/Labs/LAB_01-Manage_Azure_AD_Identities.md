@@ -4,17 +4,17 @@ lab:
   module: Administer Identity
 ---
 
-# <a name="lab-01---manage-azure-active-directory-identities"></a>实验室 01 - 管理 Azure Active Directory 标识
+# 实验室 01 - 管理 Azure Active Directory 标识
 
-# <a name="student-lab-manual"></a>学生实验室手册
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 为了让 Contoso 用户能够使用 Azure AD 进行身份验证，你的任务是预配用户和组账户。 组的成员身份应根据用户职位自动更新。 你还需要创建具有测试用户帐户的测试 Azure AD 租户，并向该帐户授予 Contoso Azure 订阅中资源的有限访问权限。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -23,16 +23,16 @@ lab:
 + 任务 3：创建 Azure Active Directory (AD) 租户（可选 - 实验室环境问题）
 + 任务 4：管理 Azure AD 来宾用户（可选 - 实验室环境问题）
 
-## <a name="estimated-timing-30-minutes"></a>预计用时：30 分钟
+## 预计用时：30 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 ![image](../media/lab01.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-create-and-configure-azure-ad-users"></a>任务 1：创建和配置 Azure AD 用户
+## 任务 1：创建和配置 Azure AD 用户
 
 在此任务中，我们将创建和配置 Azure AD 用户。
 
@@ -46,7 +46,7 @@ lab:
 
 1. 在 Azure Active Directory 边栏选项卡上的“管理”部分，单击“用户”，然后单击你的用户帐户以显示其“个人资料”设置。 
 
-1. 在“设置”部分单击“编辑”，将“使用位置”设置为“美国”，然后单击“保存”以应用更改    。
+1. 单击“编辑属性”，然后在“设置”选项卡中，将“使用位置”设置为“美国”，然后单击“保存”以应用更改    。
 
     >**注意**：必须执行此操作，以便稍后在本实验室中将 Azure AD Premium P2 许可分配给你的用户帐户。
 
@@ -100,7 +100,7 @@ lab:
 
 1. 以 az104-01a-aaduser1 用户身份从 Azure 门户注销，并关闭 InPrivate 浏览器窗口。
 
-#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>任务 2：创建已分配动态成员身份的 Azure AD 组
+## 任务 2：创建已分配动态成员身份的 Azure AD 组
 
 在此任务中，你将创建具有已分配动态成员身份的 Azure Active Directory 组。
 
@@ -183,13 +183,18 @@ lab:
 
 1. 导航回“组”-“所有组”边栏选项卡，单击代表“IT 系统管理员”组的条目，然后显示其“成员”边栏选项卡  。 验证 az104-01a-aaduser2 出现在组成员列表中。
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>任务 3：创建 Azure Active Directory (AD) 租户（可选 - 实验室环境问题）
+## 任务 3：创建 Azure Active Directory (AD) 租户（可选 - 实验室环境问题）
 
 在此任务中，你将创建新的 Azure AD 租户。
-
-   >**注意**：实验室环境中的 Captcha 验证存在一个已知问题。 如果你遇到此问题，请跳过该任务和下一个任务。 我们正在努力开发解决方案。
-
+    
 1. 在 Azure 门户中，搜索并选择“Azure Active Directory”。
+
+    >**注意**：实验室环境中的 Captcha 验证存在一个已知问题。 如果收到错误“创建失败。请求过多，请稍后尝试”，请执行以下操作：<br>
+    - 尝试创建几次。<br>
+    - 检查“管理租户”部分，确保未在后台创建租户。 <br>
+    - 打开一个新的 InPrivate 窗口，并使用 Azure 门户尝试从那里创建租户。<br>
+     向培训师提出问题，然后使用[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)查看步骤。 <br>
+    - 可以稍后尝试此任务，但其他实验室不需要创建租户。 
 
 1. 单击“管理租户”，然后在下一个屏幕上单击“+ 创建”，并指定以下设置 ：
 
@@ -211,7 +216,7 @@ lab:
 
 1. 显示新创建的 Azure AD 租户的边栏选项卡，方法是使用“单击此处导航到新租户：Contoso 实验室”链接或 Azure 门户工具栏中的“目录 + 订阅”按钮（正好在 Cloud Shell 按钮的右侧）。
 
-#### <a name="task-4-manage-azure-ad-guest-users"></a>任务 4：管理 Azure AD 来宾用户。
+## 任务 4：管理 Azure AD 来宾用户。
 
 在此任务中，你将创建 Azure AD 来宾用户，并授予他们访问 Azure 订阅中的资源的权限。
 
@@ -255,7 +260,7 @@ lab:
 1. 请单击“+ 添加成员身份”并将来宾用户帐户添加到“IT 实验室管理员”组。
 
 
-#### <a name="task-5-clean-up-resources"></a>任务 5：清理资源
+## 任务 5：清理资源
 
 > **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源，确保不产生意外成本。 在这种情况下，虽然没有与 Azure Active Directory 租户及其对象相关的额外费用，但你可能需要考虑删除在此实验室中创建的用户帐户、组帐户和 Azure Active Directory 租户。
 
@@ -279,7 +284,7 @@ lab:
 
 > **注意**：如果租户具有试用版许可证，则必须先等待试用版许可证过期，然后才能删除租户。 这不会产生任何额外费用。
 
-#### <a name="review"></a>审阅
+#### 审阅
 
 在此实验室中，你执行了以下操作：
 

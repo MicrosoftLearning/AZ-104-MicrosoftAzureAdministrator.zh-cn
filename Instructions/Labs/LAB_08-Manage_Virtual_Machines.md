@@ -4,16 +4,16 @@ lab:
   module: Administer Virtual Machines
 ---
 
-# <a name="lab-08---manage-virtual-machines"></a>实验室 08 - 管理虚拟机
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 08 - 管理虚拟机
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你的任务是确定用于部署和配置 Azure 虚拟机的不同选项。 首先，你需要确定在使用 Azure 虚拟机时可以采用的各种计算和存储复原与缩放选项。 接下来，你需要研究使用 Azure 虚拟机规模集时可用的计算和存储复原与缩放选项。 你还希望探索使用 Azure 虚拟机自定义脚本扩展自动配置虚拟机和虚拟机规模集的功能。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -25,18 +25,18 @@ lab:
 + 任务 6：使用虚拟机扩展配置 Azure 虚拟机规模集
 + 任务 7：缩放 Azure 虚拟机规模集的计算和存储（可选）
 
-## <a name="estimated-timing-50-minutes"></a>预计用时：50 分钟
+## 预计用时：50 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instructions
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-deploy-zone-resilient-azure-virtual-machines-by-using-the-azure-portal-and-an-azure-resource-manager-template"></a>任务 1：使用 Azure 门户和 Azure 资源管理器模板部署可复原区域的 Azure 虚拟机
+## 任务 1：使用 Azure 门户和 Azure 资源管理器模板部署可复原区域的 Azure 虚拟机
 
 在此任务中，你将使用 Azure 门户和 Azure 资源管理器模板将 Azure 虚拟机部署到不同的可用性区域。
 
@@ -136,7 +136,7 @@ lab:
 
     >**注意**：等待两个部署完成，然后继续进行下一个任务。 这可能需要大约 5 分钟。
 
-#### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>任务 2：使用虚拟机扩展配置 Azure 虚拟机
+## 任务 2：使用虚拟机扩展配置 Azure 虚拟机
 
 在此任务中，将使用自定义脚本虚拟机扩展将 Windows Server Web 服务器角色安装在上一个任务中部署的两个 Azure 虚拟机上。
 
@@ -223,7 +223,7 @@ lab:
 
     >**注意**：还可连接到 az104-08-vm0，运行 `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` 以访问托管在 az104-08-vm1 上的网站 。
 
-#### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>任务 3：缩放 Azure 虚拟机的计算和存储
+## 任务 3：缩放 Azure 虚拟机的计算和存储
 
 在此任务中，将通过更改 Azure 虚拟机的大小来缩放计算，并通过附加和配置数据磁盘来缩放其存储。
 
@@ -262,7 +262,7 @@ lab:
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
 
-   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 2046GB -ResiliencySettingName Simple -ProvisioningType Fixed
+   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 64GB -ResiliencySettingName Simple -ProvisioningType Fixed
 
    Initialize-Disk -VirtualDisk (Get-VirtualDisk -FriendlyName virtualdisk1)
 
@@ -336,7 +336,7 @@ lab:
 
     > **注意**：等待确认命令已成功完成。
 
-#### <a name="task-4-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>任务 4：注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序
+## 任务 4：注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序
 
 1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
 
@@ -352,7 +352,7 @@ lab:
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>任务 5：使用 Azure 门户部署可复原区域的 Azure 虚拟机规模集
+## 任务 5：使用 Azure 门户部署可复原区域的 Azure 虚拟机规模集
 
 在此任务中，你将使用 Azure 门户跨可用性区域部署 Azure 虚拟机规模集。
 
@@ -367,8 +367,9 @@ lab:
     | 虚拟机规模集名称 | az10408vmss0 |
     | Region | 选择其中一个支持可用性区域且可预配 Azure 虚拟机的区域，该区域与之前在本实验室中部署虚拟机的区域不同 |
     | 可用性区域 | 区域 1、2、3 |
+    | 业务流程模式 | **Uniform** |
     | 映像 | Windows Server 2019 Datacenter - Gen2 |
-    | Azure Spot 实例 | **是** |
+    | 使用 Azure Spot 折扣运行 | **是** |
     | 大小 | 标准 D2s_v3 |
     | 用户名 | **学生** |
     | 密码 | 提供安全密码  |
@@ -378,7 +379,7 @@ lab:
 
 1. 接受“创建虚拟机规模集”边栏选项卡的“磁盘”选项卡上的默认值，然后单击“下一步:   网络 >”。
 
-1. 在“创建虚拟机规模集”边栏选项卡的“网络”选项卡，单击“虚拟网络”文本框下方的“创建虚拟网络”链接，使用以下设置创建新的虚拟网络（其余设置保留为默认值）：
+1. 在“创建虚拟机规模集”边栏选项卡的“网络”选项卡，单击“虚拟网络”文本框下方的“创建虚拟网络”链接，使用以下设置创建新的虚拟网络（将其他设置保留为默认值）   。 
 
     | 设置 | 值 |
     | --- | --- |
@@ -416,13 +417,18 @@ lab:
 
 1. 回到“编辑网络接口”边栏选项卡，单击“公用 IP 地址”部分的“已启用”，然后单击“确认”。
 
-1. 返回到“创建虚拟机规模集”边栏选项卡的“网络”选项卡，在“负载均衡”部分下，确保选中“使用负载均衡器”条目，并指定以下负载均衡设置（其他设置保留默认值），然后单击“下一步:      缩放 >”：
+1. 回到“创建虚拟机规模集”边栏选项卡的“网络”选项卡，在“负载均衡”部分下指定以下设置（将其他设置保留为默认值）  。
 
     | 设置 | 值 |
     | --- | --- |
     | 负载均衡选项 | Azure 负载均衡器 |
-    | 选择负载均衡器 | （新）az10408vmss0-lb |
-    | 选择后端池 | （新）bepool |
+    | 选择负载均衡器 | **创建负载均衡器** |
+    
+1.  在“创建负载均衡器”页上指定负载均衡器名称并采用默认值。 完成后单击“创建”，然后单击“下一步: 缩放>” 。
+    
+    | 设置 | 值 |
+    | --- | --- |
+    | 负载均衡器名称 | **az10408vmss0-lb** |
 
 1. 在“创建虚拟机规模集”边栏选项卡的“缩放”选项卡上，指定以下设置（其他设置保留默认值），然后单击“下一步:   管理 >”：
 
@@ -456,7 +462,7 @@ lab:
 
     >**注意**：请等待虚拟机规模集部署完成。 这大约需要 5 分钟。
 
-#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>任务 6：使用虚拟机扩展配置 Azure 虚拟机规模集
+## 任务 6：使用虚拟机扩展配置 Azure 虚拟机规模集
 
 在此任务中，将使用自定义脚本虚拟机扩展将 Windows Server Web 服务器角色安装在上一个任务中部署的 Azure 虚拟机规模集的实例上。
 
@@ -497,7 +503,7 @@ lab:
 
     >**注意**：验证浏览器页面是否显示 Azure 虚拟机扩展集 az10408vmss0 的一个实例的名称。
 
-#### <a name="task-7-scale-compute-and-storage-for-azure-virtual-machine-scale-sets"></a>任务 7：缩放 Azure 虚拟机规模集的计算和存储
+## 任务 7：缩放 Azure 虚拟机规模集的计算和存储
 
 在此任务中，将更改虚拟机规模集实例的大小，配置其自动缩放设置，并为其附加磁盘。
 
@@ -619,7 +625,7 @@ lab:
 
 1. 单击“az10408vmss0”边栏选项卡“设置”部分的“实例”，选中虚拟机规模集实例旁边的复选框，单击“升级”，然后在提示确认时，单击“是”    。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -646,7 +652,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

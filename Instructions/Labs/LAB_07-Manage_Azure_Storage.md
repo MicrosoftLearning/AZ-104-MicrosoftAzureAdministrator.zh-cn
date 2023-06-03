@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Storage
 ---
 
-# <a name="lab-07---manage-azure-storage"></a>实验室 07 - 管理 Azure 存储
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 07 - 管理 Azure 存储
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你需要评估可否使用 Azure 存储来存储当前位于本地数据存储中的文件。 虽然不经常访问其中大部分文件，但也有一些例外。 你希望将访问频率较低的文件放在价格较低的存储层中，以最大程度地降低存储成本。 你还计划探索 Azure 存储提供的不同保护机制，包括网络访问、身份验证、授权和复制。 最后，你需要确定 Azure 文件存储服务有多适合用于托管本地文件共享。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -24,18 +24,18 @@ lab:
 + 任务 5：创建并配置 Azure 文件存储共享
 + 任务 6：管理 Azure 存储的网络访问
 
-## <a name="estimated-timing-40-minutes"></a>预计用时：40 分钟
+## 预计用时：40 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab07.png)
 
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>任务 1：预配实验室环境
+## 任务 1：预配实验室环境
 
 在此任务中，你将部署一个 Azure 虚拟机，稍后将在本实验室中用到。
 
@@ -48,8 +48,6 @@ lab:
     >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\07\\az104-07-vm-template.json 和 \\Allfiles\\Labs\\07\\az104-07-vm-parameters.json 上传到 Cloud Shell 主目录中   。
-
-1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中运行以下命令，以创建将托管虚拟机的资源组（将 '[Azure_region]' 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）
 
@@ -70,6 +68,8 @@ lab:
     
 1. 在 Cloud Shell 窗格中运行以下命令，通过使用上传的模板和参数文件来部署虚拟机：
 
+    >注意：系统会提示你提供管理员密码。
+
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -89,7 +89,7 @@ lab:
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="task-2-create-and-configure-azure-storage-accounts"></a>任务 2：创建和配置 Azure 存储帐户
+## 任务 2：创建和配置 Azure 存储帐户
 
 在此任务中，你将创建和配置 Azure 存储帐户。
 
@@ -124,7 +124,7 @@ lab:
 
     > **注意**：对于不经常访问的数据，冷访问层是最佳选择。
 
-#### <a name="task-3-manage-blob-storage"></a>任务 3：管理 Blob 存储
+## 任务 3：管理 Blob 存储
 
 在此任务中，你将创建 blob 容器并在其中上传 blob。
 
@@ -143,9 +143,8 @@ lab:
 
 1. 在“上传 blob”边栏选项卡上，展开“高级”部分，并指定以下设置（其他设置则保留为默认值） ：
 
-    | 设置 | Value |
+    | 设置 | 值 |
     | --- | --- |
-    | 身份验证类型 | **帐户密钥**  |
     | Blob 类型 | **块 blob** |
     | 块大小 | **4 MB** |
     | 访问层 | **热访问层** |
@@ -163,7 +162,7 @@ lab:
 
     > **注意**：你可以选择执行以下操作：下载 blob；更改其访问层（当前设置为“热”）；获得租约，这会将其租赁状态更改为“已锁定”（当前设置为“已解锁”）并保护 blob 不被修改或删除；以及分配自定义元数据（通过指定任意键/值对）  。 也可以在 Azure 门户界面中直接“编辑”文件，无需先下载。 你还可以创建快照以及生成 SAS 令牌（将在下一个任务中探索此选项）。
 
-#### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>任务 4：管理 Azure 存储的身份验证和授权
+## 任务 4：管理 Azure 存储的身份验证和授权
 
 在此任务中，你将配置 Azure 存储的身份验证和授权。
 
@@ -226,7 +225,7 @@ lab:
 
     > **注意**：更改可能需要大约 5 分钟才生效。
 
-#### <a name="task-5-create-and-configure-an-azure-files-shares"></a>任务 5：创建并配置 Azure 文件存储共享
+## 任务 5：创建并配置 Azure 文件存储共享
 
 在此任务中，你将创建和配置 Azure 文件存储共享。
 
@@ -268,7 +267,7 @@ lab:
 
 1. 单击 az104-07-folder，并验证 az104-07-file.txt 出现在文件列表中。
 
-#### <a name="task-6-manage-network-access-for-azure-storage"></a>任务 6：管理 Azure 存储的网络访问
+## 任务 6：管理 Azure 存储的网络访问
 
 在此任务中，你将配置 Azure 存储的网络访问。
 
@@ -305,7 +304,7 @@ lab:
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -327,7 +326,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

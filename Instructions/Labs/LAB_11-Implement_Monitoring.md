@@ -4,16 +4,16 @@ lab:
   module: Administer Monitoring
 ---
 
-# <a name="lab-11---implement-monitoring"></a>实验室 11 - 实现监视
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 11 - 实现监视
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你需要评估 Azure 功能，以深入了解 Azure 资源的性能和配置，尤其要关注 Azure 虚拟机。 若要实现此目的，你打算检查 Azure Monitor 的功能，包括 Log Analytics。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -25,17 +25,17 @@ lab:
 + 任务 6：审阅 Azure Monitor 功能
 + 任务 7：查看 Azure Log Analytics 功能
 
-## <a name="estimated-timing-45-minutes"></a>预计用时：45 分钟
+## 预计用时：45 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab11.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>任务 1：预配实验室环境
+## 任务 1：预配实验室环境
 
 在此任务中，你将部署用于测试监视方案的虚拟机。
 
@@ -48,8 +48,6 @@ lab:
     >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。
 
 1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中，单击“上传”，然后将文件 \\Allfiles\\Labs\\11\\az104-11-vm-template.json 和 \\Allfiles\\Labs\\11\\az104-11-vm-parameters.json 上传到 Cloud Shell 主目录中   。
-
-1. 编辑刚刚上传的参数文件并更改密码。 如果需要在 Shell 中编辑文件的帮助，请向讲师寻求帮助。 最佳做法是，机密（如密码）应存储在 Key Vault 中，这样更安全。 
 
 1. 在 Cloud Shell 窗格中，运行以下命令以创建托管虚拟机的资源组（将 `[Azure_region]` 占位符替换为你打算在其中部署 Azure 虚拟机的 Azure 区域的名称）：
 
@@ -65,6 +63,8 @@ lab:
 
 1. 在“Cloud Shell”窗格中运行以下命令，以创建第一个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
 
+    >注意：系统会提示你提供管理员密码。
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -75,7 +75,7 @@ lab:
 
     >注意：请不要等待部署完成，而是继续执行下一个任务。 部署大约需要 3 分钟的时间完成。
 
-#### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>任务 2：注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序。
+## 任务 2：注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序。
 
 1. 在 Cloud Shell 窗格中，运行以下命令以注册 Microsoft.Insights 和 Microsoft.AlertsManagement 资源提供程序。
 
@@ -87,7 +87,7 @@ lab:
 
 1. 最小化 Cloud Shell 窗格（但不要将其关闭）。
 
-#### <a name="task-3-create-and-configure-an-azure-log-analytics-workspace-and-azure-automation-based-solutions"></a>任务 3：创建和配置 Azure Log Analytics 工作区和基于 Azure 自动化的解决方案
+## 任务 3：创建和配置 Azure Log Analytics 工作区和基于 Azure 自动化的解决方案
 
 在此任务中，你将创建和配置 Azure Log Analytics 工作区和基于 Azure 自动化的解决方案
 
@@ -119,7 +119,7 @@ lab:
 
     >**注意**：务必根据[工作区映射文档](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)指定 Azure 区域
 
-    >备注：请等待部署完成。 部署可能需要大约 3 分钟。
+    >注意：请等待部署完成。 部署可能需要大约 3 分钟。
 
 1. 单击“转到资源”。
 
@@ -135,7 +135,7 @@ lab:
 
     >备注：请等待安装完成。 这可能需要大约 5 分钟。
 
-#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>任务 4：查看 Azure 虚拟机的默认监视设置
+## 任务 4：查看 Azure 虚拟机的默认监视设置
 
 在此任务中将查看 Azure 虚拟机的默认监视设置
 
@@ -153,15 +153,15 @@ lab:
 
 1. 在“指标”下拉列表中，选择“CPU 百分比”，在“聚合”下拉列表中，选择“平均”，然后查看生成的图表。
 
-#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>任务 5：配置 Azure 虚拟机诊断设置
+## 任务 5：配置 Azure 虚拟机诊断设置
 
 在此任务中，将配置 Azure 虚拟机诊断设置。
 
 1. 在“az104-11-vm0”边栏选项卡上，单击“监视”部分的“诊断设置”。
 
-1. 在“az104-11-vm0 \| 诊断设置”边栏选项卡的“概述”选项卡中，单击“启用来宾级别的监视”  。
+1. 在“az104-11-vm0 \| 诊断设置”边栏选项卡的“概述”选项卡上，选择“诊断存储帐户”，然后单击“启用来宾级监视”   。
 
-    >注意：请等待操作生效。 这可能需要大约 3 分钟。
+    >注意：应等待诊断设置扩展安装完成。 这可能需要大约 3 分钟。
 
 1. 切换到“az104-11-vm0 \| 诊断设置”边栏选项卡上的“性能计数器”选项卡并查看可用的计数器 。
 
@@ -171,11 +171,11 @@ lab:
 
     >注意：默认情况下，日志集合包含应用程序日志和系统日志中的严重、错误和警告条目，以及安全日志中的审核失败条目。 在这里，你还可以切换到“自定义”视图以了解更详细的配置设置。
 
-1. 在“az104-11-vm0”边栏选项卡上的“监视”部分，单击“Log Analytics 代理”，然后单击“启用”。   
+1. 在 az104-11-vm0 边栏选项卡上的“监视”部分，单击“日志”，然后单击“启用”。
 
-1. 在“az104-11-vm0 - 日志”边栏选项卡上，确保在“选择 Log Analytics 工作区”下拉列表中选择了你之前在本实验室中创建的 Log Analytics 工作区，然后单击“启用”。
+1. 在“az104-11-vm0 - 日志”边栏选项卡上，确保已选择“Azure Monitor 代理(推荐)”，然后单击“配置”  。  
 
-    >**注意**：请勿等待操作完成，而是继续执行下一步。 该操作可能需要 5 分钟左右。
+    >注意：不要等待操作完成，直接继续执行下一步。 该操作可能需要 5 分钟左右。
 
 1. 在“az104-11-vm0 \| 日志”边栏选项卡的“监视”部分中，单击“指标”  。
 
@@ -191,7 +191,7 @@ lab:
 
 1. 在“指标”下拉列表中，选择“内存\\可用字节”，在“聚合”下拉列表中，选择“最大”，然后查看生成的图表   。
 
-#### <a name="task-6-review-azure-monitor-functionality"></a>任务 6：审阅 Azure Monitor 功能
+## 任务 6：审阅 Azure Monitor 功能
 
 1. 在 Azure 门户中，搜索并选择“监视”，并在“监视 \| 概述”边栏选项卡中单击“指标”  。
 
@@ -280,7 +280,7 @@ lab:
 
 1. 在“所有警报”边栏选项卡上，查看生成的警报。
 
-#### <a name="task-7-review-azure-log-analytics-functionality"></a>任务 7：查看 Azure Log Analytics 功能
+## 任务 7：查看 Azure Log Analytics 功能
 
 1. 在 Azure 门户中，导航回到“监视器”边栏选项卡，单击“日志”。
 
@@ -315,7 +315,7 @@ lab:
 
     >注意：可能需要等待几分钟，更新数据才可用。
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
 >**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -337,7 +337,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 
