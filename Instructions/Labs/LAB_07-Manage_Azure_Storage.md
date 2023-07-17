@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 07 - 管理 Azure 存储
+  title: 实验室 07：管理 Azure 存储
   module: Administer Azure Storage
 ---
 

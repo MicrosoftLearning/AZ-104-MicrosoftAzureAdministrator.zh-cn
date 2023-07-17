@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 08 - 管理虚拟机
+  title: 实验室 08：管理虚拟机
   module: Administer Virtual Machines
 ---
 
