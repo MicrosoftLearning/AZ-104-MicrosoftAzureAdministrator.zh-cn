@@ -1,17 +1,17 @@
 ---
 lab:
-  title: 02a - 管理订阅和 RBAC
+  title: 实验室 02a：管理订阅和 RBAC
   module: Administer Governance and Compliance
 ---
 
-# <a name="lab-02a---manage-subscriptions-and-rbac"></a>实验室 02a - 管理订阅和 RBAC
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 02a - 管理订阅和 RBAC
+# 学生实验室手册
 
-## <a name="lab-requirements"></a>实验室要求
+## 实验室要求
 
 本实验室需要具有创建 Azure Active Directory (Azure AD) 用户、创建自定义 Azure 基于角色的访问控制 (RBAC) 角色，以及将这些角色分配给 Azure AD 用户的权限。 并非所有实验室主机托管服务提供商都提供此功能。 请询问讲师是否可以使用本实验室。
 
-## <a name="lab-scenario"></a>实验室场景
+## 实验室场景
 
 为了改善 Contoso 中 Azure 资源的管理，你的任务是实现以下功能：
 
@@ -24,7 +24,7 @@ lab:
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -33,18 +33,18 @@ lab:
 + 任务 3：分配 RBAC 角色
 
 
-## <a name="estimated-timing-30-minutes"></a>预计用时：30 分钟
+## 预计用时：30 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instructions
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-implement-management-groups"></a>任务 1：实现管理组
+## 任务 1：实现管理组
 
 在此任务中，你将需要创建和配置管理组。 
 
@@ -81,7 +81,7 @@ lab:
 
     >**注意**：在 **“az104-02-mg1 \| 订阅**”边栏选项卡上，将 Azure 订阅的 ID 复制到剪贴板。 稍后在下一个任务中将用到它。
 
-#### <a name="task-2-create-custom-rbac-roles"></a>任务 2：创建自定义 RBAC 角色
+## 任务 2：创建自定义 RBAC 角色
 
 在此任务中，你创建自定义 RBAC 角色的定义。
 
@@ -124,7 +124,7 @@ lab:
 
 1. 关闭 Cloud Shell 窗格。
 
-#### <a name="task-3-assign-rbac-roles"></a>任务 3：分配 RBAC 角色
+## 任务 3：分配 RBAC 角色
 
 在此任务中，你将创建一个 Azure Active Dicrectory 用户，将在上一个任务中创建的 RBAC 角色分配给该用户，并验证该用户可以执行 RBAC 角色定义中指定的任务。
 
@@ -167,7 +167,7 @@ lab:
 
 1. 不要继续创建支持请求。 相反，请以“az104-02-aaduser1”用户身份从 Azure 门户注销，然后关闭 InPrivate 浏览器窗口。
 
-#### <a name="task-4-clean-up-resources"></a>任务 4：清理资源
+## 任务 4：清理资源
 
    >**注意**：记得删除所有不再使用的新建 Azure 资源。 虽然在此实验室中创建的资源不会产生额外的费用，但请删除未使用的资源，以确保不会有意外费用产生。
 
@@ -209,7 +209,7 @@ lab:
 1. 导航回“管理组”边栏选项卡，单击“az104-02-mg1”管理组右侧的省略号图标，然后单击“删除”   。
   >                **注意**：如果无法删除“租户根管理组”，则可能是“Azure 订阅”位于管理组下。  需要将“Azure 订阅”从“租户根管理组”中删除，然后删除该组 。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 
