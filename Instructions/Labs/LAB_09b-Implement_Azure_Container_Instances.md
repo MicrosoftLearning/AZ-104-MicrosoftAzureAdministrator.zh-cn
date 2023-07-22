@@ -1,7 +1,7 @@
 ---
 lab:
   title: 实验室 09b：实现 Azure 容器实例
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # 实验室 09b - 实现 Azure 容器实例

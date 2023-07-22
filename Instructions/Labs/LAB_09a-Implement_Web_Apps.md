@@ -1,7 +1,7 @@
 ---
 lab:
   title: 实验室 09a：实现 Web 应用
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # 实验室 09a - 实现 Web 应用
