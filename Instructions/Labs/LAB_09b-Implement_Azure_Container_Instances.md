@@ -1,7 +1,7 @@
 ---
 lab:
-  title: 09b - 实现 Azure 容器实例
-  module: Administer Serverless Computing
+  title: 实验室 09b：实现 Azure 容器实例
+  module: Administer PaaS Compute Options
 ---
 
 # 实验室 09b - 实现 Azure 容器实例
@@ -17,7 +17,7 @@ Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了�
 
 在此实验中，将执行以下操作：
 
-- 任务 1：使用 Azure 容器实例部署 Docker 容器映像
+- 任务 1：使用 Docker 映像部署 Azure 容器实例
 - 任务 2：查看 Azure 容器实例的功能
 
 ## 预计用时：20 分钟
@@ -30,7 +30,7 @@ Contoso 希望为其虚拟化工作负荷找到一个新平台。 你找到了�
 
 ## 练习 1
 
-## 任务 1：使用 Azure 容器实例部署 Docker 容器映像
+## 任务 1：使用 Docker 映像部署 Azure 容器实例
 
 在此任务中，你将为 Web 应用程序创建一个新的容器实例。
 

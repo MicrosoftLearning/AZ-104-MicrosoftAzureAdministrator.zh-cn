@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 03a - 使用 Azure 门户管理 Azure 资源
+  title: 实验室 03a：使用 Azure 门户管理 Azure 资源
   module: Administer Azure Resources
 ---
 

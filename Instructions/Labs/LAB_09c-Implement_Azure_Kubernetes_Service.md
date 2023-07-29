@@ -1,7 +1,7 @@
 ---
 lab:
-  title: 09c - 实现 Azure Kubernetes 服务
-  module: Administer Serverless Computing
+  title: 实验室 09c：实现 Azure Kubernetes 服务
+  module: Administer PaaS Compute Options
 ---
 
 # 实验室 09c - 实现 Azure Kubernetes 服务

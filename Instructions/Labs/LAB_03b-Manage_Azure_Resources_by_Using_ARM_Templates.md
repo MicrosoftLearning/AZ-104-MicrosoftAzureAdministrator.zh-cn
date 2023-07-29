@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 03b - 使用 ARM 模板管理 Azure 资源
+  title: 实验室 03b：使用 ARM 模板管理 Azure 资源
   module: Administer Azure Resources
 ---
 
@@ -102,7 +102,9 @@ lab:
     | 磁盘大小 (Gb) | **32** |
     | 创建选项 | **empty** |
     | 磁盘加密集类型 | **EncryptionAtRestWithPlatformKey** |
+    | 数据访问身份验证模式 | 无 |
     | 网络访问策略 | **AllowAll** |
+    | 公用网络访问 | 已禁用 |
 
 1. 选择“查看 + 创建”，然后选择“创建”。 
 

@@ -1,19 +1,19 @@
 ---
 lab:
-  title: 03d - 使用 Azure CLI 管理 Azure 资源
+  title: 实验室 03d：使用 Azure CLI 管理 Azure 资源
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>实验室 03d - 使用 Azure CLI 管理 Azure 资源
-# <a name="student-lab-manual"></a>学生实验室手册
+# 实验室 03d - 使用 Azure CLI 管理 Azure 资源
+# 学生实验室手册
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你已经探索了与使用 Azure 门户、Azure 资源管理器模板和 Azure PowerShell 预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在需要使用 Azure CLI 来执行等效的任务。 为了避免安装 Azure CLI，你将利用 Azure Cloud Shell 中提供的 Bash 环境。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-## <a name="objectives"></a>目标
+## 目标
 
 在此实验中，将执行以下操作：
 
@@ -21,17 +21,17 @@ lab:
 + 任务 2：使用 Azure CLI 创建资源组和 Azure 托管磁盘
 + 任务 3：使用 Azure CLI 配置托管磁盘
 
-## <a name="estimated-timing-20-minutes"></a>预计用时：20 分钟
+## 预计用时：20 分钟
 
-## <a name="architecture-diagram"></a>体系结构关系图
+## 体系结构关系图
 
 ![image](../media/lab03d.png)
 
-## <a name="instructions"></a>说明
+### 说明
 
-### <a name="exercise-1"></a>练习 1
+## 练习 1
 
-#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>任务 1：在 Azure Cloud Shell 中启动 Bash 会话
+## 任务 1：在 Azure Cloud Shell 中启动 Bash 会话
 
 在此任务中，你将在 Cloud Shell 中打开 Bash 会话。 
 
@@ -45,7 +45,7 @@ lab:
 
 1. 确保“Bash”出现在“Cloud Shell”窗格左上角的下拉菜单中。
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>任务 2：使用 Azure CLI 创建资源组和 Azure 托管磁盘
+## 任务 2：使用 Azure CLI 创建资源组和 Azure 托管磁盘
 
 在此任务中，你将使用 Cloud Shell 中的 Azure CLI 会话来创建资源组和 Azure 托管磁盘。
 
@@ -82,7 +82,7 @@ lab:
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>任务 3：使用 Azure CLI 配置托管磁盘
+## 任务 3：使用 Azure CLI 配置托管磁盘
 
 在此任务中，你将使用 Cloud Shell 中的 Azure CLI 会话来管理 Azure 托管磁盘的配置。 
 
@@ -110,7 +110,7 @@ lab:
    az disk show --resource-group $RGNAME --name $DISKNAME --query sku
    ```
 
-#### <a name="clean-up-resources"></a>清理资源
+## 清理资源
 
  > **注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
 
@@ -132,7 +132,7 @@ lab:
 
     >**注意**：该命令以异步方式执行（由 --nowait 参数确定），因此，尽管可立即在同一 Bash 会话中运行另一个 Azure CLI 命令，但实际上要花几分钟才能删除资源组。
 
-#### <a name="review"></a>审阅
+## 审阅
 
 在此实验室中，你执行了以下操作：
 

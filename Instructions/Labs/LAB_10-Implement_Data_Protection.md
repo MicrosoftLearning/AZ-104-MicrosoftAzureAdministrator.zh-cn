@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 10 - 实现数据保护
+  title: 实验室 10：实现数据保护
   module: Administer Data Protection
 ---
 
