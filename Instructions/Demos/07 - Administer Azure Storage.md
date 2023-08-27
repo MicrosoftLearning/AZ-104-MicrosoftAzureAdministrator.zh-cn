@@ -48,6 +48,21 @@ demo:
 
 1. 将 blob 上传到容器。 如果你有时间，可查看高级设置。 例如，Blob 类型和 Blob 大小。 
 
+## 配置存储安全性
+
+在本演示中，我们将创建一个共享访问签名。
+
+注意：本演示需要包含 Blob 容器和已上传文件的存储帐户。 
+
+参考：[为存储容器创建 SAS 令牌](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
+
+1. 选择要保护的 Blob 或文件。 
+
+1. 生成共享访问签名 (SAS)。 查看权限、开始和到期时间以及允许的协议。
+
+1. 使用 SAS URL 确保显示资源。 
+
+
 ## 配置 Azure 文件存储 
 
 在此次演示中，我们将使用文件共享和快照。
@@ -62,22 +77,7 @@ demo:
 
 1. 创建文件共享。 查看配额、上传文件以及添加目录以组织信息。 
 
-1. 创建文件共享快照。 查看何时使用快照，以及它们与备份的不同之处。 如果有时间，可上传文件、拍摄快照、删除文件并还原快照。 
-
-
-## 配置存储安全性
-
-在本演示中，我们将创建一个共享访问签名。
-
-注意：本演示需要包含 Blob 容器和已上传文件的存储帐户。 
-
-参考：[为存储容器创建 SAS 令牌](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
-
-1. 选择要保护的 Blob 或文件。 
-
-1. 生成共享访问签名 (SAS)。 查看权限、开始和到期时间以及允许的协议。
-
-1. 使用 SAS URL 确保显示资源。 
+1. 创建文件共享快照。 查看何时使用快照，以及它们与备份的不同之处。 如果有时间，可上传文件、拍摄快照、删除文件并还原快照。
 
 
 ## 存储工具（可选）
