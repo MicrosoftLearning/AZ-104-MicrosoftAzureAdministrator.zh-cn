@@ -102,11 +102,13 @@ lab:
 
     | 设置 | 值 |
     | --- | ---|
-    | 用户名 | 任何全局唯一名称（不得包含 `@` 字符） |
-    | 密码 | 满足复杂性要求的任何密码|
+    | 用户名 | 任何全局唯一名称（见备注）  |
+    | Password | 满足复杂性要求的任何密码（见备注） |
 
-    >**注意：** 你将在此实验室的下一个任务中用到这些凭据。
-
+    >注意：请将这些凭据复制到记事本。 稍后需要它们。
+    
+    >注意：这些凭据将通过 URI 传递。 请勿包含影响 URI 解释的任何特殊字符。 例如 @、$ 或 #。 可以在（字符串中间）使用星号或加号。
+    
 ## 任务 4：将代码部署到暂存部署槽位
 
 在此任务中，你会将代码部署到暂存部署槽位。
@@ -140,10 +142,8 @@ lab:
 1. 在 Cloud Shell 窗格中运行以下命令，将示例 Web 应用代码从本地存储库推送到 Azure Web 应用暂存部署槽位（确保将 `[deployment_user_name]` 占位符替换为你在上一个任务中确定的部署凭据用户名的值）：
 
    ```powershell
-   git push [deployment_user_name] master
+    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
    ```
-
-1. 如果提示进行身份验证，请键入 `[deployment_user_name]` 和相应的密码（你在上一个任务中已设置）。
 
 1. 关闭 Cloud Shell 窗格。
 
