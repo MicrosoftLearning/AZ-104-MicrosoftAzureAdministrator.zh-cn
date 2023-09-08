@@ -13,6 +13,8 @@ lab:
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
+>**注意：** 此实验室需要完成实验室 03b。
+
 ## 目标
 
 在此实验中，将执行以下操作：
@@ -27,7 +29,7 @@ lab:
 
 ![image](../media/lab03d.png)
 
-### 说明
+### Instructions
 
 ## 练习 1
 
@@ -95,7 +97,7 @@ lab:
 1. 要验证更改是否生效，请运行以下命令：
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. 要通过 Cloud Shell 中的 Bash 会话将磁盘性能 SKU 更改为“Premium_LRS”，请运行以下命令：
