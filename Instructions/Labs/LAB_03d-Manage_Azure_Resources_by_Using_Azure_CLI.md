@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 实验室 03d：使用 Azure CLI 管理 Azure 资源
+  title: 实验 03d：使用 Azure CLI 管理 Azure 资源（可选）
   module: Administer Azure Resources
 ---
 
@@ -12,6 +12,8 @@ lab:
 你已经探索了与使用 Azure 门户、Azure 资源管理器模板和 Azure PowerShell 预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在需要使用 Azure CLI 来执行等效的任务。 为了避免安装 Azure CLI，你将利用 Azure Cloud Shell 中提供的 Bash 环境。
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+
+>**注意：** 此实验室需要完成实验室 03b。
 
 ## 目标
 
@@ -27,7 +29,7 @@ lab:
 
 ![image](../media/lab03d.png)
 
-### 说明
+### Instructions
 
 ## 练习 1
 
@@ -95,7 +97,7 @@ lab:
 1. 要验证更改是否生效，请运行以下命令：
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. 要通过 Cloud Shell 中的 Bash 会话将磁盘性能 SKU 更改为“Premium_LRS”，请运行以下命令：
