@@ -30,7 +30,7 @@ lab:
 
 ![image](../media/lab09a.png)
 
-### 说明
+### Instructions
 
 ## 练习 1
 
@@ -50,7 +50,7 @@ lab:
     | 资源组 | 新资源组名称 az104-09a-rg1 |
     | Web 应用名称 | 任何全局唯一名称 |
     | 发布 | **代码** |
-    | 运行时堆栈 | **PHP 8.0** |
+    | 运行时堆栈 | PHP 8.2 |
     | 操作系统 | **Linux** |
     | 区域 | 可以在其中预配 Azure Web 应用的 Azure 区域的名称 |
     | 应用服务计划 | 接受默认配置 |
@@ -94,9 +94,9 @@ lab:
     
 1. 在“设置”选项卡的“源”下拉列表中，选择“本地 Git”，然后单击“保存”按钮   
 
-1. 在“部署中心”边栏选项卡上，将“Git 克隆 Url”条目复制到记事本 。
+1. 在“部署中心”边栏选项卡上，将“Git 克隆 Uri”条目复制到记事本 。
 
-    >**注意：** 本实验室的下一个任务将需要“Git 克隆 URL”值。
+    >注意： 本实验室的下一个任务将需要“Git 克隆 Uri”值。
 
 1. 在“部署中心”边栏选项卡上，选择“本地 Git/FTPS 凭据”选项卡，在“用户范围”部分，指定以下设置，然后单击“保存”   。
 
@@ -131,10 +131,10 @@ lab:
    Set-Location -Path $HOME/php-docs-hello-world/
    ```
 
-1. 在 Cloud Shell 窗格中运行以下命令，以添加远程 git（确保将 `[deployment_user_name]` 和 `[git_clone_url]` 占位符分别替换为部署凭据用户名的值和 Git 克隆 URL，二者均由你在上一个任务中确定） ：
+1. 在 Cloud Shell 窗格中运行以下命令，以添加远程 git（确保将 `[deployment_user_name]` 和 `[git_clone_uri]` 占位符分别替换为部署凭据用户名的值和 Git 克隆 Uri，二者均由你在上一个任务中确定） ：
 
    ```powershell
-   git remote add [deployment_user_name] [git_clone_url]
+   git remote add [deployment_user_name] [git_clone_uri]
    ```
 
     >**注意**：`git remote add` 后面的值不必与部署凭据用户名相同，但必须是惟一的
