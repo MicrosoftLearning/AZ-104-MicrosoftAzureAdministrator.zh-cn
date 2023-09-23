@@ -13,8 +13,6 @@ lab:
 
                 **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
->**注意：** 此实验室需要完成实验室 03b。 
-
 ## 目标
 
 在此实验中，将执行以下操作：
