@@ -44,7 +44,7 @@ lab:
 
 1. 在“创建 Web 应用”边栏选项卡的“基本信息”选项卡中，指定以下设置（其他设置保留默认值） ：
 
-    | 设置 | Value |
+    | 设置 | 值 |
     | --- | ---|
     | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
     | 资源组 | 新资源组名称 az104-09a-rg1 |
@@ -73,7 +73,7 @@ lab:
 
 1. 单击“+ 添加槽位”，并添加具有以下设置的新槽位：
 
-    | 设置 | Value |
+    | 设置 | 值 |
     | --- | ---|
     | 名称 | **staging** |
     | 克隆设置来源 | 请勿克隆设置|
@@ -139,7 +139,7 @@ lab:
 
     >**注意**：`git remote add` 后面的值不必与部署凭据用户名相同，但必须是惟一的
 
-1. 在 Cloud Shell 窗格中运行以下命令，将示例 Web 应用代码从本地存储库推送到 Azure Web 应用暂存部署槽位（确保将 `[deployment_user_name]` 占位符替换为你在上一个任务中确定的部署凭据用户名的值）：
+1. 在 Cloud Shell 窗格中运行以下命令，将示例 Web 应用代码从本地存储库推送到 Azure Web 应用暂存部署槽位（确保将占位符值替换为你在上一个任务中确定的部署凭据用户名和密码及应用名的值）：
 
    ```powershell
     git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
