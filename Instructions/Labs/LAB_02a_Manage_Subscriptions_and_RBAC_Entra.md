@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 实验室 02a：管理订阅和 RBAC（品牌重塑测试）
+  title: 实验室 02a：管理订阅和 RBAC
   module: Administer Governance and Compliance
 ---
 
