@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 实验室 01：管理 Microsoft Entra ID 标识（品牌重塑测试）
+  title: 实验室 01：管理 Microsoft Entra ID 标识
   module: Administer Identity
 ---
 
-# 实验室 01 - 管理 Microsoft Entra ID 标识（品牌重塑测试）
+# 实验室 01–管理 Microsoft Entra ID 标识
 
 # 学生实验室手册
 
@@ -93,7 +93,7 @@ lab:
     | 用户主体名称 | az104-01a-aaduser2 |
     | Display name | az104-01a-aaduser2 |
     | 自动生成密码 | 取消选择  |
-    | 初始密码 | 提供安全密码 |
+    | 初始密码 | **提供安全密码** |
     | 职务 | **系统管理员** |
     | 部门 | **IT** |
     | 使用位置 | **美国** |
@@ -229,7 +229,7 @@ lab:
     | 用户主体名称 | az104-01b-aaduser1 |
     | Display name | az104-01b-aaduser1 |
     | 自动生成密码 | 取消选择  |
-    | 初始密码 | 提供安全密码 |
+    | 初始密码 | **提供安全密码** |
     | 职务 | **系统管理员** |
     | 部门 | **IT** |
 
