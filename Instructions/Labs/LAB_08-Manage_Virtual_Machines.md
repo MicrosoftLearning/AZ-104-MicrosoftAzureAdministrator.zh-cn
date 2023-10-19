@@ -213,13 +213,15 @@ lab:
 
 1. 要验证基于自定义脚本扩展的配置是否成功，请导航回“az104-08-vm1”边栏选项卡，单击“操作”部分的“运行命令”，然后单击命令列表中的“RunPowerShellScript”   。
 
-1. 在“运行命令脚本”边栏选项卡中键入以下内容，单击“运行”访问托管在 az104-08-vm0 上的网站 ：
+1. 在“**运行命令脚本**”边栏选项卡中键入以下内容，然后单击“**运行**”访问托管在 **az104-08-vm1** 上的网站 ：
 
    ```powershell
    Invoke-WebRequest -URI http://10.80.0.4 -UseBasicParsing
    ```
 
     >**注意**：需要 -UseBasicParsing 参数来消除 Internet Explorer 上的依赖项，以完成 cmdlet 的执行
+
+    >**注意**： **-URI** 参数是 VM 的**专用 IP 地址**。 在“**网络**”部分导航到“**az104-08-vm1**”边栏选项卡，然后单击“**网络设置**”
 
     >**注意**：还可连接到 az104-08-vm0，运行 `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` 以访问托管在 az104-08-vm1 上的网站 。
 
