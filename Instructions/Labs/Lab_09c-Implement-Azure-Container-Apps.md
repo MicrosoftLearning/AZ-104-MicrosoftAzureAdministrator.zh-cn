@@ -62,7 +62,7 @@ Azure 容器应用使你能够在无服务器平台上运行微服务和容器�
 1. 选择“监视”选项卡以创建 Log Analytics 工作区。
 1. 在“Log Analytics 工作区”字段中选择“新建”链接，并输入以下值。
 
-    | 设置 | 值 |
+    | 设置 | Value |
     |--|--|
     | 名称 | 输入 `my-container-apps-logs` |
   
