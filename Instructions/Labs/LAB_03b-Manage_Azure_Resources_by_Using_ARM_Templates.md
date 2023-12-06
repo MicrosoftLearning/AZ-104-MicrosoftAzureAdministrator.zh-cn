@@ -10,7 +10,7 @@ lab:
 ## 实验室方案
 你已探索了与使用 Azure 门户预配资源并根据资源组整理资源相关的基本 Azure 管理功能，现在你需要使用 Azure 资源管理器模板来执行等效的任务。
 
-                注意：我们提供[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+注意：我们提供[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 ## 目标
 
@@ -54,7 +54,7 @@ lab:
 
 1. 将下载文件的内容提取到实验室计算机上的“下载”文件夹。
 
-    >**注意**：这些文件也可以是 \\Allfiles\\Labs\\03\\az104-03b-md-template.json 和 \\Allfiles\\Labs\\03\\az104-03b-md-parameters.json 
+    >**注意**：这些文件也可以是 \\Allfiles\\Labs\\03\\az104-03b-md-template.json 和 \\Allfiles\\Labs\\03\\az104-03b-md-parameters.json
     
 1. 关闭所有“文件资源管理器”窗口。
 
@@ -106,7 +106,7 @@ lab:
     | 网络访问策略 | **AllowAll** |
     | 公用网络访问 | 已禁用 |
 
-1. 选择“查看 + 创建”，然后选择“创建”。 
+1. 选择“查看 + 创建”，然后选择“创建”。
 
 1. 验证部署是否已成功完成。
 
