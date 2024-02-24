@@ -285,17 +285,17 @@ lab:
 
     > **注意**：如果未从任务 4 记录 SAS URL，则应生成具有相同配置的新 URL。 使用任务 4 的步骤 4-6 作为生成新 blob SAS URL 的指南。 
 
-1. 系统随即显示“MIT 许可证(MIT)”页面的内容。
+1. 应该能够下载 LICENSE.txt 文件。
 
     > **注意**：这很正常，因为你从客户端 IP 地址进行连接。
 
 1. 关闭 InPrivate 模式浏览器窗口，返回到显示 Azure 存储帐户的“网络”边栏选项卡的浏览器窗口。
 
-1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
+1. 在 Azure 门户中，搜索并选择“虚拟机”，然后在虚拟机列表中，单击 az104-07-vm0。
 
-1. 如果系统提示选择“Bash”或“PowerShell”，请选择“PowerShell”  。
+1. 在 az104-07-vm0 边栏选项卡上的“操作”部分，单击“运行命令”。
 
-1. 在 Cloud Shell 窗格中，运行以下命令，尝试从存储帐户的 az104-07-container 容器下载 LICENSE blob（将 `[blob SAS URL]` 占位符替换为你在上一个任务中生成的 blob SAS URL）：
+1. 在**运行命令脚本**边栏选项卡上，在 **PowerShell 脚本**窗格中运行以下命令，尝试从存储帐户的 **az104-07-container** 容器下载 LICENSE blob（将 `[blob SAS URL]` 占位符替换为你在上一个任务中生成的 blob SAS URL）：
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
@@ -303,8 +303,6 @@ lab:
 1. 验证下载尝试是否失败。
 
     > **注意**：你应收到消息“授权失败: 该请求无权执行此操作”。 这很正常，因为你连接的 IP 地址已分配给托管 Cloud Shell 实例的 Azure VM。
-
-1. 关闭 Cloud Shell 窗格。
 
 ## 清理资源
 
