@@ -295,7 +295,7 @@ lab:
 
 1. 在 az104-07-vm0 边栏选项卡上的“操作”部分，单击“运行命令”。
 
-1. 在**运行命令脚本**边栏选项卡上，在 **PowerShell 脚本**窗格中运行以下命令，尝试从存储帐户的 **az104-07-container** 容器下载 LICENSE blob（将 `[blob SAS URL]` 占位符替换为你在上一个任务中生成的 blob SAS URL）：
+1. 在运行命令脚本**** 边栏选项卡上，在 PowerShell 脚本**** 窗格中运行以下命令，尝试从存储帐户的 az104-07-container**** 容器下载 LICENSE blob（将 `[blob SAS URL]` 占位符替换为你在上一个任务中生成的 blob SAS URL）：
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
