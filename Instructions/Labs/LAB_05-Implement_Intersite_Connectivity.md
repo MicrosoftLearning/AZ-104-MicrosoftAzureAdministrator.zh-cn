@@ -5,277 +5,298 @@ lab:
 ---
 
 # 实验室 05 - 实现站点间连接
-# 学生实验室手册
 
-## 实验室方案
+## 实验室简介
 
-Contoso 在波士顿、纽约和西雅图办公室的数据中心通过网状广域网链接进行连接，彼此之间完全相连。 需要实现一个能够反映 Contoso 本地网络拓扑并验证其功能的实验室环境
+在此实验室中，探索虚拟网络之间的通信。 实现虚拟网络对等互连和测试连接。 你还将创建自定义路由。 
 
-**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。 
 
-## 目标
+## 预计用时：50 分钟
+    
+## 实验室方案 
 
-在此实验中，将执行以下操作：
+组织将核心 IT 应用和服务（如 DNS 和安全服务）与其他业务部分（包括制造部门）分割开来。 但是，在某些场景中，核心领域的应用和服务需要与制造领域的应用和服务进行通信。 在此实验室中，在分段区域之间配置连接。 这是将生产与开发分离或将一个子公司与另一个子公司分离的常见场景。  
 
-+ 任务 1：预配实验室环境
-+ 任务 2：配置本地和全局虚拟网络对等互连
-+ 任务 3：测试站点间连接
+## 交互式实验室模拟
 
-## 预计用时：30 分钟
+你可能会发现有几个交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
+
++ [使用全局虚拟网络对等互连连接两个 Azure 虚拟网络](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)。 测试不同虚拟网络中两个虚拟机之间的连接。 创建虚拟网络对等互连并重新测试。
+
++ [为虚拟网络配置监视](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/)。 了解如何使用 Azure 网络观察程序连接监视器、流日志、NSG 诊断和数据包捕获来监视 Azure IaaS 网络资源的连接。
+
++ [实现站点间连接](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)。 运行一个模板以创建包含多个虚拟机的虚拟网络基础结构。 配置虚拟网络对等互连并测试连接。 
 
 ## 体系结构关系图
 
-![image](../media/lab05.png)
+![实验室 05 体系结构图](../media/az104-lab05-architecture.png)
 
-### 说明
+## 工作技能
 
-## 练习 1
++ 任务 1：在虚拟网络中创建虚拟机。
++ 任务 2：在不同的虚拟网络中创建虚拟机。
++ 任务 3：使用网络观察程序测试虚拟机之间的连接。 
++ 任务 4：配置不同虚拟网络之间的虚拟网络对等互连。
++ 任务 5：使用 Azure PowerShell 测试虚拟机之间的连接。
++ 任务 6：创建自定义路由。 
 
-## 任务 1：预配实验室环境
+## 任务 1：创建核心服务虚拟机和虚拟网络
 
-在此任务中，你将部署三个虚拟机，每个虚拟机都部署到一个独立的虚拟网络中。其中两个在同一个 Azure 区域中，第三个在另一个 Azure 区域中。
+在此任务中，使用虚拟机创建核心服务虚拟网络。 
 
-1. 登录 [Azure 门户](https://portal.azure.com)。
+1. 登录 **Azure 门户** - `https://portal.azure.com`。
 
-1. 在 Azure 门户中，单击 Azure 门户右上方的图标，打开 Azure Cloud Shell。
+1. 搜索并选择 `Virtual Machines`。
 
-1. 如果系统提示选择“Bash”或“PowerShell”，请选择“PowerShell”  。
+1. 在“虚拟机”页中，选择“创建”，然后选择“Azure 虚拟机”********。
 
-    >**注意**：如果这是你第一次启动 Cloud Shell，并看到消息“未装载任何存储”，请选择你将在本实验室中使用的订阅，然后选择“创建存储”  。
-
-1. 在 Cloud Shell 窗格的工具栏中，单击“上传/下载文件”图标，在下拉菜单中单击“上传”，然后将文件 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json 和 \\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json 上传到 Cloud Shell 主目录中   。 
-
-1. 在 Cloud Shell 窗格中，运行以下命令以创建将托管实验室环境的资源组。 前两个虚拟网络和一对虚拟机将部署在 [Azure_region_1] 中。 第三个虚拟网络和第三个虚拟机将部署在同一资源组 [Azure_region_2] 中。 （将 [Azure_region_1] 和 [Azure_region_2] 占位符 [包括方括号] 替换为你打算在其中部署这些 Azure 虚拟机的两个不同 Azure 区域的名称。 例如，$location 1 =“eastus”。 可以使用 Get-AzLocation 列出所有位置。）：
-
-   ```powershell
-   $location1 = 'eastus'
-
-   $location2 = 'westus'
-
-   $rgName = 'az104-05-rg1'
-
-   New-AzResourceGroup -Name $rgName -Location $location1
-   ```
-
-   >**注意**：在上次正式审查此实验室时，上面使用的区域经过测试并且已知可以工作。 如果希望使用不同的位置，或者它们不再工作，则需要确定标准 D2Sv3 虚拟机可以部署到的两个不同区域。
-   >
-   >为了识别 Azure 区域，请从 Cloud Shell 中的“PowerShell”会话中运行 (Get-AzLocation).Location
-   >
-   >确定要使用的两个区域后，请在每个区域的 Cloud Shell 中运行以下命令，确认是否可以部署标准 D2Sv3 虚拟机
-   >
-   >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
-   >
-   >如果命令没有返回任何结果，则需要选择另一个区域。 确定两个合适的区域后，可以在上面的代码块中调整区域。
-
-1. 在 Cloud Shell 窗格中，运行以下命令创建三个虚拟网络，并使用上传的模板和参数文件将虚拟机部署到其中：
-    
-    >注意：系统会提示你提供管理员密码。
-
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-05-vnetvm-loop-template.json `
-      -TemplateParameterFile $HOME/az104-05-vnetvm-loop-parameters.json `
-      -location1 $location1 `
-      -location2 $location2
-   ```
-
-    >**注意**：在继续下一步之前，请等待部署完成。 这大约需要 2 分钟。
-
-1. 关闭 Cloud Shell 窗格。
-
-## 任务 2：配置本地和全局虚拟网络对等互连
-
-在此任务中，你需要在之前的任务中部署的虚拟网络之间配置本地和全局对等互连。
-
-1. 在 Azure 门户中，搜索并选择“虚拟网络”。
-
-1. 查看你在上一个任务中创建的虚拟网络，并验证是否前两个位于相同的 Azure 区域、第三个位于不同的 Azure 区域。
-
-    >**注意**：用于部署三个虚拟网络的模板可确保三个虚拟网络的 IP 地址范围不重叠。
-
-1. 在虚拟网络列表中，单击“az104-05-vnet0”。
-
-1. 在“az104-05-vnet0”虚拟网络边栏选项卡的“设置”部分，单击“对等互连”，然后单击“+ 添加”。
-
-1. 添加一个对等互连，设置如下（其他设置保留默认值），然后单击“添加”：
-
-    | 设置 | 值|
+1. 在“基本信息”选项卡上，使用以下信息完成窗体，然后选择“下一步:**** 磁盘 >”。 对于未指定的任何设置，保留默认值。
+ 
+    | 设置 | 值 | 
     | --- | --- |
-    | 本虚拟网络: 对等互连链接名称 | az104-05-vnet0_to_az104-05-vnet1 |
-    | 允许访问、转发的流量和网关的设置 | **确保仅选中前三个框** |
-    | 远程虚拟网络: 对等互连链接名称 | az104-05-vnet1_to_az104-05-vnet0 |
-    | 虚拟网络部署模型 | **资源管理器** |
-    | 我知道我的资源 ID | 未选定 |
-    | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
-    | 虚拟网络 | az104-05-vnet1 |
-    | 允许访问当前虚拟网络 |  **确保选中该框（默认）** |
-    | 允许访问、转发的流量和网关的设置 | **确保仅选中前三个框** |
+    | 订阅 |  *用户的订阅* |
+    | 资源组 |  `az104-rg5`（新建 [如有必要]****。 ）
+    | 虚拟机名称 |    `CoreServicesVM` |
+    | 区域 | **（美国）美国东部** |
+    | 可用性选项 | 没有所需的基础结构冗余 |
+    | 安全类型 | **标准** |
+    | 图像 | Windows Server 2019 Datacenter: x64 Gen2****（注意其他选择） |
+    | 大小 | Standard_DS2_v3**** |
+    | 用户名 | `localadmin` | 
+    | 密码 | 提供复杂的密码**** |
 
-    >**注意**：此步骤将建立两个本地对等互连 - 一个从 az104-05-vnet0 到 az104-05-vnet1，另一个从 az104-05-vnet1 到 az104-05-vnet0。
+    ![基本虚拟机创建页的屏幕截图。 ](../media/az104-lab05-createcorevm.png)
+   
+1. 在“磁盘”选项卡上，采用默认值，然后选择“下一步:******** 网络 >”。
 
-    >**注意**：如果 Azure 门户界面未显示上一任务中创建的虚拟网络，可以在 Cloud Shell 中运行以下 PowerShell 命令来配置对等互连：
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. 在“网络”选项卡上，对于“虚拟网络”，选择“新建”********。
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. 使用以下信息配置虚拟网络，然后选择“确定”****。 如有必要，删除或替换现有信息。
 
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet1' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet1.Id
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet0' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
-
-1. 在“az104-05-vnet0”虚拟网络边栏选项卡的“设置”部分，单击“对等互连”，然后单击“+ 添加”。
-
-1. 添加一个对等互连，设置如下（其他设置保留默认值），然后单击“添加”：
-
-    | 设置 | 值|
+    | 设置 | 值 | 
     | --- | --- |
-    | 本虚拟网络: 对等互连链接名称 | az104-05-vnet0_to_az104-05-vnet2 |
-    | 允许访问远程虚拟网络 |**确保选中该框（默认）** |
-    | 远程虚拟网络: 对等互连链接名称 | az104-05-vnet2_to_az104-05-vnet0 |
-    | 虚拟网络部署模型 | **资源管理器** |
-    | 我知道我的资源 ID | 未选定 |
-    | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
-    | 虚拟网络 | az104-05-vnet2 |
-    | 允许访问当前虚拟网络 |**确保选中该框（默认）** |
+    | 名称 | `CoreServicesVNet`（新建） |
+    | 地址范围 | `10.0.0.0/16`  |
+    | 子网名称 | `Core` | 
+    | 子网地址范围 | `10.0.0.0/24` |
 
-    >**注意**：此步骤建立两个全局对等互连：一个从 az104-05-vnet0 到 az104-05-vnet2，另一个从 az104-05-vnet2 到 az104-05-vnet0。
+1. 选择“监视”选项卡****。对于“启动诊断”，选择“禁用”****。
 
-    >**注意**：如果 Azure 门户界面未显示上一任务中创建的虚拟网络，可以在 Cloud Shell 中运行以下 PowerShell 命令来配置对等互连：
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. 选择“查看 + 创建”，然后选择“创建”。
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. 无需等待资源创建完成。 继续进行下一个任务。
 
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
+    >**注意：** 在创建虚拟机时，是否注意到在此任务中创建了虚拟网络？ 还可创建虚拟网络基础结构，然后添加虚拟机。 
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet2' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet2.Id
+## 任务 2：在不同的虚拟网络中创建虚拟机
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet0' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
+在此任务中，使用虚拟机创建制造服务虚拟网络。 
 
-1. 导航回“虚拟网络”边栏选项卡，然后在虚拟网络列表中单击“az104-05-vnet1”。
+1. 在 Azure 门户中，搜索并导航到“虚拟机”****。
 
-1. 在 az104-05-vnet1 虚拟网络边栏选项卡的“设置”部分，单击“对等互连”，然后单击“+ 添加”   。
+1. 在“虚拟机”页中，选择“创建”，然后选择“Azure 虚拟机”********。
 
-1. 添加一个对等互连，设置如下（其他设置保留默认值），然后单击“添加”：
-
-    | 设置 | 值|
+1. 在“基本信息”选项卡上，使用以下信息完成窗体，然后选择“下一步:**** 磁盘 >”。 对于未指定的任何设置，保留默认值。
+ 
+    | 设置 | 值 | 
     | --- | --- |
-    | 本虚拟网络: 对等互连链接名称 | az104-05-vnet1_to_az104-05-vnet2 |
-    | 允许访问远程虚拟网络 | **确保选中该框（默认）** |
-    | 远程虚拟网络: 对等互连链接名称 | az104-05-vnet2_to_az104-05-vnet1 |
-    | 虚拟网络部署模型 | **资源管理器** |
-    | 我知道我的资源 ID | 未选定 |
-    | 订阅 | 你在此实验室中使用的 Azure 订阅的名称 |
-    | 虚拟网络 | az104-05-vnet2 |
-    | 允许访问当前虚拟网络 | **确保选中该框（默认）** |
+    | 订阅 |  *用户的订阅* |
+    | 资源组 |  `az104-rg5` |
+    | 虚拟机名称 |    `ManufacturingVM` |
+    | 区域 | **（美国）美国东部** |
+    | 安全类型 | **标准** |
+    | 可用性选项 | 不需要基础结构冗余 |
+    | 映像 | Windows Server 2019 Datacenter: x64 Gen2**** |
+    | 大小 | Standard_DS2_v3**** | 
+    | 用户名 | `localadmin` | 
+    | 密码 | 提供复杂的密码**** |
 
-    >**注意**：此步骤建立两个全局对等互连 - 一个从 az104-05-vnet1 到 az104-05-vnet2，另一个从 az104-05-vnet2 到 az104-05-vnet1。
+1. 在“磁盘”选项卡上，采用默认值，然后选择“下一步:******** 网络 >”。
 
-    >**注意**：如果 Azure 门户界面未显示上一任务中创建的虚拟网络，可以在 Cloud Shell 中运行以下 PowerShell 命令来配置对等互连：
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. 在“网络”选项卡上，对于“虚拟网络”，选择“新建”****。
 
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
+1. 使用以下信息配置虚拟网络，然后选择“确定”****。  如有必要，删除或替换现有地址范围。
 
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
+    | 设置 | 值 | 
+    | --- | --- |
+    | 名称 | `ManufacturingVNet` |
+    | 地址范围 | `172.16.0.0/16`  |
+    | 子网名称 | `Manufacturing` |
+    | 子网地址范围 | `172.16.0.0/24` |
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id
+1. 选择“监视”选项卡****。对于“启动诊断”，选择“禁用”****。
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
-   ``` 
+1. 选择“查看 + 创建”，然后选择“创建”。
 
-## 任务 3：测试站点间连接
+## 任务 3：使用网络观察程序测试虚拟机之间的连接 
 
-在此任务中，将测试在上一个任务中通过本地和全局对等互连连接的三个虚拟网络上的虚拟机之间的连接性。
 
-1. 在 Azure 门户中，搜索并选择“虚拟机”。
+在此任务中，验证对等互连虚拟网络中的资源是否可相互通信。 网络观察程序将用于测试该连接。 在继续之前，确保已部署并正在运行这两个虚拟机。 
 
-1. 在虚拟机列表中，单击“az104-05-vm0”。
+1. 在 Azure 门户中，搜索并选择 `Network Watcher`。
 
-1. 在“az104-05-vm0”边栏选项卡中，单击“连接”，在下拉菜单中，单击“RDP”，在“连接到 RDP”边栏选项卡中，单击“下载 RDP 文件”，并按照提示启动远程桌面会话。
+1. 在“网络观察程序”的“网络诊断工具”菜单中，选择“连接故障排除”****。
 
-    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
+1. 使用以下信息完成“连接故障排除”页上的字段****。
 
-    >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
+    | 字段 | 值 | 
+    | --- | --- |
+    | 源类型           | **虚拟机**   |
+    | 虚拟机       | CoreServicesVM****    | 
+    | 目标类型      | **虚拟机**   |
+    | 虚拟机       | ManufacturingVM****   | 
+    | 首选 IP 版本  | **两者**              | 
+    | 协议              | **TCP**               |
+    | 目标端口      | `3389`                |  
+    | 源端口           | *空白*         |
+    | 诊断测试      | *Defaults*      |
 
-1. 出现提示时，使用通过 CloudShell 部署虚拟机时配置的学生用户名和密码登录。 
+    ![显示“连接故障排除”设置的 Azure 门户。](../media/az104-lab05-connection-troubleshoot.png)
 
-1. 在与 az104-05-vm0 的远程桌面会话中，右键单击“开始”按钮，然后在右键菜单中单击“Windows PowerShell (管理员)”。
+1. 选择“运行诊断测试”。
 
-1. 在 Windows PowerShell 控制台窗口，运行以下命令以测试通过 TCP 端口 3389 与 az104-05-vm1（其专用 IP 地址为 10.51.0.4）的连接性 ：
+    >**注意**：可能需要几分钟时间才能返回结果。 收集结果时，屏幕选择将灰显。 请注意，“连接测试”显示“不可访问”********。 这是有道理的，因为虚拟机位于不同的虚拟网络中。 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+ 
+## 任务 4：配置虚拟网络之间的虚拟网络对等互连
 
-    >**注意**：该测试使用 TCP 3389，因为这是操作系统防火墙默认允许使用的端口。
+在此任务中，创建虚拟网络对等互连，以启用虚拟网络中资源之间的通信。 
 
-1. 检查命令输出并验证连接是否成功。
+1. 在 Azure 门户中，选择 `CoreServicesVnet` 虚拟网络。
 
-1. 在 Windows PowerShell 控制台窗口，运行以下命令以测试与 az104-05-vm2（其专用 IP 地址为 10.52.0.4）的连接性 ：
+1. 在“CoreServicesVnet”中的“设置”下，选择“对等互连”。
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+1. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。
 
-1. 在实验室计算机上切换回 Azure 门户，然后返回“虚拟机”边栏选项卡。
+1. 使用下表中的信息创建对等互连。
 
-1. 在虚拟机列表中，单击“az104-05-vm1”。
+| **参数**                                    | **值**                             |
+| --------------------------------------------- | ------------------------------------- |
+| **此虚拟网络**                                       |                                       |
+| 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
+| 允许 CoreServicesVNet 访问对等互连虚拟网络            | 已选择（默认）                       |
+| 允许 CoreServicesVNet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
+| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 CoreServicesVNet 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
+| **远程虚拟网络**                                   |                                       |
+| 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| 虚拟网络部署模型              | **资源管理器**                      |
+| 我知道我的资源 ID                         | 未选定                          |
+| 订阅                                  | *订阅*    |
+| 虚拟网络                               | ManufacturingVnet****                     |
+| 允许 ManufacturingVNet 访问 CoreServicesVNet  | 已选择（默认）                       |
+| 允许 ManufacturingVNet 接收来自 CoreServicesVNet 的转发流量 | 已选定                        |
+| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 ManufacturingVNet 以使用 CoreServicesVNet 的远程网关       | 未选择（默认）                        |
 
-1. 在“az104-05-vm1”边栏选项卡上，单击“连接”，在下拉菜单中，单击“RDP”，然后在“使用 RDP 连接”边栏选项卡上，单击“下载 RDP 文件”并按照提示启动远程桌面会话    。
+1. 检查设置，然后选择“添加”****。
 
-    >**注意**：此步骤是指在 Windows 计算机中通过远程桌面进行连接。 在 Mac 上，可以使用 Mac App Store 中的远程桌面客户端，而在 Linux 计算机上，可以使用开源 RDP 客户端软件。
+    ![对等互连页面的屏幕截图。](../media/az104-lab05-peering.png)
+ 
+1. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。 刷新页面以确保“对等互连状态”为“已连接”********。
 
-    >**注意**：连接到目标虚拟机时，可以忽略任何警告提示。
+1. 切换到 ManufacturingVnet，并验证 ManufacturingVnet-to-CoreServicesVnet 对等互连是否已列出********。 确保“对等互连状态”为“已连接”********。 你可能需要**刷新**页面。 
 
-1. 出现提示时，请使用用户名“Student”和密码从参数文件登录。 
 
-1. 在与 az104-05-vm1 的远程桌面会话中，右键单击“开始”按钮，然后在右键菜单中单击“Windows PowerShell (管理员)”  。
+## 任务 5：使用 Azure PowerShell 测试虚拟机之间的连接
 
-1. 在 Windows PowerShell 控制台窗口，运行以下命令以测试通过 TCP 端口 3389 与 az104-05-vm2（其专用 IP 地址为 10.52.0.4）的连接性 ：
+在此任务中，重新测试不同虚拟网络中虚拟机之间的连接。 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+### 验证 CoreServicesVM 的专用 IP 地址
 
-    >**注意**：该测试使用 TCP 3389，因为这是操作系统防火墙默认允许使用的端口。
+1. 在 Azure 门户中，搜索并选择 `CoreServicesVM` 虚拟机。
 
-1. 检查命令输出并验证连接是否成功。
+1. 在“概述”边栏选项卡上的“网络”部分中，记录计算机的“专用 IP 地址”************。 需要此信息来测试连接。
+   
+### 测试从 ManufacturingVM 连接到 CoreServicesVM 的连接****。
+
+>你知道吗？**** 可通过多种方式检查连接。 在此任务中，使用“运行命令”****。 还可继续使用网络观察程序。 或者，可使用[远程桌面连接](https://learn.microsoft.com/azure/virtual-machines/windows/connect-rdp#connect-to-the-virtual-machine)访问虚拟机。 连接后，使用 test-connection****。 如果有时间，请试用 RDP。 
+
+1. 切换到 `ManufacturingVM` 虚拟机。
+
+1. 在“操作”边栏选项卡中，选择“运行命令”边栏选项卡********。
+
+1. 选择 RunPowerShellScript 并运行 Test-NetConnection 命令********。 务必使用 CoreServicesVM 的专用 IP 地址****。
+
+    ```Powershell
+    Test-NetConnection <CoreServicesVM private IP address> -port 3389
+    ```
+1. 脚本超时可能需要几分钟时间。页面顶部显示一条信息性消息“正在进行脚本执行”。**
+
+   
+1. 测试连接应成功，因为已配置对等互连。 此图中你的计算机名称和远程地址可能不同。 
+   
+   ![Test-NetConnection 成功的 PowerShell 窗口。](../media/az104-lab05-success.png)
+
+## 任务 6：创建自定义路由 
+
+在此任务中，需要控制外围子网与内部核心服务子网之间的流量。 虚拟网络设备将安装在核心服务子网中，所有流量都应路由到该位置。 
+
+1. 搜索并选择 `CoreServicesVnet`。
+
+1. 依次选择“子网”、“+ 创建”********。 务必保存你的更改。 
+
+    | 设置 | 值 | 
+    | --- | --- |
+    | 名称 | `perimeter` |
+    | 子网地址范围 | `10.0.1.0/24`  |
+
+   
+1. 在 Azure 门户中，搜索并选择 `Route tables`，然后选择“创建”****。 
+
+    | 设置 | 值 | 
+    | --- | --- |
+    | 订阅 | 用户的订阅 |
+    | 资源组 | `az104-rg5`  |
+    | 区域 | **美国东部** |
+    | 名称 | `rt-CoreServices` |
+    | 传播网关路由 | **否** |
+
+1. 部署路由表后，选择“转到资源”****。
+
+1. 依次选择“路由”、“+ 添加”。******** 创建从未来的 NVA 到 CoreServices 虚拟网络的路由。 
+
+    | 设置 | 值 | 
+    | --- | --- |
+    | 路由名称 | `PerimetertoCore` |
+    | 目标类型 | **IP 地址** |
+    | 目标 IP 地址 | `10.0.0.0/16`（核心服务虚拟网络） |
+    | 下一跃点类型 | 虚拟设备****（注意其他选择） |
+    | 下一跃点地址 | `10.0.1.7`（未来的 NVA） |
+
+1. 在路由完成后选择“+ 添加”****。 最后一件事是将路由与子网相关联。
+
+1. 依次选择“子网”、“关联”。******** 完成配置。
+
+    | 设置 | 值 | 
+    | --- | --- |
+    | 虚拟网络 | CoreServicesVnet**** |
+    | 子网 | **核心** |    
+
+>**注意**：你已创建一个用户定义的路由，用于将流量从 DMZ 定向到新的 NVA。  
 
 ## 清理资源
 
->**注意**：记得删除所有不再使用的新建 Azure 资源。 删除未使用的资源可确保不会出现意外费用。
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
->**注意**：如果不能立即删除实验室资源，也不要担心。 有时资源具有依赖项，需要更长的时间才能删除。 这是监视资源使用情况的常见管理员任务，因此，只需定期查看门户中的资源即可查看清理方式。 
++ 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
-1. 在 Azure 门户的“Cloud Shell”窗格中打开“PowerShell”会话。
 
-1. 运行以下命令，列出在本模块各实验室中创建的所有资源组：
+## 关键结论
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*'
-   ```
+恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
 
-1. 通过运行以下命令，删除在此模块的实验室中创建的所有资源组：
++ 默认情况下，不同虚拟网络中的资源无法通信。
++ 通过虚拟网络对等互连，可无缝连接 Azure 中的两个或更多个虚拟网络。
++ 对等互连虚拟网络作为一个整体，用于各种连接。
++ 对等互连虚拟网络中虚拟机之间的流量使用 Microsoft 主干基础结构。
++ 自动为虚拟网络中的每个子网创建系统定义的路由。 用户定义的路由替代或添加到默认系统路由。 
++ Azure 网络观察程序提供了一套工具来监视、诊断和查看 Azure IaaS 资源的指标和日志。
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
-   ```
+## 通过自定进度的培训了解详细信息
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
-
-## 审阅
-
-在此实验室中，你执行了以下操作：
-
-+ 预配实验室环境
-+ 配置本地和全局虚拟网络互连
-+ 测试站点间连接性
++ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/)。 使用虚拟网络对等互连以安全和尽量简化的方式实现虚拟网络之间的通信。
++ [在 Azure 部署中通过路由管理和控制流量流](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/)。 了解如何通过实现自定义路由来控制 Azure 虚拟网络流量。
