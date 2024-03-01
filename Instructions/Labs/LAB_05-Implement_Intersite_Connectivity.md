@@ -56,7 +56,7 @@ lab:
     | 设置 | 值 | 
     | --- | --- |
     | 订阅 |  *用户的订阅* |
-    | 资源组 |  `az104-rg5`（新建 [如有必要]****。 ）
+    | 资源组 |  `az104-rg5`（新建 [如有必要]****。 )
     | 虚拟机名称 |    `CoreServicesVM` |
     | 区域 | **（美国）美国东部** |
     | 可用性选项 | 没有所需的基础结构冗余 |
@@ -65,6 +65,7 @@ lab:
     | 大小 | Standard_DS2_v3**** |
     | 用户名 | `localadmin` | 
     | 密码 | 提供复杂的密码**** |
+    | 公共入站端口 | **无** |
 
     ![基本虚拟机创建页的屏幕截图。 ](../media/az104-lab05-createcorevm.png)
    
@@ -111,6 +112,7 @@ lab:
     | 大小 | Standard_DS2_v3**** | 
     | 用户名 | `localadmin` | 
     | 密码 | 提供复杂的密码**** |
+    | 公共入站端口 | **无** |
 
 1. 在“磁盘”选项卡上，采用默认值，然后选择“下一步:******** 网络 >”。
 
@@ -278,11 +280,11 @@ lab:
 
 ## 清理资源
 
-如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果你使用的是自己的订阅，请花一点时间删除实验室资源。**** 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
-+ `az group delete --name resourceGroupName`（使用 CLI）。
++ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
++ 使用 CLI (`az group delete --name resourceGroupName`)。
 
 
 ## 关键结论
