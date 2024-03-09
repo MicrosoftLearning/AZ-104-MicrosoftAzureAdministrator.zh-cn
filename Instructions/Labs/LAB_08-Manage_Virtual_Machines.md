@@ -10,7 +10,7 @@ lab:
 
 在本实验室中，你将创建虚拟机并将其与虚拟机规模集进行比较。 你将了解如何创建、配置单个虚拟机及重设其大小。 你将了解如何创建虚拟机规模集和配置自动缩放。
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。
 
 ## 预计用时：50 分钟
 
@@ -20,7 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
+你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
 
 + [在门户中创建虚拟机](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201)。 创建虚拟机，连接并安装 Web 服务器角色。
 
@@ -349,7 +349,7 @@ lab:
     -Image 'Win2019Datacenter' `
     -Zone '1' `
     -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' `
+    -Credential '(Get-Credential)' 
     ```
 
 1. 命令完成后，使用“Get-AzVM”列出资源组中的虚拟机****。
@@ -406,11 +406,11 @@ lab:
 
 ## 清理资源
 
-如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果你使用的是**自己的订阅**，请花一点时间删除实验室资源。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
-+ 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
-+ `az group delete --name resourceGroupName`（使用 CLI）。
++ 在 Azure 门户中，选择资源组，选择“**删除资源组**”，**输入资源组名称**，然后单击“**删除**”。
++ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
++ 使用 CLI (`az group delete --name resourceGroupName`)。
 
 
 ## 关键结论
