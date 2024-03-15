@@ -354,8 +354,8 @@ lab:
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. 命令完成后，使用“Get-AzVM”列出资源组中的虚拟机****。
@@ -373,7 +373,7 @@ lab:
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. 将“Get-AzVM”与“-Status”参数配合使用，以验证虚拟机是否“已解除分配”************。
