@@ -10,7 +10,7 @@ lab:
 
 在本实验室中，你将创建虚拟机并将其与虚拟机规模集进行比较。 你将了解如何创建、配置单个虚拟机及重设其大小。 你将了解如何创建虚拟机规模集和配置自动缩放。
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。
 
 ## 预计用时：50 分钟
 
@@ -152,7 +152,13 @@ lab:
 
 1. 导航回“az104-vm1”虚拟机并选择“磁盘”********。
 
+1. 在“数据磁盘”部分，选择“附加现有磁盘”。********
+
+1. 在”磁盘名称”下拉列表中，选择”VM1-DISK1”。******** 
+
 1. 验证磁盘现在是“标准 SSD”****。
+
+1. 选择“**应用**”以保存所做的更改。 
 
     >**注意：** 你现在已经创建了虚拟机、缩放了 SKU 和数据磁盘大小。 在下一个任务中，将使用虚拟机规模集自动执行缩放过程。
 
@@ -348,8 +354,8 @@ lab:
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. 命令完成后，使用“Get-AzVM”列出资源组中的虚拟机****。
@@ -367,7 +373,7 @@ lab:
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. 将“Get-AzVM”与“-Status”参数配合使用，以验证虚拟机是否“已解除分配”************。
@@ -406,11 +412,11 @@ lab:
 
 ## 清理资源
 
-如果你使用的是**自己的订阅**，请花一点时间删除实验室资源。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
-+ 在 Azure 门户中，选择资源组，选择“**删除资源组**”，**输入资源组名称**，然后单击“**删除**”。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
 
 ## 关键结论

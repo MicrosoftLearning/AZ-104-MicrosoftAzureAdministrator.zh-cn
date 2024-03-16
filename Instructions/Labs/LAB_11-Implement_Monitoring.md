@@ -41,7 +41,7 @@ lab:
 
 在此任务中，你将部署用于测试监视方案的虚拟机。
 
-1. 如有必要，请将 **\\Allfiles\\Lab11\\az104-11-vm-template.json** 实验室文件下载到计算机。
+1. 将 **\\Allfiles\\Lab11\\az104-11-vm-template.json** 实验室文件下载到计算机。
 
 1. 登录 **Azure 门户** - `https://portal.azure.com`。
 
@@ -243,11 +243,11 @@ lab:
 
 ## 清理资源
 
-如果你使用的是**自己的订阅**，请花一点时间删除实验室资源。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
-+ 在 Azure 门户中，选择资源组，选择“**删除资源组**”，**输入资源组名称**，然后单击“**删除**”。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 关键结论
 
