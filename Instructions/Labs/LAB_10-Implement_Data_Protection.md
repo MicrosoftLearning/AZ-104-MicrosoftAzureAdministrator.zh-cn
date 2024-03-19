@@ -22,7 +22,7 @@ lab:
 
 你可能会发现有一个交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
 
-+ [备份虚拟机和本地文件。](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**** 创建一个恢复服务保管库并实施 Azure 虚拟机备份。 使用 Microsoft Azure 恢复服务代理实施本地文件和文件夹备份。 本地备份超出了本实验室的内容范围，但查看这些步骤可能会有所帮助。 
++ **[备份虚拟机和本地文件。](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** 创建一个恢复服务保管库并实施 Azure 虚拟机备份。 使用 Microsoft Azure 恢复服务代理实施本地文件和文件夹备份。 本地备份超出了本实验室的内容范围，但查看这些步骤可能会有所帮助。 
 
 ## 工作技能
 
@@ -42,17 +42,17 @@ lab:
 
 在此任务中，你将使用模板来部署虚拟机。 该虚拟机将用来测试不同的备份方案。
 
-1. 下载 \\Allfiles\\Lab10\\**** 实验室文件。
+1. 下载 **\\Allfiles\\Lab10\\** 实验室文件。
 
 1. 登录 **Azure 门户** - `https://portal.azure.com`。
 
 1. 搜索并选择 `Deploy a custom template`。
 
-1. 在“自定义部署”页面上，选择“在编辑器中生成自己的模板”****。
+1. 在“自定义部署”页上，选择“在编辑器中生成自己的模板”****。
 
 1. 在“编辑模板”页上，选择“加载文件”****。
 
-1. 找到并选择 \\Allfiles\\Lab10\\az104-10-vms-edge-template.json**** 文件，然后选择“打开”。****
+1. 找到并选择 **\\Allfiles\\Lab10\\az104-10-vms-edge-template.json** 文件，然后选择“打开”。****
 
    >**注意：** 花点时间来查看模板。 我们将部署虚拟网络和虚拟机，以便可以演示备份和恢复。 
 
@@ -60,7 +60,7 @@ lab:
 
 1. 选择“编辑参数”，然后选择“加载文件”。********
 
-1. 加载并选择 \\Allfiles\\Lab10\\az104-10-vms-edge-parameters.json**** 文件。
+1. 加载并选择 **\\Allfiles\\Lab10\\az104-10-vms-edge-parameters.json** 文件。
 
 1. **保存**所做更改。
 
@@ -113,7 +113,7 @@ lab:
     
     >你知道吗？**** 通过“跨区域还原”选项，你可在次要的 [Azure 配对区域](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore)中还原数据。 
 
-1. 返回到“恢复服务保管库”边栏选项卡，单击“安全设置”>“软删除和安全设置”标签下的“更新”链接。********
+1. 返回到“恢复服务保管库”边栏选项，单击“安全设置”>“软删除和安全设置”标签下的“更新”链接。********
 
 1. 在“安全设置”边栏选项卡上，请注意，“软删除(对于在 Azure 中运行的工作负载)”为“已启用”  。 请注意，软删除保留期为 14 天。******** 
 
@@ -150,7 +150,7 @@ lab:
     | 频率 | **每日** |
     | 时间 | 凌晨 12:00 |
     | 时区 | 当地时区的名称 |
-    | 即时恢复快照保留时间 | **** 12 天 |
+    | 即时恢复快照保留时间 | 2 天 |
 
     ![备份策略页的屏幕截图。](../media/az104-lab10-backup-policy.png)
 
@@ -206,7 +206,7 @@ lab:
     - **** Azure Site Recovery 事件
     - **健康产业**
 
-1. 在“目标详细信息”中，选中“存档到存储帐户”旁边的复选框。****
+1. 在目标详细信息中，选中“存档到存储帐户”旁边的复选框。****
 
 1. 在“存储帐户”下拉列表中，选择你之前在此任务中创建的存储帐户。
 
@@ -274,15 +274,15 @@ lab:
 
 1. 选择虚拟机以查看更多详细信息。
    
->你知道吗？**** 你最好测[试受保护 VM 的故障转移](https://learn.microsoft.com/azure/site-recovery/tutorial-dr-drill-azure#run-a-test-failover-for-a-single-vm)。
+>你知道吗？**** 你最好测试受保护 VM 的故障转移。[](https://learn.microsoft.com/azure/site-recovery/tutorial-dr-drill-azure#run-a-test-failover-for-a-single-vm)
 
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源。**** 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
 
 ## 关键结论
@@ -298,5 +298,5 @@ lab:
 
 ## 通过自定进度的培训了解详细信息
 
-+ [使用 Azure 备份保护虚拟机](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/)。 使用 Azure 备份来帮助保护本地服务器、虚拟机、SQL Server、Azure 文件共享和其他工作负载。
++ [](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/)使用 Azure 备份保护虚拟机。 使用 Azure 备份来帮助保护本地服务器、虚拟机、SQL Server、Azure 文件共享和其他工作负载。
 + [使用 Azure Site Recovery 保护 Azure 基础结构](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/)。 使用 Azure Site Recovery 来自定义 Azure 虚拟机的复制、故障转移和故障回复，从而为 Azure 基础结构提供灾难恢复能力。
