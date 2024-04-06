@@ -10,6 +10,9 @@ lab:
 
 这是面向 Azure 管理员的一系列实验中的第一个。 在此实验室中，可了解用户和组。 用户和组是标识解决方案的基本构建基块。 
 
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。 
+
+
 ## 预计用时：30 分钟
 
 ## 实验室方案
@@ -135,11 +138,11 @@ lab:
    
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell `Remove-AzResourceGroup -Name resourceGroupName`。
-+ 使用 CLI `az group delete --name resourceGroupName`。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
   
 ## 关键结论
 

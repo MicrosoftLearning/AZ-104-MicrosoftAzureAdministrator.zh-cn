@@ -25,15 +25,14 @@ lab:
   
 + [实现 Azure 容器实例](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)。  使用 Azure 容器实例部署 Docker 映像。 
 
+## 体系结构关系图
+
+![任务关系图。](../media/az104-lab09b-aci-architecture.png)
+
 ## 工作技能
 
 - 任务 1：使用 Docker 映像部署 Azure 容器实例。
 - 任务 2：测试并验证 Azure 容器实例的部署。
-
-
-## 体系结构关系图
-
-![任务关系图。](../media/az104-lab09b-aci-architecture.png)
 
 ## 任务 1：使用 Docker 映像部署 Azure 容器实例
 
@@ -90,11 +89,11 @@ lab:
    
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
 
 ## 关键结论

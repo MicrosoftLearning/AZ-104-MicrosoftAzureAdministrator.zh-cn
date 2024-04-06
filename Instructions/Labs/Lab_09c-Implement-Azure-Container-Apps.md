@@ -22,14 +22,14 @@ lab:
 
 本主题没有交互式实验室模拟。 
 
+## 体系结构关系图
+
+![任务关系图。](../media/az104-lab09b-aca-architecture.png)
+
 ## 工作技能
 
 - 任务 1：创建并配置 Azure 容器应用和环境。
 - 任务 2：测试并验证 Azure 容器应用的部署。
-
-## 体系结构关系图
-
-![任务关系图。](../media/az104-lab09b-aca-architecture.png)
 
 ## 任务 1：创建并配置 Azure 容器应用和环境
 
