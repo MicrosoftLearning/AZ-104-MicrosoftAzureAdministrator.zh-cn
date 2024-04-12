@@ -115,7 +115,7 @@ lab:
 
 1. 将 **CoreServicesVnet** 的所有事件替换为 `ManufacturingVnet`。 
 
-1. 将 **10.20.0.0/16** 的所有事件替换为 `10.30.0.0/16`。 
+1. 将 **10.20.0.0** 的所有事件替换为 `10.30.0.0`。 
 
 ### 更改 ManufacturingVnet 子网
 
