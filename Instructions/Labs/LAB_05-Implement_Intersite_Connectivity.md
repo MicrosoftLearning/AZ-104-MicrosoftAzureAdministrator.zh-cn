@@ -10,7 +10,7 @@ lab:
 
 在此实验室中，探索虚拟网络之间的通信。 实现虚拟网络对等互连和测试连接。 你还将创建自定义路由。 
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。 
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可以更改区域，但步骤是使用 **美国东部** 区域编写的。 
 
 ## 预计用时：50 分钟
     
@@ -20,7 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现有几个交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
+你可能会发现几个交互式实验室模拟可用于本主题。 通过模拟，可按照自己的节奏点击浏览类似的方案。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
 
 + [使用全局虚拟网络对等互连连接两个 Azure 虚拟网络](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)。 测试不同虚拟网络中两个虚拟机之间的连接。 创建虚拟网络对等互连并重新测试。
 
@@ -194,7 +194,8 @@ lab:
 
 1. 检查设置，然后选择“添加”****。
 
-    ![对等互连页面的屏幕截图。](../media/az104-lab05-peering.png)
+![对等互连页面的屏幕截图。](../media/az104-lab05-peering.png)
+
  
 1. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。 刷新页面以确保“对等互连状态”为“已连接”********。
 
@@ -280,11 +281,11 @@ lab:
 
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源。**** 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
 
 
 ## 关键结论
