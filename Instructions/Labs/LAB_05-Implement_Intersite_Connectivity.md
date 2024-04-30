@@ -77,7 +77,7 @@ lab:
 
     | 设置 | 值 | 
     | --- | --- |
-    | 名称 | `CoreServicesVNet`（新建） |
+    | 名称 | `CoreServicesVnet`（新建） |
     | 地址范围 | `10.0.0.0/16`  |
     | 子网名称 | `Core` | 
     | 子网地址范围 | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ lab:
 
     | 设置 | 值 | 
     | --- | --- |
-    | 名称 | `ManufacturingVNet` |
+    | 名称 | `ManufacturingVnet` |
     | 地址范围 | `172.16.0.0/16`  |
     | 子网名称 | `Manufacturing` |
     | 子网地址范围 | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ lab:
 | --------------------------------------------- | ------------------------------------- |
 | **此虚拟网络**                                       |                                       |
 | 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| 允许 CoreServicesVNet 访问对等互连虚拟网络            | 已选择（默认）                       |
-| 允许 CoreServicesVNet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
-| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 CoreServicesVNet 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
+| 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认）                       |
+| 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
+| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 CoreServicesVnt 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
 | **远程虚拟网络**                                   |                                       |
 | 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | 虚拟网络部署模型              | **资源管理器**                      |
 | 我知道我的资源 ID                         | 未选定                          |
 | 订阅                                  | *订阅*    |
 | 虚拟网络                               | ManufacturingVnet****                     |
-| 允许 ManufacturingVNet 访问 CoreServicesVNet  | 已选择（默认）                       |
-| 允许 ManufacturingVNet 接收来自 CoreServicesVNet 的转发流量 | 已选定                        |
-| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 ManufacturingVNet 以使用 CoreServicesVNet 的远程网关       | 未选择（默认）                        |
+| 允许 ManufacturingVnet 访问 CoreServicesVnet  | 已选择（默认）                       |
+| 允许 ManufacturingVnet 接收来自 CoreServicesVnet 的转发流量 | 已选定                        |
+| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 ManufacturingVnet 以使用 CoreServicesVnet 的远程网关       | 未选择（默认）                        |
 
 1. 检查设置，然后选择“添加”****。
 
