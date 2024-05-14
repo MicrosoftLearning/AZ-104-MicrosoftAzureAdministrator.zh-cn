@@ -238,6 +238,17 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 用于在资源组上添加和删除资源锁的 Azure PowerShell 和 CLI 命令是什么？
++ 以表格形式列出 Azure 策略和 Azure RBAC 之间的差异，并包括示例。
++ 强制执行 Azure 策略并修正不符合资源的步骤是什么？
++ 如何获取带有特定标记的 Azure 资源的报表？
+
+## 通过自定进度的培训了解详细信息
+
++ [](https://learn.microsoft.com/training/modules/enterprise-governance/)设计企业治理策略。 使用 RBAC 和 Azure Policy 来限制对 Azure 解决方案的访问，并确定哪种方法适合你的安全目标。
+
 ## 关键结论
 
 恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
@@ -246,10 +257,5 @@ lab:
 + Azure Policy 可为资源建立多种约定。 策略定义描述了资源符合性条件以及在满足某个条件时所产生的效果。 条件将资源属性字段或值与所需值进行比较。 有许多内置策略定义，并且你可以自定义策略。 
 + Azure Policy 修正任务功能用于根据定义和分配使资源符合要求。 不符合修改或 deployIfNotExist 定义分配的资源，可以使用修正任务变为合规。
 + 你可以在订阅、资源组或资源上配置资源锁。 锁可以防止资源被用户意外删除和修改。 锁会替代任何用户权限。
-+ Azure Policy 是一种部署前安全做法。 RBAC 和资源锁是部署后安全做法。 
-
-## 通过自定进度的培训了解详细信息
-
-+ [](https://learn.microsoft.com/training/modules/enterprise-governance/)设计企业治理策略。 使用 RBAC 和 Azure Policy 来限制对 Azure 解决方案的访问，并确定哪种方法适合你的安全目标。
-  
++ Azure Policy 是一种部署前安全做法。 RBAC 和资源锁是部署后安全做法。
 

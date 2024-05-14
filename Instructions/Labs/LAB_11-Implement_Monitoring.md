@@ -249,6 +249,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 当虚拟机关闭时，Azure 中发出警报的基本配置步骤是什么？
++ 如何在触发 Azure 警报时收到通知？
++ 构造 Azure Monitor 查询以提供虚拟机 CPU 性能信息。
+
+## 通过自定进度的培训了解详细信息
+
++ [通过 Azure 上的警报改进事件响应](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/)。 通过 Azure Monitor 的警报功能响应基础结构中的事件和活动。
++ [使用 Azure Monitor 监视 Azure 虚拟机](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/)。 使用 Azure Monitor 收集和分析 VM 主机以及客户端指标和日志来监视 Azure VM。
+
 ## 关键结论
 
 恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
@@ -258,8 +270,3 @@ lab:
 + 警报规则会监视你的数据并捕获指示指定资源上发生情况的信号。
 + 如果满足警报规则的条件，则会触发警报。 可以触发多个操作（电子邮件、短信、推送、语音）。
 + 操作组包括应收到警报通知的个人。
-
-## 通过自定进度的培训了解详细信息
-
-+ [通过 Azure 上的警报改进事件响应](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/)。 通过 Azure Monitor 的警报功能响应基础结构中的事件和活动。
-+ [使用 Azure Monitor 监视 Azure 虚拟机](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/)。 使用 Azure Monitor 收集和分析 VM 主机以及客户端指标和日志来监视 Azure VM。

@@ -75,6 +75,15 @@ Azure 容器应用将托管 Kubernetes 群集的概念向前推进了一步，�
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+
++ 总结创建和配置 Azure 容器应用的步骤。
++ 将 Azure 容器应用与 Azure Kubernetes 服务进行比较和对比。
+
+## 通过自定进度的培训了解详细信息
+
++ [在 Azure 容器应用中配置容器应用](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/)。 探讨 Azure 容器应用的特性和功能，然后重点介绍如何使用 Azure 容器应用创建、配置、缩放和管理容器应用。
 
 
 ## 关键结论
@@ -85,7 +94,4 @@ Azure 容器应用将托管 Kubernetes 群集的概念向前推进了一步，�
 + 容器应用提供服务器配置、容器业务流程和部署详细信息。 
 + ACA 上的工作负载通常是长时间运行的进程，例如 Web 应用。
 
-## 通过自定进度的培训了解详细信息
-
-+ [在 Azure 容器应用中配置容器应用](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/)。 探讨 Azure 容器应用的特性和功能，然后重点介绍如何使用 Azure 容器应用创建、配置、缩放和管理容器应用。
      

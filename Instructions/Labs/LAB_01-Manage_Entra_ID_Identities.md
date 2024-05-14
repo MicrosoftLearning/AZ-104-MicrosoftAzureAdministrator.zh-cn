@@ -144,14 +144,14 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
   
-## 关键结论
 
-恭喜你完成本实验室的内容。 下面是本实验室的一些主要重点：
+## 使用 Copilot 扩展学习
 
-+ 租户代表你的组织，可帮助你管理面向内部和外部用户的特定 Microsoft 云服务实例。
-+ Microsoft Entra ID 具有用户帐户和来宾帐户。 每种帐户的访问级别都特定于预设的工作范围。
-+ 组将相关用户或设备组合在一起。 有两种类型的组：“安全”和“Microsoft 365”。
-+ 可以静态分配或动态分配组成员身份。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 创建名为 IT 管理员的安全组的 Azure PowerShell 和 CLI 命令是什么？ 提供官方命令参考页。  
++ 提供用于管理 Microsoft Entra ID 中用户和组的分步策略。
++ Azure 门户中批量创建用户和组的步骤是什么？
++ 提供内部和外部 Microsoft Entra ID 用户帐户的比较表。 
 
 
 ## 通过自定进度的培训了解详细信息
@@ -161,4 +161,11 @@ lab:
 + [利用 Microsoft Entra 的自助式密码重置让用户能够重置密码](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/)。 评估自助式密码重置，让组织中的用户可以重置其密码或解锁其帐户。 设置、配置或测试自助式密码重置。
 
 
+## 关键结论
 
+恭喜你完成本实验室的内容。 下面是本实验室的一些主要重点：
+
++ 租户代表你的组织，可帮助你管理面向内部和外部用户的特定 Microsoft 云服务实例。
++ Microsoft Entra ID 具有用户帐户和来宾帐户。 每种帐户的访问级别都特定于预设的工作范围。
++ 组将相关用户或设备组合在一起。 有两种类型的组：“安全”和“Microsoft 365”。
++ 可以静态分配或动态分配组成员身份。

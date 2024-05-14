@@ -21,7 +21,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
+你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
 
 + [创建 Web 应用](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202)。 创建运行 Docker 容器的 Web 应用。
     
@@ -177,7 +177,16 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
++ 总结创建和配置 Azure Web 应用的步骤。
++ 可以采用哪些方式缩放 Azure Web 应用？
+
+## 通过自定进度的培训了解详细信息
+
++ [使用应用服务部署槽位过渡 Web 应用部署以便进行测试和回滚](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/)。 使用部署槽位在 Azure 应用服务中简化部署和回滚 Web 应用。
++ [通过应用服务进行纵向扩展和横向扩展来缩放应用服务 Web 应用以有效满足需求](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/)。通过增量增加可用资源来响应活动增加阶段，然后在活动减少时减少这些资源以降低成本。
 
 ## 关键结论
 
@@ -188,8 +197,3 @@ lab:
 + 通过部署槽位，可创建单独的环境以部署和测试 Web 应用。
 + 可手动或自动缩放 Web 应用以处理其他需求。
 + 提供了各种诊断和测试工具。 
-
-## 通过自定进度的培训了解详细信息
-
-+ [使用应用服务部署槽位过渡 Web 应用部署以便进行测试和回滚](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/)。 使用部署槽位在 Azure 应用服务中简化部署和回滚 Web 应用。
-+ [通过应用服务进行纵向扩展和横向扩展来缩放应用服务 Web 应用以有效满足需求](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/)。通过增量增加可用资源来响应活动增加阶段，然后在活动减少时减少这些资源以降低成本。

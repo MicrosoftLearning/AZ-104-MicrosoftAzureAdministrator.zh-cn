@@ -322,7 +322,21 @@ lab:
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
-  
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+
++ 将 Azure 负载均衡器与 Azure 应用程序网关进行比较和对比。
++ 如何排查与 Azure 负载均衡器的入站连接问题？
++ 配置 Azure 应用程序网关的基本步骤是什么？
++ 创建一个突出显示 Azure 负载均衡解决方案的表。 包括以下列：支持的协议、专用负载均衡、全局负载均衡、路由策略、支持的环境、连接排出、会话亲和性、基于主机和路径的负载均衡、TLS 卸载、站点加速、安全性、缓存和压缩。
+
+## 通过自定进度的培训了解详细信息
+
++ [使用 Azure 负载均衡器提高应用程序的可伸缩性和复原能力](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/)。 介绍 Azure 中的不同负载均衡器，以及如何选择正确的 Azure 负载均衡器解决方案以满足需求。
++ [使用应用程序网关对 Web 服务流量进行负载均衡](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/)。 通过将负载分散到多个服务器并使用基于路径的路由定向 Web 流量提高应用程序复原能力。
+
 ## 关键结论
 
 恭喜你完成本实验室的内容。 下面是本实验室的主要重点。
@@ -333,8 +347,3 @@ lab:
 + Azure 应用程序网关是一种 Web 流量（OSI 第 7 层）负载均衡器，可用于管理 Web 应用程序的流量。
 + 应用程序网关标准层提供所有 L7 功能（包括负载均衡），WAF 层添加防火墙来检查恶意流量。
 + 应用程序网关可以根据 HTTP 请求的其他属性（例如 URI 路径或主机头）进行路由决策。
-
-## 通过自定进度的培训了解详细信息
-
-+ [使用 Azure 负载均衡器提高应用程序的可伸缩性和复原能力](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/)。 介绍 Azure 中的不同负载均衡器，以及如何选择正确的 Azure 负载均衡器解决方案以满足需求。
-+ [使用应用程序网关对 Web 服务流量进行负载均衡](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/)。 通过将负载分散到多个服务器并使用基于路径的路由定向 Web 流量提高应用程序复原能力。

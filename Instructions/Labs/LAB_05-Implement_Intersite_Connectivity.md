@@ -287,6 +287,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 如何使用 Azure PowerShell 或 Azure CLI 命令在 vnet1 和 vnet2 之间添加虚拟网络对等互连？
++ 创建一个表，其中突出显示 Azure 上支持的各种 Azure 和第三方监视工具。 突出显示何时使用每个工具。 
++ 我何时会在 Azure 中创建自定义网络路由？
+
+## 通过自定进度的培训了解详细信息
+
++ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/)。 使用虚拟网络对等互连以安全和尽量简化的方式实现虚拟网络之间的通信。
++ [在 Azure 部署中通过路由管理和控制流量流](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/)。 了解如何通过实现自定义路由来控制 Azure 虚拟网络流量。
+
 
 ## 关键结论
 
@@ -298,8 +310,3 @@ lab:
 + 对等互连虚拟网络中虚拟机之间的流量使用 Microsoft 主干基础结构。
 + 自动为虚拟网络中的每个子网创建系统定义的路由。 用户定义的路由替代或添加到默认系统路由。 
 + Azure 网络观察程序提供了一套工具来监视、诊断和查看 Azure IaaS 资源的指标和日志。
-
-## 通过自定进度的培训了解详细信息
-
-+ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/)。 使用虚拟网络对等互连以安全和尽量简化的方式实现虚拟网络之间的通信。
-+ [在 Azure 部署中通过路由管理和控制流量流](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/)。 了解如何通过实现自定义路由来控制 Azure 虚拟网络流量。

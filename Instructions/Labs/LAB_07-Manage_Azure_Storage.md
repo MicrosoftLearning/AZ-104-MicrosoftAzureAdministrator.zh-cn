@@ -10,7 +10,7 @@ lab:
 
 在本实验室中，你将了解如何为 Azure blob 和 Azure 文件创建存储帐户。 了解如何配置和保护 blob 容器。 还将了解如何使用存储浏览器配置和保护 Azure 文件共享。 
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。
 
 ## 预计用时：50 分钟
 
@@ -239,11 +239,23 @@ lab:
 
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
+
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 提供一个 Azure PowerShell 脚本，以创建包含 Blob 容器的存储帐户。 
++ 提供用于确保 Azure 存储帐户处于安全状态的清单。
++ 创建一个表来比较 Azure 存储冗余模型。
+
+## 通过自定进度的培训了解详细信息
+
++ [使用 Azure Blob 存储优化成本](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/)。 了解如何使用 Azure Blob 存储优化成本。
++ [使用共享访问签名控制对 Azure 存储的访问权限](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/)。 通过使用共享访问签名，安全地授予对存储在 Azure 存储帐户中的数据的访问权限。
 
 ## 关键结论
 
@@ -254,8 +266,3 @@ lab:
 + Azure blob 存储允许在 Microsoft 数据存储平台上存储大量非结构化数据。 Blob 是“二进制大型对象”(Binary Large Object) 的缩写，包括图像和多媒体文件等对象。
 + Azure 文件存储为结构化数据提供共享存储。 可以在文件夹中组织数据。
 + 不可变存储提供存储一次写入、多次读取 (WORM) 状态数据的功能。 不可变存储策略可以是基于时间，也可以是法定保留。
-
-## 通过自定进度的培训了解详细信息
-
-+ [使用 Azure Blob 存储优化成本](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/)。 了解如何使用 Azure Blob 存储优化成本。
-+ [使用共享访问签名控制对 Azure 存储的访问权限](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/)。 通过使用共享访问签名，安全地授予对存储在 Azure 存储帐户中的数据的访问权限。

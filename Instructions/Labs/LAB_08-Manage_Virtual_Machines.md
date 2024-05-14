@@ -418,6 +418,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 提供创建 Linux 虚拟机的步骤和 Azure CLI 命令。 
++ 查看缩放虚拟机并提高性能的方式。
++ 介绍 Azure 存储生命周期管理策略以及如何优化成本。
+
+## 通过自定进度的培训了解详细信息
+
++ [在 Azure 中创建 Windows 虚拟机](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/)。 使用 Azure 门户创建 Windows 虚拟机。 使用远程桌面连接到正在运行的 Windows 虚拟机
++ [使用虚拟机规模集生成可缩放的应用程序](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/)。 使应用程序能自动适应负载变更，同时通过虚拟机规模集最大程度降低成本。
++ [使用 Azure Bastion 通过 Azure 门户连接到虚拟机](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/)。 部署 Azure Bastion 以直接在 Azure 门户中安全地连接到 Azure 虚拟机，从而有效替换现有的 jumpbox 解决方案；使用诊断日志监视远程会话，以及通过断开用户会话来管理远程会话。
 
 ## 关键结论
 
@@ -429,10 +441,3 @@ lab:
 + 使用 Azure 虚拟机规模集可以创建并管理一组负载均衡的 VM。
 + 虚拟机规模集中的虚拟机是根据同一映像和配置创建的。
 + 在虚拟机规模集中，可以根据需求或定义的计划自动增减 VM 实例的数目。
-
-## 通过自定进度的培训了解详细信息
-
-+ [在 Azure 中创建 Windows 虚拟机](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/)。 使用 Azure 门户创建 Windows 虚拟机。 使用远程桌面连接到正在运行的 Windows 虚拟机
-+ [使用虚拟机规模集生成可缩放的应用程序](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/)。 使应用程序能自动适应负载变更，同时通过虚拟机规模集最大程度降低成本。
-+ [使用 Azure Bastion 通过 Azure 门户连接到虚拟机](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/)。 部署 Azure Bastion 以直接在 Azure 门户中安全地连接到 Azure 虚拟机，从而有效替换现有的 jumpbox 解决方案；使用诊断日志监视远程会话，以及通过断开用户会话来管理远程会话。
-  
