@@ -343,7 +343,7 @@ lab:
 
 1. 使用右上角的图标启动 Cloud Shell 会话****。 或者，直接导航到 `https://shell.azure.com`。
 
-1. 请务必选择“PowerShell”****。 如有必要，请使用“显示高级设置”并配置 shell 存储****。
+1. 请务必选择“PowerShell”****。 如有必要，请配置 shell 存储。
 
 1. 运行以下命令来创建虚拟机。 出现提示时，请提供 VM 的用户名和密码。 在等待期间，请阅读 [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) 命令参考，了解与创建虚拟机相关的所有参数。
 
@@ -384,7 +384,7 @@ lab:
 
 1. 使用右上角的图标启动 Cloud Shell 会话****。 或者，直接导航到 `https://shell.azure.com`。
 
-1. 请务必选择“Bash”****。 如有必要，请使用“显示高级设置”并配置 shell 存储****。
+1. 请务必选择“Bash”****。 如有必要，请配置 shell 存储。
 
 1. 运行以下命令来创建虚拟机。 出现提示时，请提供 VM 的用户名和密码。 在等待期间，请阅读 [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) 命令参考，了解与创建虚拟机相关的所有参数。
 
@@ -419,7 +419,7 @@ lab:
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + 提供创建 Linux 虚拟机的步骤和 Azure CLI 命令。 
 + 查看缩放虚拟机并提高性能的方式。
