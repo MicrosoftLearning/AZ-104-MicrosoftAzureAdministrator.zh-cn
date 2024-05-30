@@ -79,7 +79,7 @@ lab:
 
     >**注意**：此时，Web 应用具有标记为“生产”的单个部署槽位****。
 
-1. 单击“+ 添加槽位”，并添加具有以下设置的新槽位：
+1. 单击“添加槽位”，并添加具有以下设置的新槽位****：
 
     | 设置 | 值 |
     | --- | ---|
@@ -178,7 +178,7 @@ lab:
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + 总结创建和配置 Azure Web 应用的步骤。
 + 可以采用哪些方式缩放 Azure Web 应用？
