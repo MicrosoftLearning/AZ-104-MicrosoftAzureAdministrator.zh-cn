@@ -139,19 +139,23 @@ lab:
 
     >你知道吗？****  如果你主要使用 Linux 系统，Bash (CLI) 会让你感觉更熟悉。 如果你主要使用 Windows 系统，Azure PowerShell 会让你感觉更熟悉。 
 
-1. 在“你没有装载任何存储”屏幕中，选择“显示高级设置”，然后提供必填信息。******** 
+1. 在“入门”屏幕上，选择“装载存储帐户”，然后选择“我想创建存储帐户”。************  
 
-    >**注意：** 使用 Cloud Shell 时，需要提供存储帐户和文件共享。 
-
+    >**注意：** 此实验室需要一个存储帐户。 提供所需的信息。 
+    
     | 设置 | 值 |
     |  -- | -- |
+    | 订阅 | ** 选择你的订阅 |
     | 资源组 | **az104-rg3** |
+    | 区域 | ** 选择你的区域 | 
     | 存储帐户（新建） | *必须全局唯一，长度为 3 到 24 个字符，并且只能使用数字和小写字母* |
     | 文件共享（新建） | `fs-cloudshell` |
 
-1. 完成后，选择“创建存储”。**** 只有首次使用 Cloud Shell 时才需要执行此操作。 预配存储将需要几分钟时间。
+1. 完成后，选择“下一步”。**** 只有首次使用 Cloud Shell 时才需要执行此操作。 预配存储将需要几分钟时间。
 
 1. 使用“上传/下载文件”图标从“下载”目录上传 template 和 parameters 文件。**** 你需要分别上传每个文件。
+
+   >**注意：** 如果任何时候提醒你“切换到经典 Cloud Shell”****，请执行此操作。 
 
 1. 验证你的文件是否在 Cloud Shell 存储中可用。 
 
@@ -252,18 +256,15 @@ lab:
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
-  
-## 关键结论
 
-恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
+## 使用 Copilot 扩展学习
 
-+ Azure 资源管理器模板可以将解决方案中的所有资源作为一个组进行部署、管理和监视，而无需分别处理这些资源。
-+ Azure 资源管理器模板是一个 JavaScript 对象表示法 (JSON) 文件，可用于以声明方式而不是使用脚本来管理基础结构。
-+ 你可以使用包含参数值的一个单独 JSON 文件，而不是在模板中以内联值的形式传递参数。
-+ Azure 资源管理器模板可以采用各种方式进行部署，包括 Azure 门户、Azure PowerShell 和 CLI。
-+ Bicep 是 Azure 资源管理器模板的一种替代方法。 Bicep 使用声明性语法来部署 Azure 资源。 
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
-Bicep 提供简洁的语法、可靠的类型安全，并支持代码重用。 Bicep 会针对你的 Azure 基础结构即代码解决方案提供一流创作体验。
++ Azure 资源管理器模板文件的格式是什么？ 使用示例解释每个组件。 
++ 如何使用现有的 Azure 资源管理器模板？
++ 比较和对比 Azure 资源管理器模板和 Azure Bicep 模板。 
+
 
 ## 通过自定进度的培训了解详细信息
 
@@ -272,5 +273,16 @@ Bicep 提供简洁的语法、可靠的类型安全，并支持代码重用。 B
 + [](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/)使用 Windows PowerShell 管理 Azure 资源。 本模块介绍如何安装云服务管理所需的模块，以及如何使用 PowerShell 命令对云资源（例如 Azure 虚拟机、Azure 订阅和 Azure 存储帐户）执行简单的管理任务。
 + [](https://learn.microsoft.com/training/modules/bash-introduction/)Bash 简介。 使用 Bash 管理 IT 基础结构。
 + [](https://learn.microsoft.com/training/modules/build-first-bicep-template/)构建你的第一个 Bicep 模板。 在 Bicep 模板中定义 Azure 资源。 提高部署的一致性和可靠性，减少所需的手动工作量，并跨环境缩放部署。 通过使用参数、变量、表达式和模块，你的模板将非常灵活，并且可以重复使用。
+
+## 关键结论
+
+恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
+
++ Azure 资源管理器模板可以将解决方案中的所有资源作为一个组进行部署、管理和监视，而无需分别处理这些资源。
++ Azure 资源管理器模板是一个 JavaScript 对象表示法 (JSON) 文件，可用于以声明方式而不是使用脚本来管理基础结构。
++ 你可以使用包含参数值的一个单独 JSON 文件，而不是在模板中以内联值的形式传递参数。
++ Azure 资源管理器模板可以采用各种方式进行部署，包括 Azure 门户、Azure PowerShell 和 CLI。
++ Bicep 是 Azure 资源管理器模板的一种替代方法。 Bicep 使用声明性语法来部署 Azure 资源。
++ Bicep 提供简洁的语法、可靠的类型安全，并支持代码重用。 Bicep 会针对你的 Azure 基础结构即代码解决方案提供一流创作体验。
 
 

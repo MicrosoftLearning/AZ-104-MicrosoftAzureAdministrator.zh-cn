@@ -263,7 +263,7 @@ lab:
     | 属性 | 值    |
     |:---------|:---------|
     | 订阅 | 选择订阅 |
-    | 资源组 | **az04-rg4** |
+    | 资源组 | az-104-rg4**** |
     | 名称 | `contoso.com`（如果保留，请调整名称） |
     | 区域 |**美国东部**（查看信息图标） |
 
@@ -306,7 +306,7 @@ lab:
     | 属性 | 值    |
     |:---------|:---------|
     | 订阅 | 选择订阅 |
-    | 资源组 | **az04-rg4** |
+    | 资源组 | az-104-rg4**** |
     | 名称 | `private.contoso.com`（如果必须重命名，请调整） |
     | 区域 |**美国东部** |
 
@@ -343,7 +343,23 @@ lab:
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
- 
+
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
++ 在 Azure 中部署和配置虚拟网络时，共享前 10 个最佳做法。
++ 我如何使用 Azure PowerShell 和 Azure CLI 命令创建具有公共 IP 地址和一个子网的虚拟网络。 
++ 介绍 Azure 网络安全组入站和出站规则及其使用方式。
++ Azure 网络安全组和 Azure 应用程序安全组之间有什么区别？ 共享什么时候使用这些组的示例。 
++ 提供有关如何排查在 Azure 上部署网络时遇到的任何网络问题的分步指南。 此外，分享用于故障排除的每一步的思维过程。
+
+## 通过自定进度的培训了解详细信息
+
++ [Azure 虚拟网络的简介](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/)。 设计和实现核心 Azure 网络基础结构，例如虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
++ [设计 IP 寻址方案](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/)。 确定 Azure 和本地虚拟网络的专用和公共 IP 寻址功能。
++ [使用网络安全组和服务终结点来保护和隔离对 Azure 资源的访问](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/)。 网络安全组和服务终结点能帮助保护虚拟机和 Azure 服务，使其免遭未经授权的网络访问。
++ [在 Azure DNS 上托管域](https://learn.microsoft.com/training/modules/host-domain-azure-dns/)。 为域名创建 DNS 区域。 创建 DNS 记录，以将域映射到 IP 地址。 测试域名是否解析为 Web 服务器。
+  
 ## 关键结论
 
 恭喜你完成本实验室的内容。 下面是本模块的主要收获。 
@@ -354,11 +370,3 @@ lab:
 + 网络安全组包含允许或拒绝网络流量的安全规则。 可以根据需要自定义默认传入和传出规则。
 + 应用程序安全组用于保护具有常见功能的服务器组，例如 Web 服务器或数据库服务器。
 + Azure DNS 是 DNS 域的托管服务，用于提供名称解析。 可以将 Azure DNS 配置为解析公共域中的主机名。  还可以使用专用 DNS 区域将 DNS 名称分配给 Azure 虚拟网络中的虚拟机 (VM)。
-
-## 通过自定进度的培训了解详细信息
-
-+ [Azure 虚拟网络的简介](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/)。 设计和实现核心 Azure 网络基础结构，例如虚拟网络、公共和专用 IP、DNS、虚拟网络对等互连、路由和 Azure 虚拟 NAT。
-+ [设计 IP 寻址方案](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/)。 确定 Azure 和本地虚拟网络的专用和公共 IP 寻址功能。
-+ [使用网络安全组和服务终结点来保护和隔离对 Azure 资源的访问](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/)。 网络安全组和服务终结点能帮助保护虚拟机和 Azure 服务，使其免遭未经授权的网络访问。
-+ [在 Azure DNS 上托管域](https://learn.microsoft.com/training/modules/host-domain-azure-dns/)。 为域名创建 DNS 区域。 创建 DNS 记录，以将域映射到 IP 地址。 测试域名是否解析为 Web 服务器。
-  

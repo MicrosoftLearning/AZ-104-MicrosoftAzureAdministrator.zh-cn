@@ -10,7 +10,7 @@ lab:
 
 在本实验室中，你将了解如何为 Azure blob 和 Azure 文件创建存储帐户。 了解如何配置和保护 blob 容器。 还将了解如何使用存储浏览器配置和保护 Azure 文件共享。 
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。
 
 ## 预计用时：50 分钟
 
@@ -72,7 +72,7 @@ lab:
 
 1. 查看“概述”边栏选项卡和可更改的其他配置****。 这些是存储帐户的全局设置。 请注意，存储帐户可用于 blob 容器、文件共享、队列和表。
 
-1. 在“安全 + 网络”**** 部分中，选择“网络”****。 请注意，公共网络访问已禁用。
+1. 在“安全性 + 网络”部分中，选择“网络”********。 请注意，公共网络访问已禁用。
 
     + 将“公共访问级别”更改为“从选定的虚拟网络和 IP 地址启用”********。
     + 在“防火墙”部分中，选中“添加客户端 IP 地址”框********。
@@ -182,7 +182,7 @@ lab:
 
 1. 单击“+ 文件共享”并在“基本信息”选项卡上将文件共享命名为 `share1`********。 
 
-1. 请注意“层级”选项****。 保留默认值“已优化事务”****。
+1. 请注意“访问层”选项****。 保留默认值“已优化事务”****。
    
 1. 移动到“备份”选项卡，确保未选中“启用备份”************。 我们正在禁用备份以简化实验室配置。
 
@@ -212,11 +212,11 @@ lab:
 
 1. 等待虚拟网络部署，然后选择“转到资源”****。
 
-1. 在“设置”**** 部分中，选择“子网”**** 边栏选项卡。
-    + 选择默认子网。
-    + 在“服务终结点”**** 部分的“服务”**** 下拉列表中，选择“Microsoft.Storage”****。
-    + 请勿进行任何其他更改。    
-    + 务必保存你的更改。 
+1. 在“设置”部分中，选择“服务终结点”边栏选项卡。********
+    + 选择 **添加** 。 
+    + 在“服务”下拉列表中，选择“Microsoft.Storage”。********
+    + 在“子网”下拉列表中，勾选“默认”子网。********
+    + 单击“添加”以保存更改。****  
 
 1. 返回到你的存储帐户。
 
@@ -239,11 +239,23 @@ lab:
 
 ## 清理资源
 
-如果你使用的是自己的订阅，请花一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
+如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 
 
 + 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ 使用 Azure PowerShell (`Remove-AzResourceGroup -Name resourceGroupName`)。
-+ 使用 CLI (`az group delete --name resourceGroupName`)。
++ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
++ `az group delete --name resourceGroupName`（使用 CLI）。
+
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 提供一个 Azure PowerShell 脚本，以创建包含 Blob 容器的存储帐户。 
++ 提供用于确保 Azure 存储帐户处于安全状态的清单。
++ 创建一个表来比较 Azure 存储冗余模型。
+
+## 通过自定进度的培训了解详细信息
+
++ [使用 Azure Blob 存储优化成本](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/)。 了解如何使用 Azure Blob 存储优化成本。
++ [使用共享访问签名控制对 Azure 存储的访问权限](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/)。 通过使用共享访问签名，安全地授予对存储在 Azure 存储帐户中的数据的访问权限。
 
 ## 关键结论
 
@@ -254,8 +266,3 @@ lab:
 + Azure blob 存储允许在 Microsoft 数据存储平台上存储大量非结构化数据。 Blob 是“二进制大型对象”(Binary Large Object) 的缩写，包括图像和多媒体文件等对象。
 + Azure 文件存储为结构化数据提供共享存储。 可以在文件夹中组织数据。
 + 不可变存储提供存储一次写入、多次读取 (WORM) 状态数据的功能。 不可变存储策略可以是基于时间，也可以是法定保留。
-
-## 通过自定进度的培训了解详细信息
-
-+ [使用 Azure Blob 存储优化成本](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/)。 了解如何使用 Azure Blob 存储优化成本。
-+ [使用共享访问签名控制对 Azure 存储的访问权限](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/)。 通过使用共享访问签名，安全地授予对存储在 Azure 存储帐户中的数据的访问权限。

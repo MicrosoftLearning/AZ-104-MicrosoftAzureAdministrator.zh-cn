@@ -284,6 +284,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+
++ Azure 备份支持哪些产品？
++ 总结使用 Azure 备份备份和还原 Azure 虚拟机的步骤。
++ 如何使用 Azure PowerShell 或 CLI 检查 Azure 备份作业的状态。
++ 提供至少五种用于配置 Azure 虚拟机备份的最佳做法。  
+
+## 通过自定进度的培训了解详细信息
+
++ [](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/)使用 Azure 备份保护虚拟机。 使用 Azure 备份来帮助保护本地服务器、虚拟机、SQL Server、Azure 文件共享和其他工作负载。
++ [使用 Azure Site Recovery 保护 Azure 基础结构](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/)。 使用 Azure Site Recovery 来自定义 Azure 虚拟机的复制、故障转移和故障回复，从而为 Azure 基础结构提供灾难恢复能力。
 
 ## 关键结论
 
@@ -295,8 +307,3 @@ lab:
 + Azure Site Recovery 是一种灾难恢复解决方案，可为虚拟机和应用程序提供保护。
 + Azure Site Recovery 将你的工作负载复制到辅助站点，在发生服务中断或灾难时，你可以故障转移到辅助站点并快速恢复运行，从而最大程度地减少停机时间。
 + 恢复服务保管库存储你的备份数据，并最大程度地减少管理开销。
-
-## 通过自定进度的培训了解详细信息
-
-+ [](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/)使用 Azure 备份保护虚拟机。 使用 Azure 备份来帮助保护本地服务器、虚拟机、SQL Server、Azure 文件共享和其他工作负载。
-+ [使用 Azure Site Recovery 保护 Azure 基础结构](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/)。 使用 Azure Site Recovery 来自定义 Azure 虚拟机的复制、故障转移和故障回复，从而为 Azure 基础结构提供灾难恢复能力。

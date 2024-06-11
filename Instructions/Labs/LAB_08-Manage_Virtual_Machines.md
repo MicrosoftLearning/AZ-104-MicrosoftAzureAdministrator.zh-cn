@@ -49,7 +49,7 @@ lab:
 
 1. 登录到 Azure 门户 - `https://portal.azure.com`。
 
-1. 在“虚拟机”边栏选项卡中，搜索并选择 `Virtual machines`，单击“+ 创建”，然后在“+ Azure 虚拟机”下拉列表中进行选择************。 注意你的其他选择。
+1. 在“虚拟机”边栏选项卡中，搜索并选择 `Virtual machines`，单击“+ 创建”，然后在“Azure 虚拟机”下拉列表中进行选择************。 注意你的其他选择。
 
 1. 在“基本信息”选项卡的“可用性区域”下拉菜单中，选中“区域 2”旁边的复选标记************。 将同时选中“区域 1”和“区域 2”********。
 
@@ -76,7 +76,7 @@ lab:
 
     ![创建 VM 页的屏幕截图。](../media/az104-lab08-create-vm.png)
 
-1. 单击“下一步:**** 磁盘 >”，指定以下设置（其他设置保留默认值）：
+1. 单击“下一步: **** 磁盘 >”，指定以下设置（其他设置保留默认值）：
 
     | 设置 | Value |
     | --- | --- |
@@ -84,7 +84,7 @@ lab:
     | 使用 VM 删除 | 选中****（默认值） |
     | 启用超级磁盘兼容性 | **未选中** |
 
-1. 单击“下一步:**** 网络 >”，采用默认值，但不提供负载均衡器。
+1. 单击“下一步: **** 网络 >”，采用默认值，但不提供负载均衡器。
 
     | 设置 | “值” |
     | --- | --- |
@@ -92,19 +92,19 @@ lab:
     | 负载均衡选项 | **无** |
 
 
-1. 单击“下一步:**** 管理 >”，指定以下设置（其他设置保留默认值）：
+1. 单击“下一步: **** 管理 >”，指定以下设置（其他设置保留默认值）：
 
     | 设置 | 值 |
     | --- | --- |
     | 补丁业务流程选项 | 已编排 Azure**** |  
 
-1. 单击“下一步:**** 监视 >”，指定以下设置（其他设置保留默认值）：
+1. 单击“下一步: **** 监视 >”，指定以下设置（其他设置保留默认值）：
 
     | 设置 | 值 |
     | --- | --- |
     | 启动诊断 | **禁用** |
 
-1. 单击“下一步:**** 高级 >”，采用默认值，然后单击“查看 + 创建”****。
+1. 单击“下一步: **** 高级 >”，采用默认值，然后单击“查看 + 创建”****。
 
 1. 验证后，单击“创建”****。
 
@@ -194,7 +194,7 @@ lab:
 
     ![创建 VMSS 页的屏幕截图。 ](../media/az104-lab08-create-vmss.png)
 
-1. 在“现成虚拟机”**** 选项卡上，接受默认值并选择“下一步: **** 磁盘 >”。
+1. 在“现成虚拟机”**** 选项卡上，接受默认值并选择“下一步:**** 磁盘 >”。
 
 1. 在“磁盘”**** 选项卡上，接受默认值并单击“下一步: **** 网络 >”。
 
@@ -343,7 +343,7 @@ lab:
 
 1. 使用右上角的图标启动 Cloud Shell 会话****。 或者，直接导航到 `https://shell.azure.com`。
 
-1. 请务必选择“PowerShell”****。 如有必要，请使用“显示高级设置”并配置 shell 存储****。
+1. 请务必选择“PowerShell”****。 如有必要，请配置 shell 存储。
 
 1. 运行以下命令来创建虚拟机。 出现提示时，请提供 VM 的用户名和密码。 在等待期间，请阅读 [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) 命令参考，了解与创建虚拟机相关的所有参数。
 
@@ -384,7 +384,7 @@ lab:
 
 1. 使用右上角的图标启动 Cloud Shell 会话****。 或者，直接导航到 `https://shell.azure.com`。
 
-1. 请务必选择“Bash”****。 如有必要，请使用“显示高级设置”并配置 shell 存储****。
+1. 请务必选择“Bash”****。 如有必要，请配置 shell 存储。
 
 1. 运行以下命令来创建虚拟机。 出现提示时，请提供 VM 的用户名和密码。 在等待期间，请阅读 [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) 命令参考，了解与创建虚拟机相关的所有参数。
 
@@ -418,6 +418,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 提供创建 Linux 虚拟机的步骤和 Azure CLI 命令。 
++ 查看缩放虚拟机并提高性能的方式。
++ 介绍 Azure 存储生命周期管理策略以及如何优化成本。
+
+## 通过自定进度的培训了解详细信息
+
++ [在 Azure 中创建 Windows 虚拟机](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/)。 使用 Azure 门户创建 Windows 虚拟机。 使用远程桌面连接到正在运行的 Windows 虚拟机
++ [使用虚拟机规模集生成可缩放的应用程序](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/)。 使应用程序能自动适应负载变更，同时通过虚拟机规模集最大程度降低成本。
++ [使用 Azure Bastion 通过 Azure 门户连接到虚拟机](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/)。 部署 Azure Bastion 以直接在 Azure 门户中安全地连接到 Azure 虚拟机，从而有效替换现有的 jumpbox 解决方案；使用诊断日志监视远程会话，以及通过断开用户会话来管理远程会话。
 
 ## 关键结论
 
@@ -429,10 +441,3 @@ lab:
 + 使用 Azure 虚拟机规模集可以创建并管理一组负载均衡的 VM。
 + 虚拟机规模集中的虚拟机是根据同一映像和配置创建的。
 + 在虚拟机规模集中，可以根据需求或定义的计划自动增减 VM 实例的数目。
-
-## 通过自定进度的培训了解详细信息
-
-+ [在 Azure 中创建 Windows 虚拟机](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/)。 使用 Azure 门户创建 Windows 虚拟机。 使用远程桌面连接到正在运行的 Windows 虚拟机
-+ [使用虚拟机规模集生成可缩放的应用程序](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/)。 使应用程序能自动适应负载变更，同时通过虚拟机规模集最大程度降低成本。
-+ [使用 Azure Bastion 通过 Azure 门户连接到虚拟机](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/)。 部署 Azure Bastion 以直接在 Azure 门户中安全地连接到 Azure 虚拟机，从而有效替换现有的 jumpbox 解决方案；使用诊断日志监视远程会话，以及通过断开用户会话来管理远程会话。
-  

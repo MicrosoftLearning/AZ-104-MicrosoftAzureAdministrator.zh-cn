@@ -10,7 +10,7 @@ lab:
 
 在本实验室中，了解基于角色的访问控制。 了解如何使用权限和范围来控制标识可执行和不可执行的操作。 还将了解如何使用管理组简化订阅管理。 
 
-本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 可更改区域，但这些步骤是使用“美国东部”编写的****。 
+本实验室需要 Azure 订阅。 订阅类型可能会影响此实验室中功能的可用性。 你可更改区域，但这些步骤是使用“美国东部”编写的****。 
 
 ## 预计用时：30 分钟
 
@@ -157,6 +157,19 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
   
+## 使用 Copilot 扩展学习
+
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
++ 创建两个突出显示重要 PowerShell 和 CLI 命令（以获取有关 Azure 上的组织订阅的信息）的表，并在“解释”列中解释每个命令。 
++ Azure RBAC JSON 文件的格式是什么？
++ 创建自定义 Azure RBAC 角色的基本步骤是什么？
++ Azure RBAC 角色与 Microsoft Entra ID 角色有何区别？
+
+## 通过自定进度的培训了解详细信息
+
++ [使用 Azure 基于角色的访问控制 (Azure RBAC) 保护 Azure 资源](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/)。 使用 Azure RBAC 管理对 Azure 中资源的访问。
++ [使用基于角色的访问控制 (RBAC) 为 Azure 资源创建自定义角色](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/)。 了解访问控制的角色定义结构。 确定用于定义自定义角色权限的角色属性。 创建 Azure 自定义角色并将其分配给用户。
+
 ## 关键结论
 
 恭喜你完成本实验室的内容。 下面是本实验室的主要内容。 
@@ -166,13 +179,7 @@ lab:
 + Azure 具有许多内置角色。 可分配这些角色以控制对资源的访问。
 + 可创建新角色或自定义现有角色。
 + 角色以 JSON 格式的文件定义，并包括“Actions”、“NotActions”和“AssignableScopes”******。
-+ 可使用活动日志以监视角色分配。 
-
-## 通过自定进度的培训了解详细信息
-
-+ [使用 Azure 基于角色的访问控制 (Azure RBAC) 保护 Azure 资源](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/)。 使用 Azure RBAC 管理对 Azure 中资源的访问。
-+ [使用基于角色的访问控制 (RBAC) 为 Azure 资源创建自定义角色](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/)。 了解访问控制的角色定义结构。 确定用于定义自定义角色权限的角色属性。 创建 Azure 自定义角色并将其分配给用户。
-
++ 可使用活动日志以监视角色分配。
 
 
 

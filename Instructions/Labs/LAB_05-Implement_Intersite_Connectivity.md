@@ -77,7 +77,7 @@ lab:
 
     | 设置 | 值 | 
     | --- | --- |
-    | 名称 | `CoreServicesVNet`（新建） |
+    | 名称 | `CoreServicesVnet`（新建） |
     | 地址范围 | `10.0.0.0/16`  |
     | 子网名称 | `Core` | 
     | 子网地址范围 | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ lab:
 
     | 设置 | 值 | 
     | --- | --- |
-    | 名称 | `ManufacturingVNet` |
+    | 名称 | `ManufacturingVnet` |
     | 地址范围 | `172.16.0.0/16`  |
     | 子网名称 | `Manufacturing` |
     | 子网地址范围 | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ lab:
 | --------------------------------------------- | ------------------------------------- |
 | **此虚拟网络**                                       |                                       |
 | 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| 允许 CoreServicesVNet 访问对等互连虚拟网络            | 已选择（默认）                       |
-| 允许 CoreServicesVNet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
-| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 CoreServicesVNet 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
+| 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认）                       |
+| 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
+| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 CoreServicesVnt 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
 | **远程虚拟网络**                                   |                                       |
 | 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | 虚拟网络部署模型              | **资源管理器**                      |
 | 我知道我的资源 ID                         | 未选定                          |
 | 订阅                                  | *订阅*    |
 | 虚拟网络                               | ManufacturingVnet****                     |
-| 允许 ManufacturingVNet 访问 CoreServicesVNet  | 已选择（默认）                       |
-| 允许 ManufacturingVNet 接收来自 CoreServicesVNet 的转发流量 | 已选定                        |
-| 允许 CoreServicesVNet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 ManufacturingVNet 以使用 CoreServicesVNet 的远程网关       | 未选择（默认）                        |
+| 允许 ManufacturingVnet 访问 CoreServicesVnet  | 已选择（默认）                       |
+| 允许 ManufacturingVnet 接收来自 CoreServicesVnet 的转发流量 | 已选定                        |
+| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
+| 启用 ManufacturingVnet 以使用 CoreServicesVnet 的远程网关       | 未选择（默认）                        |
 
 1. 检查设置，然后选择“添加”****。
 
@@ -287,6 +287,18 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+
++ 如何使用 Azure PowerShell 或 Azure CLI 命令在 vnet1 和 vnet2 之间添加虚拟网络对等互连？
++ 创建一个表，其中突出显示 Azure 上支持的各种 Azure 和第三方监视工具。 突出显示何时使用每个工具。 
++ 我何时会在 Azure 中创建自定义网络路由？
+
+## 通过自定进度的培训了解详细信息
+
++ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/)。 使用虚拟网络对等互连以安全和尽量简化的方式实现虚拟网络之间的通信。
++ [在 Azure 部署中通过路由管理和控制流量流](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/)。 了解如何通过实现自定义路由来控制 Azure 虚拟网络流量。
+
 
 ## 关键结论
 
@@ -298,8 +310,3 @@ lab:
 + 对等互连虚拟网络中虚拟机之间的流量使用 Microsoft 主干基础结构。
 + 自动为虚拟网络中的每个子网创建系统定义的路由。 用户定义的路由替代或添加到默认系统路由。 
 + Azure 网络观察程序提供了一套工具来监视、诊断和查看 Azure IaaS 资源的指标和日志。
-
-## 通过自定进度的培训了解详细信息
-
-+ [跨 Azure 虚拟网络分发服务并通过使用虚拟网络对等互连进行集成](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/)。 使用虚拟网络对等互连以安全和尽量简化的方式实现虚拟网络之间的通信。
-+ [在 Azure 部署中通过路由管理和控制流量流](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/)。 了解如何通过实现自定义路由来控制 Azure 虚拟网络流量。

@@ -95,6 +95,15 @@ lab:
 + `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
+## 使用 Copilot 扩展学习
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+
++ 总结创建和配置 Azure 容器实例的步骤。
++ 在 Azure 上运行无服务器容器的方法有哪些？
+
+## 通过自定进度的培训了解详细信息
+
++ [在 Azure 容器实例中运行容器映像](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/)。 了解 Azure 容器实例如何帮你快速部署容器，如何设置环境变量，以及指定容器重启策略。
 
 ## 关键结论
 
@@ -104,9 +113,5 @@ lab:
 + ACI 不需要你预配或管理任何基础结构。
 + ACI 支持 Linux 容器和 Windows 容器。
 + ACI 上的工作负荷通常由某种进程或触发器启动和停止，通常生存期较短。 
-
-## 通过自定进度的培训了解详细信息
-
-+ [在 Azure 容器实例中运行容器映像](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/)。 了解 Azure 容器实例如何帮你快速部署容器，如何设置环境变量，以及指定容器重启策略。
 
     
