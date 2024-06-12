@@ -1,90 +1,90 @@
 ---
 demo:
-  title: 演示 03：管理 Azure 资源
-  module: Administer Administer Azure Resources
+    title: 'Demonstration 03: Administer Azure Resources'
+    module: 'Administer Administer Azure Resources'
 ---
-# 03 - 管理 Azure 资源
+# 03 - Administer Azure Resources
 
-## 演示 - Azure 门户
+## Demonstration -- Azure Portal
 
-在此演示中，我们将探讨 Azure 门户。
+In this demonstration, we will explore the Azure portal.
 
-参考：[管理 Azure 门户设置和首选项](https://docs.microsoft.com/azure/azure-portal/set-preferences)
+**Reference**: [Manage Azure portal settings and preferences](https://docs.microsoft.com/azure/azure-portal/set-preferences)
 
-[参考：在 Azure 门户中创建仪表板](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards)
+**Reference**: [Create a dashboard in the Azure portal](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards)
 
-[参考：如何创建 Azure 支持请求](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
+**Reference**: [How to create an Azure support request](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
 
-1. 访问 Azure 门户。
+1. Access the Azure Portal.
 
-1. 选择顶部横幅上的“支持和故障排除”图标 **** 。 查看“支持资源”链接。 
+1. Select  the **Support & Troubleshooting** icon on the top banner. Review the **Support resources** links. 
 
-1. 选择顶部横幅上的“设置”图标。 查看“外观 + 启动视图”设置。 
+1. Select the **Settings** icon on the top banner. Review **Appearance + startup views** settings. 
 
-1. 使用左侧菜单并选择“仪表板”。 使用“磁贴库”编辑仪表板 。 讨论自定义选项。
+1. Use the left-side menu and select **Dashboard**. **Edit** the dashboard using the **Tile Gallery**. Discuss customization options.
 
-1. 演示如何搜索和查找资源。
+1. Show how to search for and locate resources.
 
-1. 使用左上角菜单查找“所有服务”。 
+1. Use the upper left menu to locate **All services**. 
 
-1. 如果有时间，可查看其他功能。
+1. As you have time review other features.
    
-1. 询问学生是否有任何疑问。
+1. Ask if the students have any questions.
 
-## 演示 - Cloud Shell
+## Demonstration -- Cloud Shell
 
-在本演示中，我们将尝试使用 Cloud Shell。
+In this demonstration, we will experiment with Cloud Shell.
 
-参考：[Azure Cloud Shell 快速入门](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli)
+**Reference**: [Quickstart for Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli)
 
-**配置 Cloud Shell**
+**Configure the Cloud Shell**
 
-1.  访问 Azure 门户 **** 。
+1.  Access the **Azure Portal**.
 
-1.  单击顶部横幅上的 Cloud Shell 图标 ****  。
+1.  Click the **Cloud Shell** icon on the top banner.
 
-1.  在“欢迎使用 Shell”页面上，注意 Bash 或 PowerShell 等选项。 选择“PowerShell” **** 。
+1.  On the Welcome to the Shell page, notice your selections for Bash or PowerShell. Select **PowerShell**.
 
-1.  讨论 Azure Cloud Shell 如何需要 Azure 文件共享来保留文件。 如有必要，请配置存储共享。 
+1.  Discuss how the Azure Cloud Shell requires an Azure file share to persist files. If necessary, configure the storage share. 
 
-**尝试使用 Azure PowerShell 和 Bash**
+**Experiment with Azure PowerShell and Bash**
 
-1. 确保已选择 PowerShell shell，并尝试使用一些命令。 例如 Get-AzSubscription 和 Get-AzResourceGroup 。
+1. Ensure the **PowerShell** shell is selected and try a few commands. For example, **Get-AzSubscription** and **Get-AzResourceGroup**.
 
-1. 显示自动完成的工作原理。 显示如何清除屏幕 cls。 
+1. Show how auto-complete works. Show how to clear the screen, **cls**. 
 
-1. 确保已选择 Bash shell，并尝试使用一些命令。 例如，az account list 和 az resource list 。
+1. Ensure the **Bash** shell is selected and try a few commands. For example, **az account list** and **az resource list**.
 
-1. 询问学生是否对使用 PowerShell 或 Bash 命令有任何疑问。 
+1. Ask if students have any questions on using the PowerShell or Bash commands. 
 
-**使用 Cloud shell 编辑器进行试验（可选）**
+**Experiment with the Cloud shell editor (optional)**
 
-1. 若要使用 Cloud Editor，请选择大括号图标。
+1. To use the Cloud Editor, select the **curly braces** icon.
 
-1. 从左侧导航窗格中选择一个文件。 例如，.profile **** 。
+1. Select a file from the left navigation pane. For example, **.profile**.
 
-1. 请注意编辑器顶部横幅，设置（文本大小和字体）和上传/下载文件等选项。
+1. Notice on the editor top banner, selections for Settings (Text Size and Font) and Upload/Download files.
 
-1. 请注意最右侧省略号 (\...)，用于保存、关闭编辑器和打开文件   。
+1. Notice on the ellipsis (**\...**) on the far right for **Save**, **Close Editor**, and **Open File**.
 
-1. 如果有时间，请尝试进行操作，然后关闭 Cloud Editor ****  。
+1. Experiment as you have time, then **close** the Cloud Editor.
 
-1. 关闭 Cloud Shell。
+1. Close the Cloud Shell.
 
-## 演示 - 快速启动模板
+## Demonstration -- QuickStart Templates
 
-在本演示中，我们将探索快速入门模版。
+In this demonstration, we will explore QuickStart templates.
 
-[参考：教程 - 创建和部署模板 - Azure 资源管理器](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
+**Reference**: [Tutorial - Create & deploy template - Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
 
-1. 首先浏览到  [Azure 快速入门模板库](https://learn.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-resource-manager)。 请注意，有 JSON 和 Bicep 示例。 
+1. Start by browsing to the [Azure Quickstart Templates gallery](https://learn.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-resource-manager). Notice there are JSON and Bicep examples. 
 
-1. 询问学生是否有任何感兴趣的特定模板。 如果没有，请选择模板。 例如，[使用标记部署简单的 Windows VM ](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/vm-tags/) 模板。
+1. Ask students if there are any specific templates that are of interest. If not, select a template. For example, the [Deploy a simple Windows VM with tags](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/vm-tags/) template.
 
-1. 讨论“部署到 Azure”按钮如何支持直接通过 Azure 门户部署模板 ****  。
+1. Discuss how the **Deploy to Azure** button enables you to deploy the template directly through the Azure portal.
 
-1. 部署 JSON 模板并讨论如何编辑模板和参数文件。 查看文件的用途。 如果有时间，可查看语法。 
+1. **Deploy** the JSON template and discuss how you can edit the template and parameters file. Review the purpose of the files. As you have time, review the syntax. 
 
-1. 返回到代码示例库，并找到 Bicep 模板。 例如，[创建标准存储帐户](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/storage-account-create/)。 
+1. Return to the code samples gallery, and locate a Bicep template. For example, [Create a Create a Standard Storage Account](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/storage-account-create/). 
 
-1. 部署 Bicep 模板并讨论如何编辑模板和参数文件。 如果有时间，可查看语法。 
+1. **Deploy** the Bicep template and discuss how you can edit the template and parameters file. As you have time, review the syntax. 

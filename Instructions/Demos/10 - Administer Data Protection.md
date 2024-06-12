@@ -1,62 +1,62 @@
 ---
 demo:
-  title: 演示 10：管理数据保护
-  module: Administer Data Protection
+    title: 'Demonstration 10: Administer Data Protection'
+    module: 'Administer Data Protection'
 ---
 
-# 10 - 管理数据保护
+# 10 - Administer Data Protection
 
-## 备份 Azure 文件共享
+## Backup Azure File Shares
 
-在本演示中，我们将探讨在 Azure 门户中备份文件共享。
+In this demonstration, we will explore backing up a file share in the Azure portal.
 
-> 注意：本演示需要一个带有文件共享的存储帐户。 
+> **Note:** This demonstration requires a storage account with a file share. 
 
-参考：[在 Azure 门户中备份 Azure 文件共享](https://docs.microsoft.com/azure/backup/backup-afs)
+**Reference**: [Back up Azure file shares in the Azure portal](https://docs.microsoft.com/azure/backup/backup-afs)
 
-**创建恢复服务保管库**
+**Create a Recovery Services vault**
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 搜索并选择“恢复服务保管库”。
+1. Search for an select **Recovery Services vaults**.
 
-1. 创建恢复服务保管库。 查看保管库与文件共享位于同一区域的要求。 
+1. Create a **Recovery Services Vault**. Review the requirement that the vault be in the same region as the file share. 
 
-1. 等待创建保管库。 
+1. Wait for the vault to be created. 
 
-**配置 Azure 文件备份**
+**Configure the Azure files backup**
 
-1. 转到“备份中心”并创建新的备份 实例。
+1. Go to **Backup center** and create a new **Backup** instance.
 
-1. 查看并讨论“数据源类型”下拉列表中的选项。 选择“Azure 文件存储（Azure 存储）”。 
+1. Review and discuss the choices in the **Datasource type** drop-down. Select **Azure files (Azure storage)**. 
 
-1. 选择保管库。
+1. Select your **vault**.
 
-1. 继续配置备份。 选择要备份的特定存储帐户和文件共享。  
+1. **Continue** configuring the backup. Select the specific storage account and file share that you want to backup.  
 
-1. 在“策略详细信息”中，单击“编辑此策略”。 讨论备份策略的用途。 查看备份计划和保持期。  
+1. In the **Policy details** click **Edit this policy**. Discuss the purpose of backup policies. Review the **backup schedule** and **retention range**.  
 
-1. 启用备份以保存更改。 
+1. **Enable backup** to save your changes. 
 
-1. 如果有时间，请查看如何还原备份实例 。 此外，如何监视备份作业。 
+1. As you have time, review how to **Restore** a **Backup instance**. Also, how to monitor your **Backup jobs**. 
 
-## 备份 Azure 虚拟机
+## Backup Azure Virtual Machines
 
-在此演示中，我们计划每日将虚拟机备份到恢复服务保管库。
+In this demonstration, we will schedule a daily backup of a virtual machine to a Recovery Services vault.
 
-> 注意：此演示需要使用虚拟机和恢复服务保管库。
+> **Note:** This demonstration requires a virtual machine and a recovery service vault.
 
-参考：[教程 - 备份多个 Azure 虚拟机](https://docs.microsoft.com/azure/backup/tutorial-backup-vm-at-scale)
+**Reference**: [Tutorial - Back up multiple Azure virtual machines](https://docs.microsoft.com/azure/backup/tutorial-backup-vm-at-scale)
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 转到“备份中心”并创建新的备份 实例。
+1. Go to **Backup center** and create a new **Backup** instance.
 
-1. 选择“Azure 虚拟机”作为“数据源类型”，然后选择保管库。
+1. Select **Azure Virtual machines** as the **Datasource type** and select the vault.
 
-1. 查看 DefaultPolicy。 默认策略每天备份一次虚拟机。 每日备份保留 30 天。 即时恢复快照保留两天。
+1. Review the **DefaultPolicy**. The default policy backs up the virtual machine once a day. The daily backups are retained for 30 days. Instant recovery snapshots are retained for two days.
 
-1. 使用“启用备份”保存配置。
+1. Use **Enable backup** to save your configuration.
 
-1. 如果有时间，请查看如何立即备份。 此外，如何查看备份作业。  
+1. As you have time, review how to **Backup now**. Also, how to review your **Backup jobs**.  
 

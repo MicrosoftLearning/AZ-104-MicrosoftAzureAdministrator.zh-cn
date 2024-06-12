@@ -1,77 +1,78 @@
 ---
+
 demo:
-  title: 演示 04：管理虚拟网络
-  module: Administer Virtual Networking
+    title: 'Demonstration 04: Administer Virtual Networking'
+    module: 'Administer Virtual Networking'
 ---
 
-# 04 - 管理虚拟网络
+# 04 - Administer Virtual Networking
 
-## 配置虚拟网络
+## Configure Virtual Networks
 
-在本演示中，你将创建虚拟网络。
+In this demonstration, you will create virtual networks.
 
-参考：[快速入门：创建虚拟网络 - Azure 门户](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+**Reference**: [Quickstart: Create a virtual network - Azure portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-## 在门户中创建虚拟网络
+## Create a virtual network in the portal
 
-1.  登录到 Azure 门户并搜索“虚拟网络” **** 。
+1.  Sign in the to the Azure portal and search for **Virtual Networks**.
 
-1.  创建虚拟网络，说明基本设置。 确保至少创建了一个子网。 
+1.  Create a virtual network, explaining the basic settings as you go. Ensure at least one subnet is created. 
 
-1.  验证是否已创建虚拟网络。
+1.  Verify your virtual network was created.
 
-## 配置网络安全组
+## Configure Network Security Groups
 
-在本演示中，你将探索 NSG 和服务终结点。
+In this demonstration, you will explore NSGs and service endpoints.
 
-参考：[限制对 PaaS 资源的访问 - 教程 - Azure 门户](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
+**Reference**: [Restrict access to PaaS resources - tutorial - Azure portal](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
 
-**创建网络安全组**
+**Create a network security group**
 
-1. 访问 Azure 门户。
+1. Access the Azure Portal.
 
-1. 搜索并选择“网络安全组” **** 。
+1. Search for and select the **Network Security Groups**.
 
-1. 创建一个 NSG，说明设置。 
+1. Create a NSG explaining the settings as you go. 
  
-1. 等待部署新 NSG。
+1. Wait for the new NSG to deploy.
 
-**探索入站和出站规则**
+**Explore inbound and outbound rules**
 
-1. 选择新 NSG。
+1. Select your new NSG.
 
-1. 讨论 NSG 如何与子网或网络接口相关联。
+1. Discuss how the NSG can be associated with subnets or network interfaces.
 
-1. 讨论目标入站和出站规则。  
+1. Discuss the purpose inbound and outbound rules.  
 
-1. 查看默认的入站和出站规则。 
+1. Review the default inbound and outbound rules. 
 
-1. 创建新规则，说明设置。 专门讨论服务选择（如 HTTPS）和优先级设置。 
+1. Create a new rule, explaining the settings as you go. Specifically discuss the service selection (like HTTPS) and the priority settings. 
 
-## 配置 Azure DNS
+## Configure Azure DNS
 
-在本演示中，你将探索 Azure DNS。
+In this demonstration, you will explore Azure DNS.
 
-参考：[教程：托管域和子域 - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
+**Reference**: [Tutorial: Host your domain and subdomain - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
 
 
-**创建 DNS 区域**
+**Create a DNS zone**
 
-1. 访问 Azure 门户。
+1. Access the Azure Portal.
 
-1. 搜索 DNS 区域服务 ****  。
+1. Search for the **DNS zones** service.
 
-1. 创建 DNS 区域并说明该区域的用途。 对于名称，可以使用 contoso.internal.com。
+1. Create a **DNS zone** and explain the purpose of the zone. For a name you can use contoso.internal.com.
 
-1.  请等待 DNS 区域创建完毕。 可能需要刷新页面。 ****  
+1.  Wait for the DNS zone to be created. You may need to **Refresh** the page.
 
-**添加 DNS 记录集**
+**Add a DNS record set**
 
-参考：[教程：创建别名记录以引用区域资源记录](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
+**Reference**: [Tutorial: Create an alias record to refer to a zone resource record](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
 
-1. 创建区域后，选择“+记录集” **** 。
+1. Once your zone is created, select **+Record Set**.
 
-1. 使用“类型”下拉列表查看各种记录类型。 ****   查看如何使用不同的记录类型。 请注意当你选择不同记录类型时记录信息如何变化。
+1. Use the **Type** drop-down to view the different types of records. Review how the different record types are used. Notice how the record information changes as you select different record types.
 
-1. 创建 A 记录作为示例。 
+1. Create an **A** record as an example. 
 

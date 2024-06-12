@@ -1,67 +1,67 @@
 ---
 demo:
-  title: 演示 08：管理 Azure 虚拟机
-  module: Administer Azure Virtual Machines
+    title: 'Demonstration 08: Administer Azure Virtual Machines'
+    module: 'Administer Azure Virtual Machines'
 ---
 
 
-# 08 - 管理 Azure 虚拟机
+# 08 - Administer Azure Virtual Machines
 
-## 演示 - 在门户中创建虚拟机
+## Demonstration -- Create Virtual Machines in the portal
 
-在本演示中，我们将在门户中创建并访问 Azure 虚拟机。
+In this demonstration, we will create and access an Azure virtual machine in the portal.
 
-**参考**
+**References**
 
-[快速入门 - 在 Azure 门户中创建 Windows VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+[Quickstart - Create a Windows VM in the Azure portal](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
 
-[快速入门 - 在 Azure 门户中创建 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
+[Quickstart - Create a Linux VM in the Azure portal](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
 
-[使用 Bastion 连接到虚拟机](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
+[Connect to a virtual machine with Bastion](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
 
-**创建虚拟机**
+**Create the virtual machine**
 
-注意：这些步骤仅涵盖一些虚拟机参数。 可探索和了解其他区域。 可以根据受众创建 Windows 或 Linux 虚拟机。
+**Note:** These steps only cover a few virtual machine parameters. Feel free to explore and cover other areas. You can create either Windows or Linux virtual machine, depending on your audience.
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 搜索虚拟机。 
+1. Search for **Virtual machines**. 
 
-1. 创建基本虚拟机。 查看可用性选项、映像和入站规则。
+1. Create a basic virtual machine. Review the availability options, images, and inbound rules.
 
-1. 讨论创建安全管理员帐户的重要性。
+1. Discuss the importance of creating a secure administrator account.
 
-1. 创建虚拟机并等待资源部署。  
+1. Create the virtual machine and wait for the resource to deploy.  
 
-**连接到虚拟机**
+**Connect to the virtual machine**
 
-1. 可通过多种方式连接到虚拟机。 
+1. There are several ways to **Connect** to the virtual machine. 
 
-1. 对于 Windows 服务器，可以使用 RDP，如快速入门中所示。 
+1. For a Windows server you can use **RDP**, as shown in the QuickStart. 
 
-1. 对于 Linux 服务器，可以通过 SSH 连接，如快速入门中所示。 
+1. For a Linux server you can **SSH**, as shown in the QuickStart. 
 
-1. 对于任一服务器，都可以使用 Bastion 服务进行连接（快速入门）。 查看为什么 Bastion 优先于 RDP 或 SSH。 
+1. For either server you can connect with the **Bastion** service (QuickStart). Review why Bastion is preferred to RDP or SSH. 
 
-## 配置虚拟机可用性
+## Configure Virtual Machine Availability
 
-在本演示中，我们将了解虚拟机缩放选项。
+In this demonstration, we will explore virtual machine scaling options.
 
-**参考**
+**References**
 
-[使用 Azure 门户在规模集中创建虚拟机](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
+[Create virtual machines in a scale set using Azure portal](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
 
-1. 使用 Azure 门户。
+1. Use the Azure Portal.
 
-1. 搜索并选择“虚拟机规模集”。 
+1. Search for and select **Virtual Machine Scale Sets**. 
 
-1. 创建虚拟机规模集。 查看虚拟机规模集的用途。 查看统一业务流程模式与灵活业务流程模式之间的差异。 说明你的选择可能会影响缩放选项。 
+1. Create a **Virtual Machine Scale Sets**. Review the purpose of virtual machine scale sets. Review the difference between the **Uniform** and **Flexible** orchestration modes. Explain your selection can affect your scaling options. 
 
-1. 移动到“缩放”选项卡 **** 。 
+1. Move to **Scaling** tab. 
 
-1. 查看如何使用手动缩放和横向缩减策略 ****  。 
+1. Review how **Manual scale** and **Scale-in policy** is used. 
 
-1. 更改为“自定义”缩放策略。 
+1. Change to a **Custom** scaling policy. 
 
-1. 查看如何使用 CPU 阈值 (%) 在虚拟机实例中横向扩展和缩减。 
+1. Review how **CPU threshold (%)** is used to scale out and scale in the virtual machine instances. 
 

@@ -1,65 +1,65 @@
 ---
 demo:
-  title: 演示 06：管理网络流量管理
-  module: Administer Network Traffic Management
+    title: 'Demonstration 06: Administer Network Traffic Management'
+    module: 'Administer Network Traffic Management'
 ---
 
 
-# 06 - 执行网络流量管理
+# 06 - Administer Network Traffic Management
 
-## 配置 Azure 负载均衡器
+## Configure Azure Load Balancer
 
-在此演示中，我们将了解如何创建公共负载均衡器。 
+In this demonstration, we will learn how to create a public load balancer. 
 
-注意：本演示需要一个具有至少一个子网的虚拟网络。  
+**Note:** This demonstration requires a virtual network with at least one subnet. 
 
-**参考**：[快速入门：使用 Azure 门户创建公共负载均衡器，以便对 VM 进行负载均衡](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
+**Reference**: [Quickstart: Create a public load balancer to load balance VMs using the Azure portal](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
 
-**显示门户的帮我选择功能**
+**Show the portal's help me choose feature**
 
-1. 访问 Azure 门户。
+1. Access the Azure portal.
 
-1. 搜索并选择“负载均衡 - 帮我选择”。
+1. Search for and select **Load balancing - help me choose**.
 
-1. 使用向导演练不同的方案。
+1. Use the wizard to walk-through different scenarios.
    
-**创建负载均衡器**
+**Create a load balancer**
 
-1. 在 Azure 门户中继续操作。
+1. Continue in the Azure portal.
 
-1. 搜索并选择“负载均衡器”。 创建负载均衡器。 
+1. Search for and select **Load balancer**. **Create** a load balancer. 
 
-1. 在“基本信息”选项卡上，探讨 SKU、类型以及层级   。
+1. On the **Basics** tab, discuss **SKU**, **Type**, and **Tier**.
 
-1. 在“前端 IP 配置”选项卡上，探讨公共 IP 地址的使用。
+1. On the **Frontend IP configuration** tab, discuss using a public IP address.
 
-1. 在“后端池”选项卡上，通过 IP 地址范围选择虚拟网络。
+1. On the **Backend pools** tab, select the virtual network with IP address range.
 
-1. 在“入站规则”选项卡上，创建负载均衡规则”。 探讨协议、端口、运行状况探测和会话持续性等参数   。 
+1. On the **Inbound rules** tab, create a load balancing rule. Discuss parameters like **Protocol**, **Ports**, **Health probes**, and **Session persistence**. 
 
 
-## 配置 Azure 应用程序网关
+## Configure Azure Application Gateway
 
-在此演示中，我们将了解如何创建 Azure 应用程序网关。 
+In this demonstration, we will learn how to create an Azure Application Gateway. 
 
-**注意**：为了简单起见，请在完成配置时创建新的虚拟网络和子网。 
+**Note**: To keep things simple, create new virtual networks and subnets as you go through the configuration. 
 
-**参考**：[快速入门：使用 Azure 应用程序网关定向 Web 流量 - Azure 门户](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
+**Reference**: [Quickstart: Direct web traffic with Azure Application Gateway - Azure portal](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 
-**创建 Azure 应用程序网关**
+**Create the Azure Application Gateway**
 
-1. 访问 Azure 门户。
+1. Access the Azure portal.
 
-1. 搜索并选择“Azure 应用程序网关”。
+1. Search for and select **Azure Application Gateway**.
 
-1. 创建新的网关。
+1. **Create** a new gateway.
 
-1. 在“基本信息”选项卡上，探讨层级、自动缩放以及实例计数   。
+1. On the **Basics** tab, discuss **Tiers**, **Autoscaling**, and **Instance counts**.
 
-1. 在“前端”选项卡上，探讨 IP 地址类型。
+1. On the **Frontends** tab, discuss the IP address types.
 
-1. 在“后端”选项卡上，探讨空后端池的适用情况。
+1. On the **Backends** tab, discuss when to use an empty backend pool.
 
-1. 在“配置”选项卡上，探讨传递规则。 与负载均衡器规则进行比较。
+1. On the **Configuration** tab, discuss routing rules. Compare to the load balancer rules.
 
-1. 说明在创建网关后要添加后端目标并进行测试。 
+1. Explain that after gateway is created, you would then add backend targets and test. 
