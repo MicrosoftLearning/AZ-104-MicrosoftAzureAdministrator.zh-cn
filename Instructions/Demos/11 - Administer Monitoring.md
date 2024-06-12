@@ -1,52 +1,52 @@
 ---
 demo:
-  title: 演示 11：管理监视
-  module: Administer Monitoring
+    title: 'Demonstration 11: Administer Monitoring'
+    module: 'Administer Monitoring'
 ---
 
-# 11 - 管理监视
+# 11 - Administer Monitoring
 
-## 配置 Azure 警报
+## Configure Azure Alerts
 
-在本演示中，将创建预警规则。
+In this demonstration, we will create an alert rule.
 
-[参考：使用 Azure Monitor 创建、查看和管理指标警报](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
+**Reference**: [Create, view, and manage Metric Alerts Using Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
 
-创建警报规则
+**Create an alert rule**
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 搜索并选择“监视”，然后选择“警报”。
+1. Search for and select **Monitor** and then **Alerts**.
 
-1. 选择警报规则的范围。 讨论如何按订阅、资源类型或资源位置进行筛选。
+1. Select a scope for the alert rule. Discuss how You can filter by subscription, resource type, or resource location.
 
-1. 设置警报规则的条件。 讨论信号如何定义要度量的内容。 
+1. Set the conditions for the alert rule. Discuss how signals define what you want to measure. 
 
-1. 设置警报规则的操作。 查看操作组和可用的通知类型。 
+1. Set the actions for the alert rule. Review action groups and the type of notifications that are available. 
 
-1. 设置警报规则的详细信息。 查看常见详细信息，例如严重性。 
+1. Set the details for the alert rule. Review common details like severity. 
 
-1. 完成警报配置并查看已触发的任何警报。 
+1. Finish configuring your alert and review any alerts which have fired. 
 
-## 配置 Log Analytics
+## Configure Log Analytics
 
-在本演示中，你将使用 Log Analytics 查询语言。
+In this demonstration, you will work with the Log Analytics query language.
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 搜索并选择“监视”，然后选择“日志”。
+1. Search for and select **Monitor** and then **Logs**.
 
-1. 如果显示，请关闭初始屏幕。
+1. If shown, close the splash screen.
 
-1. 选择一个范围并应用更改。 
+1. Select a scope and **apply** your changes. 
 
-1. 查看日志信息在表中是如何组织的。 浏览多个表。
+1. Review how log information is organized in tables. Browse several of the tables.
 
-1. 移动到“查询”选项卡。选择查询并加载到编辑器 。 讨论已创建多少个常见查询。
+1. Move to the **queries** tab. Select a query and **load to editor**. Discuss how many common queries have already been created.
 
-1. 简要查看 KQL 语法。 
+1. Briefly review the KQL syntax. 
 
-1. 如果你有时间，可以尝试“收藏夹”和“保存的查询”  **** 。
+1. As you have time, experiment with **Favorites** and **Saved Queries**.
 
 
 

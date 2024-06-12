@@ -1,55 +1,58 @@
 ---
 demo:
-  title: 演示 01：管理标识
-  module: Administer Identity
+    title: 'Demonstration 01: Administer Identity'
+    module: 'Administer Identity'
 ---
 
-# 01 - 管理标识
+# 01 - Administer Identity
 
-## 配置 Entra ID 标识
+## Configure Entra ID Identities
 
-此领域没有正式的演示。 请考虑演练学生实验室 01 的交互式实验室模拟。 
+This area does not have a formal demonstration. Consider walking through the interactive lab simulation for student Lab 01. 
 
-[交互式实验室模拟实验室 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
+[Interactive Lab Simulation Lab 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 
-或者，可以使用以下快速入门之一。 
+Alternatively, you could use one of these QuickStarts. 
 
-**引用**：[快速入门 - 访问并在 Microsoft Entra ID 中创建新租户](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+**Reference**: [Quickstart - Create a group with members and view all groups and members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
 
-**引用**：[快速入门 - 创建包含成员的组并查看所有组和成员](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
+## Configure User and Group Accounts
 
-## 配置用户和组帐户
+In this demonstration, we will explore Entra ID identities.
 
-在本演示中，将探讨 Entra ID 标识。
+**Reference**: [Add or delete users](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
 
-**引用**：[添加或删除用户](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
+**Reference**: [Create a basic group and add members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
 
-**引用**：[创建基本组并添加成员](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
+**Note:** Depending on your subscription not all areas of the Microsoft Entra ID blade will be available. 
 
-**注意：**  根据订阅，Microsoft Entra ID 窗格并非所有区域都可用。 
+**Review license and domain information**
 
-**查看许可证和域信息**
+1.  Access the Azure portal and navigate to the **Microsoft Entra ID** blade.
 
-1.  访问 Azure 门户并导航到  **Microsoft Entra ID**  窗格。
+2.  On the Overview blade, review the **Tenant information** including license and primary domain.
 
-2.  在“概述”边栏选项卡上，查看“租户信息”，包括许可证和主域。 ****  
+**Explore user accounts**
 
-**浏览用户帐户**
+1.  Select the **Users** blade.
 
-1.  选择“用户”边栏选项卡 ****  。
+2.  Explain the choices for **New user** and **New guest user**.
 
-2.  说明“新建用户”和“新建来宾用户”的选项。 ****   ****
+3.  Select **New user** and discuss the differences between **Create
+    user** and **Invite user**.
 
-3.  选择“新建用户”，讨论“创建用户”和“邀请用户”之间的差异 ****   ****   **** 。
+4.  Create a **New user** reviewing the **Identity**, **Groups and
+    roles**, **Settings**, and **Job Info** parameters.
 
-4.  创建查看标识、组和角色、设置和作业信息参数的新用户 ****   ****  ****  ****  ****  。
+5.  After the user is created, review **Reset password**, **Delete
+    user**, and **Sign-ins**.
 
-5.  创建用户后，查看“重置密码”、“删除用户”和“登录” ****  ****  **** 。
+**Explore group accounts**
 
-**浏览组帐户**
+1.  Return to the **Microsoft Entra ID** page and select
+    the **Groups** blade.
 
-1.  返回  **Microsoft Entra ID**  页面，然后选择“ **组**” 窗格。
+2.  Create a **New group** or select an existing group to review.
 
-2.  创建新组，或者选择现有组进行查看 ****  。
-
-3.  查看相关组信息，包括“成员资格类型”和“类型” ****   **** 。
+3.  Review information about a group including **Membership
+    type** and **Type**.

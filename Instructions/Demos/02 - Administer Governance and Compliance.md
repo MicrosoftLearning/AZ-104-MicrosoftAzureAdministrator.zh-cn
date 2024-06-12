@@ -1,111 +1,112 @@
 ---
+
 demo:
-  title: 演示 02：管理治理和合规性
-  module: Administer Governance and Compliance
+    title: 'Demonstration 02: Administer Governance and Compliance'
+    module: 'Administer Governance and Compliance'
 ---
 
-# 02 - 管理治理与合规性
+# 02 - Administer Governance and Compliance
 
-## 配置订阅
+## Configure Subscriptions
 
-此领域没有正式的演示。 
+This area does not have a formal demonstration. 
 
-[参考：创建额外的 Azure 订阅](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
+**Reference**: [Create an additional Azure subscription](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
-## 配置 Azure Policy
+## Configure Azure Policy
 
-在本演示中，我们将使用 Azure 策略。
+In this demonstration, we will work with Azure policies.
 
-[参考：教程：生成策略以强制执行合规性 - Azure Policy](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+**Reference**: [Tutorial: Build policies to enforce compliance - Azure Policy](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-**分配策略**
+**Assign a policy**
 
-1.  访问 Azure 门户。
+1.  Access the Azure portal.
 
-2.  搜索并选择“策略” **** 。
+2.  Search for and select **Policy**.
 
-3.  选择“分配”，然后选择“分配策略” ****  。
+3.  Select **Assignments** and then **Assign Policy**.
 
-5.  讨论“范围”，它用于确定要强制执行策略分配的资源或资源组 ****  。
+5.  Discuss the **Scope** which determines what resources or grouping of resources the policy assignment is enforced on.
 
-6.  选择“策略定义…”，打开可用定义列表。 **** 请花点时间查看内置策略定义。
+6.  Select the **Policy definition** ellipsis to open the list of available definitions. Take some time to review the built-in policy definitions.
 
-7.  搜索并选择“允许的位置”策略 **** 。 通过此策略，可限制组织在部署资源时可指定的位置。
+7.  Search for and select the **Allowed locations** policy. This policy enables you to restrict the locations your organization can specify when deploying resources.
 
-8.  移动“参数”选项卡，然后使用下拉列表选择一个或多个允许的位置 ****  。
+8.  Move the **Parameters** tab and using the drop-down select one or more allowed locations.
 
-9.  单击“查看 + 创建”，然后单击“创建”以创建策略 ****   ****  。
+9.  Click **Review + create** and then **Create** to create the policy.
 
-**创建并分配计划定义**
+**Create and assign an initiative definition**
 
-1.  返回 Azure Policy 页面并选择“创作”下的“定义” ****  。
+1.  Return to the Azure Policy page and select **Definitions** under Authoring.
 
-2.  选择页面顶部的“计划定义” ****  。
+2.  Select **Initiative Definition** at the top of the page.
 
-3.  提供名称和说明 ****   **** 。
+3.  Provide a **Name** and **Description**.
 
-4.  新建类别 。
+4.  **Create new** Category.
 
-5.  从右侧面板中添加“允许的位置”策略 ****   ****  。
+5.  From the right panel **Add** the **Allowed locations** policy.
 
-6.  添加你选择的一项其他策略。
+6.  Add one additional policy of your choosing.
 
-7.  保存所做更改，然后将计划定义分配给订阅。  ****  
+7.  **Save** your changes and then **Assign** your initiative definition to your subscription.
 
-**检查合规性**
+**Check for compliance**
 
-1.  返回到“Azure Policy 服务”页面。
+1.  Return to the Azure Policy service page.
 
-2.  选择“合规性” **** 。
+2.  Select **Compliance**.
 
-3.  查看策略和定义的状态。
+3.  Review the status of your policy and your definition.
 
-**检查修正任务**
+**Check for remediation tasks**
 
-1.  返回到“Azure Policy 服务”页面。
+1.  Return to the Azure Policy service page.
 
-2.  选择“修正” **** 。
+2.  Select **Remediation**.
 
-3.  查看列出的所有修正任务。
+3.  Review any remediation tasks that are listed.
 
-4. 如果有时间，删除策略和计划。 
+4. As you have time, remove the policy and the initiative. 
 
-## 配置基于角色的访问控制
+## Configure Role-Based Access Control
 
-在本演示中，我们将了解角色分配。
+In this demonstration, we will learn about role assignments.
 
-[参考：教程：使用 Azure 门户授予用户对 Azure 资源的访问权限 - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+**Reference**: [Tutorial: Grant a user access to Azure resources using the Azure portal - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
-参考：[快速入门 - 检查用户对 Azure 资源的访问权限 - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/check-access)
+**Reference**: [Quickstart - Check access for a user to Azure resources - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/check-access)
 
-找到“访问控制”边栏选项卡
+**Locate Access Control blade**
 
-1.  访问 Azure 门户，然后选择一个资源组。 记下所使用的资源组。
+1.  Access the Azure portal and select a resource group. Make a note of what resource group you use.
 
-2.  选择“访问控制 (IAM)”边栏选项卡 ****  。
+2.  Select the **Access Control (IAM)** blade.
 
-3.  此边栏选项卡将可用于许多不同的资源，因此你可以控制权限。
+3.  This blade will be available for many different resources so you can control permissions.
 
-查看角色权限
+**Review role permissions**
 
-1.  选择“角色”选项卡（顶部） ****  。
+1.  Select the **Roles** tab (top).
 
-1.  查看大量可用的内置角色。
+1.  Review the large number of built-in roles that are available.
 
-1.  双击某个角色，然后选择“权限”（顶部）。 ****  
+1.  Double-click a role, and then select **Permissions** (top).
 
-1.  继续点击该角色，直到可以查看该角色的“读取”、“写入”和“删除”操作。 ****  
+1.  Continue drilling into the role until you can view the **Read, Write, and Delete** actions for that role.
 
-1.  返回“访问控制(IAM)”边栏选项卡 ****  。
+1.  Return to the **Access Control (IAM)** blade.
 
-**添加角色分配**
+**Add a role assignment**
 
-1.  创建用户或选择现有用户。
+1.  Create a user or select an existing user.
 
-1.  选择“添加角色分配”，然后选择一个角色。 **** 例如，所有者**。
+1.  Select **Add role assignment** and select a role. For example, *owner*.
 
-1.  选择“检查访问权限” **** 。
+1.  Select **Check access**.
 
-1.  查看用户权限。
+1.  Review the user permissions.
 
-1.  请注意，可以拒绝分配 **** 。
+1.  Note that you can **Deny assignments**.

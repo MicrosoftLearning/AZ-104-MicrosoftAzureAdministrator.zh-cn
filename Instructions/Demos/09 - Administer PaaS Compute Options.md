@@ -1,106 +1,106 @@
 ---
 demo:
-  title: 演示 09：管理 PaaS 计算选项
-  module: Administer PaaS Compute Options
+    title: 'Demonstration 09: Administer PaaS Compute Options'
+    module: 'Administer PaaS Compute Options'
 ---
 
-# 09 - 管理 PaaS 计算选项
+# 09 - Administer PaaS Compute Options
 
-## 配置 Azure 应用服务计划
+## Configure Azure App Service Plans
 
-在本演示中，将创建并使用 Azure 应用服务计划。
+In this demonstration, we will create and work with Azure App Service plans.
 
-[参考：管理应用服务计划 - Azure 应用服务](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
+**Reference**: [Manage App Service plan - Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
 
-参考：[在 Azure 应用服务中纵向扩展应用](https://learn.microsoft.com/azure/app-service/manage-scale-up)
+**Reference**: [Scale up an app in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-scale-up)
 
-参考：[Azure 应用服务中的自动扩缩](https://learn.microsoft.com/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
+**Reference**: [Automatic scaling in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
 
-1. 使用 Azure 门户。 
+1. Use the Azure portal. 
 
-1. 搜索并选择“应用服务计划” **** 。
+1. Search for and select **App Service plans**.
 
-1. 创建一个简单的应用服务计划。 讨论需要选择 Windows 还是 Linux。 现在或在后续步骤中讨论定价计划。 
+1. Create a simple App Service plan. Discuss the need to select Windows or Linux. Discuss pricing plans now or in the next steps. 
 
-1. 部署新的应用服务计划。 
+1. Deploy your new app service plan. 
 
-1. 查看“纵向扩展（应用服务计划）”边栏选项卡。 讨论“开发/测试”计划与“生产”计划之间的差异。 查看功能列表。 
+1. Review the **Scale up (App Service Plan)** blade. Discuss the difference between **Dev/Test** and **Production** plans. Review the feature list. 
 
-1. 查看“横向扩展（应用服务计划）”边栏选项卡。 查看“手动”和“基于规则”之间的差异。 
+1. Review the **Scale out (App Service Plan)** blade. Review the difference between **Manual** and **Rule-based**. 
 
-## 配置 Azure 应用服务
+## Configure Azure App Services
 
-在本演示中，我们将新建运行 Docker 容器的 Web 应用。 容器会显示一条“欢迎”消息。
+In this demonstration, we will create a new web app that runs a Docker container. The container displays a Welcome message.
 
-[参考：创建 Web 应用](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
+**Reference**: [Create a Web App](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
 
-在此任务中，我们将创建一个 Azure 应用服务 Web 应用。
+In this task, we will create an Azure App Service Web App.
 
-1. 使用 Azure 门户。 
+1. Use the Azure portal. 
 
-1. 搜索并选择“应用服务” **** 。
+1. Search for and select **App Services**.
 
-1. 创建 Web 应用 。
+1. **Create** a **Web App**.
 
-    - 发布：代码。 查看其他选项。
-    - 运行时堆栈：.Net。 查看其他选项。
-    - 操作系统：Linux
+    - Publish: **Code**. Review other choices.
+    - Runtime stack: **.Net**. Review other choices.
+    - Operating system: **Linux**
 
-1. 选择“免费 F1”服务计划。
+1. Select the **Free F1** service plan.
 
-1. 查看 + 创建 Web 应用。 等待资源部署完毕。
+1. **Review + create** the web app. Wait for the resource to deploy.
 
-1. 在“概述”页上，确保“状态”为“正在运行”  。
+1. On the **Overview** page, ensure the **Status** is **Running**.
 
-1. 选择 URL 并确保加载默认占位符页面。
+1. Select the **URL** and ensure the default placeholder page loads.
 
-1. 如果有时间，请浏览“部署槽位”选项。
+1. As you have time, explore the **Deployment slots** options.
    
-## 配置 Azure 容器实例
+## Configure Azure Container Instances
 
-在本演示中，我们将在 Azure 门户中使用 Azure 容器实例 (ACI) 创建、配置和部署容器。 ACI 应用程序显示一个静态 HTML 页面，其中包含公共 Microsoft Hello World 图像。 
+In this demonstration we create, configure, and deploy a container by using Azure Container Instances (ACI) from the Azure Portal. The ACI application displays a static HTML page with the public Microsoft Hello World image. 
 
-**参考**：[快速入门 - 将 Docker 容器部署到容器实例](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal)
+**Reference**: [Quickstart - Deploy Docker container to container instance](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal)
 
-1. 使用 Azure 门户。
+1. Use the Azure portal.
 
-1. 搜索并选择“容器实例” **** 。
+1. Search for and select **Container instances**.
 
-1. 创建新的容器实例。 
+1. **Create** a new container instance. 
 
-1. 填写“资源组”和“容器名称” 。 
+1. Fill in the **Resource group** and **Container name**. 
 
-1. 讨论“映像源”选项。 使用快速入门映像。
+1. Discuss the **Image source** options. Use **Quickstart images**.
 
-1. 对于“容器映像”，使用 mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux) 。 此示例 Linux 映像打包了一个用 Node.js 编写的小型 Web 应用，该应用提供静态 HTML 页面。
+1. For **Container image** use **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)**. This sample Linux image packages a small web app written in Node.js that serves a static HTML page.
 
-1. 在“网络”页，为容器指定一个“DNS 名称标签”   。 
+1. On the **Networking** page, specify a **DNS name label** for your container. 
 
-1. 将其他所有设置保留为默认设置，然后选择“查看 + 创建”。
+1. Leave all other settings as their defaults, then select **Review + create**.
 
-1. 等待资源部署完毕。
+1. Wait for the resource to deploy.
 
-1. 在资源的“概述”页上，确保“状态”为“正在运行”  。
+1. On the **Overview** page for the resource, ensure the **Status** is **Running**.
 
-1. 导航到容器实例的 FQDN，并确保显示欢迎页。 
+1. Navigate to the **FQDN** for the container instance and ensure the welcome page displays. 
 
-注意：若要避免产生额外费用，请删除资源。 
+**Note**: To avoid additional costs, delete the resource. 
 
-## 配置 Azure 容器应用
+## Configure Azure Container Apps
 
-在本演示中，我们将创建并使用 Azure 容器应用。 
+In this demonstration, we will create and work with Azure Container Apps. 
 
-**参考**：[快速入门：使用 Azure 门户部署自己的第一个容器应用](https://learn.microsoft.com/azure/container-apps/quickstart-portal)
+**Reference**: [Quickstart: Deploy your first container app using the Azure portal](https://learn.microsoft.com/azure/container-apps/quickstart-portal)
 
-1. 搜索并选择“容器应用”。
+1. Search for and select **Container Apps**.
 
-1. 提供“项目详细信息”并创建容器应用环境 。
+1. Complete the **Project details** and create the container apps **environment**.
 
-1. 查看并创建容器应用。
+1. **Review and create** the container app.
 
-1. 使用应用程序 URL 链接查看自己的应用程序。
+1. Use the **Application URL** link to view your application.
 
-1. 验证浏览器是否显示“欢迎使用 Azure 容器应用”消息。 
+1. Verify the browser displays the **Welcome to Azure Container Apps** message. 
 
 
 
