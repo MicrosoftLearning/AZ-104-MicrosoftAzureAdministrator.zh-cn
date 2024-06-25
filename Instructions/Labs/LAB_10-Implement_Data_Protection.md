@@ -113,11 +113,9 @@ lab:
     
     >你知道吗？**** 通过“跨区域还原”选项，你可在次要的 [Azure 配对区域](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore)中还原数据。 
 
-1. 返回到“恢复服务保管库”边栏选项，单击“安全设置”>“软删除和安全设置”标签下的“更新”链接。********
+1. 选择“安全设置”>“软删除和安全设置”标签下的“更新”链接。********
 
 1. 在“安全设置”边栏选项卡上，请注意，“软删除(对于在 Azure 中运行的工作负载)”为“已启用”  。 请注意，软删除保留期为 14 天。******** 
-
-1. 返回到“恢复服务保管库”边栏选项卡，选择“概述”边栏选项卡。****
 
 >你知道吗？**** Azure 有两种类型的保管库：“恢复服务保管库”与“备份保管库”。 主要区别在于可以备份的数据源。 详细了解[区别](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault)。
 
@@ -285,7 +283,7 @@ lab:
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + Azure 备份支持哪些产品？
 + 总结使用 Azure 备份备份和还原 Azure 虚拟机的步骤。
