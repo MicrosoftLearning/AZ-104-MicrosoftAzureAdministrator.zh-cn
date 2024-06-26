@@ -169,38 +169,21 @@ lab:
 
 1. 在“CoreServicesVnet”中的“设置”下，选择“对等互连”。
 
-1. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。
-
-1. 使用下表中的信息创建对等互连。
+1. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。 如果未指定，请使用默认值。 
 
 | **参数**                                    | **值**                             |
-| --------------------------------------------- | ------------------------------------- |
-| **此虚拟网络**                                       |                                       |
+| --------------------------------------------- | ------------------------------------- |                                
 | 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认）                       |
-| 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
-| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 CoreServicesVnt 以使用对等互连虚拟网络的远程网关       | 未选择（默认）                        |
-| **远程虚拟网络**                                   |                                       |
-| 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| 虚拟网络部署模型              | **资源管理器**                      |
-| 我知道我的资源 ID                         | 未选定                          |
-| 订阅                                  | *订阅*    |
-| 虚拟网络                               | ManufacturingVnet****                     |
+| 虚拟网络    | **ManufacturingVM-net (az104-rg5)**  |
 | 允许 ManufacturingVnet 访问 CoreServicesVnet  | 已选择（默认）                       |
 | 允许 ManufacturingVnet 接收来自 CoreServicesVnet 的转发流量 | 已选定                        |
-| 允许 CoreServicesVnet 中的网关将流量转发到对等互连虚拟网络 | 未选择（默认） |
-| 启用 ManufacturingVnet 以使用 CoreServicesVnet 的远程网关       | 未选择（默认）                        |
+| 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认）                       |
+| 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
 
-1. 检查设置，然后选择“添加”****。
-
-![对等互连页面的屏幕截图。](../media/az104-lab05-peering.png)
-
- 
 1. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。 刷新页面以确保“对等互连状态”为“已连接”********。
 
 1. 切换到 ManufacturingVnet，并验证 ManufacturingVnet-to-CoreServicesVnet 对等互连是否已列出********。 确保“对等互连状态”为“已连接”********。 你可能需要**刷新**页面。 
-
 
 ## 任务 5：使用 Azure PowerShell 测试虚拟机之间的连接
 
@@ -288,7 +271,7 @@ lab:
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 *copilot.microsoft.com*。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + 如何使用 Azure PowerShell 或 Azure CLI 命令在 vnet1 和 vnet2 之间添加虚拟网络对等互连？
 + 创建一个表，其中突出显示 Azure 上支持的各种 Azure 和第三方监视工具。 突出显示何时使用每个工具。 
