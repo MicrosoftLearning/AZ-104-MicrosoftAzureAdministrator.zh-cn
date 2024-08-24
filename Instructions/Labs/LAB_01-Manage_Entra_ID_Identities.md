@@ -19,15 +19,8 @@ lab:
 
 你的组织正在构建一个新的实验室环境，用于对应用和服务进行预生产测试。  一些工程师受雇管理实验室环境，包括虚拟机。 为了支持工程师通过使用 Microsoft Entra ID 进行身份验证，你的任务是预配用户和组。 为了最大程度减少管理开销，应根据职务自动更新组成员身份。 
 
-## 交互式实验室模拟
-
-此实验室使用交互式实验室模拟。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
->**注意：** 此模拟即将更新。 Microsoft Entra ID 是 Azure Active Directory (Azure AD) 的新名称。 
-
-+ [管理 Entra ID 标识](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)。 创建和配置用户并分配给组。 创建 Azure 租户并管理来宾帐户。 
-
 ## 体系结构关系图
+
 ![实验室 01 体系结构示意图。](../media/az104-lab01-architecture.png)
 
 ## 工作技能
