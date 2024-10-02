@@ -133,15 +133,6 @@ lab:
 
 >**注意：** 你可能正在管理大量组。 你的组织是否具有创建组和添加成员的计划？
    
-## 清理资源
-
-如果使用自己的订阅，需要一点时间删除实验室资源****。 这将确保资源得到释放，并将成本降至最低。 删除实验室资源的最简单方法是删除实验室资源组。 请注意，这不会删除已创建的任何 Entra ID 用户或组。 
-
-+ 在 Azure 门户中，选择资源组，选择“删除资源组”，输入资源组名称，然后单击“删除”************。
-+ `Remove-AzResourceGroup -Name resourceGroupName`（使用 Azure PowerShell）。
-+ `az group delete --name resourceGroupName`（使用 CLI）。
-  
-
 ## 使用 Copilot 扩展学习
 
 Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
