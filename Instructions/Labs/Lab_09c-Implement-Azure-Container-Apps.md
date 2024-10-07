@@ -47,7 +47,7 @@ Azure 容器应用将托管 Kubernetes 群集的概念向前推进了一步，�
     | 资源组 | `az104-rg9` |
     | 容器应用名称 |  `my-app` |
     | 区域    | 美国东部****（或你附近可用的区域） |
-    | 容器应用环境 | 保留默认值 |
+    | 容器应用环境 | 选择“**新建**”>将环境名称设置为 **my-environment**  > “**创建**” |
 
 1. 在“容器”选项卡上，确保已启用“使用快速入门映像”，并将快速入门映像设置为“简单 hello world 容器”************。
 
@@ -76,7 +76,7 @@ Azure 容器应用将托管 Kubernetes 群集的概念向前推进了一步，�
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + 总结创建和配置 Azure 容器应用的步骤。
 + 将 Azure 容器应用与 Azure Kubernetes 服务进行比较和对比。
