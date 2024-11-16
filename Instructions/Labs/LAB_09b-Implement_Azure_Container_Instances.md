@@ -61,6 +61,8 @@ lab:
 
     >**注意**：可以在 dns-name-label.region.azurecontainer.io 公开访问你的容器。 如果你收到了“DNS 名称标签不可用”的错误消息，请指定其他值。
 
+1. 单击“**下一步: 监视 >**”并取消选中“**启用容器实例日志**”。 
+
 1. 单击“下一步:**高级”>**，查看设置而不进行任何更改。
 
  1. 单击“查看 + 创建”，确保通过验证，然后选择“创建”********。
@@ -96,7 +98,7 @@ lab:
 + `az group delete --name resourceGroupName`（使用 CLI）。
 
 ## 使用 Copilot 扩展学习
-Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到 copilot.microsoft.com**。 花几分钟时间尝试这些提示。
+Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以帮助了解实验室中未涵盖的领域或需要更多信息的领域。 打开 Edge 浏览器并选择“Copilot”（右上角）或导航到*copilot.microsoft.com*。 花几分钟时间尝试这些提示。
 
 + 总结创建和配置 Azure 容器实例的步骤。
 + 在 Azure 上运行无服务器容器的方法有哪些？
