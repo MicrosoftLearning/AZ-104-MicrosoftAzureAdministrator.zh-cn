@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 实验室 06：实现流量管理
+  title: 实验室 06：实现网络流量管理
   module: Administer Network Traffic Management
 ---
 
-# 实验室 06 - 实现流量管理
+# 实验室 06 - 实现网络流量管理
 
 ## 实验室简介
 
