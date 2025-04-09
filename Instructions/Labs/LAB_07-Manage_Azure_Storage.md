@@ -146,7 +146,7 @@ lab:
 
 1. 选择上传文件并查看“下载”、“删除”、“更改层级”和“获取租约”等选项****************。
 
-1. 复制文件 URL 并粘贴到新的 Inprivate 浏览窗口中********。
+1. 复制文件 **URL**（“属性”边栏选项卡）并将其粘贴到新的 **Inprivate** 浏览窗口。
 
 1. 你应该可以看到一个 XML 格式的消息，显示“ResourceNotFound”或“PublicAccessNotPermitted”。
 

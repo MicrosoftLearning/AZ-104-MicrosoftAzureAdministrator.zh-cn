@@ -44,8 +44,8 @@ lab:
 
 1. 登录 **Azure 门户** - `https://portal.azure.com`。
 
-1. 搜索并选择 `Disks`。
-
+1. 搜索并选择 `Disks`。 
+   
 1. 在“磁盘”页上，选择“创建”。****
 
 1. 在“创建托管磁盘”页上，配置该磁盘，然后选择“确定”。******** 
@@ -213,23 +213,27 @@ lab:
 
 在此任务中，你将使用 Bicep 文件部署托管磁盘。 Bicep 是基于 ARM 模板构建的声明性自动化工具。
 
+1. 找到 **\Allfiles\Lab03\azuredeploydisk.bicep** 文件。
+
 1. 继续在 Cloud Shell 中的 Bash 会话中工作。********
 
-1. 找到并下载 **\Allfiles\Lab03\azuredeploydisk.bicep** 文件。
+1. 选择“**管理文件**”，然后将 Bicep 文件“**上传**”到 Cloud Shell。 
 
-1. **** 将该 bicep 文件上传到 Cloud Shell。 
+1. 单击“**编辑器**”，出现提示时，请**确认**切换到经典 Cloud Shell。
 
-1. 选择“编辑器”（大括号）图标并导航到该文件。****
+1. 选择 **azuredeploydisk.bicep** 文件 
 
-1. 花一分钟时间从头到尾阅读该 bicep 模板文件。 请注意磁盘资源的定义方式。 
+1. 花一分钟时间从头到尾阅读 Bicep 模板文件。 请注意磁盘资源的定义方式。 
    
 1. 做出以下更改：
 
-    + 将 **managedDiskName** 值更改为 `Disk4`。
-    + 将 **sku name** 值更改为 `StandardSSD_LRS`。
-    + 将 **diskSizeinGiB** 值更改为 `32`。
+    + 将 **managedDiskName** 值（第 4 行）更改为 Disk4。
+    + 将 **sku 名称** 值（第 26 行）更改为 StandardSSD_LRS。
+    + 将 **diskSizeinGiB** 值（第 7 行）更改为 32。
 
-1. 按 **Ctrl +S** 保存所做的更改。
+    >**备注：** 实验室文件中提供了已完成的 Bicep 模板。
+    
+1. 使用 **Ctrl + S** 保存所做的更改。
 
 1. 现在，部署该模板。
 
