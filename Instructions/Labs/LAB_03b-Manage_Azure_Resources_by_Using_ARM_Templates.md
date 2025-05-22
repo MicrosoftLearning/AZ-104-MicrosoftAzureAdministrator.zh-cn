@@ -227,11 +227,9 @@ lab:
    
 1. 做出以下更改：
 
-    + 将 **managedDiskName** 值（第 2 行）更改为 Disk4。
-    + 将 **sku 名称** 值（第 26 行）更改为 StandardSSD_LRS。
-    + 将 **diskSizeinGiB** 值（第 7 行）更改为 32。
-
-    >**备注：** 实验室文件中提供了已完成的 Bicep 模板。
+    + 将 **managedDiskName** 值（第 2 行）更改为 **az104-disk5**。
+    + 将 **sku 名称**值（第 26 行）更改为 **StandardSSD_LRS**。
+    + 将 **diskSizeinGiB** 值（第 7 行）更改为 **32**。
     
 1. 使用 **Ctrl + S** 保存所做的更改。
 
