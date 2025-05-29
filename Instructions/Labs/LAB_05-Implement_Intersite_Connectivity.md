@@ -73,7 +73,7 @@ lab:
 
 1. 在“网络”选项卡上，对于“虚拟网络”，选择“新建”********。
 
-1. 使用以下信息配置虚拟网络，然后选择“确定”****。 如有必要，删除或替换现有信息。
+1. 使用以下信息配置虚拟网络，然后选择“**确定**”。 如有必要，删除或替换现有信息。
 
     | 设置 | 值 | 
     | --- | --- |
@@ -118,7 +118,7 @@ lab:
 
 1. 在“网络”选项卡上，对于“虚拟网络”，选择“新建”****。
 
-1. 使用以下信息配置虚拟网络，然后选择“确定”****。  如有必要，删除或替换现有地址范围。
+1. 使用以下信息配置虚拟网络，然后选择“**确定**”。  如有必要，删除或替换现有地址范围。
 
     | 设置 | 值 | 
     | --- | --- |
@@ -169,23 +169,23 @@ lab:
 
 1. 在“CoreServicesVnet”中的“设置”下，选择“对等互连”。
 
-1. 在“CoreServicesVnet”|“对等互连”上，选择“+ 添加”。 如果未指定，请使用默认值。 
+1. 在“CoreServicesVnet”的“对等互连”中，选择“**+ 添加**”。 如果未指定，请使用默认值。 
 
-| **参数**                                    | **值**                             |
-| --------------------------------------------- | ------------------------------------- |                                
-| 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| 虚拟网络    | **ManufacturingVM-net (az104-rg5)**  |
-| 允许 ManufacturingVnet 访问 CoreServicesVnet  | 已选择（默认）                       |
-| 允许 ManufacturingVnet 接收来自 CoreServicesVnet 的转发流量 | 已选定                        |
-| 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认）                       |
-| 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定                       |
+    | **参数**                                    | **值**                             |
+    | --------------------------------------------- | ------------------------------------- |                                
+    | 对等互连链接名称                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | 虚拟网络    | **ManufacturingVM-net (az104-rg5)**  |
+    | 允许 ManufacturingVnet 访问 CoreServicesVnet  | 已选择（默认） |
+    | 允许 ManufacturingVnet 接收来自 CoreServicesVnet 的转发流量 | 已选定  |
+    | 对等互连链接名称                             | `ManufacturingVnet-to-CoreServicesVnet` |
+    | 允许 CoreServicesVnet 访问对等互连虚拟网络            | 已选择（默认） |
+    | 允许 CoreServicesVnet 接收来自对等互连虚拟网络的转发流量 | 已选定 |
 
-1. 单击“添加” 。
+4. 单击“添加” 。
 
-1. 在“CoreServicesVnet”|“对等互连”中，验证是否列出了“将 CoreServicesVnet 连接到 ManufacturingVnet”对等互连。 刷新页面以确保“对等互连状态”为“已连接”********。
+5. 在“CoreServicesVnet”的“对等互连”中，验证是否列出了“**CoreServicesVnet-to-ManufacturingVnet**”对等互连。 刷新页面以确保“对等互连状态”为“已连接”********。
 
-1. 切换到 ManufacturingVnet，并验证 ManufacturingVnet-to-CoreServicesVnet 对等互连是否已列出********。 确保“对等互连状态”为“已连接”********。 你可能需要**刷新**页面。 
+6. 切换到 ManufacturingVnet，并验证 ManufacturingVnet-to-CoreServicesVnet 对等互连是否已列出********。 确保“对等互连状态”为“已连接”********。 你可能需要**刷新**页面。 
 
 ## 任务 5：使用 Azure PowerShell 测试虚拟机之间的连接
 
@@ -231,7 +231,7 @@ lab:
     | 子网地址范围 | `10.0.1.0/24`  |
 
    
-1. 在 Azure 门户中，搜索并选择 `Route tables`，然后选择“创建”****。 
+1. 在 Azure 门户中，搜索并选择`Route tables`，选择“**查看 + 创建**”，然后选择“**创建**”。 
 
     | 设置 | 值 | 
     | --- | --- |
@@ -245,7 +245,7 @@ lab:
    
 1. 选择资源（而不是复选框） **rt-CoreServices**
 
-1. 展开“**设置**”，然后依次选择“**路由**”、“**+ 添加**”。 创建从未来的网络虚拟设备 (NVA) 到 CoreServices 虚拟网络的路由。 
+1. 展开“**设置**”，然后依次选择“**路由**”、“**添加**”。 创建从未来的网络虚拟设备 (NVA) 到 CoreServices 虚拟网络的路由。 
 
     | 设置 | 值 | 
     | --- | --- |
