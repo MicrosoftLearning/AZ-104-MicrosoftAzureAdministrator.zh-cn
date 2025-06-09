@@ -204,7 +204,6 @@ lab:
     - **** 附加 Azure 备份警报数据
     - **** Azure Site Recovery 作业
     - **** Azure Site Recovery 事件
-    - **健康产业**
 
 1. 在目标详细信息中，选中“存档到存储帐户”旁边的复选框。****
 
