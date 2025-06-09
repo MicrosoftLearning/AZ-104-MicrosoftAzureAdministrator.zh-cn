@@ -166,7 +166,7 @@ lab:
     | 说明 | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | 策略强制执行 | 已启用 |
 
-1. 单击“下一步”两次，将“参数”设置为以下值 ：
+1. 单击“**下一步**”，并将“**参数**”设置为以下值：
 
     | 设置 | 值 |
     | --- | --- |
