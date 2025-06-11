@@ -20,11 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
-+ [创建并配置 Azure 负载均衡器](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)。 创建虚拟网络、后端服务器、负载均衡器，然后测试负载均衡器。
-+ [部署 Azure 应用程序网关](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)。 创建应用程序网关、虚拟机和后端池，并测试网关。
-+ [实现流量管理](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)。 实现完整的中心辐射型网络，包括虚拟机、虚拟网络、对等互连、负载均衡器和应用程序网关。
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 工作技能
 

@@ -20,15 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
-+ [在门户中创建虚拟机](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201)。 创建虚拟机，连接并安装 Web 服务器角色。
-
-+ [使用模板部署虚拟机](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209)。 了解快速入门库并找到虚拟机模板。 部署模板并验证部署。
-
-+ [使用 PowerShell 创建虚拟机](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010)。 使用 Azure PowerShell 部署虚拟机。 查看 Azure 顾问建议。
-
-+ [使用 CLI 创建虚拟机](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011)。 使用 CLI 部署虚拟机。 查看 Azure 顾问建议。
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 工作技能
 

@@ -21,11 +21,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
-+ [创建 Web 应用](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202)。 创建运行 Docker 容器的 Web 应用。
-    
-+ [实现 Azure Web 应用](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)。 创建 Azure Web 应用、管理部署并缩放应用。 
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 

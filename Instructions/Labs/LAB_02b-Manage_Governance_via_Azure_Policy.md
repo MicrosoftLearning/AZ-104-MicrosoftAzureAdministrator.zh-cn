@@ -28,13 +28,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现几个交互式实验室模拟可用于本主题。 通过模拟，可按照自己的节奏点击浏览类似的方案。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
-
-+ [](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015)管理资源锁。 添加资源锁并测试以进行确认。
-  
-+ [](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017)创建 Azure 策略。 创建一个 Azure 策略，用以限制可以放置资源的位置。 创建一个新资源并确保强制实施该策略。 
-
-+ [](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)通过 Azure 策略管理治理。 通过 Azure 门户创建和分配标记。 创建一个要求进行标记的 Azure 策略。 修正不符合要求的资源。
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 
