@@ -28,13 +28,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的应用场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
-
-+ [使用 RBAC 管理访问权限](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014)。 向用户分配内置角色并监视活动日志。 
-
-+ [管理订阅和 RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)。 实现管理组并创建和分配自定义 RBAC 角色。
-
-+ [打开支持请求](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022)。 查看支持计划选项，然后创建和监视支持请求、技术或计费。
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 

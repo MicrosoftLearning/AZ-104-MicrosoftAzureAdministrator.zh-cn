@@ -20,13 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现几个交互式实验室模拟可用于本主题。 通过模拟，可按照自己的节奏点击浏览类似的方案。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
-
-+ [使用全局虚拟网络对等互连连接两个 Azure 虚拟网络](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)。 测试不同虚拟网络中两个虚拟机之间的连接。 创建虚拟网络对等互连并重新测试。
-
-+ [为虚拟网络配置监视](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/)。 了解如何使用 Azure 网络观察程序连接监视器、流日志、NSG 诊断和数据包捕获来监视 Azure IaaS 网络资源的连接。
-
-+ [实现站点间连接](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)。 运行一个模板以创建包含多个虚拟机的虚拟网络基础结构。 配置虚拟网络对等互连并测试连接。 
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 
@@ -56,7 +50,7 @@ lab:
     | 设置 | 值 | 
     | --- | --- |
     | 订阅 |  *用户的订阅* |
-    | 资源组 |  `az104-rg5`（新建 [如有必要]****。 )
+    | 资源组 |  `az104-rg5`（新建 [如有必要]****。 "
     | 虚拟机名称 |    `CoreServicesVM` |
     | 区域 | **（美国）美国东部** |
     | 可用性选项 | 没有所需的基础结构冗余 |

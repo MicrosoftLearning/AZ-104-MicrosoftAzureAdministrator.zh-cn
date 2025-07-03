@@ -17,13 +17,10 @@ lab:
 ## 实验室方案
 
 你的组织有一个在本地数据中心的虚拟机上运行的 Web 应用程序。 组织希望将所有应用程序移动到云，但不希望拥有大量要管理的服务器。 你决定评估 Azure 容器实例和 Docker。 
+
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
-+ [部署 Azure 容器实例](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203)。 使用 Azure 容器实例创建、配置和部署 Docker 容器。
-  
-+ [实现 Azure 容器实例](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)。  使用 Azure 容器实例部署 Docker 映像。 
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 

@@ -20,11 +20,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现一些交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
-
-+ [创建 blob 存储](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205)。 创建存储帐户、管理 blob 存储以及监视存储活动。 
-  
-+ [管理 Azure 存储](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)。 创建存储帐户并查看配置。 管理 blob 存储容器。 配置存储网络。 
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 

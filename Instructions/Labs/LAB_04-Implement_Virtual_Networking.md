@@ -24,15 +24,7 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现几个交互式实验室模拟可用于本主题。 通过模拟，可按照自己的节奏点击浏览类似的方案。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。 
-
-+ [保护网络流量](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013)。 创建虚拟机、虚拟网络和网络安全组。 添加网络安全组规则以允许和禁止流量。
-  
-+ [创建简单的虚拟网络](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204)。 创建包含两台虚拟机的虚拟网络。 演示虚拟机可以通信。 
-
-+ [在 Azure 中设计和实现虚拟网络](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)。 创建资源组并创建包含子网的虚拟网络。  
-
-+ [实现虚拟网络](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)。 创建和配置虚拟网络、部署虚拟机、配置网络安全组和配置 Azure DNS。
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
 

@@ -20,11 +20,10 @@ lab:
 
 ## 交互式实验室模拟
 
-你可能会发现有一个交互式实验室模拟对本主题很有用。 通过模拟，可按照自己的节奏点击浏览类似的场景。 交互式模拟与本实验室之间存在差异，但许多核心概念是相同的。 不需要 Azure 订阅。
-
-+ [实现监视](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)。 创建 Log Analytics 工作区和基于 Azure 自动化的解决方案。 查看虚拟机的监视和诊断设置。 查看 Azure Monitor 和 Log 日志分析功能。 
+>**注意**：此前提供的实验室模拟已停用。
 
 ## 体系结构关系图
+
 
 ![体系结构任务示意图](../media/az104-lab11-architecture.png)
 
