@@ -257,7 +257,6 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 
 + [创建 Azure 存储帐户](https://learn.microsoft.com/training/modules/create-azure-storage-account/)。 使用正确的选项创建 Azure 存储帐户以满足业务需求。
 + [管理 Azure Blob 存储生命周期](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle)。 了解如何在整个 Azure Blob 存储生命周期中管理数据可用性。
-+ [使用 Azure Blob 存储优化成本](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/)。 了解如何使用 Azure Blob 存储优化成本。
 
 ## 关键结论
 

@@ -162,7 +162,6 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 ## 通过自定进度的培训了解详细信息
 
 + [使用 Azure 基于角色的访问控制 (Azure RBAC) 保护 Azure 资源](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/)。 使用 Azure RBAC 管理对 Azure 中资源的访问。
-+ [使用基于角色的访问控制 (RBAC) 为 Azure 资源创建自定义角色](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/)。 了解访问控制的角色定义结构。 确定用于定义自定义角色权限的角色属性。 创建 Azure 自定义角色并将其分配给用户。
 
 ## 关键结论
 
@@ -174,6 +173,7 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + 可创建新角色或自定义现有角色。
 + 角色以 JSON 格式的文件定义，并包括“Actions”、“NotActions”和“AssignableScopes”******。
 + 可使用活动日志以监视角色分配。
+
 
 
 
