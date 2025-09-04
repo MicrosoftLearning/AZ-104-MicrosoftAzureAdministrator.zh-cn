@@ -37,8 +37,8 @@ lab:
 ## 工作技能
 
 + 任务 1：通过 Azure 门户创建和分配标记。
-+ 任务 2：通过 Azure 策略强制进行标记。
-+ 任务 3：通过 Azure 策略应用标记。
++ 任务 2：通过 Azure Policy 强制执行标记。
++ 任务 3：通过 Azure Policy 应用标记。
 + 任务 4：配置并测试资源锁。 
 
 ## 任务 1：通过 Azure 门户分配标记
@@ -240,10 +240,6 @@ Copilot 可帮助你了解如何使用 Azure 脚本工具。 Copilot 还可以�
 + 以表格形式列出 Azure 策略和 Azure RBAC 之间的差异，并包括示例。
 + 强制执行 Azure 策略并修正不符合资源的步骤是什么？
 + 如何获取带有特定标记的 Azure 资源的报表？
-
-## 通过自定进度的培训了解详细信息
-
-+ [](https://learn.microsoft.com/training/modules/enterprise-governance/)设计企业治理策略。 使用 RBAC 和 Azure Policy 来限制对 Azure 解决方案的访问，并确定哪种方法适合你的安全目标。
 
 ## 关键结论
 
