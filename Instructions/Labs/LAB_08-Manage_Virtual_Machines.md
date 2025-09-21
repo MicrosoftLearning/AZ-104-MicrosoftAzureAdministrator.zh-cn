@@ -70,7 +70,7 @@ lab:
 
 1. 单击“下一步: **** 磁盘 >”，指定以下设置（其他设置保留默认值）：
 
-    | 设置 | Value |
+    | 设置 | 值 |
     | --- | --- |
     | OS 磁盘类型 | **高级·SSD** |
     | 使用 VM 删除 | 选中****（默认值） |
@@ -216,7 +216,7 @@ lab:
     | --- | --- |
     | 源 | **任意** |
     | 源端口范围 | * |
-    | 目标 | **任意** |
+    | 目的地 | **任意** |
     | 服务 | **HTTP** |
     | 操作 | **允许** |
     | 优先级 | 1010 |
@@ -381,7 +381,7 @@ lab:
 1. 命令完成后，使用“az vm show”验证是否已创建虚拟机****。
 
     ```sh
-    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details
+    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details --output table
     ```
 
 1. 验证“powerState”是否为“VM 正在运行”********。
