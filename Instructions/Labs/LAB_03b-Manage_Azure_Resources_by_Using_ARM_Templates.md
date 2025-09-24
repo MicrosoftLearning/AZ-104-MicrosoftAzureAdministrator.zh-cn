@@ -172,7 +172,7 @@ lab:
 1. 确认该磁盘已创建。
 
    ```powershell
-   Get-AzDisk
+   Get-AzDisk | ft
    ```
    
 ## 任务 4：使用 CLI 部署模板 
