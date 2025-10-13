@@ -91,7 +91,7 @@ lab:
 
     | 设置 | 值 |
     | --- | --- |
-    | 分配名称 | 需要资源上的“成本中心”标记及其值 |
+    | 分配名称 | `Require Cost Center tag and its value on resources` |
     | 说明 | `Require Cost Center tag and its value on all resources in the resource group`|
     | 策略强制执行 | 已启用 |
 
