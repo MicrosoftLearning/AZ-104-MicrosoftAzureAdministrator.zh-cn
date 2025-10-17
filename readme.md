@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # AZ-104：Microsoft Azure 管理员
 
 ## 欢迎使用
@@ -36,9 +28,9 @@ Or, if you are a trainer with a microsoft.com email address, please create a tic
 
 ## 如何参与内容编辑？
 
-- 任何 MCT 都可向 GitHub 存储库中的代码或内容提交拉取请求，Microsoft 和课程作者将根据需要进行分流并纳入内容和实验室代码的更改。
+- 每位 MCT 都可向 GitHub 存储库中的代码或内容提交拉取请求，Microsoft 和课程作者将对内容进行分类，并根据需要采纳内容和实验室代码更改。
 
-- 你可以提交 bug、更改、改进和想法。  先于我们找到了新的 Azure 功能？  提交新的演示吧！
+- 你可以提交 Bug、更改、改进内容和想法。  在我们之前发现新的 Azure 功能了吗？  提交新的演示吧！
 
 ## 如何处理对学生手册的更改？
 

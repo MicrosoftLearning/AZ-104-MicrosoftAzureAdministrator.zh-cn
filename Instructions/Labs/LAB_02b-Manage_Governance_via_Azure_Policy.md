@@ -26,10 +26,6 @@ lab:
 
 - 使用资源锁保护所配置的资源
 
-## 交互式实验室模拟
-
->**注意**：此前提供的实验室模拟已停用。
-
 ## 体系结构关系图
 
 ![任务体系结构的示意图。](../media/az104-lab02b-architecture.png)
@@ -95,7 +91,7 @@ lab:
 
     | 设置 | 值 |
     | --- | --- |
-    | 分配名称 | 需要资源上的“成本中心”标记及其值 |
+    | 分配名称 | `Require Cost Center tag and its value on resources` |
     | 说明 | `Require Cost Center tag and its value on all resources in the resource group`|
     | 策略强制执行 | 已启用 |
 
