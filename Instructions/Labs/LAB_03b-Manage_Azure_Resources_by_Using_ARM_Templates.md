@@ -198,7 +198,7 @@ lab:
 1. 确认该磁盘已创建。
 
      ```sh
-     az disk list --output table
+     az disk list --resource-group az104-rg3 --output table
      ```
    
 ## 任务 5：使用 Azure Bicep 部署资源
@@ -234,7 +234,7 @@ lab:
 1. 确认该磁盘已创建。
 
     ```sh
-    az disk list --output table
+    az disk list --resource-group az104-rg3 --output table
     ```
 
     >**注意：** 你已成功部署了五个托管磁盘，每个磁盘采用不同的方式。 做得不错！

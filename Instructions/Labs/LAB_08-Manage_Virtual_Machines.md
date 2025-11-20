@@ -54,7 +54,7 @@ lab:
     | 可用性选项 | **可用性区域** |
     | 可用性区域 | 区域 1、2****（阅读有关使用虚拟机规模集的说明） |
     | 安全类型 | **标准** |
-    | 图像 | Windows Server 2019 Datacenter - x64 Gen2**** |
+    | 图像（查看所有图像） | Windows Server 2019 Datacenter - x64 Gen2**** |
     | Azure Spot 实例 | **unchecked** |
     | 大小 | Standard D2s v3 |
     | 用户名 | `localadmin` |
@@ -172,7 +172,7 @@ lab:
     | 业务流程模式 | **Uniform** |
     | 安全类型 | **标准** |
     | 缩放选项 | **查看并采用默认值**。 我们将在下一个任务中对此进行更改。 |
-    | 映像 | Windows Server 2019 Datacenter - x64 Gen2**** |
+    | 图像（查看所有图像） | Windows Server 2019 Datacenter - x64 Gen2**** |
     | 使用 Azure Spot 折扣运行 | **未选中** |
     | 大小 | 标准 D2s_v3 |
     | 用户名 | `localadmin` |
