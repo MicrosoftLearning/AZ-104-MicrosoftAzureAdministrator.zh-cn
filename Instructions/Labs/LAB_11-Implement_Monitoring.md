@@ -207,7 +207,7 @@ lab:
 
 在此任务中，你将使用 Azure Monitor 查询从虚拟机捕获的数据。
 
-    >**Note:** It can take 15-30 minutes for data to appear. Concentrate on the method and types of queries, rather than the results. 
+   >**注意：** 如果数据没有显示，也没关系。 重点关注用于查看监视信息的步骤，包括预配置的自定义日志查询。 
 
 1. 在 Azure 门户中，搜索并选择 `Monitor`，然后单击“**日志**”。
 
